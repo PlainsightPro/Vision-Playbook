@@ -4,65 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plainsight Vision Playbook</title>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
-    .header {
-        background-color: #003366;
-        color: white;
-        text-align: center;
-        padding: 10px 20px;
-    }
-    .container {
-        display: flex;
-        min-height: 90vh;
-    }
-    .sidebar {
-        flex: 0 0 20%;
-        background: #f4f4f4;
-        padding: 20px;
-        height: 100vh;
-        overflow: auto;
-    }
-    .content {
-        flex: 1;
-        padding: 20px;
-    }
-    .menu-item {
-        font-size: 16px;
-        font-weight: bold;
-        margin-top: 15px;
-        margin-bottom: 5px;
-    }
-    .sub-menu {
-        padding-left: 20px;
-        margin-bottom: 10px;
-    }
-    .sub-menu a {
-        font-size: 14px;
-        display: block;
-        color: black;
-        padding: 5px 0;
-        text-decoration: none;
-    }
-    .sub-sub-menu {
-        padding-left: 40px;
-        margin-top: 5px;
-    }
-    .sub-sub-menu a {
-        font-size: 12px;
-        display: block;
-        color: black;
-        padding: 5px 0;
-        text-decoration: none;
-    }
-    a:hover {
-        background-color: #ddd;
-    }
+    body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    .header { background-color: #003366; color: white; text-align: center; padding: 10px 20px; }
+    .container { display: flex; min-height: 90vh; }
+    .sidebar { flex: 0 0 20%; background: #f4f4f4; padding: 20px; height: 100vh; overflow: auto; }
+    .content { flex: 1; padding: 20px; }
+    .menu-item { font-size: 16px; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
+    .sub-menu { padding-left: 20px; margin-bottom: 10px; }
+    .sub-menu a, .sub-sub-menu a { font-size: 14px; display: block; color: black; padding: 5px 0; text-decoration: none; }
+    .sub-sub-menu { padding-left: 40px; margin-top: 5px; }
+    a:hover { background-color: #ddd; }
 </style>
 </head>
 <body>
@@ -74,48 +26,28 @@
     <div class="sidebar">
         <div class="menu-item">Vision Playbook Usage</div>
         <div class="sub-menu">
-            <a href="javascript:void(0);" data-md="Introduction.md" onclick="showContent(this)">Introduction</a>
-            <a href="javascript:void(0);" data-md="evolution.md" onclick="showContent(this)">Continuous evolution</a>
+            <a href="https://github.com/PlainsightPro/Vision-Playbook/blob/main/Introduction.md" target="_blank">Introduction</a>
+            <a href="https://github.com/PlainsightPro/Vision-Playbook/blob/main/ContinuousEvolution.md" target="_blank">Continuous evolution</a>
         </div>
         <div class="menu-item">Our Culture</div>
         <div class="sub-menu">
-            <a href="javascript:void(0);" data-md="purpose.md" onclick="showContent(this)">Purpose</a>
-            <a href="javascript:void(0);" data-md="values.md" onclick="showContent(this)">Values</a>
-            <a href="javascript:void(0);" data-md="unique.md" onclick="showContent(this)">What makes us unique</a>
+            <a href="https://github.com/PlainsightPro/Vision-Playbook/blob/main/Purpose.md" target="_blank">Purpose</a>
+            <a href="https://github.com/PlainsightPro/Vision-Playbook/blob/main/Values.md" target="_blank">Values</a>
+            <a href="https://github.com/PlainsightPro/Vision-Playbook/blob/main/WhatMakesUsUnique.md" target="_blank">What makes us unique</a>
         </div>
         <div class="menu-item">Our Structure</div>
         <div class="sub-menu">
-            <a href="javascript:void(0);" data-md="structureIntro.md" onclick="showContent(this)">Introduction</a>
+            <a href="https://github.com/PlainsightPro/Vision-Playbook/blob/main/StructureIntroduction.md" target="_blank">Introduction</a>
             <div class="sub-sub-menu">
-                <a href="javascript:void(0);" data-md="onboarding.md" onclick="showContent(this)">🙋‍♂️ On-boarding</a>
-                <a href="javascript:void(0);" data-md="midFlight.md" onclick="showContent(this)">🚀 Mid-Flight</a>
+                <a href="https://github.com/PlainsightPro/Vision-Playbook/blob/main/Onboarding.md" target="_blank">🙋‍♂️ On-boarding</a>
+                <a href="https://github.com/PlainsightPro/Vision-Playbook/blob/main/MidFlight.md" target="_blank">🚀 Mid-Flight</a>
             </div>
         </div>
     </div>
     <div class="content" id="mainContent">
         <h2>Welcome to our Playbook</h2>
-        <p>Click on a section on the left to display its content here.</p>
+        <p>Click on a section on the left to view its content.</p>
     </div>
 </div>
-
-<script>
-function showContent(element) {
-    const markdownPath = element.getAttribute('data-md');
-    fetch(markdownPath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(text => {
-            document.getElementById('mainContent').innerHTML = marked(text);
-        })
-        .catch(error => {
-            console.error('Error loading the Markdown file:', error);
-            document.getElementById('mainContent').innerHTML = '<p>Error loading content. Please check console for details.</p>';
-        });
-}
-</script>
 </body>
 </html>
