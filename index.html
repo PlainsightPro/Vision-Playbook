@@ -12,7 +12,7 @@
     .sidebar { flex: 0 0 20%; background: #f4f4f4; padding: 20px; height: 100vh; overflow: auto; }
     .content { flex: 1; padding: 20px; overflow-y: auto; }
     .menu-item { font-size: 16px; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
-    .sub-menu { padding-left: 20px; margin-bottom: 10px; }
+    .sub-menu, .sub-sub-menu { padding-left: 20px; margin-bottom: 10px; }
     .sub-menu a, .sub-sub-menu a { font-size: 14px; display: block; color: black; padding: 5px 0; text-decoration: none; cursor: pointer; }
     .sub-sub-menu { padding-left: 40px; margin-top: 5px; }
     a:hover { background-color: #ddd; }
@@ -27,22 +27,34 @@
     <div class="sidebar">
         <div class="menu-item">Vision Playbook Usage</div>
         <div class="sub-menu">
-            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Introduction.md')">Introduction</a>
-            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/ContinuousEvolution.md')">Continuous evolution</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/IntroductionVision.md')">🙋‍♂️Introduction</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/ContinuousImprovement.md')">🥇Continuous improvement</a>
         </div>
         <div class="menu-item">Our Culture</div>
         <div class="sub-menu">
-            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Purpose.md')">Purpose</a>
-            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Values.md')">Values</a>
-            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/WhatMakesUsUnique.md')">What makes us unique</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Purpose.md')">💎Purpose</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Values.md')">💖Values</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/WhatMakesUsUnique.md')">🤓What makes us unique</a>
         </div>
         <div class="menu-item">Our Structure</div>
         <div class="sub-menu">
-            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/StructureIntroduction.md')">Introduction</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/IntroductionStructure.md')">Introduction</a>
             <div class="sub-sub-menu">
-                <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Onboarding.md')">🙋‍♂️ On-boarding</a>
-                <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/MidFlight.md')">🚀 Mid-Flight</a>
+                <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Onboarding.md')">🙋‍♂️On-boarding</a>
+                <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/MidFlight.md')">🚀Mid-Flight</a>
+                <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Ofboarding.md')">🙋‍♀️Of-boarding</a>
             </div>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/PersonalGrowthOps.md')">🚀Personal Growth Ops</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Scheduling.md')">🔁Scheduling</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Roles.md')">🧑‍💼Roles</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/DataStrategy.md')">🎯Plan – Data Strategy</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/DataPlatformAndUseCases.md')">🏗️Build – Data Platform & Use cases</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Support.md')">🆘Run - Support</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Approach.md')">🎯Approach</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/CustomerSatisfactionSurveys.md')">💘Customer satisfaction surveys</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Communities.md')">🧑‍🤝‍🧑Communities</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Partnerships.md')">🤝Partnerships</a>
+            <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/CollaborativePartnership.md')">🚀Collaborative Partnership</a>
         </div>
     </div>
     <div class="content" id="mainContent">
