@@ -8,31 +8,27 @@
 <style>
     body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; }
     .header { background-color: #003366; color: white; text-align: center; padding: 10px 20px; }
-    .container { display: flex; min-height: 90vh; transition: margin-left 0.3s; }
-    .sidebar { flex: 0 0 20%; background: #f4f4f4; padding: 20px; height: 100vh; overflow: auto; transition: width 0.3s, margin-left 0.3s; }
+    .container { display: flex; min-height: 90vh; }
+    .sidebar { flex: 0 0 20%; background: #f4f4f4; padding: 20px; height: 100vh; overflow: auto; }
     .content { flex: 1; padding: 20px; overflow-y: auto; }
     .menu-item { font-size: 16px; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
     .sub-menu, .sub-sub-menu { padding-left: 20px; margin-bottom: 10px; }
     .sub-menu a, .sub-sub-menu a, .same-style { font-size: 14px; display: block; color: black; padding: 5px 0; text-decoration: none; cursor: pointer; }
-    .sub-menu-nonlink { font-size: 14px; display: block; color: black; padding: 5px 0; text-decoration: none; }
+    .sub-menu-nonlink { font-size: 14px; display: block; color: black; padding: 5px 0; text-decoration: none;}
     .sub-sub-menu { padding-left: 40px; margin-top: 5px; }
     a:hover { background-color: #ddd; }
-    .toggle-button { position: absolute; top: 10px; left: 10px; background-color: #003366; color: white; border: none; padding: 10px 15px; cursor: pointer; }
-    .collapsed .sidebar { width: 0; padding: 0; overflow: hidden; }
-    .collapsed .content { margin-left: 0; }
 </style>
 </head>
 <body>
 <div class="header">
     <h1>Plainsight Vision Playbook 🌍🚀</h1>
     <h5>Code is the blueprint of our organization, built on transparency and rocket-fueled by passion.</h5>
-    <!-- Anchor tag linking to the GitHub edit URL -->
+        <!-- Anchor tag linking to the GitHub edit URL -->
     <a href="https://github.com/PlainsightPro/Vision-Playbook" target="_blank" rel="noopener noreferrer">
     <!-- Image source for the badge -->
     <img src="https://img.shields.io/badge/Edit_on-GitHub-blue?logo=github" alt="Edit on GitHub"></a>
 </div>
-<button class="toggle-button" onclick="toggleSidebar()">☰</button>
-<div class="container" id="mainContainer">
+<div class="container">
     <div class="sidebar">            
         <div class="menu-item">Vision Playbook Usage</div>
         
@@ -49,7 +45,11 @@
         </div>
         
         <div class="menu-item">Our Structure</div>
+
+
         <div class="sub-menu">
+            
+
             <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/IntroductionStructure.md')">🙋‍♂️Introduction</a>
 
             <!-- HR OPS -->
@@ -91,7 +91,9 @@
             
             <!-- Equity OPS -->
             <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/CollaborativePartnership.md')">🚀Collaborative Partnership</a>
+
         </div>
+        
     </div>
     <div class="content" id="mainContent">
         <h2>Welcome to our Playbook</h2>
@@ -110,11 +112,6 @@ function loadMarkdown(url) {
         console.error('Failed to fetch Markdown', err);
         document.getElementById('mainContent').innerHTML = '<p>Error loading the document.</p>';
     });
-}
-
-function toggleSidebar() {
-    const container = document.getElementById('mainContainer');
-    container.classList.toggle('collapsed');
 }
 </script>
 </body>
