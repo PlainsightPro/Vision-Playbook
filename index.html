@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plainsight Vision Playbook</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    .top-nav {
+        background-color: #FAA7B7
+; /* Yellow */
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .header {
+        background-color: #003366; /* Dark blue */
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+    }
+    .container {
+        display: flex;
+        min-height: 90vh;
+    }
+    .sidebar {
+        flex: 0 0 20%;
+        background: #f4f4f4;
+        padding: 20px;
+        height: 100vh;
+        overflow: auto; 
+    }
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+    .sidebar a {
+        text-decoration: none;
+        display: block;
+        padding: 8px;
+        color: black;
+        border-bottom: 1px solid #ddd;
+    }
+    .sidebar a:hover {
+        background-color: #ddd;
+    }
+    .button {
+        color: black;
+        background-color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .button img {
+        vertical-align: middle;
+    }
+</style>
+</head>
+<body>
+<div class="top-nav">
+    <button class="button" onclick="location.href='https://github.com/PlainsightPro/Vision-Playbook'">View on GitHub</button>
+</div>
+<div class="header">
+    <h1>Plainsight Vision Playbook 🌍🚀</h1>
+    <h5>The Vision Playbook guides us in reaching our vision, one mission at a time.</h5>
+</div>
+<div class="container">
+    <div class="sidebar">
+        <a href="#" onclick="showContent('intro')">Introduction</a>
+        <a href="#" onclick="showContent('culture')">Our Culture</a>
+        <a href="#" onclick="showContent('structure')">Our Structure</a>
+    </div>
+    <div class="content" id="mainContent">
+        <h2>Welcome to our Playbook</h2>
+        <p>Click on a section on the left to display its content here.</p>
+    </div>
+</div>
+
+<script>
+function showContent(section) {
+    var content = {
+        'intro': '<h2>Introduction</h2><p>This is the introduction to our vision playbook.</p>',
+        'culture': '<h2>Our Culture</h2><p>Here is some content about our culture...</p>',
+        'structure': '<h2>Our Structure</h2><p>Information about our structure goes here...</p>'
+    };
+    document.getElementById('mainContent').innerHTML = content[section];
+}
+</script>
+</body>
+</html>
