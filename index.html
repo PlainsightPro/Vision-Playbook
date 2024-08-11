@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plainsight Vision Playbook</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
     body, html {
         margin: 0;
@@ -31,14 +32,35 @@
         flex: 1;
         padding: 20px;
     }
-    .sidebar a {
-        text-decoration: none;
-        display: block;
-        padding: 8px;
-        color: black;
-        border-bottom: 1px solid #ddd;
+    .menu-item {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 5px;
     }
-    .sidebar a:hover {
+    .sub-menu {
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+    .sub-menu a {
+        font-size: 14px;
+        display: block;
+        color: black;
+        padding: 5px 0;
+        text-decoration: none;
+    }
+    .sub-sub-menu {
+        padding-left: 40px;
+        margin-top: 5px;
+    }
+    .sub-sub-menu a {
+        font-size: 12px;
+        display: block;
+        color: black;
+        padding: 5px 0;
+        text-decoration: none;
+    }
+    a:hover {
         background-color: #ddd;
     }
 </style>
@@ -50,9 +72,25 @@
 </div>
 <div class="container">
     <div class="sidebar">
-        <a href="#" onclick="showContent('intro')">Introduction</a>
-        <a href="#" onclick="showContent('culture')">Our Culture</a>
-        <a href="#" onclick="showContent('structure')">Our Structure</a>
+        <div class="menu-item">Vision Playbook Usage</div>
+        <div class="sub-menu">
+            <a href="#" onclick="showContent('intro')">Introduction</a>
+            <a href="#" onclick="showContent('evolution')">Continuous evolution</a>
+        </div>
+        <div class="menu-item">Our Culture</div>
+        <div class="sub-menu">
+            <a href="#" onclick="showContent('purpose')">Purpose</a>
+            <a href="#" onclick="showContent('values')">Values</a>
+            <a href="#" onclick="showContent('unique')">What makes us unique</a>
+        </div>
+        <div class="menu-item">Our Structure</div>
+        <div class="sub-menu">
+            <a href="#" onclick="showContent('structureIntro')">Introduction</a>
+            <div class="sub-sub-menu">
+                <a href="#" onclick="showContent('onboarding')">🙋‍♂️ On-boarding</a>
+                <a href="#" onclick="showContent('midFlight')">🚀 Mid-Flight</a>
+            </div>
+        </div>
     </div>
     <div class="content" id="mainContent">
         <h2>Welcome to our Playbook</h2>
@@ -62,12 +100,24 @@
 
 <script>
 function showContent(section) {
-    var content = {
-        'intro': '<h2>Introduction</h2><p>This is the introduction to our vision playbook.</p>',
-        'culture': '<h2>Our Culture</h2><p>Here is some content about our culture...</p>',
-        'structure': '<h2>Our Structure</h2><p>Information about our structure goes here...</p>'
-    };
-    document.getElementById('mainContent').innerHTML = content[section];
+    // Constructing the file name based on the section clicked.
+    const markdownPath = `${section}.md`;
+
+    // Fetch the markdown file, convert it to text, then use marked.js to convert to HTML.
+    fetch(markdownPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(text => {
+            document.getElementById('mainContent').innerHTML = marked(text);
+        })
+        .catch(error => {
+            console.error('Error loading the Markdown file:', error);
+            document.getElementById('mainContent').innerHTML = '<p>Error loading content...</p>';
+        });
 }
 </script>
 </body>
