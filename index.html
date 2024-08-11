@@ -141,7 +141,8 @@ function loadMarkdown(url) {
     fetch(url)
     .then(response => response.text())
     .then(text => {
-        document.getElementById('mainContent').innerHTML = marked.parse(text);
+        const content = marked.parse(text);
+        document.getElementById('mainContent').innerHTML = `<div style="font-size: smaller;">${content}</div>`;
     })
     .catch(err => {
         console.error('Failed to fetch Markdown', err);
