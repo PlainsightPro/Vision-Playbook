@@ -26,9 +26,27 @@
         left: 0px; /* Align to left of the header */
     }
     .container { display: flex; min-height: 90vh; }
-    .sidebar { flex: 0 0 250px; background: #f4f4f4; padding: 20px; height: 100vh; overflow: auto; transition: transform 0.3s ease; }
-    .sidebar.hidden { transform: translateX(-100%); }
-    .content { flex: 1; padding: 20px; overflow-y: auto; }
+    .sidebar { 
+        flex: 0 0 250px; 
+        background: #f4f4f4; 
+        padding: 20px; 
+        height: 100vh; 
+        overflow: auto; 
+        transition: transform 0.3s ease, flex 0.3s ease; 
+    }
+    .sidebar.hidden { 
+        transform: translateX(-100%); 
+        flex: 0 0 0; /* Collapse the sidebar */
+    }
+    .content { 
+        flex: 1; 
+        padding: 20px; 
+        overflow-y: auto; 
+        transition: flex 0.3s ease; 
+    }
+    .content.full-width { 
+        flex: 1 0 100%; /* Expand the content to full width */
+    }
     .menu-item { font-size: 16px; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
     .sub-menu, .sub-sub-menu { padding-left: 15px; margin-bottom: 10px; }
     .sub-menu a, .sub-sub-menu a, .same-style { font-size: 14px; display: block; color: black; padding: 5px 0; text-decoration: none; cursor: pointer; }
@@ -133,8 +151,11 @@ function loadMarkdown(url) {
 
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('mainContent');
+    
     sidebar.classList.toggle('hidden');
+    content.classList.toggle('full-width');
 }
 </script>
 </body>
-</html
+</html>
