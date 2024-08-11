@@ -13,7 +13,7 @@
     .content { flex: 1; padding: 20px; overflow-y: auto; }
     .menu-item { font-size: 16px; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
     .sub-menu, .sub-sub-menu { padding-left: 20px; margin-bottom: 10px; }
-    .sub-menu a, .sub-sub-menu a { font-size: 14px; display: block; color: black; padding: 5px 0; text-decoration: none; cursor: pointer; }
+    .sub-menu a, .sub-sub-menu a, .same-style { font-size: 14px; display: block; color: black; padding: 5px 0; text-decoration: none; cursor: pointer; }
     .sub-sub-menu { padding-left: 40px; margin-top: 5px; }
     a:hover { background-color: #ddd; }
 </style>
@@ -48,11 +48,11 @@
         <div class="menu-item">Our Structure</div>
         <div class="sub-menu">
             <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/IntroductionStructure.md')">🙋‍♂️Introduction</a>
-            🙋‍♂️Introduction
+            <a href="#" class="same-style">🙋‍♂️Growth Ops</a>
            
             <div class="sub-sub-menu">
                 <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Onboarding.md')">👋On-boarding</a>
-                <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/MidFlight.md')">🚀Launched</a>
+                <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Launched.md')">🚀Launched</a>
                 <a href="#" onclick="loadMarkdown('https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/Launched/Offboarding.md')">🙋‍♀️Offboarding</a>
             </div>
     
