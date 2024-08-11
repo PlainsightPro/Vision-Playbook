@@ -74,21 +74,21 @@
     <div class="sidebar">
         <div class="menu-item">Vision Playbook Usage</div>
         <div class="sub-menu">
-            <a href="#" onclick="showContent('intro')">Introduction</a>
-            <a href="#" onclick="showContent('evolution')">Continuous evolution</a>
+            <a href="javascript:void(0);" data-md="intro.md" onclick="showContent(this)">Introduction</a>
+            <a href="javascript:void(0);" data-md="evolution.md" onclick="showContent(this)">Continuous evolution</a>
         </div>
         <div class="menu-item">Our Culture</div>
         <div class="sub-menu">
-            <a href="#" onclick="showContent('purpose')">Purpose</a>
-            <a href="#" onclick="showContent('values')">Values</a>
-            <a href="#" onclick="showContent('unique')">What makes us unique</a>
+            <a href="javascript:void(0);" data-md="purpose.md" onclick="showContent(this)">Purpose</a>
+            <a href="javascript:void(0);" data-md="values.md" onclick="showContent(this)">Values</a>
+            <a href="javascript:void(0);" data-md="unique.md" onclick="showContent(this)">What makes us unique</a>
         </div>
         <div class="menu-item">Our Structure</div>
         <div class="sub-menu">
-            <a href="#" onclick="showContent('structureIntro')">Introduction</a>
+            <a href="javascript:void(0);" data-md="structureIntro.md" onclick="showContent(this)">Introduction</a>
             <div class="sub-sub-menu">
-                <a href="#" onclick="showContent('onboarding')">🙋‍♂️ On-boarding</a>
-                <a href="#" onclick="showContent('midFlight')">🚀 Mid-Flight</a>
+                <a href="javascript:void(0);" data-md="onboarding.md" onclick="showContent(this)">🙋‍♂️ On-boarding</a>
+                <a href="javascript:void(0);" data-md="midFlight.md" onclick="showContent(this)">🚀 Mid-Flight</a>
             </div>
         </div>
     </div>
@@ -99,15 +99,12 @@
 </div>
 
 <script>
-function showContent(section) {
-    // Constructing the file name based on the section clicked.
-    const markdownPath = `${section}.md`;
-
-    // Fetch the markdown file, convert it to text, then use marked.js to convert to HTML.
+function showContent(element) {
+    const markdownPath = element.getAttribute('data-md');
     fetch(markdownPath)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.text();
         })
@@ -116,7 +113,7 @@ function showContent(section) {
         })
         .catch(error => {
             console.error('Error loading the Markdown file:', error);
-            document.getElementById('mainContent').innerHTML = '<p>Error loading content...</p>';
+            document.getElementById('mainContent').innerHTML = '<p>Error loading content. Please check console for details.</p>';
         });
 }
 </script>
