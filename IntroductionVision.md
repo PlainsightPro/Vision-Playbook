@@ -3,12 +3,9 @@
 # Vision Playbook Usage - 🙋️Introduction
 
 [Subtitle 1](#subtitle1)
+
 [Subtitle 2](#subtitle2)
 
-
-[Subtitle 1](#Subtitle-1)
-
-[Subtitle 2](#Subtitle-2)
 
 You can even work with images from the images folder:
 ![Mission Vision Values Services Knowledge](images/Mission+vision+values+services+knowledge.png)
