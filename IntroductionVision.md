@@ -5,6 +5,10 @@
 
 [Subtitle 2](#Subtitle-2)
 
+You can even work with images from the images folder:
+![Mission Vision Values Services Knowledge](images/Mission+vision+values+services+knowledge.png)
+
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Ipsum platea cursus sed; tellus risus erat. Netus tempor nostra ultrices sodales ante. Hac praesent lobortis mauris aliquam pellentesque suscipit justo suspendisse. Arcu sem nostra congue facilisis convallis. Accumsan praesent interdum varius augue erat, vitae molestie.
