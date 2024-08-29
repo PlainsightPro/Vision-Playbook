@@ -25,7 +25,9 @@
         bottom: 0px; /* Align to bottom of the header */
         left: 0px; /* Align to left of the header */
     }
-    .container { display: flex; min-height: 90vh; }
+    .container { display: flex; 
+                flex-direction: row;
+                min-height: 90vh; }
     .sidebar { 
         flex: 0 0 250px; 
         background: #f4f4f4; 
@@ -39,7 +41,8 @@
         flex: 0 0 0; /* Collapse the sidebar */
     }
     .content { 
-        flex: 1; 
+       /* flex: 1; */
+        flex-grow: 1;
         padding: 20px; 
         overflow-y: auto; 
         transition: flex 0.3s ease; 
