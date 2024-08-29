@@ -47,12 +47,55 @@
     .content.full-width { 
         flex: 1 0 100%; /* Expand the content to full width */
     }
-    .menu-item { font-size: 16px; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
-    .sub-menu { padding-left: 10px; margin-bottom: 10px; }
-    .sub-sub-menu { padding-left: 15px; margin-bottom: 10px; }
-    .deep-sub-menu {padding-left: 20px; margin-bottom: 10px; }
-    .sub-menu a, .sub-sub-menu a, .same-style { font-size: 14px; display: block; color: black; padding: 5px 0; text-decoration: none; cursor: pointer; }
-    .sub-menu-nonlink { font-size: 14px; font-weight: bold; display: block; color: black; padding: 5px 0; text-decoration: none;}
+    .menu-item {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .sub-menu {
+        font-size: 16px;
+        padding-left: 10px; /* First level */
+        margin-bottom: 10px;
+    }
+    .sub-sub-menu {
+        padding-left: 18px; /* Second level */
+        margin-bottom: 10px;
+    }
+    .deep-sub-menu {
+        padding-left: 25px; /* Third level */
+        margin-bottom: 10px;
+    }
+    .deeper-sub-menu {
+        padding-left: 32px; /* Fourth level */
+        margin-bottom: 10px;
+    }
+    .sub-menu a {
+        font-size: 16px;
+        display: block;
+        color: black;
+        padding: 5px 0;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .sub-sub-menu a, .deep-sub-menu a, .deeper-sub-menu a, .same-style {
+        font-size: 14px;
+        display: block;
+        color: black;
+        padding: 5px 0;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .sub-menu-nonlink {
+        font-size: 14px;
+        font-weight: bold;
+        display: block;
+        color: black;
+        padding: 5px 0;
+        text-decoration: none;
+    }
+
+
     /*.sub-sub-menu { padding-left: 20px; margin-top: 0; }*/
     a:hover { background-color: #ddd; }
 </style>
