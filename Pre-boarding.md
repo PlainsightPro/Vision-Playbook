@@ -2,7 +2,8 @@
 
 _Pre-boarding at Plainsight is all about making sure we're a perfect match 🤝._
 
-### Here's how it works:
+
+## Hiring Journey
 
 🚀 **Quick Intro Call**  
   - We'll start with a brief chat to introduce ourselves and learn about your background.
@@ -24,3 +25,6 @@ _Pre-boarding at Plainsight is all about making sure we're a perfect match 🤝.
   - Once you're happy with the offer, it's time to accept and get ready to join us!
 
 **This streamlined process ensures we're on the same page from the start and ready to move forward together. 🙌**
+
+
+## Salary Proposal
