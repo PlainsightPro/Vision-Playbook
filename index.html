@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plainsight Vision Playbook</title>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> -->
+<!-- Include Mermaid.js -->
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+mermaid.initialize({ startOnLoad: true });
+</script>
 <style>
     body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; }
     .header {
