@@ -31,7 +31,7 @@ graph LR;
 ```
   
 
-## The Recruitment Journey 🚀
+## The Hiring Journey 🚀
 
 ### 1. Initial Contact: Making the Connection 🤝
 Our journey together begins the moment you express interest in joining Plainsight. Whether you applied directly or were scouted by our talent team, we’ll reach out to set up an initial conversation. This is our chance to get to know you, understand your career goals, and see how they align with our vision.
@@ -45,7 +45,7 @@ Depending on the role, you might be asked to complete an assessment or case stud
 ### 4. The Interview Rounds: Meeting the Team 💼
 Next, you’ll have the opportunity to meet with various members of our team, including potential colleagues and leaders. These interviews are as much about us getting to know you as they are about you learning more about us. We value open, two-way conversations where both sides can explore if there’s a mutual fit.
 
-### 5. The Offer: Welcome to the Plainsight Family 🎉
+### 5. The Offer: Welcome to the Plainsight Team 🎉
 If everything aligns, we’ll extend a formal offer for you to join the team. This offer will include details on your role, compensation, benefits, and any other relevant information. We believe in being transparent and fair, so we’ll take the time to go over the offer with you and answer any questions.
 
 ## Preparing for Your First Day 🌱
