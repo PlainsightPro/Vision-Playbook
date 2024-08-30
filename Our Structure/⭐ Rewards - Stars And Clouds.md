@@ -12,7 +12,7 @@ Plainsight Stars are your rewards for driving our strategic goals forward. Our v
 
 ### Enablers/Goals
 - **Share Knowledge**: Publish blogs on our website.
-- **Achieve Partner Status**: Help us gain recognition with Microsoft.
+- **Achieve Partner Status**: Help us gain recognition with our partners.
 - **Host/Present at Events**: Represent us externally.
 - **Grow Our Client Base**: Bring in new customers.
 - **Onboard New Talent**: Help us expand the team.

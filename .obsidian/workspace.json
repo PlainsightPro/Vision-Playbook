@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "3026405ad2382ed1",
+    "type": "split",
+    "children": [
+      {
+        "id": "3f7569bb4276f434",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fcfd365bf5dad877",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Our Structure/🌱 Learning And Experimentation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "32ed551eb1aa5828",
+    "type": "split",
+    "children": [
+      {
+        "id": "d373c3e270145986",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "198c433d60ff4f01",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cc0145bb1a9685e3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a132df5de572c3aa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ddf72574003d77c7",
+    "type": "split",
+    "children": [
+      {
+        "id": "317ebce4b33b29da",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa3841efc4074dc8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Our Structure/🌱 Learning And Experimentation.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "39a3c8377c7cebbe",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Our Structure/🌱 Learning And Experimentation.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8e58b8c6a0b0a8c5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "f3ab3ea8ef46ad09",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Our Structure/🌱 Learning And Experimentation.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "publish:Publish changes...": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "fcfd365bf5dad877",
+  "lastOpenFiles": [
+    "Our Structure/⭐ Rewards - Stars And Clouds.md",
+    "Our Structure/⭐ PlainsightStarsAndClouds.md",
+    "Our Structure/⭐ Bonus - Stars And Clouds.md",
+    "Our Structure/🌱 Learning And Experimentation.md",
+    "Our Structure/🚲 Mobility.md",
+    "Our Structure/🛹 Pre-boarding & Hiring.md",
+    "images/Plainsight.svg",
+    "Our Structure/🚀 Onboarding.md",
+    "Our Structure/Evaluation Process.md",
+    "Our Structure/🎯 Evaluation Process.md",
+    "Our Structure/Learning And Experimentation.md",
+    "Our Structure/Onboarding.md",
+    "Our Structure/Mobility.md",
+    "images/Mission+vision+values+services+knowledge.png",
+    "Our Structure/🌴 Holidays.md"
+  ]
+}
