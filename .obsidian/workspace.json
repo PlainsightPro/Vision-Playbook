@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Our Structure/🌱 Learning And Experimentation.md",
+                "file": "Service Delivery Ops/🎯 Plan – Data Strategy.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Our Structure/🌱 Learning And Experimentation.md",
+                "file": "Service Delivery Ops/🎯 Plan – Data Strategy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Our Structure/🌱 Learning And Experimentation.md",
+                "file": "Service Delivery Ops/🎯 Plan – Data Strategy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Our Structure/🌱 Learning And Experimentation.md"
+                "file": "Service Delivery Ops/🎯 Plan – Data Strategy.md"
               }
             }
           }
@@ -149,20 +149,43 @@
   },
   "active": "fcfd365bf5dad877",
   "lastOpenFiles": [
-    "Our Structure/⭐ Rewards - Stars And Clouds.md",
-    "Our Structure/⭐ PlainsightStarsAndClouds.md",
-    "Our Structure/⭐ Bonus - Stars And Clouds.md",
-    "Our Structure/🌱 Learning And Experimentation.md",
-    "Our Structure/🚲 Mobility.md",
-    "Our Structure/🛹 Pre-boarding & Hiring.md",
+    "Partner Ops/🤝 Partnerships.md",
+    "Partner Ops/🥇Continuous improvement.md",
+    "Partner Ops/🧑‍🤝‍🧑 Communities.md",
+    "Partner Ops/🎯 Plan – Data Strategy.md",
+    "Launched.md",
+    "Service Delivery Ops/🆘 Run - Support.md",
+    "Vision Playbook Usage/🙋️Introduction & Vision.md",
+    "Vision Playbook Usage/🥇Continuous improvement.md",
+    "People Ops/Working @ Plainsight/💪 Hosting a Teambuilding or Sports Event.md",
+    "People Ops/Working @ Plainsight/🌴 Holidays.md",
+    "People Ops/Working @ Plainsight/🌱 Learning And Experimentation.md",
+    "People Ops/Working @ Plainsight/⭐ Rewards - Stars And Clouds.md",
+    "Service Delivery Ops/🎯 Plan – Data Strategy.md",
+    "Service Delivery Ops/🏗️ Build – Data Platform & Use cases.md",
+    "Partner Ops",
+    "New folder",
+    "Customer Ops",
+    "Service Delivery Ops/🎯 Plan – Data Strategy copy 2.md",
+    "Service Delivery Ops/🎯 Plan – Data Strategy copy.md",
+    "Service Delivery Ops",
+    "People Ops/Service Delivery Ops",
+    "People Ops/Your Employee Journey/🚀 Onboarding.md",
+    "People Ops/Your Employee Journey/🛹 Pre-boarding & Hiring.md",
+    "People Ops/Your Employee Journey/😢 Off-Boarding.md",
+    "People Ops/Your Employee Journey",
+    "People Ops/Working @ Plainsight/🚲 Mobility.md",
+    "People Ops/Working @ Plainsight/🚀 Onboarding.md",
+    "People Ops/Working @ Plainsight/📄 CV - CurriculumVitae.md",
+    "People Ops/Working @ Plainsight/🎯 Evaluation Process.md",
+    "People Ops/Working @ Plainsight/Sports Event.md",
+    "People Ops/Working @ Plainsight/💪 Hosting a Teambuilding/Sports Event.md",
+    "People Ops/Working @ Plainsight/💪 Hosting a Teambuilding",
+    "People Ops/Off-Boarding/😢 Off-Boarding.md",
+    "People Ops/Working @ Plainsight",
+    "People Ops/Pre-Boarding & Hiring",
+    "People Ops/Off-Boarding",
     "images/Plainsight.svg",
-    "Our Structure/🚀 Onboarding.md",
-    "Our Structure/Evaluation Process.md",
-    "Our Structure/🎯 Evaluation Process.md",
-    "Our Structure/Learning And Experimentation.md",
-    "Our Structure/Onboarding.md",
-    "Our Structure/Mobility.md",
-    "images/Mission+vision+values+services+knowledge.png",
-    "Our Structure/🌴 Holidays.md"
+    "images/Mission+vision+values+services+knowledge.png"
   ]
 }

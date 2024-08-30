@@ -3,30 +3,41 @@
 Welcome to the start of your journey with Plainsight! Our recruitment process is designed to be as seamless, transparent, and engaging as possible. Here’s what you can expect as you embark on this exciting path with us.
 
 ```mermaid
+---
+config:
+  layout: elk
+  theme: forest
+  look: neo
+---
 
-graph LR;
-    subgraph A[Phase 1: 🎉 Initial Engagement]
-        A1[👋 Interview 1: Get to Know Us]
-    end
-    
-    subgraph B[Phase 2: 🤓 In-Depth Meeting]
-        direction LR
-        B1[💬 Interview 2: Questions & Deep-Dive] 
-        B2[🛠️ Technical Challenge]
-    end
-        
-    subgraph C[Phase 4: 📝 Decision Making]
-        direction LR
-        C1[📄 Offer Proposal] --> C2[🤔 What's it gonna be? Yes or No?!]
-    end
-    
-    subgraph D[Phase 5: 🌟 Onboarding]
-        direction LR
-        D1[📋 Pre-boarding] --> FD2[🚀 First Day at Plainsight]
-    end
-    
-    A --> B --> C --> D
+graph TB;
+    subgraph A[Phase 1: 🎉 Initial Engagement]
+        A1[👋 Interview 1: Get to Know Us]
+    end
+    
+    subgraph B[Phase 2: 🤓 In-Depth Meeting]
+        direction LR
+        B1[💬 Interview 2: Questions & Deep-Dive]
+        B2[🛠️ Technical Challenge]
+    end
 
+    subgraph C[Phase 4: 📝 Decision Making]
+        direction LR
+        C1[📄 Offer Proposal] --> C2[🤔 What's it gonna be? Yes or No?!]
+    end
+
+    subgraph D[Phase 5: 🌟 Onboarding]
+        direction LR
+        D1[📋 Pre-boarding] --> D2[🚀 First Day at Plainsight]
+    end
+
+    A --> B --> C --> D
+    
+    classDef outerBox fill:#FDCAD2,stroke:#031B89,stroke-width:1px;
+    class A,B,C,D outerBox;
+    
+    classDef innerbox fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
+    class A1,B1,B2,C1,C2,D1,D2 innerbox;
     
 ```
   

@@ -3,17 +3,28 @@
 At Plainsight, our evaluation process is designed to align your personal career aspirations with the company’s goals. This is how we structure it:
 
 ```mermaid
-graph TD;
-    A[December: Set Long & Short-Term Goals]
-    B[Periodic Follow-Up by Career Coach]
-    C[Mid-Year Evaluation: Month 7]
-    D[Periodic Follow-Up by Career Coach]
-    E[End of Year: Review & Reset Goals]
+---
+config:
+  theme: forest
+  layout: elk
+---
 
-    A --> B --> C --> D --> E --> A
-    B --> B
-    D --> D
-    
+graph TD;
+    A[🎯 Dec/Jan: Set Long & Short-Term Goals]
+    B[🔄 Periodic Follow-Up with Career Coach]
+    C[📊 July: Mid-Year Evaluation]
+    D[🔄 Periodic Follow-Up with Career Coach]
+    E[🎉 Dec/Jan: Review & Reset Goals]
+
+    A --> B --> C --> D --> E --> A
+    B --> B
+    D --> D
+
+    classDef pinkBox fill:#FDCAD2,stroke:#031B89,stroke-width:1px;
+    class A,C,D,E pinkBox;
+
+    classDef blueBox fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
+    class B,D blueBox;
 ```
 
 ## December: Setting the Stage for Success 🎯
