@@ -1,14 +1,11 @@
-<a name="top"></a>
-[![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-blue?logo=github)](https://github.com/PlainsightPro/Vision-Playbook/edit/Launched/IntroductionVision.md)
-# Vision Playbook Usage - 🙋️Introduction
-
 ## Our Story: The Birth of a Vision 🚀
 
 Plainsight was born out of a simple yet powerful idea: to create a company where innovation thrives, and people are empowered to turn ideas into reality. Our journey began in 2023, when a group of passionate individuals, driven by a shared vision, decided to challenge the status quo in the Data & AI Industry. They saw a gap, an opportunity to make a difference, and they seized it with both hands.
 
 The early days were filled with late nights, tough decisions, and relentless perseverance. But it was also a time of excitement and discovery. We built our foundation on the belief that with the right mix of talent, technology, and teamwork, anything is possible.
 
-![Mission Vision Values Services Knowledge](images/Mission+vision+values+services+knowledge.png)
+
+![Mission Vision Values Services Knowledge](https://raw.githubusercontent.com/PlainsightPro/Vision-Playbook/79a28c5ee8d7b39c2bd215ddbe01a5c96ff08026/images/Mission%2Bvision%2Bvalues%2Bservices%2Bknowledge.png)
 
 ## Our Vision: Charting the Course for the Future 🌍
 
@@ -31,6 +28,3 @@ Our values are the bedrock of Plainsight. They are the principles that guide our
 - **Be Impactful**: We focus on making a meaningful difference in everything we do.
 - **Be Respectful**: We treat everyone with respect, fostering a culture of inclusivity and collaboration.
 
-## What’s Next? Join Us on This Journey 🎯
-
-The introduction is just the beginning of the Plainsight story. As you explore this playbook, you’ll discover the many facets of our company—from our people and culture to our strategies and successes. We invite you to dive in, learn more, and join us on this exciting journey towards the future.
