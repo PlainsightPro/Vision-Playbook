@@ -3,7 +3,8 @@
 At Plainsight, your hard work and dedication don't go unnoticed! Our unique reward system celebrates both your strategic contributions and extra efforts. Whether you're helping us reach key goals or going the extra mile in other areas, there’s a reward waiting for you.
 
 ## Quick Link: Requesting Stars and Clouds
-Submit your requests [here](https://plainsightis.sharepoint.com/Lists/Plainsight%20Stars%20%20Clouds/AllItems.aspx).
+
+[![Rewards Link](https://img.shields.io/badge/Plainsight%20Rewards-Click%20Here-FDCAD2?style=for-the-badge)](https://plainsightis.sharepoint.com/Lists/Plainsight%20Stars%20%20Clouds/AllItems.aspx)
 
 ## ⭐ Plainsight Stars ⭐
 

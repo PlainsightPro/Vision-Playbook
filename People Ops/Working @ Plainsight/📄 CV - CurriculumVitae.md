@@ -2,8 +2,7 @@
 
 At Plainsight, your CV is more than just a document—it's your professional story. It’s essential to keep it current, as we use your CV to present your skills and experience to potential customers. It's essential to maintain your CV regularly. Click the button below to update your CV:
 
-[![Update Your CV](https://img.shields.io/badge/Update_Your_CV-Click_Here-blue?style=for-the-badge)](https://plainsightis.sharepoint.com/sites/Plainsight/CV/Forms/All%20Active%20Consultants.aspx)
-
+[![Update Your CV](https://img.shields.io/badge/Update_Your_CV-Click_Here-FDCAD2?style=for-the-badge)](https://plainsightis.sharepoint.com/sites/Plainsight/CV/Forms/All%20Active%20Consultants.aspx)
 
 Here’s why it matters:
 
