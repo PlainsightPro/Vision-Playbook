@@ -1,5 +1,6 @@
 <a name="top"></a>
-[![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-blue?logo=github)](https://github.com/PlainsightPro/Vision-Playbook/edit/Launched/IntroductionVision.md)
+[![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-FDCAD2?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/PlainsightPro/Vision-Playbook/blob/Launched/Vision%20Playbook%20Usage/%F0%9F%99%8B%EF%B8%8F%20Hello%20There.md)
+
 
 # Vision Playbook Usage - 🙋️Introduction
 
