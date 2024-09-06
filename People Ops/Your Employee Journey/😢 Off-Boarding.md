@@ -2,12 +2,12 @@
 
 At Plainsight, saying goodbye to a colleague is never easy. Whether you're moving on to new adventures or taking a different path, we want to ensure your transition is smooth, respectful, and positive. Here’s how we handle the off-boarding process:
 
-## A Thoughtful Farewell 🌱
+## A Thoughtful Goodbye 🌱
 
 We understand that off-boarding is a significant moment for both the departing employee and the team. Our goal is to make sure everything is handled professionally and with care.
 
 ### 1. Exit Interview 🗣️
-We value your feedback and experiences during your time with us. An exit interview provides an opportunity to share your thoughts on what worked well and areas where we can improve. This conversation is confidential and helps us continue to grow as a company.
+We value your feedback and experiences during your time with us. An exit interview provides an opportunity to share your thoughts on what worked well and areas where we can improve. This conversation is confidential and helps us continue to grow as a company. Besides the official exit interview, you'll have at least one extra feedbackconversation with someone else. This is to ensure both parties capture the correct feedback and can possibly adapt their way of working accordingly. 
 
 ### 2. Knowledge Transfer 📚
 Before you go, we’ll work with you to ensure a smooth transition of your responsibilities. This includes:
@@ -21,7 +21,7 @@ We’ll coordinate the return of any company assets, such as laptops, access car
 We believe in recognizing the contributions you’ve made to the team. A farewell event or meeting is typically organized to give everyone a chance to say goodbye and celebrate your time at Plainsight.
 
 ### 5. Final Payroll and Benefits 🧾
-We’ll ensure that your final paycheck and any outstanding benefits are processed promptly. Our HR team will provide you with all the necessary details regarding your final payment, benefits continuation, and any other important information.
+We’ll ensure that your final paycheck and any outstanding benefits are processed promptly. Our People Team will provide you with all the necessary details regarding your final payment, benefits continuation, and any other important information.
 
 ## Staying Connected 🌍
 
