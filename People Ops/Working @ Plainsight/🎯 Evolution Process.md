@@ -1,6 +1,10 @@
-# Plainsight Evaluation Process 🔍
+# Plainsight Evolution Process 🔍
 
-At Plainsight, our evaluation process is designed to align your personal career aspirations with the company’s goals. This is how we structure it:
+At Plainsight, we believe that growth is a continuous journey fueled by honest, open feedback. We don’t adhere to the traditional concept of "evaluations" but instead embrace what we call 720° feedback. This approach ensures that every voice is heard, whether it's within our team or from our customers, fostering a culture where improvement is constant and multidimensional.
+
+Besides the continuous open candor and feedback culture, we have two fixed 720° feedback moments each year. These sessions allow us to set both short- and long-term goals, follow up on progress, and ensure that feedback from all relevant perspectives—coach to consultant, consultant to coach, peer consultants, customer to consultant, and customer to Plainsight as a company—is taken into account. This structured process ensures that personal and team growth remain aligned with our values. ♾️
+
+This is how we structure it:
 
 ```mermaid
 ---
@@ -12,9 +16,9 @@ config:
 graph TD;
     A[🎯 Dec/Jan: Set Long & Short-Term Goals]
     B[🔄 Periodic Follow-Up with Career Coach]
-    C[📊 July: Mid-Year Evaluation]
+    C[📊 July: Mid-Year Feedback moment]
     D[🔄 Periodic Follow-Up with Career Coach]
-    E[🎉 Dec/Jan: Review & Reset Goals]
+    E[🎉 Dec/Jan: 720° Feedback & Reset Goals]
 
     A --> B --> C --> D --> E --> A
     B --> B
@@ -44,16 +48,16 @@ Your career coach plays a crucial role in helping you reach your short-term goal
 ### Ongoing Follow-Up 📈
 The career coach will check in with you periodically to make sure everything is on track. These follow-ups are designed to address any challenges you might be facing and to ensure that you’re making progress toward your goals.
 
-## July: Mid-Year Evaluation 🗒️
+## July: Mid-Year Feedback moment 🗒️
 
-In July, we conduct a mid-year evaluation. This is a well-structured conversation where we:
+In July, we conduct a mid-year feedback moment. This is a well-structured conversation where we:
 
 - **Review Progress**: We assess how well you’re tracking toward your SMART goals.
-- **Customer Feedback**: We share and discuss feedback from clients to ensure alignment.
+- **720° Feedback**: We gather feedback from all relevant perspectives: coach to consultant, consultant to coach, peer consultants, customer to consultant, and customer to Plainsight 
 - **Support Needs**: If there are areas where your career coach can assist, this is the time to ask.
 
-The mid-year evaluation is an essential checkpoint to ensure that you’re on course to achieve your objectives and to adjust any plans if needed.
+This mid-year feedback moment is an essential checkpoint to ensure that you’re on course to achieve your objectives and to adjust any plans if needed.
 
 ---
 
-This process ensures that your career development is both proactive and aligned with the needs of Plainsight, fostering growth for both you and the company.
+This process ensures that your career development is both proactive and aligned with the needs of Plainsight, fostering growth for both you and the company.♾️🚀
