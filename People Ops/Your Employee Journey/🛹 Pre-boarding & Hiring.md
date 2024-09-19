@@ -59,6 +59,8 @@ Next, you’ll have the opportunity to meet with various members of our team, in
 ### 5. The Offer: Welcome to the Plainsight Team 🎉
 If everything aligns, we’ll extend a formal offer for you to join the team. This offer will include details on your role, compensation, benefits, and any other relevant information. We believe in being transparent and fair, so we’ll take the time to go over the offer with you and answer any questions.
 
+Not selected? Don't hold back to ask for feedback: it's in our DNA. 
+
 ## Preparing for Your First Day 🌱
 
 Once you’ve accepted the offer, the pre-boarding process officially begins. We’ll provide you with all the information you need to hit the ground running on your first day. This includes access to our onboarding portal, where you can complete necessary paperwork, learn more about our culture, and start getting acquainted with your team.
