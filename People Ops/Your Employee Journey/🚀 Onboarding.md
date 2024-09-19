@@ -10,8 +10,8 @@ Before we kick off the onboarding process, you'll need to sign your proposal. Th
 ## 🚀 Onboarding Setup
 Once your proposal is signed, we begin preparing for your arrival:
 
-- **HR Contact**: Our HR team will reach out to guide you through the initial steps.
-- **HR Platform Access**: You'll receive a link to our [HR Platform](https://selfservice.officient.io), where you'll fill in all the relevant information we need to get everything set before your start date. 
+- **People team Contact**: Our People Team will reach out to guide you through the initial steps.
+- **People Platform Access**: You'll receive a link to our [People Platform](https://selfservice.officient.io), where you'll fill in all the relevant information we need to get everything set before your start date. 
 - **Mobility Options**: We’ll give you some information about the mobility options you have at Plainsight. Feel free to already take a peek here: [🚗 Mobility](Mobility.md). But no worries—we’ll explain everything!
 - **Event Invitations**: You’ll start receiving invites to our events, and you're welcome to attend even before your official onboarding day.
 
