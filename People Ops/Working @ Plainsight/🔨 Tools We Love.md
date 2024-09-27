@@ -42,6 +42,9 @@ At Plainsight, we rely on a variety of tools to get the job done efficiently and
 ### SQL Server Management Studio (SSMS)
 - **Best Practices**: Use SSMS to manage SQL databases efficiently. Always back up databases before making major changes.
 - **Install From**: [Microsoft Website](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
+### Data Studio 
+- **Best Practices**: Use Data Studio for a more Visual Studio code-like view. Less functionalities then SSMS, but does the trick for basic SQL database needs.
+- **Install From**: [Microsoft Website](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall)
 
 ## Other Tools
 

@@ -17,7 +17,7 @@ Before you go, we’ll work with you to ensure a smooth transition of your respo
 ### 3. Handing Over Company Assets 💻
 We’ll coordinate the return of any company assets, such as laptops, access cards, or other equipment. This process is straightforward, and our IT team will assist in managing account access and data transfer securely.
 
-### 4. Saying Goodbye 👋
+### 4. Ciao adios 👋
 We believe in recognizing the contributions you’ve made to the team. A farewell event or meeting is typically organized to give everyone a chance to say goodbye and celebrate your time at Plainsight.
 
 ### 5. Final Payroll and Benefits 🧾

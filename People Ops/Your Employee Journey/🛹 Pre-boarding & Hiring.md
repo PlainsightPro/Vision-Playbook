@@ -62,7 +62,7 @@ Depending on the role, you might be asked to complete an assessment or case stud
 ### 3. The Interview Rounds: Meeting the Team 💼
 Next, you’ll have the opportunity to meet with various members of our team, including potential colleagues and leaders. These interviews are as much about us getting to know you as they are about you learning more about us. We value open, two-way conversations where both sides can explore if there’s a mutual fit.
 
-### 5. The Offer: Welcome to the Plainsight Team 🎉
+### 4. The Offer: Welcome to the Plainsight Team 🎉
 If everything aligns, we’ll extend a formal offer for you to join the team. This offer will include details on your role, compensation, benefits, and any other relevant information. We believe in being transparent and fair, so we’ll take the time to go over the offer with you and answer any questions. If one of both parties doesn't feel an exact fit, feel free to ask or give feedback - feedback is in our DNA.
 
 Once you're happy with the offer, it's time to accept and get ready to join us!
