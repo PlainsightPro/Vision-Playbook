@@ -47,8 +47,6 @@ The Mobility Budget is a fixed amount that you can use to manage your own transp
 
 Submitting expenses is easy—just upload a photo through the [app](https://play.google.com/store/apps/details?id=com.mobility.olympus&hl=en&pli=1)! 📱
 
----
-
 ### 🛤️ The 3 Pillars of the Mobility Budget
 
 #### Pillar 1: Electric/Low-Emission Company Car
@@ -74,9 +72,8 @@ Examples include:
 - There is no way to transfer this remainder to the next year
 - Note: The payout is taxed at **38.08%**
 
-![Mobility Budget pilars](https://github.com/PlainsightPro/Vision-Playbook/blob/Launched/images/mobilitybudget.png)
+![[mobilitybudget.png]]
 
----
 ### 📜 Rules & Regulations
 
 For more information, visit: [https://mobiliteitsbudget.be/nl](https://mobiliteitsbudget.be/nl)
@@ -85,8 +82,6 @@ For more information, visit: [https://mobiliteitsbudget.be/nl](https://mobilitei
 - The Mobility Budget is generally released **monthly** but can be released **all at once** (e.g., a larger payout in September for purchasing a bike)
 - Legal maximum limits apply to the Mobility Budget
 - Manage your budget through the **[app](https://play.google.com/store/apps/details?id=com.mobility.olympus&hl=en&pli=1)** 💼
-
----
 
 ### 👍 Interested?
 
