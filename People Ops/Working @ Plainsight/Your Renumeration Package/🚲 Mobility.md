@@ -74,9 +74,7 @@ Examples include:
 - There is no way to transfer this remainder to the next year
 - Note: The payout is taxed at **38.08%**
 
-obsidian://open?vault=Obsidian%20Vault&file=images%2Fmobilitybudget.png
-
-![Mobility Budget Pilars](obsidian://open?vault=Obsidian%20Vault&file=images%2Fmobilitybudget.png) <!-- Replace with actual image URL -->
+![Mobility Budget pilars](https://github.com/PlainsightPro/Vision-Playbook/blob/Launched/images/mobilitybudget.png)
 
 ---
 ### 📜 Rules & Regulations
