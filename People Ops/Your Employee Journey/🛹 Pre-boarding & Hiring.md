@@ -67,6 +67,8 @@ If everything aligns, we’ll extend a formal offer for you to join the team. Th
 
 Once you're happy with the offer, it's time to accept and get ready to join us!
 
+Not selected? Don't hold back to ask for feedback: it's in our DNA. 
+
 ## Preparing for Your First Day 🌱
 
 Once you’ve accepted the offer, the pre-boarding process officially begins. We’ll provide you with all the information you need to hit the ground running on your first day. 🏃‍➡️ This includes access to our onboarding portal, where you can complete necessary paperwork, learn more about our culture, and start getting acquainted with your team.
