@@ -49,18 +49,17 @@ Submitting expenses is easy—just upload a photo through the [app](https://play
 
 ---
 
-## 🛤️ The 3 Pillars of the Mobility Budget
+### 🛤️ The 3 Pillars of the Mobility Budget
 
-### Pillar 1: Electric/Low-Emission Company Car
+#### Pillar 1: Electric/Low-Emission Company Car
 - Maximum 95g CO₂ 
 - Each new car should have lower emissions, ideally going down to 0 (electric)
 - Includes costs for **charging/fueling, administration, and company taxes**
 - Perfect if the car’s class isn't your top priority
 - Any remaining budget can be used on the other pillars
 
----
 
-### Pillar 2: Sustainable Transport & Housing Costs
+#### Pillar 2: Sustainable Transport & Housing Costs
 Examples include:
 - Purchasing or renting (electric) **(moped) bikes**, along with insurance and maintenance
 - **Public transport tickets** or subscriptions (for both Belgium and abroad, family members included)
@@ -69,29 +68,31 @@ Examples include:
 - Renting a car/caravan (within Belgium or abroad)
 - **Housing costs** such as rent, mortgage capital repayments, and interest **(!most used!)**
 
----
 
-### Pillar 3: Cash
+#### Pillar 3: Cash
 - Any remaining budget is paid out as **cash** in January
 - There is no way to transfer this remainder to the next year
 - Note: The payout is taxed at **38.08%**
 
----
+obsidian://open?vault=Obsidian%20Vault&file=images%2Fmobilitybudget.png
 
-## 📜 Rules & Regulations
+![Mobility Budget Pilars](obsidian://open?vault=Obsidian%20Vault&file=images%2Fmobilitybudget.png) <!-- Replace with actual image URL -->
+
+---
+### 📜 Rules & Regulations
 
 For more information, visit: [https://mobiliteitsbudget.be/nl](https://mobiliteitsbudget.be/nl)
 
-### Key Rules:
+#### Key Rules:
 - The Mobility Budget is generally released **monthly** but can be released **all at once** (e.g., a larger payout in September for purchasing a bike)
 - Legal maximum limits apply to the Mobility Budget
 - Manage your budget through the **[app](https://play.google.com/store/apps/details?id=com.mobility.olympus&hl=en&pli=1)** 💼
 
 ---
 
-## 👍 Interested?
+### 👍 Interested?
 
-### What to Do:
+#### What to Do:
 1. Send an email to **HR@plainsight.pro** expressing your interest in the Mobility Budget
 2. Sign the attachment to your employment contract regarding the Mobility Budget
 
@@ -101,8 +102,6 @@ Let’s get moving! 🚴‍♀️🚘🚆
 
 
 
-
-![Description of Image 1](https://via.placeholder.com/800x400) <!-- Replace with actual image URL -->
 
 
 
