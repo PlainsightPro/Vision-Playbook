@@ -1,10 +1,11 @@
 <a name="top"></a>
-# Introduction
+# Plainsight Playbook
 
 Plainsight loves to put things in Plain Sight (🥁). Open source code is the blueprint of our organization, built on transparency and rocket-fueled by passion 🌍🚀. Transparency fuels trust, trust generates speed and impact.
 
 Suggestions to improve our organization?
-You are just one merge request away: <a name="top"></a> [![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-FDCAD2?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/PlainsightPro/Vision-Playbook/blob/Launched/Vision%20Playbook%20Usage/%F0%9F%99%8B%EF%B8%8F%20Hello%20There.md)
+You are just one merge request away: <a name="top"></a>
+[![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-FDCAD2?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/PlainsightPro/Vision-Playbook/blob/Launched/Vision%20Playbook%20Usage/%F0%9F%99%8B%EF%B8%8F%20Hello%20There.md)
 
 # Why This Playbook? 🤔
 
@@ -33,3 +34,4 @@ This playbook exists to align everyone with our purpose, values, and processes. 
 ## What’s Next? Join Us on This Journey 🎯
 
 The introduction is just the beginning of the Plainsight story. As you explore this playbook, you’ll discover the many facets of our company—from our people and culture to our strategies and successes. We invite you to dive in, learn more, and join us on this exciting journey towards the future.
+![[plainsight playbook himym.png|300]]
