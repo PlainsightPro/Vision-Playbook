@@ -1,5 +1,5 @@
 <a name="top"></a>
-# Plainsight Playbook
+# Plainsight Playbook 📔
 
 Plainsight loves to put things in Plain Sight (🥁). Open source code is the blueprint of our organization, built on transparency and rocket-fueled by passion 🌍🚀. Transparency fuels trust, trust generates speed and impact.
 
