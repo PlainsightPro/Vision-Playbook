@@ -26,6 +26,7 @@ We believe in the importance of taking time off to relax, recharge, and come bac
 
 - **Where to Enter**: Log your holidays in the [**People Platform**](https://selfservice.officient.io/).
 - **Approval**: **No approval needed**! We trust you to arrange holidays that suit both your needs and your customer’s needs. Just make sure you have the green light from your customer before booking your time off.
+	- If you are on the bench: please send the admin team an email in advance 
 - **Consider this order of taking up holidays:** ADV > Replacement holidays > Legal holidays > Youth/European holidays
 
 ---
@@ -53,3 +54,15 @@ Also add your holidays to your **Outlook calendar**. This will sync with Teams a
 ## 🌞 Enjoy Your Time Off!
 
 Take full advantage of your holidays, relax, and come back with great memories to share!
+
+
+# 🤒 What to Do When You're ill
+
+If you fall ill, here are the steps to follow:
+
+- **Log your illness in the [People Platform](https://selfservice.officient.io/) as soon as possible.
+- **Notify the admin team by sending an email to hr@plainsight.pro.
+- **Contact your client** early in the morning to inform them of your situation.
+- (**Upload a doctor's certificate** to the People Platform within **2 days**.)
+
+By following these steps, we can ensure smooth communication and that your illness is properly recorded. 🤧🤗

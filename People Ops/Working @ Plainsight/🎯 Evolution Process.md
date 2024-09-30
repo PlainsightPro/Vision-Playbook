@@ -58,6 +58,7 @@ In July, we conduct a mid-year feedback moment. This is a well-structured conver
 
 This mid-year feedback moment is an essential checkpoint to ensure that you’re on course to achieve your objectives and to adjust any plans if needed.
 
+![[CareerCoach.png]]
 ---
 
 This process ensures that your career development is both proactive and aligned with the needs of Plainsight, fostering growth for both you and the company.♾️🚀
