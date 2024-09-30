@@ -1,16 +1,16 @@
 <a name="top"></a>
 # Introduction
 
-Plainsight loves to put things in Plain Sight. Open source code is the blueprint of our organization, built on transparancy and rocket-fueled by passion 🌍🚀. Transparancy fuels trust, trust generates speed and impact.
+Plainsight loves to put things in Plain Sight (🥁). Open source code is the blueprint of our organization, built on transparency and rocket-fueled by passion 🌍🚀. Transparency fuels trust, trust generates speed and impact.
 
 Suggestions to improve our organization?
-You are always just one merge request away: <a name="top"></a> [![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-FDCAD2?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/PlainsightPro/Vision-Playbook/blob/Launched/Vision%20Playbook%20Usage/%F0%9F%99%8B%EF%B8%8F%20Hello%20There.md)
+You are just one merge request away: <a name="top"></a> [![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-FDCAD2?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/PlainsightPro/Vision-Playbook/blob/Launched/Vision%20Playbook%20Usage/%F0%9F%99%8B%EF%B8%8F%20Hello%20There.md)
 
 # Why This Playbook? 🤔
 
 This playbook exists to align everyone with our purpose, values, and processes. We want to show who we are to all our stakeholders—our colleagues, customers, partners, friends, and family, and anyone who wants to know what Plainsight stands for and how we do business. It’s a living document that evolves with us, ensuring that we stay on course as we grow and innovate together.
 
-Principles:
+**Principles:**
 
 - Guidelines in the handbook are meant to help, not act as strict rules.
 
