@@ -27,5 +27,5 @@ By establishing a strong foundation with the right data platform and products, t
 
 ---
 
-> [!"Intelligent Data Platforms handle your data from BI to AI, from batch to real-time."]
+> *"Intelligent Data Platforms handle your data from BI to AI, from batch to real-time."*
 
