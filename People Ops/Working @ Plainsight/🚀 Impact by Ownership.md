@@ -38,4 +38,4 @@ We believe that the act of distributing ownership generates impact beyond what a
 ![[Equity.png]]
 
 Questions on the nitty gritty details?
-Talk to one of the collaborative partners.
+**Talk to one of the collaborative partners**.
