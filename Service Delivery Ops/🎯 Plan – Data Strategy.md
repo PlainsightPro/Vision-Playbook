@@ -8,7 +8,7 @@ In the Plan phase, we focus on crafting a tailored data strategy that aligns wit
 
 
 3. **Business Prioritization**: To maximize the impact of data initiatives, we evaluate the identified use cases based on two dimensions: **business impact** and **technical feasibility**. This allows us to prioritize opportunities that provide the greatest return on investment while being achievable with the existing or planned capabilities. Sometimes it might be better to opt for a technical less perfect solution, if it fits the business better. Value is key!
-
+![[Techfeas_busImpact.png|400]]
 
 4. **Roadmap Execution & Governance**: Once the use cases are prioritized, we develop a clear and actionable roadmap that outlines the phases of execution. This roadmap also includes reference architectures that guide technology implementation, ensuring that each phase contributes to the overall data strategy and organizational goals.
 

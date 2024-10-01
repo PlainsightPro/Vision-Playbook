@@ -16,7 +16,7 @@ The Build phase is where the foundational elements of the data strategy come to 
 What’s key for us is that **everything we build brings value** to the business context. Every stage during the Build phase is frequently evaluated to ensure that development is heading in the right direction and delivering tangible business benefits. This iterative process allows us to adapt and refine our approach based on feedback, keeping the focus on **value creation.**
 ### Data Platform & Data Products
 In the Build phase, the **Data Platform** serves as the backbone that supports all data products. These data products are tailored to address specific business needs and are designed to be modular and scalable, allowing easy integration with various analytical tools and applications.
-
+![[Dataproducts.png]]
 ### Deliverables:
 - A robust data platform to centralize data access and processing.
 - Scalable data pipelines for seamless data ingestion and transformation.
