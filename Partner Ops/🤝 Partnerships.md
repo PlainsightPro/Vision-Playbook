@@ -1,11 +1,10 @@
-# 🚧 This Site is Under Construction 🚧
+## We believe in 1 + 1 > 2
 
-Oops! Looks like you've wandered into our construction zone. 🏗️
+At Plainsight, we deeply value our partnerships with technology providers because they enable us to stay at the cutting edge of innovation. Our commitment to knowledge and continuous learning drives us to be closely aligned with our technology partners. 
 
-We're busy hammering away to bring you something awesome. 
+This proximity not only helps us understand and leverage the latest advancements but also empowers us to deliver the best solutions to our clients. By collaborating on challenging customer needs, we can jointly explore, create, and implement the most effective strategies, ensuring that we provide our clients with the most impactful and future-ready data and analytics solutions. This synergy makes us stronger and better equipped to solve complex problems together.
 
-<iframe src="https://giphy.com/embed/NytMLKyiaIh6VH9SPm" width="480" height="360" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+Our current Technology Partners:
+- Microsoft
+- Databricks
 
-Don’t worry, we’ll be up and running soon. Stay tuned for the grand reveal! 🎉
-
-Feel free to check back later, or send us some good vibes while we work! ✨
