@@ -1,7 +1,8 @@
 ![[visionvalues.png]]
 # PURPOSE
 
-**Driving Business Outcomes through Data & AI**
+> **Driving Business Outcomes through Data & AI**
+
 
 We are committed to making a real impact through data and AI. Every part of our work, from internal processes to client engagement, is centered around achieving meaningful business outcomes. Our journey is shaped by key values and practices that form the foundation of our purpose.
 
