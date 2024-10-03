@@ -36,7 +36,8 @@ We believe in the importance of taking time off to relax, recharge, and come bac
 When you're off, set an **Out of Office** message to let others know. Here's an example template:
 
 > "Hi there!  
-> I am currently out of the office enjoying my holidays 🌴. I will be back on [Return Date]. Emails will not be read and not be forwarded. I will get back to you as soon as possible after my return.  
+> I am currently out of the office enjoying my holidays 🌴. I will be back on [Return Date]. Emails will not be read and not be forwarded. I will get back to you as soon as possible after my return.
+> If you're in need of assistance or support, you can send a mail to info@plainsight.pro and they will get back to you.   
 > Best regards,  
 > [Your Name]"
 
