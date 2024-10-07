@@ -46,10 +46,6 @@ At Plainsight, we rely on a variety of tools to get the job done efficiently and
 - **Best Practices**: Use Data Studio for a more Visual Studio code-like view. Less functionalities then SSMS, but does the trick for basic SQL database needs.
 - **Install From**: [Microsoft Website](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall)
 
-## Other Tools
 
-### Edge Browser
-- **Best Practices**: Use Microsoft Edge for secure browsing, and leverage its integration with Microsoft 365 for seamless productivity.
-- **Install From**: [Microsoft Website](https://www.microsoft.com/edge)
 
 
