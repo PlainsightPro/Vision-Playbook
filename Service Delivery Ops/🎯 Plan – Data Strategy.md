@@ -2,7 +2,6 @@
 
 In the Plan phase, we focus on crafting a tailored data strategy that aligns with the business goals and objectives of our clients. This phase is crucial for understanding the full potential of data within an organization and **setting the foundation** for future data initiatives.
 
-![[Plan.png|700]]
 ## Steps in the Plan Phase
 1. **Discovery**: We engage in a thorough exploration of the client’s business value chain, capturing various use cases and identifying how data and analytics can drive value across different functions. This includes considering **People, Process, Technology, and Data** as the key pillars to ensure a holistic approach.
 

@@ -7,6 +7,17 @@ Suggestions to improve our organization?
 You are just one merge request away: <a name="top"></a>
 [![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-FDCAD2?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/PlainsightPro/Vision-Playbook/tree/Launched/Playbook%20Usage)
 
+
+# Where to start? 🤔
+
+1. Purpose & [[🥇 The Foundation of Plainsight]]🚀
+2. What makes us different next to the above?
+	1. Making people grow in their careers is prio 1. Read our Career Framework: [[🎯 Evolution Process]]
+	2. Is there a limit on my growth? Spoiler alert: "No, sorry". Read: [[🚀 Impact by Ownership]]
+	3. Sharing knowledge freely, openly and over boundaries of organisations is our success recipe: [[🧑‍🤝‍🧑 Communities]]
+	4. We believe in an eco-system of people that can provide value when our customers need them. Therefore we closely work together via employment and/or contract based.
+
+
 # Why This Playbook? 🤔
 
 This playbook exists to align everyone with our purpose, values, and processes. We want to show who we are to all our stakeholders—our colleagues, customers, partners, friends, and family, and anyone who wants to know what Plainsight stands for and how we do business. It’s a living document that evolves with us, ensuring that we stay on course as we grow and innovate together.
