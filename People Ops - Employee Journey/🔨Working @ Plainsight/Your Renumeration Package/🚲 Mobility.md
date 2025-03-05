@@ -29,7 +29,6 @@ After some time, you have the option to:
 - A budget equivalent to the TCO of a company car
 - Extra flexibility in spending
 - We work with the [Olympus mobility platform](https://play.google.com/store/apps/details?id=com.mobility.olympus&hl=en&pli=1)
-- **When you opted in for the mobility budget, there is no way back to a company car**
 - Comprised of 3 pillars (details below)
 
 ---
