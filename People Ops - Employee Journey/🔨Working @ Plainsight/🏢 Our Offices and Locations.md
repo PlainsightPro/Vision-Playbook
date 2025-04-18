@@ -12,11 +12,11 @@ At Plainsight, we believe that efficiency and impact far outweigh the importance
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2509.582307545002!2d3.7693060906155447!3d51.023864998757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3750ae2453a3f%3A0xff2eaecce4ca3cf9!2sEn%20CO%20-%20coworking!5e0!3m2!1snl!2sbe!4v1725022728368!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 ### Mechelen 📍
-- **Address**: [Bedrijvencentrum Mechelen](https://maps.app.goo.gl/9N2Ef5yhANt8b1GP6) - De Regenboog 11, 2800 Mechelen
+- **Address**: [Wasserman Mechelen](https://maps.app.goo.gl/UZzSQUcadLN3Kc4N6) - Kruisbaan 70, 2800 Mechelen
 - **Description**: The Mechelen office is another popular spot for meetings and team activities, offering a convenient location for many of our staff.
-- **Opening hours & Entrance**: There is always someone in the office between 08:00 and 18:00. If you visit this office frequently, you can ask for a key that also grants access outside of business hours. 
+- **Opening hours & Entrance**: You can enter the office via the key in the locker. Description on our Teams site! 
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2510.5158699854387!2d4.460151976590215!3d51.00661787170373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3e6746626940f%3A0xf4999b2272f0d59c!2sBedrijvencentrum%20Mechelen!5e0!3m2!1snl!2sbe!4v1725022692780!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5020.6265856052505!2d4.462765177146641!3d51.0103607468913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3e675f95f86fb%3A0xfcbd305559bdcd15!2sKruisbaan%2070%2C%202800%20Mechelen!5e0!3m2!1snl!2sbe!4v1745006989531!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 ### Eindhoven 📍
 - **Address**: [High-Tech Campus 5](https://maps.app.goo.gl/iVsjWK2u78kRcHwW9) - HTC 5, 5656 AE Eindhoven, Nederland
