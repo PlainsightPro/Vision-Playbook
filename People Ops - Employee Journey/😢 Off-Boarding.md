@@ -7,7 +7,7 @@ At Plainsight, saying goodbye to a colleague is never easy. Whether you're movin
 We understand that off-boarding is a significant moment for both the departing employee and the team. Our goal is to make sure everything is handled professionally and with care.
 
 ### 1. Exit Interview 🗣️
-We value your feedback and experiences during your time with us. An exit interview provides an opportunity to share your thoughts on what worked well and areas where we can improve. This conversation is confidential and helps us continue to grow as a company. Besides the official exit interview, you'll have at least one extra feedbackconversation with someone else. This is to ensure both parties capture the correct feedback and can possibly adapt their way of working accordingly. 
+We value your feedback and experiences during your time with us. An exit interview provides an opportunity to share your thoughts on what worked well and areas where we can improve. This conversation is confidential and helps us continue to grow as a company. Besides the official exit interview, you'll have at least one extra feedback conversation with someone else. This is to ensure both parties capture the correct feedback and can possibly adapt their way of working accordingly. 
 
 ### 2. Knowledge Transfer 📚
 Before you go, we’ll work with you to ensure a smooth transition of your responsibilities. This includes:
