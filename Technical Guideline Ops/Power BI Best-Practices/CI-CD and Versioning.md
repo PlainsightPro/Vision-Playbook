@@ -2,11 +2,7 @@
 
 ## Overview
 
-Treat Power BI like software. Prefer **Power BI Desktop Projects (.pbip)** so semantic model/report definitions are text-based and diffable. Choose a versioning approach that fits project scale and governance needs; the options below are ordered from least to most mature.
-
-
-> [!NOTE] ⚠️ Power BI Projects File (.pbip)
-> Power BI Projects (.pbip) files are relatively new. Some features (such as using them in Fabric Deployment Pipelines) are not available at the time of writing. 
+Treat Power BI like software. Prefer **Power BI Desktop Projects (.pbip)**[^1] so semantic model/report definitions are text-based and diffable. Choose a versioning approach that fits project scale and governance needs; the options below are ordered from least to most mature.
 
 ## Versioning Options (least → most mature)
 
@@ -37,9 +33,10 @@ Treat Power BI like software. Prefer **Power BI Desktop Projects (.pbip)** so se
 - **Deployments:** Orchestrate OTAP (Dev/Test/Acc/Prod) via **Fabric Deployment Pipelines** and/or **Azure (Build) Pipelines** using **YAML/IaC**.
 - **Use when:** **Default choice** for all production-grade and multi-team projects.
 
-
-# OTAP deployment approaches (at a glance)
+# OTAP deployment approaches
 
 - **Fabric Deployment Pipelines:** Use rules to swap connections/parameters; promote Dataset before Reports.
 - **Azure Pipelines (YAML/IaC):** Automate build & release from Git; manage Fabric assets/config via templates; gates and approvals per stage.
 - **Hybrid:** Git (source of truth) + Fabric Pipelines (promotion) for a lightweight but governed flow.
+
+[^1]: **Power BI Projects (.pbip)** files are relatively new. Some features (such as using them in Fabric Deployment Pipelines) are not available at the time of writing. 
