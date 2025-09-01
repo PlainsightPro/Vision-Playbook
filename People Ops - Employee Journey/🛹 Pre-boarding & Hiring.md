@@ -79,4 +79,4 @@ We’ll also pair you with a buddy who will be your go-to person for any questio
 
 Your journey with us is just beginning, and we’re thrilled to have you on board. At Plainsight, we’re committed to your growth and success, and we can’t wait to see the amazing things we’ll accomplish together.
 
-Welcome to Plainsight—where innovation meets passion, and your potential is limitless.
+Welcome to Plainsight; where innovation meets passion, and your potential is limitless.
