@@ -15,12 +15,13 @@ jobs:
 
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1
-        with: # Exclude Plainsight Sharepoint and Support site
+        with:
           args: >-
-            --no-progress 
-            --exclude '^https://plainsightis\.sharepoint\.com'
-            --exclude '^https://support\.plainsight\.pro'
+            --no-progress
+            --exclude '^https://plainsightis\.sharepoint\.com/.*'
+            --exclude '^https://support\.plainsight\.pro/?$'
+            .
           fail: true
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
