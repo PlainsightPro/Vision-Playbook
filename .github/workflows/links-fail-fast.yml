@@ -18,8 +18,8 @@ jobs:
         with: # Exclude Plainsight Sharepoint and Support site
           args: >-
             --no-progress 
-            --exclude '^https://plainsightis\.sharepoint\.com.*'
-            --exclude '^https://support\.plainsight\.pro/?$'
+            --exclude '^https://plainsightis\.sharepoint\.com'
+            --exclude '^https://support\.plainsight\.pro'
           fail: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
