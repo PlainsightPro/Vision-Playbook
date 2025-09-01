@@ -1,4 +1,4 @@
-# Data Modeling Best Practices (Power BI + Fabric)
+# Data Modeling Best Practices for Power BI
 
 ## Overview
 Design star schemas around a central **fact** table with surrounding **dimension** tables.
@@ -16,7 +16,7 @@ and plan for scale with incremental refresh/partitioning in enterprise models.
 **Don’t**
 - Don’t build one giant “flat” table for everything. 
 - Don’t snowflake dimensions unless there’s a compelling reason.
-- Don’t enable bi‑directional relationships by default. Bi-directional relationship could lead to ambiguous relationships. If bi-directional relationships are required, override the filtering behaviour in your measure by using CROSSFILTER[^1]. 
+- Don’t enable bi‑directional relationships by default. Bi-directional relationship could lead to ambiguous relationships. If bi-directional relationships are required, override the filtering behaviour **in your measure** by using CROSSFILTER[^1]. 
 
 
 [^1]: Do note that CROSSFILTER and USERELATIONSHIP are not supported in models using Row-Level Security (RLS). 

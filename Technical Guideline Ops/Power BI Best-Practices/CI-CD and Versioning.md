@@ -8,14 +8,16 @@ Treat Power BI like software. Prefer **Power BI Desktop Projects (.pbip)**[^1] s
 
 ### 1) No version history (❌ Not done)
 
-- **Description:** Files live only on a local machine or shared drive without versioning.
+- **Description:** Files live only on the Power BI Service. The Power BI Service has the latest version of you report. 
 - **Use when:** Never recommended.
 - **Risks:** No audit trail, high risk of overwrites, difficult rollbacks.
 
 ### 2) SharePoint / OneDrive library with versioning (✔ Acceptable for small projects)
 
-- **Description:** Store `.pbix` / `.pbip` files in a SharePoint or OneDrive library with version history enabled.
-- **Pros:** Simple to set up; automatic versioning & timestamps; familiar to business teams.
+- **Description:** Store `.pbix` / `.pbip` files in a SharePoint or OneDrive library with version history enabled. 
+	- Either there is a OneDrive/SharePoint backing-up the files in your Power BI Workspace upon publishing. 
+	- Either the SharePoint has the same structure as your Power BI Service and this location has the latest version of the truth. 
+- **Pros:** Simple to set up; automatic versioning & timestamps; familiar to business teams. You already see 'who changed what on what timestamp'. 
 - **Cons:** Binary diffs are not meaningful; branching/review is limited; merges are manual.
 - **Use when:** **Smaller projects** or short-lived prototypes where Git maturity is overkill.
 
@@ -30,7 +32,7 @@ Treat Power BI like software. Prefer **Power BI Desktop Projects (.pbip)**[^1] s
 
 - **Description:** Connect your workspace or PBIP projects to a Git repo in **Azure DevOps** or **GitHub (Enterprise)**.
 - **Pros:** Proper version history, branches, pull requests, code reviews, CI/CD; text diffs on PBIP assets.
-- **Deployments:** Orchestrate OTAP (Dev/Test/Acc/Prod) via **Fabric Deployment Pipelines** and/or **Azure (Build) Pipelines** using **YAML/IaC**.
+- **Deployments:** Orchestrate OTAP (Dev/Test/Acc/Prod) via **Power BI/Fabric Deployment Pipelines** and/or **Azure (Build) Pipelines** using **YAML/IaC**.
 - **Use when:** **Default choice** for all production-grade and multi-team projects.
 
 # OTAP deployment approaches

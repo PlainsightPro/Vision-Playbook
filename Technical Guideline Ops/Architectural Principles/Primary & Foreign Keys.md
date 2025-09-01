@@ -9,7 +9,6 @@ on the one‑side and matching data types between related columns.
 Integers are compressed exceptionally well; clean star schemas reduce ambiguity
 and speed up filters and joins at scale. GUID relationships are stored as strings and take-up a lot of memory in your mode. 
 
-
 ## Do’s & Don’ts
 **Do**
 - Use `CustomerID`, `ProductID` (INT) as PKs; use the same INTs as FKs in facts.
