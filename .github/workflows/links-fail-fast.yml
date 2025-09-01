@@ -1,0 +1,21 @@
+# Quickly check links in Markdown, HTML, and text files using lychee.
+# https://github.com/lycheeverse/lychee-action
+
+name: Links (Fail Fast)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
