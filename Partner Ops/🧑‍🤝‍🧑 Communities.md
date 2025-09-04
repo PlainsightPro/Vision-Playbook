@@ -9,6 +9,10 @@ Once a year, at the beginning of October, you can find us at the [DataMinds Conn
 ### Fabric Belgium
 [Fabric Belgium](https://powerbi.brussels/) is a focused community that gathers Power BI enthusiasts and professionals in Brussels to exchange ideas, showcase projects, and collaborate on best practices. Our participation in this group allows us to engage in deep-dive discussions about business intelligence, data visualization, and the practical application of Microsoft Fabric & Power BI in various business contexts. We learn from real-world use cases and have the opportunity to share our own insights on building effective, data-driven solutions.
 
+### Generative AI Belgium
+[Generative AI Belgium](https://www.meetup.com/generative-ai-belgium/?utm_source=chatgpt.com) is a public Meetup based in Ghent that gathers researchers, builders and curious practitioners to explore practical uses of generative models in product, design, art and business. By participating we stay close to emerging techniques and share hands on lessons from our own implementations. The group runs regular speaker evenings, demos and hands on workshops where you can see how teams actually ship generative solutions and learn the trade offs that do not make it into papers. It is a useful place to meet potential collaborators, discover practical patterns and test early ideas with an engaged audience.
+
+
 ### A Culture of Knowledge Sharing
 By being active in these communities, we strive to promote a culture of open knowledge-sharing across organizational boundaries. Our aim is not just to advance our internal expertise, but also to contribute to the wider data community. We believe that the sharing of ideas, challenges, and successes leads to better solutions for all and drives the entire data field forward.
 

@@ -2,8 +2,6 @@
 
 At Plainsight, we're dedicated to ensuring that you have the support you need to thrive. Whether you're facing an issue, need assistance, or have a question, our support team is here to help you every step of the way. 
 
-///
-
 ## How to Get Support
 
 ### Logging an Issue 📝
