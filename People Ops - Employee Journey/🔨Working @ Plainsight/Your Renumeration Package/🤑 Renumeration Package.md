@@ -25,9 +25,6 @@ We offer a robust hospitalization insurance plan through **Alan**, ensuring you 
 - **Mobile Accessibility**: Easily manage your insurance and submit claims through Alan’s user-friendly mobile app, making healthcare simple and accessible.
 - **Additional Health Services**: Alan isn’t just for hospitalization. You can schedule calls for various health-related issues, including **(mental) health & wellbeing support**, all through the app.
 
-See how it works?
-- [FAQ](https://help.be.alan.com/en/collections/3872632-members) 
-
 ---
 
 This package is part of our commitment to your health, financial security, and overall well-being, ensuring that you’re supported both now and in the future.
