@@ -31,23 +31,23 @@ Good naming conventions make it easier for both developers and business users to
 
 **Don’t**
 - Don’t use technical abbreviations (e.g., `CustID`, `PrdNm`). Always prefer clarity.  
-- Don’t reuse the same column name across different tables without a prefix — users won’t know whether `Date` refers to order, invoice, or delivery.  
+- Don’t reuse the same column name across different tables without a prefix; users won’t know whether `Date` refers to order, invoice, or delivery.  
 
 ---
 
 ## Measures
-- Use **business-oriented measure names** — name the result, not the calculation.  
+- Use **business-oriented measure names**; name the result, not the calculation.  
   - ✅ `Revenue`, `Customer Count`, `Churn Rate`  
   - ❌ `Total Revenue`, `Sum of Sales`, `Measure1`  
 - Indicate the **calculation type** or time intelligence explicitly when relevant:  
   - `Revenue YoY %`  
   - `Sales Growth (QTD)`  
 - Group related measures into display folders for easier navigation.  
-- Keep measure names concise but unambiguous — avoid unnecessary filler words like *“Total”* unless needed for clarity.  
+- Keep measure names concise but unambiguous; avoid unnecessary filler words like *“Total”* unless needed for clarity.  
 
 **Don’t**
 - Don’t put all measures into a “dummy” or “measures” table. Keep them on the table they logically belong to.  
-- Don’t use technical language in measure names — names should be understandable by a business audience.  
+- Don’t use technical language in measure names; names should be understandable by a business audience.  
 
 ---
 
