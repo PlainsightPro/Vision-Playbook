@@ -1,3 +1,6 @@
+---
+publish: false
+---
 # Welcome to Plainsight's GitHub Repository! 🎉
 
 You've found our Git page—welcome! We're excited to have you here.

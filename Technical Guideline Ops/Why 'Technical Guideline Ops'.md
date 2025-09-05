@@ -8,7 +8,7 @@ config:
   theme: forest
   layout: elk
 ---
-
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
 graph TD;
     A[Q? Can I adhere to the technical Guidelines?]
     B[Yes, it's a greenfield.]

@@ -13,7 +13,7 @@ You can choose to start with either:
 
 ### Long-Term 
 After some time, you have the option to:
-- Choose a **Company Car** through **Lizzy** or **Alphabet Lease** platforms, or
+- Choose a **Company Car** through **Lizy** or **Alphabet Lease** platforms, or
 - Opt for the **Mobility Budget** after all
 
 ---
@@ -23,7 +23,7 @@ After some time, you have the option to:
 ### Company Car
 - A fixed Total Cost of Ownership (TCO) budget assigned to you according to your wage category
 - Includes a fuel/charging card
-- Selected through **Alphabet Lease** or **Lizzy**
+- Selected through **Alphabet Lease** or **Lizy**
 
 ### Mobility Budget
 - A budget equivalent to the TCO of a company car
