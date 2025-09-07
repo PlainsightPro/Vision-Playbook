@@ -5,7 +5,7 @@ Treat Power BI like software.
 Prefer **Power BI Desktop Projects (.pbip)** so semantic model and report definitions are **text-based, diffable, and Git-friendly**.  
 This enables proper versioning, branching, and CI/CD.  
 
-> 📝 **Note**  
+> [!📝 What are .pbip and .pbir files?]-
 > A `.pbip` file is a **project manifest** that points to the actual definition files:  
 > - **`.tmdl` (Tabular Model Definition Language):** semantic model definition (tables, relationships, measures).  
 > - **`.pbir` (Power BI Report):** report layout, visuals, and metadata.  
@@ -85,21 +85,19 @@ This enables proper versioning, branching, and CI/CD.
 - **Use when:**  
   - **Default choice** for production-grade, multi-developer, and enterprise BI projects.  
 
-<details>
-<summary>🔍 Quality Assurance in Git Workflows</summary>
-
+> [!🔍 Quality Assurance in Git Workflows]-
+> 
 When integrating Power BI with Git, you can also introduce **automated quality checks** for semantic models and reports:
-
-- **[Tabular Editor Best Practice Analyzer (BPA)](https://github.com/TabularEditor/BestPracticeRules)**  
+> 
+> - **[Tabular Editor Best Practice Analyzer (BPA)](https://github.com/TabularEditor/BestPracticeRules)**  
   Define and enforce best-practice rules for DAX, relationships, naming conventions, unused fields, etc.  
   Rules can be customized in JSON and run automatically in pipelines.  
-
-- **[PBI Inspector v2](https://github.com/NatVanG/PBI-InspectorV2)**  
+> 
+> - **[PBI Inspector v2](https://github.com/NatVanG/PBI-InspectorV2)**  
   Open-source tooling for inspecting Power BI projects, validating structure, and running automated checks.  
   Useful for compliance, technical debt reduction, and governance.  
-
+> 
 These tools can be integrated into CI/CD pipelines to enforce coding standards, naming conventions, and model optimization **before deployment**.  
-</details>
 
 ---
 

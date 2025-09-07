@@ -11,11 +11,11 @@ add comments, and prefer **measures** over calculated columns when possible.
 - Format DAX consistently (each argument on a new line, indent filters).  
 - Add inline `// comments` for complex business rules.  
 - Use `DIVIDE` instead of `/` as `DIVIDE` allows safe handling of divide-by-zero.  
-- Use **helper measures** to avoid duplication and simplify maintenance.  
-- Use `CALCULATE` only when you need to **change filter context**, otherwise keep logic in base measures.  
+- Use helper measures to avoid duplication and simplify maintenance.  
+- Use `CALCULATE` only when you need to change filter context, otherwise keep logic in base measures.  
 - Replace complex `IF` chains with `SWITCH(TRUE(), …)` for readability.  
-- Keep **business logic** in measures, not in calculated columns (except when needed for relationships).  
-- Test for **blank values** explicitly to avoid misleading 0s in reports.  
+- Keep business logic in measures, not in calculated columns (except when needed for relationships).  
+- Test for blank values explicitly to avoid misleading 0s in reports.  
 - Document assumptions in comments (e.g., “Assumes sales amount is net of tax”).  
 
 **Don’t**
@@ -29,95 +29,81 @@ add comments, and prefer **measures** over calculated columns when possible.
 
 ## Practical Examples
 
-<details>
-<summary>Using VAR for clarity</summary>
+>[!Using VAR for clarity]-
+>
+>```DAX
+>[YoY Sales %] =
+>VAR _PrevYear =
+>    CALCULATE (
+>        [Total Sales],
+>        DATEADD ( 'Date'[Date], -1, YEAR )
+>    )
+>RETURN
+>    IF (
+>        _PrevYear = 0,
+>        BLANK(),
+>        DIVIDE ( [Total Sales] - _PrevYear, _PrevYear )
+>    )
+>```
 
-```DAX
-[YoY Sales %] =
-VAR _PrevYear =
-    CALCULATE (
-        [Total Sales],
-        DATEADD ( 'Date'[Date], -1, YEAR )
-    )
-RETURN
-    IF (
-        _PrevYear = 0,
-        BLANK(),
-        DIVIDE ( [Total Sales] - _PrevYear, _PrevYear )
-    )
-```
-</details>
+>[!Safe margin calculation]-
+>
+>```DAX
+>[Margin %] =
+>VAR _TotalSales = [Total Sales]
+>VAR _TotalCost  = [Total Cost]
+>RETURN
+ >   IF (
+ >       _TotalSales = 0,
+ >       BLANK(),
+ >       DIVIDE ( _TotalSales - _TotalCost, _TotalSales )
+ >   )
+>```
 
-<details>
-<summary>Safe margin calculation</summary>
+>[!Switch instead of nested IF]-
+>```DAX
+>[Customer Segment] =
+>SWITCH (
+ >   TRUE(),
+ >   [Customer Spend] > 10000, "High Value",
+ >   [Customer Spend] > 5000,  "Medium Value",
+ >   [Customer Spend] > 0,     "Low Value",
+ >   BLANK()
+>)
+>```
 
-```DAX
-[Margin %] =
-VAR _TotalSales = [Total Sales]
-VAR _TotalCost  = [Total Cost]
-RETURN
-    IF (
-        _TotalSales = 0,
-        BLANK(),
-        DIVIDE ( _TotalSales - _TotalCost, _TotalSales )
-    )
-```
-</details>
+>[!Remove filters selectively]-
+>```DAX
+>[Total Sales (Ignore Product)] =
+>CALCULATE (
+>    [Total Sales],
+>    REMOVEFILTERS ( 'Product' )
+>)
+>```
 
-<details>
-<summary>Switch instead of nested IF</summary>
+>[!Iterators vs aggregators]-
+>
+>❌ Less efficient
+>```DAX
+>[Total Sales X] =
+>SUMX ( 'Sales', 'Sales'[Quantity] * 'Sales'[UnitPrice] )
+>```
+>
+>✅ Better (when column already exists)
+>```DAX
+>[Total Sales] = SUM ( 'Sales'[SalesAmount] )
+>```
 
-```DAX
-[Customer Segment] =
-SWITCH (
-    TRUE(),
-    [Customer Spend] > 10000, "High Value",
-    [Customer Spend] > 5000,  "Medium Value",
-    [Customer Spend] > 0,     "Low Value",
-    BLANK()
-)
-```
-</details>
-
-<details>
-<summary>Remove filters selectively</summary>
-
-```DAX
-[Total Sales (Ignore Product)] =
-CALCULATE (
-    [Total Sales],
-    REMOVEFILTERS ( 'Product' )
-)
-```
-</details>
-
-<details>
-<summary>Iterators vs aggregators</summary>
-
-❌ Less efficient
-```DAX
-[Total Sales X] =
-SUMX ( 'Sales', 'Sales'[Quantity] * 'Sales'[UnitPrice] )
-```
-
-✅ Better (when column already exists)
-```DAX
-[Total Sales] = SUM ( 'Sales'[SalesAmount] )
-```
-</details>
-
-<details>
-<summary>Explicit blank handling</summary>
-
-```DAX
-[Return Rate %] =
-VAR _Returns = [Total Returns]
-VAR _Sales   = [Total Sales]
-RETURN
-    IF (
-        ISBLANK ( _Sales ),
-        BLANK(),
-        DIVIDE ( _Returns, _Sales )
-    )
-```
-</details>
+>[!Explicit blank handling]-
+>
+>```DAX
+>[Return Rate %] =
+>VAR _Returns = [Total Returns]
+>VAR _Sales   = [Total Sales]
+>RETURN
+  >  IF (
+>    ISBLANK ( _Sales ),
+>	BLANK(),
+>	DIVIDE ( _Returns, _Sales )
+>)
+>```

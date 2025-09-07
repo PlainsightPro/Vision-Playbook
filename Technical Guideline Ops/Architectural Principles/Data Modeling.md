@@ -12,7 +12,6 @@ Model for analytics using **dimensional modeling** by default. Favor **star sche
 - **Time intelligence ready**: dedicated Date/Time dimensions; mark and relate properly.
 - **Type changes**: SCD1 for corrections, SCD2 for history that users analyze.
 - **Separation of concerns**: ingestion brings data in; modeling shapes it for use.
-    
 ## Do
 - Define **fact types** explicitly: Transaction, Periodic Snapshot, Accumulating Snapshot.
 - Pick **one grain** per fact and stick to it (e.g., order line, daily inventory).
@@ -20,7 +19,6 @@ Model for analytics using **dimensional modeling** by default. Favor **star sche
 - Keep relationships **single-direction**; avoid many‑to‑many unless bridged.
 - Keep **business logic** in measures/views, not in ingestion jobs.
 - Document **assumptions, grain, SCD strategy, and data contracts** per model.
-    
 
 ## Don’t
 - Don’t build an **OBT (One Big Table)** for convenience; it blocks reuse and worsens performance.
@@ -33,19 +31,16 @@ Model for analytics using **dimensional modeling** by default. Favor **star sche
 - **Conceptual**: business entities and relationships; no tech constraints.
 - **Logical**: attributes, keys, and relationships; still tech‑agnostic.
 - **Physical**: actual tables/columns/keys/partitions in the platform.
-    
 
 ## Dimensional patterns (preferred)
 - **Star Schema** (default): one fact at a clear grain with surrounding dimensions. Best for most analytics.
 - **Snowflake Schema** (rare): normalize a large, sparse dimension to reduce duplication.
 - **Galaxy/Constellation**: multiple facts sharing conformed dimensions.
-    
 
 ## SCD guidance
 - **SCD1** (overwrite): fixes errors or non‑analytical changes.
 - **SCD2** (row‑version): add `ValidFrom/ValidTo/IsCurrent`; use for attributes users analyze over time.
 - Use **degenerate dimensions** for order numbers, invoice IDs, etc.
-    
 
 ## Many‑to‑many & hierarchies
 - Use **bridge tables** or **factless facts** for coverage (e.g., students ↔ classes, promos ↔ products).

@@ -7,8 +7,8 @@ Good naming conventions make it easier for both developers and business users to
 ---
 
 ## Tables
-- Use **singular business-friendly names** for dimensions and facts (e.g., `Customer`, `Sales Transaction`).  
-- When a table represents a **role-playing dimension** (e.g., Customer appearing as both Bill-to and Ship-to), add a short prefix or suffix in parentheses:  
+- Use singular business-friendly names for dimensions and facts (e.g., `Customer`, `Sales Transaction`).  
+- When a table represents a role-playing dimension (e.g., Customer appearing as both Bill-to and Ship-to), add a short prefix or suffix in parentheses:  
   - `Invoice Customer (Inv. Cust.)`  
   - `Delivery Customer (Del. Cust.)`  
 - Use abbreviations only when they are widely understood across the business.  
@@ -21,11 +21,11 @@ Good naming conventions make it easier for both developers and business users to
 ---
 
 ## Columns
-- Provide **user-friendly column names** that describe the business meaning (e.g., `Booking Month`, `Product Code`).  
-- Prefix column names with the **table abbreviation** to avoid ambiguity in reports. Example:  
+- Provide user-friendly column names that describe the business meaning (e.g., `Booking Month`, `Product Code`).  
+- Prefix column names with the table abbreviation to avoid ambiguity in reports. Example:  
   - `'Sales Transaction (ST)'[ST Order Number]`  
   - `'Invoice Customer (Inv. Cust.)'[Inv. Cust. Country Name]`  
-- When a column contains both **Code** and **Name**, consider adding a concatenated “Code Name” column to simplify filtering and searching.  
+- When a column contains both `Code` and `Name`, consider adding a concatenated `Code Name` column to simplify filtering and searching.  
 - Use clear suffixes for role-playing columns (e.g., `Order Date`, `Invoice Date` instead of a generic `Date`).  
 - Ensure that calculated/derived columns are named in a way that signals their logic (e.g., `Customer Age (Years)` instead of just `Age`).  
 
@@ -36,10 +36,10 @@ Good naming conventions make it easier for both developers and business users to
 ---
 
 ## Measures
-- Use **business-oriented measure names**; name the result, not the calculation.  
+- Use business-oriented measure names; name the result, not the calculation.  
   - ✅ `Revenue`, `Customer Count`, `Churn Rate`  
   - ❌ `Total Revenue`, `Sum of Sales`, `Measure1`  
-- Indicate the **calculation type** or time intelligence explicitly when relevant:  
+- Indicate the calculation type or time intelligence explicitly when relevant:  
   - `Revenue YoY %`  
   - `Sales Growth (QTD)`  
 - Group related measures into display folders for easier navigation.  
