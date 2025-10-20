@@ -3,12 +3,9 @@
 ## Overview
 Use **whole number** surrogate keys for relationships. Avoid text/GUID keys. Ensure uniqueness
 on the one‑side and matching data types between related columns.
-
-
 ## Why It Matters
-Integers are compressed exceptionally well; clean star schemas reduce ambiguity
+Integers are compressed exceptionally well in tools such as Power BI; clean star schemas reduce ambiguity
 and speed up filters and joins at scale. GUID relationships are stored as strings and take-up a lot of memory in your mode. 
-
 ## Do’s & Don’ts
 **Do**
 - Use `CustomerID`, `ProductID` (INT) as PKs; use the same INTs as FKs in facts.
@@ -18,7 +15,6 @@ and speed up filters and joins at scale. GUID relationships are stored as string
 **Don’t**
 - Don’t relate on high‑cardinality text or GUID columns when avoidable.
 - Don’t leave duplicate keys on the one‑side (breaks one‑to‑many).
-
 ## Practical Examples
 
 **Key approach**
