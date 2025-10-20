@@ -10,9 +10,8 @@ config:
   layout: elk
 ---
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
-graph LR
+graph TD
     %% Expanded DW/BI platform
-
     subgraph Source Systems
         A1[(Source System A)]
         A2[(Source System B)]
@@ -24,7 +23,8 @@ graph LR
         I2[Streaming / CDC]
     end
 
-    subgraph Data Platform
+    subgraph Data Platform 
+	    direction LR
         subgraph Back Room
             L[Landing<br/>Δ-only]:::delta
             B[Staging]:::all
@@ -54,7 +54,6 @@ A3 --> I2
 I1 --> L
 I2 --> L
 L --> B
-M --> C
 O --> D
 D --> S
 S --> E
@@ -62,10 +61,9 @@ D --> X
 D --> R
 B --> M
 C --> O
+M --> C
+C <--> G
 
-%% Cross-cutting (dotted = supporting)
-M -.-> G
-G -.-> C
 
 %% Node styles
 classDef delta fill:#F3F4F6,stroke:#6B7280,stroke-width:2px,stroke-dasharray:6 3,color:#374151;
@@ -73,6 +71,7 @@ classDef all fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
 class A,C blueBox;
 
 ```
+
 
 The flow of data is hence as follows: 
 
