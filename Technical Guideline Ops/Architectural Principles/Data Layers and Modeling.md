@@ -143,6 +143,78 @@ This multi-layered approach is preferred over a 'Dimensional Model Only' archite
 * **Source system isolation**: Keeping Landing and Staging per source system maintains clear data lineage and simplifies troubleshooting.
 * **Progressive transformation**: The Intermediate layers enable modular, reusable transformations that can be tested and maintained independently.
 
+
+
+## Layer-by-Layer Transformation Example
+
+To illustrate how data transforms across layers, let's follow a typical e-commerce scenario from Source/Staging through Conformed to Dimensional Model.
+
+```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
+graph LR
+    subgraph Source["Source / Staging<br/>(Normalized - Many Tables)"]
+        ADDR[Address]
+        CUST[Customer]
+        INV_H[Invoice Header]
+        INV_L[Invoice Line]
+        PROD[Product]
+        COLOR[Product Color]
+        CAT[Product Category]
+        BUD[Sales Budget]
+    end
+    
+    subgraph Conformed["Conformed Layer<br/>(Denormalized - Fewer Tables)"]
+        C_CUST[Customer]
+        C_CUST_SNAP[Customer_Snapshot]
+        C_PROD[Product]
+        C_PRODCAT[ProductCategory]
+        C_INV[Invoice]
+        C_BUDGET[SalesBudget]
+    end
+    
+    subgraph Dimensional["Dimensional Model<br/>(Star Schema)"]
+        D_CUST[D_Customer <br>SCD2]
+        D_PROD[D_Product]
+        F_SALES[F_Sales]
+        F_BUDGET[F_SalesBudget]
+    end
+    
+    CUST --> C_CUST
+    ADDR --> C_CUST
+    CUST --> C_CUST_SNAP
+    PROD --> C_PROD
+    COLOR --> C_PROD
+    CAT --> C_PROD
+    CAT --> C_BUDGET
+    BUD --> C_BUDGET
+    BUD --> C_PRODCAT
+    INV_H --> C_INV
+    INV_L --> C_INV
+    
+    C_CUST --> D_CUST
+    C_CUST_SNAP --> D_CUST
+    C_PROD --> D_PROD
+    C_PRODCAT --> D_PROD
+    C_INV --> F_SALES
+    C_BUDGET --> F_BUDGET
+    
+    D_CUST -.-> F_SALES
+    D_PROD -.-> F_SALES
+    D_PROD -.-> F_BUDGET
+```
+
+**Transformation flow:**
+- **Source/Staging (8 tables)**: Normalized structure with `Customer`, `Address`, `Invoice Header`, `Invoice Line`, `Product`, `Product Color`, `Product Category`, `Sales Budget`
+- **Conformed Layer (6 tables)**: Denormalized into `C_Customer` (Customer + Address), `C_Customer_Snapshot` (history tracking from Customer), `C_Product` (Product + Color + Category), `C_ProductCategory` (aggregated product categories from Sales Budget), `C_Invoice` (Invoice Header + Lines), `C_SalesBudget` (budget targets from Sales Budget and Product Category)
+- **Dimensional Model (4 tables)**: Star schema with 2 facts (`F_Sales`, `F_SalesBudget`) and 2 dimensions (`D_Customer`, `D_Product` merging both detail and category levels)
+
+> [!tip] Progressive Denormalization
+> Notice the progressive reduction in table count as data moves through layers:
+> - **Staging**: 8 tables with complex relationships
+> - **Conformed**: 6 tables with denormalization, history tracking (`C_Customer_Snapshot`), business categorization (`C_ProductCategory`), and budgets (`C_SalesBudget`)
+> - **Dimensional**: 2 fact tables + 2 dimension tables in star schema
+> 
+> Key insight: `D_Product` merges both `C_Product` (detail level with individual products) and `C_ProductCategory` (aggregate category level) into a single dimensional hierarchy. This allows both `F_Sales` (detailed transactions at product level) and `F_SalesBudget` (aggregated budgets at category level) to share the same dimension, enabling actual vs. budget comparisons across the product hierarchy.
 ---
 
 ## Related Topics
