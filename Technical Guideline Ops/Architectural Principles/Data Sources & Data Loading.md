@@ -23,9 +23,9 @@
 
 ### Full Load
 
-When applying a 'Full' loading strategy, all data from the source system is extracted during an ETL run. This means that the `Landing` and `Staging` layer have the same data. As such, subsequent layers can both use the `Landing` and `Staging` layer to fill the ODS and Dimensional model. 
+When applying a 'Full' loading strategy, all data from the source system is extracted during an ETL run. This means that the `Landing` and `Staging` layer have the same data. As such, subsequent layers can both use the `Landing` and `Staging` layer to fill the Conformed and Dimensional model. 
 
-While the Staging layer can be filled using a 'Truncate and Insert' manner, this cannot be done in the `ODS` or the `Dimensional Model` layer as history is being captured there (snapshot and SCD2). Hence, an upsert manner is used. 
+While the Staging layer can be filled using a 'Truncate and Insert' manner, this cannot be done in the `Conformed` or the `Dimensional Model` layer as history is being captured there (snapshot and SCD2). Hence, an upsert manner is used. 
 
 Full load simplifies ETL but results in long loading times when the source data contains large amounts of data. 
 
@@ -46,7 +46,7 @@ graph LR
       L[Landing]:::delta
       B[Staging]:::all
       M1[Intermediate]:::delta
-      ODS[ODS]:::all
+      CONF[Conformed]:::all
       M2[Intermediate]:::delta
     end
     subgraph Front Room
@@ -59,8 +59,8 @@ S -->|full| L
 L -.->|truncate + insert| B 
 B --> M1 
 L -.->|optional| M1
-M1 -->|upsert|ODS 
-ODS -->M2 
+M1 -->|upsert|CONF 
+CONF -->M2 
 M2 -->|upsert| D
 
 
@@ -75,7 +75,7 @@ classDef full fill:#FDE68A,stroke:#B45309,stroke-width:2px,color:#7C2D12;
 ### Incremental Loading
 
 When applying an 'Incremental' loading strategy, only the changed records form the source system are extracted since the last run (newly inserted, updated or deleted records). 
-The `Landing` stores the change set only, while these records are then upserted into `Staging`. These delta's are then used to efficiently fill the `ODS` and `Dimensional Model` layers.  
+The `Landing` stores the change set only, while these records are then upserted into `Staging`. These delta's are then used to efficiently fill the `Conformed` and `Dimensional Model` layers.  
 
 Incremental loading mechanisms reduce ETL duration but improve complexity of maintaining copies of the source system. Whenever possible, an incremental loading mechanism is preferred. 
 
@@ -97,7 +97,7 @@ graph LR
       W[Timestamp/Watermark]:::delta
       B[Staging<br/>All data]:::all
       M1[Intermediary<br/>Δ-only]:::delta
-      ODS[ODS<br/>All data]:::all
+      CONF[Conformed<br/>All data]:::all
       M2[Intermediary<br/>Δ-only]:::delta
     end
     subgraph Front Room
@@ -110,8 +110,8 @@ W <-.->|fetch watermark| L
 S -->|cdc or delta| L
 L -->|merge upsert| B
 B -->|derive delta| M1
-M1 -->|merge upsert| ODS
-ODS -->|derive delta| M2
+M1 -->|merge upsert| CONF
+CONF -->|derive delta| M2
 M2 -->|merge upsert| D
 
 
@@ -119,3 +119,10 @@ M2 -->|merge upsert| D
 classDef delta fill:#F3F4F6,stroke:#6B7280,stroke-width:2px,stroke-dasharray:6 3,color:#374151;
 classDef all fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
 ```
+
+---
+
+## Related Topics
+
+- [[Data Layers and Modeling]] - Overall architecture showing how data sources fit into the platform
+- [[Conformed Layer]] - Where source data is cleaned and integrated
