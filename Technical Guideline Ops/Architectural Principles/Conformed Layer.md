@@ -184,6 +184,9 @@ The Conformed layer establishes change tracking infrastructure used by downstrea
 | 1           | 2024-01-01   | Acme Corp | East   | 2024-01-01      | 2025-03-15    | FALSE       |
 | 1           | 2025-03-15   | Acme Corp | West   | 2025-03-15      | NULL          | TRUE        |
 
+> [!info] Snapshot Timing
+> In practice, snapshots are taken at regular intervals (daily, weekly, or monthly). The `SnapshotDate` represents when the snapshot was captured, while `T_ValidFromDate` tracks when the actual change occurred in the source system. These dates may not align—a change occurring mid-day might be captured in the next scheduled snapshot.
+
 > [!tip] Why Track Here?
 > Implementing snapshotting/history tracking logic in the Conformed layer means dimensional models inherit accurate historical context automatically. See [[#Table Structure|Table Structure]] for detailed implementation patterns.
 
