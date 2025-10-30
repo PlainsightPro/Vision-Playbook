@@ -75,6 +75,12 @@ graph LR
 
 **Best for:** Medium to large-scale Master Data implementations where business users need self-service capabilities with enterprise-grade data management.
 
+**Demo video:**
+
+[![Master Data Hub Demo](https://img.youtube.com/vi/W_g8K8FP0tI/0.jpg)](https://www.youtube.com/watch?v=W_g8K8FP0tI)
+
+
+
 ### SharePoint Lists + Power Apps
 
 For smaller projects, **SharePoint Lists combined with Power Apps** provide a lightweight Master Data solution.
