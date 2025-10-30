@@ -164,12 +164,12 @@ graph LR
     end
     
     subgraph Conformed["Conformed Layer<br/>(Denormalized - Fewer Tables)"]
-        C_CUST[Customer]
-        C_CUST_SNAP[Customer_Snapshot]
-        C_PROD[Product]
-        C_PRODCAT[ProductCategory]
-        C_INV[Invoice]
-        C_BUDGET[SalesBudget]
+        C_CUST[C_Customer]
+        C_CUST_SNAP[C_Customer_Snapshot]
+        C_PROD[C_Product]
+        C_PRODCAT[C_ProductCategory]
+        C_INV[C_Invoice]
+        C_BUDGET[C_SalesBudget]
     end
     
     subgraph Dimensional["Dimensional Model<br/>(Star Schema)"]
@@ -188,6 +188,7 @@ graph LR
     CAT --> C_BUDGET
     BUD --> C_BUDGET
     BUD --> C_PRODCAT
+    CAT --> C_PRODCAT
     INV_H --> C_INV
     INV_L --> C_INV
     
@@ -198,9 +199,9 @@ graph LR
     C_INV --> F_SALES
     C_BUDGET --> F_BUDGET
     
-    D_CUST -.-> F_SALES
-    D_PROD -.-> F_SALES
-    D_PROD -.-> F_BUDGET
+    D_CUST --> F_SALES
+    D_PROD --> F_SALES
+    D_PROD --> F_BUDGET
 ```
 
 **Transformation flow:**

@@ -41,7 +41,6 @@ Leverage Obsidian's full formatting capabilities:
 
 - **Callouts**: `> [!info]`, `> [!warning]`, `> [!tip]` for highlighted information
 - **Code blocks**: Use syntax highlighting (` ```python`, ` ```sql`, ` ```yaml`)
-- **Highlights**: `==highlighted text==` for emphasis
 - **Strikethrough**: `~~deprecated approach~~` to show what NOT to do
 - **Footnotes**: `[^1]` for references without cluttering main text
 - **Comments**: `%% internal note %%` for hidden documentation notes
