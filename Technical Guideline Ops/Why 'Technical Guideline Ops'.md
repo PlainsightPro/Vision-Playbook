@@ -34,4 +34,4 @@ graph TD;
 ## Why do we have these Technical Guidelines? 
 
 * We want to provide best-practices to our customers. 
-* Our projects should easily be transferrable between consultants.  test
+* Our projects should easily be transferrable between consultants.
