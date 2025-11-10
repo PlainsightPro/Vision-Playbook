@@ -18,31 +18,29 @@ models/
 ├─ staging/
 │  ├─ sap/
 │  │  ├─ _sources.yml          # Source definitions, freshness, owner metadata
-│  │  ├─ stg_sap__charges.sql           # One-to-one with source() tables
-│  │  └─ stg_sap__customers.sql
+│  │  ├─ stg_sap_charges.sql   # One-to-one with source() tables
+│  │  └─ stg_sap_customers.sql
 │  └─ salesforce/
 │     └─ ...
 ├─ intermediate/
-│  ├─ finance/
-│  │  └─ int_finance_orders_enriched.sql
-│  ├─ marketing/
-│  └─ shared/
+│  ├─ int_orders_enriched.sql
+│  ├─ int_orders_flattened.sql
+│  └─ ...
 ├─ conformed/
-│  ├─ conf_customer.sql
-│  ├─ conf_product.sql
+│  ├─ c_customer.sql
+│  ├─ c_product.sql
 │  └─ _models.yml              # Contracts, ownership, tests
 └─ front_room/
-   ├─ dimensional/
+   ├─ star_dim_fact/
    │  ├─ dim_customer.sql
    │  └─ dim_product.sql
    │  └─ fact_orders.sql
-   ├─ master/
    ├─ feature_store/
    └─ one_big_table/
 ```
 
 ### Staging (Source-Conformed)
-- One dbt model per `source()` table, named `stg_<source>__<entity>`.
+- One dbt model per `source()` table, named `stg_<source>_<entity>`.
 - Keep logic atomic: rename, cast, and normalize fields - never join or aggregate.
 - Organize folders by source system (`staging/sap`, `staging/salesforce`) so commands like `dbt build --select staging.sap+` work intuitively.
 - Set default materialization to `view` via `dbt_project.yml`, e.g.
@@ -64,11 +62,12 @@ models:
 ### Conformed (Integrated Models)
 - Integrate and cleanse data across domains so downstream teams inherit harmonized entities (customers, products, orders).
 - Apply SCD rules, survivorship (choosing the “winning” version of a record when multiple sources disagree), and cross-source enrichment (merging attributes from different systems); document contracts, tests, and ownership in `_models.yml`.
-- Name models `conf_<entity>` (e.g., `conf_customer`), materialize as `table`/`incremental`, and treat this layer as the reusable interface for front-room consumers.
+- Name models `c_<entity>` (e.g., `c_customer`), materialize as `table`/`incremental`, and treat this layer as the reusable interface for front-room consumers.
+- The 'Conformed' layer stores your dbt_snapshot models. 
 
 ### Front Room (Presentation & Experience)
 - Deliver business-ready dimensional models, fact tables, master data, feature stores, and other consumer outputs that BI/ML teams query directly.
-- Organize subfolders by consumption pattern (`front_room/dimensional`, `front_room/fact`, `front_room/feature_store`, `front_room/master`, `front_room/one_big_table`) and use business-friendly names (no prefixes) for models.
+- Organize subfolders by consumption pattern (`front_room/star_dim_fact`,  `front_room/feature_store`, `front_room/one_big_table`, ...) and use business-friendly names (no prefixes) for models.
 - Keep transformations light: the goal is to expose curated tables, not re-implement conformed logic. Default to `view` for agility, switching to `table`/`incremental` only when SLA or cost requires it.
 
 ---

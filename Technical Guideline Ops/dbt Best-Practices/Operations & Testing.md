@@ -3,7 +3,7 @@
 ## Operating Principles
 Keep dbt operations boring by standardizing how jobs run, how failures alert, and which tests guard each layer. Treat runs as production software pipelines—even if analysts write the SQL.
 
-> [!note] 📝 Run Vocabulary
+> [!📝 Run Vocabulary]- 
 > - **Development:** local, iterative, `dbt build --select my_model+`
 > - **Pre-Prod:** automated validation on feature branches or staging datasets
 > - **Production:** scheduled jobs that own SLAs and downstream contracts
