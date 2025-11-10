@@ -3,10 +3,10 @@
 ## Overview
 Design your dbt repo so the filesystem narrates how data travels from raw sources to curated front-room outputs. A tidy tree makes onboarding faster, testing easier, and CI/CD predictable. Use layers, conventions, and shared configuration to avoid model sprawl.
 
-> [!tip] 💡 Golden Rule
+> [!tip] Golden Rule
 > Each folder should describe *what problem the models solve*, not who authored them. Align structure to the business process or data contract.
 
-> [!warning] ⚠️ Keep dbt’s Top-Level Skeleton
+> [!warning] Keep dbt’s Top-Level Skeleton
 > Stick to dbt’s default root folders (`models/`, `snapshots/`, `tests/`, `macros/`, `analysis/`, etc.). Only organize within those directories—renaming or reshuffling the top-level structure breaks conventions, tooling, and contributor expectations.
 
 ---
@@ -15,6 +15,13 @@ Design your dbt repo so the filesystem narrates how data travels from raw source
 
 ```text
 models/
+├─ landing/                     # Optional - external tables or incremental ingestion
+│  ├─ sap/
+│  │  ├─ _sources.yml          # External table definitions
+│  │  ├─ land_sap_charges.sql  # External or incremental-only models
+│  │  └─ land_sap_customers.sql
+│  └─ salesforce/
+│     └─ ...
 ├─ staging/
 │  ├─ sap/
 │  │  ├─ _sources.yml          # Source definitions, freshness, owner metadata
@@ -38,6 +45,20 @@ models/
    ├─ feature_store/
    └─ one_big_table/
 ```
+
+### Landing (Optional Source-Conformed)
+- **Optional layer** for external tables, incremental-only ingestion, or raw file processing before staging.
+- Name models `land_<source>_<entity>` if using this layer, otherwise skip directly to staging.
+- Organize by source system (`landing/sap`, `landing/salesforce`) for consistency.
+- Useful when:
+  - Data arrives via external tools (Fivetran, Airbyte) that populate external tables
+  - Incremental-only data needs preprocessing before merging into staging
+  - Raw files need parsing (JSON, Parquet) before source definitions
+  - Change data capture (CDC) streams require transformation
+- **Can be skipped** when staging can directly reference `source()` tables without preprocessing.
+
+> [!tip] When to Use Landing
+> Use landing when external tools or incremental patterns require a preprocessing step before staging. If your sources are clean and directly queryable, skip this layer and start at staging.
 
 ### Staging (Source-Conformed)
 - One dbt model per `source()` table, named `stg_<source>_<entity>`.
@@ -83,9 +104,10 @@ models:
 
 | Layer        | Naming Pattern              | Typical Materialization | Notes |
 |--------------|-----------------------------|-------------------------|-------|
-| Staging      | `<source>_<entity>`    | `view`                  | Mirrors upstream grain, grouped by source folders. |
-| Intermediate | `<domain>_<action>`     | `ephemeral` or `view`   | Domain folders communicate owners - verbs explain intent (`int_finance_orders_enriched`). |
-| Conformed    | `<domain>_<entity>`    | `table` / `incremental` | Harmonized, reusable entities that supply multiple experiences. |
-| Front Room   | `<business_concept>`        | `view` | Consumer-facing names (e.g., `orders`, `customers_daily`, `dim_finance_account`). |
+| Landing      | `land_<source>_<entity>`    | `external` or `view`    | Optional preprocessing step; use external tables or incremental patterns. Skip if staging can directly reference sources. |
+| Staging      | `stg_<source>_<entity>`     | `view`                  | Mirrors upstream grain, grouped by source folders. |
+| Intermediate | `int_<domain>_<action>`     | `ephemeral` or `view`   | Domain folders communicate owners - verbs explain intent (`int_finance_orders_enriched`). |
+| Conformed    | `c_<domain>_<entity>`       | `table` / `incremental` | Harmonized, reusable entities that supply multiple experiences. |
+| Front Room   | `<business_concept>`        | `view`                  | Consumer-facing names (e.g., `orders`, `customers_daily`, `dim_finance_account`). |
 
 

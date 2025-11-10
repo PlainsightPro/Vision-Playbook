@@ -227,6 +227,7 @@ Traceable data lineage with validation flags ensures regulatory compliance and s
 | **Selective snapshotting**               | Only create snapshot tables for entities requiring historical tracking—avoid unnecessary overhead |
 | **Synchronize base and snapshot tables** | Ensure base table updates trigger corresponding snapshot inserts when attributes change           |
 | **Version control transformations**      | Treat ETL code as critical infrastructure                                                         |
+| **Apply DRY principles**                 | Extract reusable transformations into functions/macros—see [[DRY  - Don't Repeat Yourself]] for patterns                   |
 
 
 > [!warning] Common Pitfalls

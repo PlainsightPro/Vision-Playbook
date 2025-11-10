@@ -11,6 +11,71 @@
 
 ---
 
+## DRY - Don't Repeat Yourself
+
+> [!info] Core Principle
+> See [[DRY  - Don't Repeat Yourself]] in Architectural Principles for the language-agnostic foundation of this principle, covering SQL, Python, and general programming patterns.
+
+**In dbt projects, apply DRY by extracting reusable logic into macros, packages, and centralized models.** This reduces maintenance burden, minimizes errors, and accelerates development.
+
+### dbt-Specific DRY Tools
+
+**1. Macros for Repeated Transformations**
+
+```sql
+-- macros/cents_to_dollars.sql
+{% macro cents_to_dollars(column_name) %}
+    {{ column_name }} / 100.0
+{% endmacro %}
+
+-- Use in any model
+select
+    {{ cents_to_dollars('order_total_cents') }} as order_total_usd,
+    {{ cents_to_dollars('shipping_cents') }} as shipping_usd
+from orders
+```
+
+**2. Centralized Reference Models**
+
+Create conformed models once and `ref()` everywhere:
+
+```sql
+-- models/conformed/c_customer.sql
+select customer_id, customer_name, customer_type, region
+from {{ source('crm', 'customers') }}
+
+-- Reference in all downstream models
+select o.order_id, c.customer_name
+from orders as o
+left join {{ ref('c_customer') }} as c on o.customer_id = c.customer_id
+```
+
+**3. dbt Packages for Cross-Project Patterns**
+
+```yaml
+# packages.yml
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 1.1.1
+```
+
+```sql
+-- Use vetted community macros
+select
+    {{ dbt_utils.generate_surrogate_key(['customer_id', 'order_date']) }} as order_key,
+    {{ dbt_utils.safe_divide('revenue', 'order_count') }} as avg_order_value
+from orders
+```
+
+> [!tip] dbt DRY Checklist
+> Before writing a transformation:
+> - Have I seen this pattern before in the project?
+> - Can I use a dbt_utils macro?
+> - Should this be a `ref()` model instead?
+> - Will other models need this logic?
+
+---
+
 ## Configuration Inheritance
 - Define defaults high in `dbt_project.yml` (materializations, tags, quoting) and override only when necessary.
 - Example: enforce quoting + incremental strategy for Conformed and Front Room folders.
