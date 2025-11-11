@@ -193,6 +193,6 @@ flowchart TD
   - Rotate access keys regularly
 
 ## Related Documentation
-- [[1. Naming Conventions]]
-- [[2. Workspace Organization]]
-- [[3. Lakehouse Architecture]]
+- [[Technical Guideline Ops/Fabric Best-Practices/Naming Conventions]]
+- [[Workspace Organization]]
+- [[Lakehouse Architecture]]

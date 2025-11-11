@@ -166,6 +166,6 @@ Tip: treat sustained warnings (multiple intervals) as actionable signals — inv
 
 
 ## Related pages
-- [[2. Workspace Organization]]
-- [[3. Lakehouse Architecture]]
-- [[4. Data Pipeline Patterns]]
+- [[Workspace Organization]]
+- [[Lakehouse Architecture]]
+- [[Data Pipeline Patterns]]

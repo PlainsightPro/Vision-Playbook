@@ -99,8 +99,8 @@ Workspace scoping, role-based access control (RBAC), and promotion mechanics tog
 - [ ] Backup & soft-delete configured
 
 ## Related pages
-- [[1. Naming Conventions]]
-- [[6. Capacity Management]]
+- [[Technical Guideline Ops/Fabric Best-Practices/Naming Conventions]]
+- [[Capacity Management]]
 
 > [!tip]
 > Keep production workspaces minimal; use sharing (Apps) to present friendly names to end users.

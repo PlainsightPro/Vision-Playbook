@@ -125,8 +125,8 @@ Track ingestion latency, fresheness, error rates and storage growth. Define SLA 
 - [ ] Monitoring & alerts configured
 
 ## Related pages
-- [[1. Naming Conventions]]
-- [[4. Data Pipeline Patterns]]
+- [[Technical Guideline Ops/Fabric Best-Practices/Naming Conventions]]
+- [[Data Pipeline Patterns]]
 
 > [!tip]
 > Start small: implement Bronze→Silver flow first, then expand to Gold as business needs stabilize.

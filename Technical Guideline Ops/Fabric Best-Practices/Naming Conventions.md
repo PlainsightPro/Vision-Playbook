@@ -112,5 +112,5 @@ This structure keeps type & purpose easily parseable for automation.
 > - **Ownership**: Assign ownership automatically using prefix + purpose (e.g., all `LH_*` items owned by the Data Platform team)
 
 ## Related pages
-- [[2. Workspace Organization]] — where items live
-- [[5. Third Party Tooling]] — tools to browse and manage artifacts
+- [[Workspace Organization]] — where items live
+- [[Technical Guideline Ops/Fabric Best-Practices/Third Party Tooling]] — tools to browse and manage artifacts

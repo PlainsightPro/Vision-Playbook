@@ -55,7 +55,7 @@ Import should be your **default choice** unless specific constraints force alter
 - ✅ Source system can handle scheduled extract loads
 
 > [!tip] Memory Estimation
-> Power BI's VertiPaq compression typically achieves **10:1 compression ratios** for typical business data. A 50 GB source table often compresses to ~5 GB in-memory. Use [[Third Party Tooling]] like VertiPaq Analyzer to estimate actual memory consumption.
+> Power BI's VertiPaq compression typically achieves **10:1 compression ratios** for typical business data. A 50 GB source table often compresses to ~5 GB in-memory. Use [[Technical Guideline Ops/Power BI Best-Practices/Third Party Tooling]] like VertiPaq Analyzer to estimate actual memory consumption.
 
 ### Do's & Don'ts
 
@@ -197,8 +197,8 @@ flowchart TD
 ## Related Pages
 
 - [[Data Modeling in Power BI]] — Star schema design principles apply to all connection modes
-- [[Naming Conventions]] — Consistent naming critical for DirectQuery SQL generation
-- [[Third Party Tooling]] — VertiPaq Analyzer essential for Import optimization
+- [[Technical Guideline Ops/Power BI Best-Practices/Naming Conventions]] — Consistent naming critical for DirectQuery SQL generation
+- [[Technical Guideline Ops/Power BI Best-Practices/Third Party Tooling]] — VertiPaq Analyzer essential for Import optimization
 - [[DAX Coding Standards]] — DirectQuery requires simpler DAX patterns
 - [[Data Layers and Modeling]] — Architectural context for choosing connection modes
 

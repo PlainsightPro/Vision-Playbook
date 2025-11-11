@@ -80,6 +80,6 @@ WHEN NOT MATCHED THEN INSERT (...)
 - Parameterize secrets via Key Vault
 
 ## Related pages
-- [[1. Naming Conventions]]
-- [[2. Workspace Organization]]
-- [[3. Lakehouse Architecture]]
+- [[Technical Guideline Ops/Fabric Best-Practices/Naming Conventions]]
+- [[Workspace Organization]]
+- [[Lakehouse Architecture]]
