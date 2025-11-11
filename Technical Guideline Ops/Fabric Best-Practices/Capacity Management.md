@@ -8,7 +8,7 @@ Capacity management follows a four-step cycle: Size → Split → Optimize → M
 
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true, "curve": "basis" }, "theme": "base" } }%%
-flowchart TD
+flowchart LR
   Size["Size<br/>(Right-sizing)"] --> Split["Split<br/>(Workload Isolation)"]
   Split --> Optimize["Optimize<br/>(Performance Tuning)"]
   Optimize --> Monitor["Monitor<br/>(Continuous Improvement)"]
@@ -162,9 +162,9 @@ A focused monitoring strategy gives teams the telemetry they need to keep capaci
 | Queue depth | >10 | >20 | Reduce concurrency or increase capacity |
 | Refresh time | +25% baseline | +50% baseline | Investigate refresh failures, stagger schedules |
 
-Tip: treat sustained warnings (multiple intervals) as actionable signals — investigate hot datasets and expensive queries before resizing capacity.
+Tip: treat sustained warnings (multiple intervals) as actionable signals; investigate hot datasets and expensive queries before resizing capacity.
 
-
+---
 ## Related pages
 - [[Workspace Organization]]
 - [[Lakehouse Architecture]]

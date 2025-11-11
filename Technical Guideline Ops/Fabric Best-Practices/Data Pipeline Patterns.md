@@ -79,6 +79,7 @@ WHEN NOT MATCHED THEN INSERT (...)
 - Use managed identities for resource access
 - Parameterize secrets via Key Vault
 
+---
 ## Related pages
 - [[Technical Guideline Ops/Fabric Best-Practices/Naming Conventions]]
 - [[Workspace Organization]]
