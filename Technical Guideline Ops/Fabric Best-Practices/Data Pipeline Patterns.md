@@ -53,10 +53,10 @@ WHEN NOT MATCHED THEN INSERT (...)
 | Notebooks | Advanced data processing, custom transform logic and ML experiments. Use when custom code, libraries or iterative exploration is needed. Notebooks can be orchestrated from Data Pipelines. |
 | Dataflow Gen2 | Self-service transformations for Power BI users (Power Query experience). Best for light-weight transformations tightly coupled to Power BI workflows. |
 
-![Data Pipelines editor](images/pipelines_editor.png)
-![Dataflow Gen2 editor](images/dataflow_gen2.png)
+![Data Pipelines editor](pipelines_editor.png)
+![Dataflow Gen2 editor](dataflow_gen2.png)
 
-![Sample Jupyter notebook](images/notebook_sample.png)
+![Sample Jupyter notebook](notebook_sample.png)
 
 ## Error handling patterns
 

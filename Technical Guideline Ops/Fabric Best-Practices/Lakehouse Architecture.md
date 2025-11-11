@@ -21,7 +21,7 @@ graph LR
   Gold --> Semantic["Semantic Models & Reports"]
 ```
 
-![Medallion architecture](images/medallion_architecture.png)
+![Medallion architecture](medallion_architecture.png)
 
 ## Quick Reference: Do's and Don'ts
 
@@ -66,7 +66,7 @@ Separation of concerns by layer simplifies governance and enables targeted perfo
   - Table Shortcuts: point to Delta/managed tables and are ideal in Silver/Gold layers to share curated data across lakehouses.
 - Consider enabling Shortcuts Cache for cross-geo reads to reduce egress costs; weigh cache costs vs egress savings for high-read volumes.
 
-![OneLake Shortcuts](images/onelake_shortcuts.png)
+![OneLake Shortcuts](onelake_shortcuts.png)
 
 ## Multiple Lakehouses & sensitivity
 

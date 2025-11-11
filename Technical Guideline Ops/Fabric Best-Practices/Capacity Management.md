@@ -72,7 +72,7 @@ flowchart TD
    - Optimize settings for specific use cases
    - Better resource utilization
 
-![One big vs multiple small capacities](images/capacity_onebig_vs_many.png)
+![One big vs multiple small capacities](capacity_onebig_vs_many.png)
 
 ### Example Split Configuration
 
@@ -95,15 +95,15 @@ flowchart TD
    - Better for predictable workloads
    - Requires careful scheduling
 
-   ![Workload Smoothing](images/debruyn_smoothing.png)
+   ![Workload Smoothing](debruyn_smoothing.png)
 
    **Impact of Smoothing on Capacity Metrics**
 
    Without smoothing - CPU usage shows sharp spikes:
-   ![Capacity Metrics without Smoothing](images/capacity_metrics_no_smoothing.png)
+   ![Capacity Metrics without Smoothing](capacity_metrics_no_smoothing.png)
 
    With smoothing - More even resource utilization:
-   ![Capacity Metrics with Smoothing](images/capacity_metrics_with_smoothing.png)
+   ![Capacity Metrics with Smoothing](capacity_metrics_with_smoothing.png)
 
    > [!tip]
    > Notice how workload smoothing reduces sharp CPU spikes and creates a more consistent resource utilization pattern. This leads to better performance predictability and more efficient capacity usage.
@@ -120,7 +120,7 @@ flowchart TD
    - Responds to both predictable and unexpected demands
    - Sets min/max boundaries for control
 
-   ![Autoscaling](images/debruyn_autoscale.png)
+   ![Autoscaling](debruyn_autoscale.png)
 
    > [!tip]
    > Autoscaling automatically increases or decreases your capacity size based on workload demands. It helps optimize costs by scaling down during quiet periods and scaling up to handle peak loads. Configure min/max boundaries to control costs while ensuring performance.
