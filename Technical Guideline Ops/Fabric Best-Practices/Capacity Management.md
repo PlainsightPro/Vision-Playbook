@@ -72,7 +72,7 @@ flowchart LR
    - Optimize settings for specific use cases
    - Better resource utilization
 
-![One big vs multiple small capacities](capacity_onebig_vs_many.png)
+![[capacity_onebig_vs_many.png]]
 
 ### Example Split Configuration
 
@@ -95,15 +95,15 @@ flowchart LR
    - Better for predictable workloads
    - Requires careful scheduling
 
-   ![Workload Smoothing](debruyn_smoothing.png)
+   ![[debruyn_smoothing.png]]
 
    **Impact of Smoothing on Capacity Metrics**
 
    Without smoothing - CPU usage shows sharp spikes:
-   ![Capacity Metrics without Smoothing](capacity_metrics_no_smoothing.png)
+   ![[capacity_metrics_no_smoothing.png]]
 
    With smoothing - More even resource utilization:
-   ![Capacity Metrics with Smoothing](capacity_metrics_with_smoothing.png)
+   ![[capacity_metrics_with_smoothing.png]]
 
    > [!tip]
    > Notice how workload smoothing reduces sharp CPU spikes and creates a more consistent resource utilization pattern. This leads to better performance predictability and more efficient capacity usage.
@@ -120,7 +120,7 @@ flowchart LR
    - Responds to both predictable and unexpected demands
    - Sets min/max boundaries for control
 
-   ![Autoscaling](debruyn_autoscale.png)
+   ![[debruyn_autoscale.png]]
 
    > [!tip]
    > Autoscaling automatically increases or decreases your capacity size based on workload demands. It helps optimize costs by scaling down during quiet periods and scaling up to handle peak loads. Configure min/max boundaries to control costs while ensuring performance.

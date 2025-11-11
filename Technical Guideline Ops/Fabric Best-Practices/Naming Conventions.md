@@ -13,7 +13,7 @@ This section captures pragmatic rules you can enforce via templates and CI. Bene
 | Governance | Regex-based policy checks make it possible to deny or flag non-conforming artifacts in PRs |
 | Clarity | Separates technical names from business-facing display names, reducing ambiguity |
 
-![Naming conventions diagram](datamarc_naming.png)
+![[datamarc_naming.png]]
 
 ## Quick Reference: Do's and Don'ts
 

@@ -25,7 +25,10 @@ Vision-Playbook/
 ## Key Conventions
 
 ### Linking & Navigation
-Use `[[Page Name]]` for internal wiki links (Obsidian convention). Embed images with `![[image.png]]`. Preserve emojis in filenames exactly as they appear (e.g., `🙋️ START HERE.md`). Maintain spaces in folder names like `People Ops - Employee Journey/`.
+Use `[[Page Name]]` for internal wiki links (Obsidian convention). Embed images with `![[image.png]]` (no path needed—Obsidian automatically finds images in the `/images/` folder). Preserve emojis in filenames exactly as they appear (e.g., `🙋️ START HERE.md`). Maintain spaces in folder names like `People Ops - Employee Journey/`.
+
+> [!warning] Image Embedding
+> Always use Obsidian wiki-style for images: `![[image.png]]` instead of standard Markdown syntax. This ensures images resolve correctly regardless of file location and maintains consistency across the playbook.
 
 ### Visual Communication First
 **Prioritize diagrams over text.** Use Mermaid extensively for processes, architectures, and workflows. Always include proper config:

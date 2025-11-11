@@ -61,7 +61,7 @@ flowchart TD
 # Key Tools
 
 ### Visual Studio Code (⭐ Essential)
-<img src="images/logo_vscode.svg" alt="VS Code Logo" width="120" style="background: white; padding: 10px;"/>
+![[logo_vscode.svg]]
 
 - **Purpose:** Primary development environment for Fabric workspaces
 - **Key Capabilities:**
@@ -94,7 +94,7 @@ flowchart TD
 ---
 
 ### SQL Server Management Studio (SSMS)
-<img src="images/logo_ssms.png" alt="SSMS Logo" width="120" style="background: white; padding: 10px;"/>
+![[logo_ssms.png]]
 
 - **Purpose:** Deep SQL development and performance tuning
 - **Key Capabilities:**
@@ -118,7 +118,7 @@ flowchart TD
 ---
 
 ### OneLake Explorer
-<img src="images/logo_onelake.jpg" alt="OneLake Logo" width="120" style="background: white; padding: 10px;"/>
+![[logo_onelake.jpg]]
 
 - **Purpose:** File-level operations and sync for Fabric lakehouses
 - **Key Capabilities:**
@@ -145,7 +145,7 @@ flowchart TD
 ---
 
 ### Power BI Desktop
-<img src="images/logo_powerbi.svg" alt="Power BI Logo" width="120" style="background: white; padding: 10px;"/>
+![[logo_powerbi.svg]]
 
 - **Purpose:** Data modeling and report development
 - **Key Capabilities:**
