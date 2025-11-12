@@ -5,6 +5,8 @@
 
 ## Compute Decision Flow
 
+Use this flow to identify the right compute type for your needs:
+
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart TD
@@ -28,17 +30,44 @@ flowchart TD
     I -->|ETL Pipeline| N[Job Cluster<br/>Autoscaling Enabled]
     I -->|ML Training| O[Job Cluster<br/>GPU-enabled]
     I -->|Streaming| P[Job Cluster<br/>Always-on]
+    
+    style B fill:#a8d8ff
+    style C fill:#ffd4a3
+    style G fill:#c9f0c9
+    style H fill:#c9f0c9
+    style I fill:#c9f0c9
+    
+    style J fill:#e8e8e8
+    style K fill:#e8e8e8
+    style L fill:#e8e8e8
+    style M fill:#e8e8e8
+    style N fill:#e8e8e8
+    style O fill:#e8e8e8
+    style P fill:#e8e8e8
 ```
+
+**Legend:** 🔵 Interactive vs Automated | 🟠 Collaboration | 🟢 Workload Type | ⚪ Your Result
+
+---
 
 ## Compute Types Overview
 
-| Compute Type | Use Case | Cost Efficiency | Auto-termination | Best For |
-|--------------|----------|-----------------|------------------|----------|
-| **SQL Warehouses** | SQL analytics & BI | ⭐⭐⭐ High | ✅ Yes | Business analysts, SQL-based reporting |
-| **All-Purpose Clusters** | Interactive development | ⭐⭐ Medium | ✅ Yes | Collaborative data engineering |
-| **Job Clusters** | Automated workloads | ⭐⭐⭐ High | ✅ Automatic | Production pipelines, scheduled jobs |
-| **Single Node Clusters** | Light exploration | ⭐⭐⭐ High | ✅ Yes | Quick data checks, small datasets |
-| **Personal Compute** | Individual development | ⭐⭐ Medium | ✅ Yes | Solo experimentation |
+> [!tip] Quick Navigation
+> This section provides a high-level overview. Click the links below to jump to detailed guidance for each compute type.
+
+| Compute Type | Use Case | Cost Efficiency | Auto-termination | Best For | Learn More |
+|--------------|----------|-----------------|------------------|----------|------------|
+| **SQL Warehouses** | SQL analytics & BI | ⭐⭐⭐ High | Yes | Business analysts, SQL-based reporting | [Details ↓](#sql-warehouses) |
+| **All-Purpose Clusters** | Interactive development | ⭐⭐ Medium | Yes | Collaborative data engineering | [Details ↓](#all-purpose-clusters) |
+| **Job Clusters** | Automated workloads | ⭐⭐⭐ High | Automatic | Production pipelines, scheduled jobs | [Details ↓](#job-clusters) |
+| **Single Node Clusters** | Light exploration | ⭐⭐⭐ High | Yes | Quick data checks, small datasets | [Details ↓](#single-node-clusters) |
+| **Personal Compute** | Individual development | ⭐⭐ Medium | Yes | Solo experimentation | [Details ↓](#all-purpose-clusters) |
+
+---
+
+## Detailed Compute Guidance
+
+The following sections provide in-depth information about each compute type, including configuration examples, best practices, and when to use them.
 
 ## SQL Warehouses
 
