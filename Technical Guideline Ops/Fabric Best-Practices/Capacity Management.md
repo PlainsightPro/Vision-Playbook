@@ -72,8 +72,6 @@ flowchart LR
    - Optimize settings for specific use cases
    - Better resource utilization
 
-![[capacity_onebig_vs_many.png]]
-
 ### Example Split Configuration
 
 | Capacity | Size | Workload Type | Typical Use |
@@ -95,7 +93,9 @@ flowchart LR
    - Better for predictable workloads
    - Requires careful scheduling
 
-   ![[debruyn_smoothing.png]]
+   ![[smoothing.png]]
+   *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
+
 
    **Impact of Smoothing on Capacity Metrics**
 
@@ -104,6 +104,8 @@ flowchart LR
 
    With smoothing - More even resource utilization:
    ![[capacity_metrics_with_smoothing.png]]
+   *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
+
 
    > [!tip]
    > Notice how workload smoothing reduces sharp CPU spikes and creates a more consistent resource utilization pattern. This leads to better performance predictability and more efficient capacity usage.
@@ -120,7 +122,8 @@ flowchart LR
    - Responds to both predictable and unexpected demands
    - Sets min/max boundaries for control
 
-   ![[debruyn_autoscale.png]]
+   ![[autoscale.png]]
+   *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
 
    > [!tip]
    > Autoscaling automatically increases or decreases your capacity size based on workload demands. It helps optimize costs by scaling down during quiet periods and scaling up to handle peak loads. Configure min/max boundaries to control costs while ensuring performance.
@@ -141,7 +144,7 @@ flowchart LR
    - Set spend alerts and thresholds
 
 > [!tip]
-> Start with conservative limits and adjust based on monitoring data.
+> Start with conservative limits and adjust based on monitoring data. For Spark-based Lakehouse workloads, see [[Spark Autoscaling|Spark Autoscaling]] for detailed configuration guidance.
 
 ## 4. Monitoring & Governance
 

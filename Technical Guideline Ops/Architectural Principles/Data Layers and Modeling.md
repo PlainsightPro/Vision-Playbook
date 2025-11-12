@@ -1,4 +1,4 @@
-
+	
 # Data Layers and Modeling - Overview
 
 The graph underneath, shows the normal flow of a best-practice implementation of a Data Platform at projects of Plainsight. 

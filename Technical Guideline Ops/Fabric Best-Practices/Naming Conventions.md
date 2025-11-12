@@ -13,7 +13,9 @@ This section captures pragmatic rules you can enforce via templates and CI. Bene
 | Governance | Regex-based policy checks make it possible to deny or flag non-conforming artifacts in PRs |
 | Clarity | Separates technical names from business-facing display names, reducing ambiguity |
 
-![[datamarc_naming.png]]
+[^1]![[datamarc_naming.png]]
+
+*Image source: [Marc Lelijveld](https://data-marc.com/2025/02/13/structure-fabric-items-by-applying-naming-conventions/)*
 
 ## Quick Reference: Do's and Don'ts
 
@@ -114,3 +116,5 @@ This structure keeps type & purpose easily parseable for automation.
 ## Related pages
 - [[Workspace Organization]] — where items live
 - [[Technical Guideline Ops/Fabric Best-Practices/Third Party Tooling]] — tools to browse and manage artifacts
+
+[^1]: 
