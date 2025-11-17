@@ -3,6 +3,21 @@
 > [!info] Purpose
 > This guide helps you select the right compute resource in Databricks based on your workload type, team collaboration needs, and cost considerations.
 
+## Compute Types Overview
+
+> [!tip] Quick Navigation
+> This section provides a high-level overview. Click the compute type names to jump to detailed guidance.
+
+| Compute Type                                      | Use Case                | Cost Efficiency | Auto-termination | Best For                               |
+| ------------------------------------------------- | ----------------------- | --------------- | ---------------- | -------------------------------------- |
+| [**SQL Warehouses**](#sql-warehouses)             | SQL analytics & BI      | ⭐⭐⭐ High        | Yes              | Business analysts, SQL-based reporting |
+| [**All-Purpose Clusters**](#all-purpose-clusters) | Interactive development | ⭐⭐ Medium       | Yes              | Collaborative data engineering         |
+| [**Job Clusters**](#job-clusters)                 | Automated workloads     | ⭐⭐⭐ High        | Automatic        | Production pipelines, scheduled jobs   |
+| [**Single Node Clusters**](#single-node-clusters) | Light exploration       | ⭐⭐⭐ High        | Yes              | Quick data checks, small datasets      |
+| **Personal Compute**                              | Individual development  | ⭐⭐ Medium       | Yes              | Solo experimentation (see All-Purpose) |
+
+---
+
 ## Compute Decision Flow
 
 Use this flow to identify the right compute type for your needs:
@@ -47,21 +62,6 @@ flowchart TD
 ```
 
 **Legend:** 🔵 Interactive vs Automated | 🟠 Collaboration | 🟢 Workload Type | ⚪ Your Result
-
----
-
-## Compute Types Overview
-
-> [!tip] Quick Navigation
-> This section provides a high-level overview. Click the compute type names to jump to detailed guidance.
-
-| Compute Type | Use Case | Cost Efficiency | Auto-termination | Best For |
-|--------------|----------|-----------------|------------------|----------|
-| [**SQL Warehouses**](#sql-warehouses) | SQL analytics & BI | ⭐⭐⭐ High | Yes | Business analysts, SQL-based reporting |
-| [**All-Purpose Clusters**](#all-purpose-clusters) | Interactive development | ⭐⭐ Medium | Yes | Collaborative data engineering |
-| [**Job Clusters**](#job-clusters) | Automated workloads | ⭐⭐⭐ High | Automatic | Production pipelines, scheduled jobs |
-| [**Single Node Clusters**](#single-node-clusters) | Light exploration | ⭐⭐⭐ High | Yes | Quick data checks, small datasets |
-| **Personal Compute** | Individual development | ⭐⭐ Medium | Yes | Solo experimentation (see All-Purpose) |
 
 ---
 
@@ -278,6 +278,140 @@ graph TD
 
 > [!tip] Monitor and Adjust
 > Review cluster usage metrics monthly. If clusters frequently restart due to aggressive auto-termination, increase the timeout slightly to improve user experience.
+
+---
+
+## Photon Acceleration: When to Use It
+
+**Photon** is Databricks' native vectorized query engine that accelerates SQL and DataFrame workloads. While it can provide 2-5x performance improvements, it comes with approximately **2x higher DBU costs**. In practice, Photon is primarily valuable for workloads with **heavy joins and aggregations**. For most other use cases, the cost increase outweighs the performance benefits.
+
+### Decision Framework
+
+```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
+flowchart TD
+    A[Evaluate Workload] --> B{Heavy Joins/Aggregations?}
+    
+    B -->|Yes - Many joins or complex aggregations| C{Dataset Size?}
+    B -->|No - Simple transformations| D[❌ Standard Runtime<br/>Cost not justified]
+    
+    C -->|Large >100GB| E[✅ Use Photon<br/>Performance gains justify cost]
+    C -->|Small <50GB| F[❌ Standard Runtime<br/>Overhead exceeds benefit]
+    
+    style B fill:#a8d8ff
+    style C fill:#ffd4a3
+    style D fill:#ffe1e1
+    style E fill:#e1f5e1
+    style F fill:#ffe1e1
+```
+
+### When to Enable Photon
+
+| Workload Characteristic | Use Photon? | Why? |
+|------------------------|-------------|------|
+| **Complex multi-table joins** | ✅ Yes | Photon's vectorization excels at join operations |
+| **Heavy aggregations (GROUP BY)** | ✅ Yes | Significant speedup for complex aggregations on large datasets |
+| **Star schema queries** | ✅ Yes | Ideal for fact-dimension joins with aggregations |
+| **BI dashboards (SQL Warehouse)** | ✅ Default | SQL Warehouses include Photon, optimized for analytical queries |
+
+### When NOT to Use Photon
+
+| Workload Characteristic | Use Standard | Why? |
+|------------------------|--------------|------|
+| **Simple transformations (filters, selects)** | ❌ Standard | Minimal joins/aggregations = cost not justified |
+| **ETL with mostly data movement** | ❌ Standard | Reading/writing data doesn't benefit from Photon |
+| **Small to medium datasets (<50GB)** | ❌ Standard | Performance gains too small to justify 2x cost |
+| **DLT pipelines without complex logic** | ❌ Standard | Simple bronze→silver transformations don't need Photon |
+| **Streaming without aggregations** | ❌ Standard | Simple event processing doesn't benefit |
+| **ML training pipelines** | ❌ Standard | ML libraries don't benefit from Photon (use GPU instead) |
+| **Development/testing environments** | ❌ Standard | Cost not justified for non-production work |
+| **Custom Scala/Java code** | ❌ Standard | Photon optimizes SQL/DataFrame operations only |
+
+### Cost vs Performance Trade-off
+
+**Photon pricing:**
+- Approximately **2x DBU cost** compared to standard runtime
+- Performance improvements: **2-5x faster** for SQL workloads
+
+**ROI calculation:**
+```
+Standard runtime: 100 DBUs × $0.40 = $40 (takes 60 minutes)
+Photon runtime: 100 DBUs × $0.80 = $80 (takes 20 minutes)
+
+Cost increase: +$40 (+100%)
+Time saved: -40 minutes (-67%)
+```
+
+> [!warning] Cost vs Benefit Reality
+> Photon doubles your DBU costs. Unless your workload performs **heavy joins and aggregations on large datasets (>100GB)**, the 2x cost increase typically exceeds any time savings. Most ETL pipelines don't have enough join/aggregation complexity to justify Photon.
+
+### Photon Configuration Examples
+
+**Enable Photon on Job Cluster:**
+```python
+{
+    "name": "daily-etl-with-photon",
+    "new_cluster": {
+        "spark_version": "14.3.x-photon-scala2.12",  # Note: photon in version
+        "node_type_id": "Standard_D4ds_v5",
+        "autoscale": {
+            "min_workers": 2,
+            "max_workers": 10
+        }
+    }
+}
+```
+
+**Photon in SQL Warehouse:**
+```sql
+-- SQL Warehouses automatically use Photon
+-- No configuration needed - it's enabled by default
+SELECT 
+    customer_segment,
+    COUNT(*) as customer_count,
+    SUM(lifetime_value) as total_value
+FROM gold.customer_metrics
+GROUP BY customer_segment
+ORDER BY total_value DESC
+```
+
+**Photon in DLT Pipeline (only for heavy aggregations):**
+```python
+import dlt
+
+# Use Photon only when you have complex joins and aggregations
+@dlt.table(
+    comment="Complex multi-table aggregation - Photon justified"
+)
+def gold_sales_summary():
+    return (
+        dlt.read("silver_sales")
+            .join(dlt.read("silver_customers"), "customer_id")
+            .join(dlt.read("silver_products"), "product_id")
+            .join(dlt.read("silver_regions"), "region_id")
+            .groupBy("region", "customer_segment", "product_category")
+            .agg(
+                sum("amount").alias("total_revenue"),
+                avg("amount").alias("avg_order_value"),
+                count("transaction_id").alias("transaction_count")
+            )
+    )
+```
+
+### Best Practices
+
+| Practice | Rationale |
+|----------|-----------|
+| ✅ Use Photon **only for heavy joins/aggregations** | The ONLY use case where cost is justified |
+| ✅ Enable on **SQL Warehouses for BI** | Already default, optimized for analytical queries |
+| ✅ Require **>100GB datasets** before considering | Small data doesn't benefit enough |
+| ✅ **Benchmark rigorously** before committing | Most workloads won't see ROI—prove it first |
+| ❌ **Don't use Photon by default** | 2x cost increase requires clear justification |
+| ❌ Don't use for **simple ETL pipelines** | Data movement and basic transforms don't benefit |
+| ❌ Don't use for **development/testing** | Cost never justified for non-production |
+| ❌ Don't use without **many joins/aggregations** | Core value proposition—without these, skip Photon |
+
+---
 
 ## Anti-Patterns to Avoid
 
