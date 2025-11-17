@@ -8,13 +8,13 @@
 > [!tip] Quick Navigation
 > This section provides a high-level overview. Click the compute type names to jump to detailed guidance.
 
-| Compute Type                                      | Use Case                | Cost Efficiency | Auto-termination | Best For                               |
-| ------------------------------------------------- | ----------------------- | --------------- | ---------------- | -------------------------------------- |
-| [**SQL Warehouses**](#sql-warehouses)             | SQL analytics & BI      | ⭐⭐⭐ High        | Yes              | Business analysts, SQL-based reporting |
-| [**All-Purpose Clusters**](#all-purpose-clusters) | Interactive development | ⭐⭐ Medium       | Yes              | Collaborative data engineering         |
-| [**Job Clusters**](#job-clusters)                 | Automated workloads     | ⭐⭐⭐ High        | Automatic        | Production pipelines, scheduled jobs   |
-| [**Single Node Clusters**](#single-node-clusters) | Light exploration       | ⭐⭐⭐ High        | Yes              | Quick data checks, small datasets      |
-| **Personal Compute**                              | Individual development  | ⭐⭐ Medium       | Yes              | Solo experimentation (see All-Purpose) |
+| Compute Type | Use Case | Cost Efficiency | Auto-termination | Best For |
+| ------------ | -------- | --------------- | ---------------- | -------- |
+| [[#SQL Warehouses\|SQL Warehouses]] | SQL analytics & BI | ⭐⭐⭐ High | Yes | Business analysts, SQL-based reporting |
+| [[#All-Purpose Clusters\|All-Purpose Clusters]] | Interactive development | ⭐⭐ Medium | Yes | Collaborative data engineering |
+| [[#Job Clusters\|Job Clusters]] | Automated workloads | ⭐⭐⭐ High | Automatic | Production pipelines, scheduled jobs |
+| [[#Single Node Clusters\|Single Node Clusters]] | Light exploration | ⭐⭐⭐ High | Yes | Quick data checks, small datasets |
+| Personal Compute | Individual development | ⭐⭐ Medium | Yes | Solo experimentation (see All-Purpose) |
 
 ---
 
