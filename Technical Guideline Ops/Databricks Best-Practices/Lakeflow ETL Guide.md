@@ -529,7 +529,7 @@ flowchart LR
 - Better cost tracking per pipeline
 - Optimal for production reliability
 
-**See [[How to choose your Compute?]] for detailed guidance on cluster sizing and Photon usage.**
+**See [[Compute Selection]] for detailed guidance on cluster sizing and Photon usage.**
 
 ---
 
@@ -711,7 +711,7 @@ flowchart TD
 ## Related Documentation
 
 ### Within Databricks Best-Practices
-- [[How to choose your Compute?]] - Cluster sizing, Photon usage, and cost optimization
+- [[Compute Selection]] - Cluster sizing, Photon usage, and cost optimization
 
 ### Fabric Architecture (Similar Concepts)
 - [[Data Layers and Modeling]] - Medal architecture principles applicable to Lakeflow
