@@ -21,7 +21,7 @@ graph LR
     
     subgraph Downstream
         I[Intermediate]:::delta
-        C[Conformed]:::all
+        C[ADS]:::all
     end
     
     S -->|Optional| L
@@ -103,7 +103,7 @@ graph LR
 ### Why Staging Matters
 
 **Single source of truth:** Downstream layers reference staging, not raw sources; consistent data access across the platform.
-**Reprocessing capability:** Rebuild conformed/dimensional layers from staging without impacting source systems.
+**Reprocessing capability:** Rebuild ads/dimensional layers from staging without impacting source systems.
 **Testing entry point:** Data quality checks start here: catch bad data before propagation.
 **Source isolation:** Each source system gets its own staging area—clear lineage and simplified troubleshooting.
 
@@ -112,5 +112,5 @@ graph LR
 
 - [[Data Layers and Modeling]]: Full data platform architecture overview
 - [[Data Sources & Data Loading]]: Source system integration patterns
-- [[Conformed Layer]]:  Next transformation step after staging
+- [[Analytical Data Store (ADS)]]:  Next transformation step after staging
 ---
