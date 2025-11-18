@@ -29,7 +29,7 @@ graph TD
                 B3[Staging C]:::all
             end
             M[Intermediate<br/>Δ-only<br>optional]:::delta
-            C[Conformed]:::all
+            C[ADS]:::all
             O[Intermediate<br/>Δ-only<br>optional]:::delta
         end
 
@@ -90,7 +90,7 @@ graph LR
             L[Landing<br/>Δ-only<br/>Optional]:::optional
             B[Staging<br/>All data]:::all
             M1[Intermediate<br/>Δ-only<br>optional]:::delta
-            CONF[Conformed<br/>All data]:::all
+            CONF[ADS<br/>All data]:::all
             M2[Intermediate<br/>Δ-only<br>optional]:::delta
         end
 
@@ -131,11 +131,11 @@ Here we see all data that the information is flowing through.
    
 4. The **Staging** layer contains a replica of the source information. This layer contains a replica of the source after an ETL load. The data in this layer is as close to the source as possible (similar column names, similar table names) and nearly no data corrections are applied here. This layer is used for reloads of data to subsequent layers. Read more in [[Landing and Staging]].
 
-5. The **Intermediate Layers** provide helpful steps to apply changes to the staging and Conformed layers such as flattening, filtering, grouping, denormalizing/flattening and more. The intermediary layers can consist of volatile views, of small increments, persisted tables and more. These layer helps split-up the ETL for more modularity, re-use of logic and more. 
+5. The **Intermediate Layers** provide helpful steps to apply changes to the staging and ADS layers such as flattening, filtering, grouping, denormalizing/flattening and more. The intermediary layers can consist of volatile views, of small increments, persisted tables and more. These layer helps split-up the ETL for more modularity, re-use of logic and more. 
    
-> [!tip] The 'Intermediate' layer can be skipped when no intermediary steps are required to fill 'Conformed' or 'Front Room' layers
+> [!tip] The 'Intermediate' layer can be skipped when no intermediary steps are required to fill 'ADS' or 'Front Room' layers
    
-5. The **Conformed** layer provides cleaned data with data quality rules applied and initial denormalization. Tables are unpivoted, making the data more accessible while still allowing for further business-friendly modeling. This layer is used to integrate different sources, for historical build-up (supporting SCD2 logic in later-on streams), and for increased querying capacity to address business questions. This is the ideal phase to feed Master Data Services (MDS). This layer can be used by experienced data engineers and data analysts. Read more about this layer in [[Conformed Layer]]. 
+5. The **ADS** layer provides cleaned data with data quality rules applied and initial denormalization. Tables are unpivoted, making the data more accessible while still allowing for further business-friendly modeling. This layer is used to integrate different sources, for historical build-up (supporting SCD2 logic in later-on streams), and for increased querying capacity to address business questions. This is the ideal phase to feed Master Data Services (MDS). This layer can be used by experienced data engineers and data analysts. Read more about this layer in [[Analytical Data Store (ADS)]]. 
 
 6. The **Front Room** provides business-optimized data structures for reporting, analytics, and machine learning:
    - **Star - Dimensional Model** (Facts & Dimensions): Star schema optimized for fast querying and business user exploration. Read more in [[Dimension Tables]] and [[Fact Tables]].
@@ -152,8 +152,8 @@ Our layered architecture approach balances flexibility with performance, inspire
 
 This multi-layered approach is preferred over a 'Dimensional Model Only' architecture for several key reasons:
 
-* **Flexibility for integration**: The Back Room layers (Staging, Conformed) provide multiple integration points for diverse source systems and historical data build-up.
-* **Easier dimensional modeling**: Having clean, conformed data makes it significantly easier to build and maintain dimensional models.
+* **Flexibility for integration**: The Back Room layers (Staging, ADS) provide multiple integration points for diverse source systems and historical data build-up.
+* **Easier dimensional modeling**: Having clean, ADS data makes it significantly easier to build and maintain dimensional models.
 * **Cost efficiency**: Modern data platforms separate storage and compute, making additional data layers low-cost while providing significant value.
 * **Advanced analytics support**: For AI, Data Science, and ML use cases, the Back Room's more granular and flexible structure is often preferred over the Front Room's optimized dimensional model.
 * **AI-assisted development**: Leveraging AI-supported ETL development tools works efficiently with both Back Room and Front Room layers, accelerating delivery.
@@ -164,7 +164,7 @@ This multi-layered approach is preferred over a 'Dimensional Model Only' archite
 
 ## Layer-by-Layer Transformation Example
 
-To illustrate how data transforms across layers, let's follow a typical e-commerce scenario from Source/Staging through Conformed to Dimensional Model.
+To illustrate how data transforms across layers, let's follow a typical e-commerce scenario from Source/Staging through ADS to Dimensional Model.
 
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
@@ -180,13 +180,13 @@ graph LR
         BUD[Sales Budget]
     end
     
-    subgraph Conformed["Conformed Layer<br/>(Denormalized - Fewer Tables)"]
-        C_CUST[C_Customer]
-        C_CUST_SNAP[C_Customer_Snapshot]
-        C_PROD[C_Product]
-        C_PRODCAT[C_ProductCategory]
-        C_INV[C_Invoice]
-        C_BUDGET[C_SalesBudget]
+    subgraph ADS["Analytical Data Store (ADS)<br/>(Denormalized - Fewer Tables)"]
+        ADS_CUST[ADS_Customer]
+        ADS_CUST_SNAP[ADS_Customer_Snapshot]
+        ADS_PROD[ADS_Product]
+        ADS_PRODCAT[ADS_ProductCategory]
+        ADS_INV[ADS_Invoice]
+        ADS_BUDGET[ADS_SalesBudget]
     end
     
     subgraph Dimensional["Dimensional Model<br/>(Star Schema)"]
@@ -196,25 +196,25 @@ graph LR
         F_BUDGET[F_SalesBudget]
     end
     
-    CUST --> C_CUST
-    ADDR --> C_CUST
-    CUST --> C_CUST_SNAP
-    PROD --> C_PROD
-    COLOR --> C_PROD
-    CAT --> C_PROD
-    CAT --> C_BUDGET
-    BUD --> C_BUDGET
-    BUD --> C_PRODCAT
-    CAT --> C_PRODCAT
-    INV_H --> C_INV
-    INV_L --> C_INV
+    CUST --> ADS_CUST
+    ADDR --> ADS_CUST
+    CUST --> ADS_CUST_SNAP
+    PROD --> ADS_PROD
+    COLOR --> ADS_PROD
+    CAT --> ADS_PROD
+    CAT --> ADS_BUDGET
+    BUD --> ADS_BUDGET
+    BUD --> ADS_PRODCAT
+    CAT --> ADS_PRODCAT
+    INV_H --> ADS_INV
+    INV_L --> ADS_INV
     
-    C_CUST --> D_CUST
-    C_CUST_SNAP --> D_CUST
-    C_PROD --> D_PROD
-    C_PRODCAT --> D_PROD
-    C_INV --> F_SALES
-    C_BUDGET --> F_BUDGET
+    ADS_CUST --> D_CUST
+    ADS_CUST_SNAP --> D_CUST
+    ADS_PROD --> D_PROD
+    ADS_PRODCAT --> D_PROD
+    ADS_INV --> F_SALES
+    ADS_BUDGET --> F_BUDGET
     
     D_CUST --> F_SALES
     D_PROD --> F_SALES
@@ -223,22 +223,22 @@ graph LR
 
 **Transformation flow:**
 - **Source/Staging (8 tables)**: Normalized structure with `Customer`, `Address`, `Invoice Header`, `Invoice Line`, `Product`, `Product Color`, `Product Category`, `Sales Budget`
-- **Conformed Layer (6 tables)**: Denormalized into `C_Customer` (Customer + Address), `C_Customer_Snapshot` (history tracking from Customer), `C_Product` (Product + Color + Category), `C_ProductCategory` (aggregated product categories from Sales Budget), `C_Invoice` (Invoice Header + Lines), `C_SalesBudget` (budget targets from Sales Budget and Product Category)
+- **Analytical Data Store (ADS) (6 tables)**: Denormalized into `ADS_Customer` (Customer + Address), `ADS_Customer_Snapshot` (history tracking from Customer), `ADS_Product` (Product + Color + Category), `ADS_ProductCategory` (aggregated product categories from Sales Budget), `ADS_Invoice` (Invoice Header + Lines), `ADS_SalesBudget` (budget targets from Sales Budget and Product Category)
 - **Dimensional Model (4 tables)**: Star schema with 2 facts (`F_Sales`, `F_SalesBudget`) and 2 dimensions (`D_Customer`, `D_Product` merging both detail and category levels)
 
 > [!tip] Progressive Denormalization
 > Notice the progressive reduction in table count as data moves through layers:
 > - **Staging**: 8 tables with complex relationships
-> - **Conformed**: 6 tables with denormalization, history tracking (`C_Customer_Snapshot`), business categorization (`C_ProductCategory`), and budgets (`C_SalesBudget`)
+> - **ADS**: 6 tables with denormalization, history tracking (`ADS_Customer_Snapshot`), business categorization (`ADS_ProductCategory`), and budgets (`ADS_SalesBudget`)
 > - **Dimensional**: 2 fact tables + 2 dimension tables in star schema
 > 
-> Key insight: `D_Product` merges both `C_Product` (detail level with individual products) and `C_ProductCategory` (aggregate category level) into a single dimensional hierarchy. This allows both `F_Sales` (detailed transactions at product level) and `F_SalesBudget` (aggregated budgets at category level) to share the same dimension, enabling actual vs. budget comparisons across the product hierarchy.
+> Key insight: `D_Product` merges both `ADS_Product` (detail level with individual products) and `ADS_ProductCategory` (aggregate category level) into a single dimensional hierarchy. This allows both `F_Sales` (detailed transactions at product level) and `F_SalesBudget` (aggregated budgets at category level) to share the same dimension, enabling actual vs. budget comparisons across the product hierarchy.
 ---
 
 ## Related Topics
 
 - [[Data Sources & Data Loading]] - How data enters the platform
-- [[Conformed Layer]] - Critical transformation layer between Back Room and Front Room
+- [[Analytical Data Store (ADS)]] - Critical transformation layer between Back Room and Front Room
 - [[Dimension Tables]] - Star schema dimension design patterns
 - [[Fact Tables]] - Star schema fact table design patterns  
 - [[Master Data]] - Operational database for business-maintained reference data

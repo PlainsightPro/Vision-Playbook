@@ -37,17 +37,17 @@ from orders
 
 **2. Centralized Reference Models**
 
-Create conformed models once and `ref()` everywhere:
+Create ADS models once and `ref()` everywhere:
 
 ```sql
--- models/conformed/c_customer.sql
+-- models/ads/ads_customer.sql
 select customer_id, customer_name, customer_type, region
 from {{ source('crm', 'customers') }}
 
 -- Reference in all downstream models
 select o.order_id, c.customer_name
 from orders as o
-left join {{ ref('c_customer') }} as c on o.customer_id = c.customer_id
+left join {{ ref('ads_customer') }} as c on o.customer_id = c.customer_id
 ```
 
 **3. dbt Packages for Cross-Project Patterns**
@@ -78,12 +78,12 @@ from orders
 
 ## Configuration Inheritance
 - Define defaults high in `dbt_project.yml` (materializations, tags, quoting) and override only when necessary.
-- Example: enforce quoting + incremental strategy for Conformed and Front Room folders.
+- Example: enforce quoting + incremental strategy for ADS and Front Room folders.
 
 ```yaml
 models:
   my_project:
-    conformed:
+    ads:
       +materialized: table
       +on_schema_change: append_new_columns
     front_room/logistics:
@@ -134,7 +134,7 @@ staged_orders as (
     from source_orders
 ),
 
--- Join to the conformed customer dimension for attributes
+-- Join to the ADS customer dimension for attributes
 orders_with_customer as (
     select
         o.order_id,

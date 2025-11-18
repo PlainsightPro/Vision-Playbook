@@ -34,7 +34,7 @@ flowchart LR
     style Platinum fill:#E5E4E2,stroke:#9C9C9C,color:#000000
 ```
 
-**Our approach uses semantic names** (Landing, Staging, Conformed, Front Room) with clear responsibilities per layer.  
+**Our approach uses semantic names** (Landing, Staging, ADS, Front Room) with clear responsibilities per layer.  
 
 ## Detailed Mapping
 
@@ -48,15 +48,15 @@ flowchart TB
     end
     
     subgraph Silver["Silver"]
-        Conformed[Conformed]
+        ADS[ADS]
     end
     
     subgraph Gold["Gold = Front Room"]
         Dims[Star - Dimens & Facts] & Facts[One Big Table] & Feat[Feature Stores]
     end
     
-    Staging --> Conformed
-    Conformed --> Dims & Facts & Feat
+    Staging --> ADS
+    ADS --> Dims & Facts & Feat
     
     style Bronze fill:#CD7F32,stroke:#8B4513,color:#FFFFFF
     style Silver fill:#C0C0C0,stroke:#808080,color:#000000
@@ -68,8 +68,8 @@ flowchart TB
 
 - [[Data Layers and Modeling]]: Our preferred approach
 - [[Landing and Staging]]: Bronze equivalent
-- [[Conformed Layer]]: Silver equivalent
+- [[Analytical Data Store (ADS)]]: Silver equivalent
 - [[Star - Dimension Tables]] & [[Star - Fact Tables]]: Gold equivalent
 
 > [!tip] Bottom Line
-> Medallion works for simple cases, but semantic layer names (Landing/Staging/Conformed/Front Room) prevent ambiguity and layer proliferation in complex implementations.
+> Medallion works for simple cases, but semantic layer names (Landing/Staging/ads/Front Room) prevent ambiguity and layer proliferation in complex implementations.

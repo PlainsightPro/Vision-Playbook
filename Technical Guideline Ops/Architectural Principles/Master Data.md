@@ -1,7 +1,7 @@
 # Master Data
 
 > [!info] Core Concept
-> Master Data is an **operational database** that serves as a centralized hub for managing critical reference data, lists, lookups, budgets, and other business-maintained information within the data platform. Unlike source systems or analytical layers, Master Data is actively managed by business users and provides a bidirectional interface with the [[Conformed Layer]].
+> Master Data is an **operational database** that serves as a centralized hub for managing critical reference data, lists, lookups, budgets, and other business-maintained information within the data platform. Unlike source systems or analytical layers, Master Data is actively managed by business users and provides a bidirectional interface with the [[Analytical Data Store (ADS)]].
 
 ## Purpose
 
@@ -30,13 +30,13 @@ Master Data is fundamentally different from other data platform layers:
 
 ### Integration with Data Platform
 
-Master Data maintains a bidirectional relationship with the Conformed layer:
+Master Data maintains a bidirectional relationship with the Analytical Data Store (ADS):
 
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 graph LR
     MD[Master Data]
-    CONF[Conformed Layer]
+    CONF[Analytical Data Store (ADS)]
     
     MD -->|Enrichment Flow<br/>Reference data adds context| CONF
     CONF -->|Feedback Flow<br/>New values flagged for classification| MD
@@ -45,9 +45,9 @@ graph LR
     class MD,CONF highlight
 ```
 
-**Enrichment flow** (Master Data → Conformed): Reference data is joined with conformed data to add business context
+**Enrichment flow** (Master Data → ADS): Reference data is joined with ADS data to add business context
 
-**Feedback flow** (Conformed → Master Data): New values discovered in source systems can be flagged for classification in Master Data
+**Feedback flow** (ADS → Master Data): New values discovered in source systems can be flagged for classification in Master Data
 
 ## Common Use Cases
 
@@ -119,6 +119,6 @@ When out-of-the-box solutions don't fit, **custom applications** can be develope
 
 ## Related Topics
 
-- [[Conformed Layer]] - The primary integration point for Master Data
+- [[Analytical Data Store (ADS)]] - The primary integration point for Master Data
 - [[Dimension Tables]] - How Master Data enriches dimensional models
 - [[Data Layers and Modeling]] - Where Master Data fits in the overall architecture

@@ -30,10 +30,10 @@ Document selectors, targets, threads, and variables for each scenario so operato
 
 > [!tip] 💡 Testing Tactic
 > - **Hit sources hard:** Saturate staging/source models with `not_null`, `unique`, freshness, and schema-conformance tests so bad data is blocked before it propagates.  
-> - **Guard dimensions & facts:** In the conformed/front-room layers (dimensions & facts), prioritize relationship tests, contracts, and business constraints to ensure metrics stay trustworthy.
+> - **Guard dimensions & facts:** In the ADS/front-room layers (dimensions & facts), prioritize relationship tests, contracts, and business constraints to ensure metrics stay trustworthy.
 
 ### 1. Built-In Data Quality
-- Saturate staging and conformed/front-room models with `not_null` and `unique` on natural or surrogate keys; only add these tests to intermediate models when they are high-risk models.
+- Saturate staging and ADS/front-room models with `not_null` and `unique` on natural or surrogate keys; only add these tests to intermediate models when they are high-risk models.
 - Use `relationships` to enforce referential integrity between front-room dimension & fact models.
 - Attach `accepted_values` to enums and status fields to prevent silent drift.
 
@@ -52,10 +52,10 @@ Document selectors, targets, threads, and variables for each scenario so operato
 |--------------|------------------------------------------|
 | Staging      | `not_null`, `unique`, `accepted_values`, `source-freshness`  | 
 | Intermediate (only if materialized) | Minimize tests in this layer. Only apply checks on high-risk models and during development | 
-| Conformed    | Key uniqueness and relationship depth | 
+| ADS    | Key uniqueness and relationship depth | 
 | Front Room (Dims/Facts) | Contracts, metric-specific assertions, dimensional constraints (e.g., Type 2 checks) | 
 
-> Intermediate models that remain ephemeral should not accumulate dedicated test suites—lean on staging coverage upstream and conformed/front-room constraints downstream.
+> Intermediate models that remain ephemeral should not accumulate dedicated test suites—lean on staging coverage upstream and ADS/front-room constraints downstream.
 
 ---
 
