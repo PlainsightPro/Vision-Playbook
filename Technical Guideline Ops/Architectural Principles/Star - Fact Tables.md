@@ -211,7 +211,7 @@ Fact tables are typically:
 
 - [[Dimension Tables]] - Provide context for fact measures through filtering and grouping
 - [[Data Layers and Modeling]] - Where fact tables fit in the architecture
-- [[Conformed Layer]] - Source layer for cleaned data feeding into dimensional model
+- [[Analytical Data Store (ADS)]] - Source layer for cleaned data feeding into dimensional model
 
 ---
 

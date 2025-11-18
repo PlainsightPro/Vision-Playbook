@@ -33,9 +33,9 @@ models/
 │  ├─ int_orders_enriched.sql
 │  ├─ int_orders_flattened.sql
 │  └─ ...
-├─ conformed/
-│  ├─ c_customer.sql
-│  ├─ c_product.sql
+├─ ads/
+│  ├─ ads_customer.sql
+│  ├─ ads_product.sql
 │  └─ _models.yml              # Contracts, ownership, tests
 └─ front_room/
    ├─ star_dim_fact/
@@ -46,7 +46,7 @@ models/
    └─ one_big_table/
 ```
 
-### Landing (Optional Source-Conformed)
+### Landing (Optional Source-ADS)
 - **Optional layer** for external tables, incremental-only ingestion, or raw file processing before staging.
 - Name models `land_<source>_<entity>` if using this layer, otherwise skip directly to staging.
 - Organize by source system (`landing/sap`, `landing/salesforce`) for consistency.
@@ -60,7 +60,7 @@ models/
 > [!tip] When to Use Landing
 > Use landing when external tools or incremental patterns require a preprocessing step before staging. If your sources are clean and directly queryable, skip this layer and start at staging.
 
-### Staging (Source-Conformed)
+### Staging (Source-ADS)
 - One dbt model per `source()` table, named `stg_<source>_<entity>`.
 - Keep logic atomic: rename, cast, and normalize fields - never join or aggregate.
 - Organize folders by source system (`staging/sap`, `staging/salesforce`) so commands like `dbt build --select staging.sap+` work intuitively.
@@ -78,18 +78,18 @@ models:
 - Organize by domain (`finance`, `marketing`, `platform`) to mirror how the business consumes data.
 - Compose reusable joins/filters; prefer `ephemeral` materializations unless the model is reused broadly.
 - Break heavy logic into `int_<noun>_<verb>` models (`int_finance_orders_enriched`).
-- Keep only the transformations needed to shape inputs for Conformed - avoid duplication of staging logic or presentation metrics.
+- Keep only the transformations needed to shape inputs for ADS - avoid duplication of staging logic or presentation metrics.
 
-### Conformed (Integrated Models)
+### ADS (Integrated Models)
 - Integrate and cleanse data across domains so downstream teams inherit harmonized entities (customers, products, orders).
 - Apply SCD rules, survivorship (choosing the “winning” version of a record when multiple sources disagree), and cross-source enrichment (merging attributes from different systems); document contracts, tests, and ownership in `_models.yml`.
-- Name models `c_<entity>` (e.g., `c_customer`), materialize as `table`/`incremental`, and treat this layer as the reusable interface for front-room consumers.
-- The 'Conformed' layer stores your dbt_snapshot models. 
+- Name models `ads_<entity>` (e.g., `ads_customer`), materialize as `table`/`incremental`, and treat this layer as the reusable interface for front-room consumers.
+- The 'ADS' layer stores your dbt_snapshot models. 
 
 ### Front Room (Presentation & Experience)
 - Deliver business-ready dimensional models, fact tables, master data, feature stores, and other consumer outputs that BI/ML teams query directly.
 - Organize subfolders by consumption pattern (`front_room/star_dim_fact`,  `front_room/feature_store`, `front_room/one_big_table`, ...) and use business-friendly names (no prefixes) for models.
-- Keep transformations light: the goal is to expose curated tables, not re-implement conformed logic. Default to `view` for agility, switching to `table`/`incremental` only when SLA or cost requires it.
+- Keep transformations light: the goal is to expose curated tables, not re-implement ADS logic. Default to `view` for agility, switching to `table`/`incremental` only when SLA or cost requires it.
 
 ---
 
@@ -107,7 +107,7 @@ models:
 | Landing      | `land_<source>_<entity>`    | `external` or `view`    | Optional preprocessing step; use external tables or incremental patterns. Skip if staging can directly reference sources. |
 | Staging      | `stg_<source>_<entity>`     | `view`                  | Mirrors upstream grain, grouped by source folders. |
 | Intermediate | `int_<domain>_<action>`     | `ephemeral` or `view`   | Domain folders communicate owners - verbs explain intent (`int_finance_orders_enriched`). |
-| Conformed    | `c_<domain>_<entity>`       | `table` / `incremental` | Harmonized, reusable entities that supply multiple experiences. |
+| ADS    | `c_<domain>_<entity>`       | `table` / `incremental` | Harmonized, reusable entities that supply multiple experiences. |
 | Front Room   | `<business_concept>`        | `view`                  | Consumer-facing names (e.g., `orders`, `customers_daily`, `dim_finance_account`). |
 
 

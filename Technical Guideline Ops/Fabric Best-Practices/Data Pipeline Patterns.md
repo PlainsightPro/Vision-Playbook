@@ -9,7 +9,7 @@ Reliable pipelines are the backbone of a healthy lakehouse. Use idempotent steps
 
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true, "curve": "basis" }, "theme": "base" } }%%
-flowchart TD
+flowchart LR
     Source --> Validate[Validation]
     Validate --> Transform[Transform]
     Transform --> Load[Load]
