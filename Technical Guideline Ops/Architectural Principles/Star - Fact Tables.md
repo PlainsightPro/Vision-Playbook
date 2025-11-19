@@ -1,7 +1,7 @@
 # Fact Tables
 
 > [!info] Core Concept
-> Fact tables store **numeric measurements** (the "facts") of business events and processes. They contain the quantitative data you analyze—sales amounts, quantities, balances, temperatures—within the context provided by [[Dimension Tables]].
+> Fact tables store **numeric measurements** (the "facts") of business events and processes. They contain the quantitative data you analyze - sales amounts, quantities, balances, temperatures - within the context provided by [[Dimension Tables]].
 
 ## Structure Overview
 
@@ -199,7 +199,7 @@ Fact tables include technical columns for data lineage, audit trails, and data q
 
 Fact tables are typically:
 - **Narrow**: Fewer columns than dimension tables (just keys + measures + attributes)
-- **Deep**: Massive row counts—millions, billions, or more
+- **Deep**: Massive row counts - millions, billions, or more
 
 **Size drivers:**
 - **Dimensionality**: More dimension keys = more possible combinations

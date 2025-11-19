@@ -88,14 +88,14 @@ graph LR
 
 **Data pattern:** All data (complete history after ETL load)
 
-**Key principle:** Staging contains a replica of source data after ETL processing. Data is as close to the source as possible—similar column names, similar table names, minimal corrections. This layer enables reloads to subsequent layers without hitting source systems again.
+**Key principle:** Staging contains a replica of source data after ETL processing. Data is as close to the source as possible - similar column names, similar table names, minimal corrections. This layer enables reloads to subsequent layers without hitting source systems again.
 
 ### Staging Characteristics
 
 | Aspect | Details |
 |--------|---------|
 | **Data Volume** | All data (full history) |
-| **Transformation** | Minimal—rename, cast, light cleaning |
+| **Transformation** | Minimal - rename, cast, light cleaning |
 | **Materialization** | Views or tables |
 | **Naming** | `stg_<source>_<entity>` |
 | **Retention** | Long-term (foundation for downstream) |
@@ -105,7 +105,7 @@ graph LR
 **Single source of truth:** Downstream layers reference staging, not raw sources; consistent data access across the platform.
 **Reprocessing capability:** Rebuild ads/dimensional layers from staging without impacting source systems.
 **Testing entry point:** Data quality checks start here: catch bad data before propagation.
-**Source isolation:** Each source system gets its own staging area—clear lineage and simplified troubleshooting.
+**Source isolation:** Each source system gets its own staging area - clear lineage and simplified troubleshooting.
 
 ---
 ## Related Pages

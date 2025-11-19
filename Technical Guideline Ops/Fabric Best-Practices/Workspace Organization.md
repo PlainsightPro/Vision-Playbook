@@ -81,7 +81,7 @@ Workspace scoping, role-based access control (RBAC), and promotion mechanics tog
 
 | Topic | Practical guidance |
 |---|---|
-| Capacity sizing | Avoid using tiny F2 capacities for production workloads — they are suitable for POCs but quickly become a bottleneck for Spark-based engineering. Prefer larger SKUs for production or reserve capacity where needed. |
+| Capacity sizing | Avoid using tiny F2 capacities for production workloads - they are suitable for POCs but quickly become a bottleneck for Spark-based engineering. Prefer larger SKUs for production or reserve capacity where needed. |
 | One big vs multiple small | Prefer multiple small capacities when you need strict isolation (compliance, billing, geographic or organizational boundaries). One large capacity may simplify operations for centralized teams but can create noisy-neighbor issues. Consider using multiple capacities unless you have clear reasons to centralize. |
 | Multi-geo | Deploy Fabric capacities in the regions you require for data residency and latency; use multiple capacities per required geography. |
 

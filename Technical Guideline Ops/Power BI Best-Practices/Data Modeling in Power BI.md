@@ -56,7 +56,7 @@ F_Sales: One row per order line
 - Don’t snowflake dimensions unless reuse or maintenance clearly requires it.  
 - Don’t enable bi-directional relationships by default. Bi-directional relationships can lead to ambiguity. If bi-directional relationships are required, override the filtering behaviour **in your measure** by using CROSSFILTER[^1].  
 - Don’t apply RLS with complex filters directly on large fact tables.  
-- Don’t leave large descriptive text or high-cardinality columns in facts—split them into separate detail tables if needed.  
+- Don’t leave large descriptive text or high-cardinality columns in facts - split them into separate detail tables if needed.  
 - Don’t hard-code data sources; use parameters for environment portability.  
 - Don’t deploy straight to production; always validate in test first.  
 

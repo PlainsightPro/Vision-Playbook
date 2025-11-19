@@ -1,7 +1,7 @@
 # Lakehouse Architecture
 
 > [!info] Purpose
-> Foundational architecture patterns enable scalable and reliable data processing in Fabric lakehouses. The medallion architecture (Bronze/Silver/Gold) combined with Delta Lake optimization creates a robust foundation for data quality and performance. Through proper partitioning, quality gates, and file organization, teams can deliver reliable analytics while maintaining optimal query performance and data integrity.
+> Foundational architecture patterns enable scalable and reliable data processing in Fabric lakehouses. The medallion architecture (Bronze/Silver/Gold, see [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]]) combined with Delta Lake optimization creates a robust foundation for data quality and performance. Through proper partitioning, quality gates, and file organization, teams can deliver reliable analytics while maintaining optimal query performance and data integrity.
 
 > [!warning] Medallion Architecture
 > Microsoft Fabric commonly uses the Medallion architecture pattern (Bronze → Silver → Gold). While functional, at Plainsight we prefer the more explicit layering approach described in [[Technical Guideline Ops/Architectural Principles/Data Layers and Modeling|Data Layers and Modeling]]. See [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]] for a comparison and mapping between approaches.

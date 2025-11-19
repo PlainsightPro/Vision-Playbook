@@ -1,11 +1,11 @@
 # From plan to platform - turning data into value
 
->Strategy sets the blueprint, but execution builds the rocket. This phase is where we bring the vision to life—fast, focused, and aligned with your goals.
+>Strategy sets the blueprint, but execution builds the rocket. This phase is where we bring the vision to life - fast, focused, and aligned with your goals.
 
 
-In the Execution phase, we translate strategy into real, working solutions. Whether it's building a modern data platform, operationalizing AI, or enabling self-service insights—we focus on **business value at every step**. No unnecessary complexity, no overengineering. Just smart, pragmatic solutions, delivered faster through proven methods, certified experts, and accelerators.
+In the Execution phase, we translate strategy into real, working solutions. Whether it's building a modern data platform, operationalizing AI, or enabling self-service insights - we focus on **business value at every step**. No unnecessary complexity, no overengineering. Just smart, pragmatic solutions, delivered faster through proven methods, certified experts, and accelerators.
 
-Our interdisciplinary teams—**strategists, analysts, engineers, scientists, and architects**—work side by side with your business to build outcomes, not just deliverables.
+Our interdisciplinary teams - **strategists, analysts, engineers, scientists, and architects** - work side by side with your business to build outcomes, not just deliverables.
 
 ![[Pasted image 20241001125758.png]]
 
@@ -21,13 +21,13 @@ Our interdisciplinary teams—**strategists, analysts, engineers, scientists, an
 ### How We Accelerate Value
 ![[Pasted image 20250603155900.png]]
 - **Certified Experts**  
-    Our teams combine deep expertise with cross-functional thinking. From cloud to ML, from UX to architecture—we’ve got the right mix to move fast and think holistically.
+    Our teams combine deep expertise with cross-functional thinking. From cloud to ML, from UX to architecture - we’ve got the right mix to move fast and think holistically.
     ![[Pasted image 20250603155704.png]]
 - **Proven Methodology**  
     Our battle-tested delivery approach keeps projects aligned with value. Iterative, transparent, and always tied to outcomes.
     
 - **Reusable Accelerators**  
-    From reference architectures to Frameworks—we don’t start from scratch. We bring tools, code and frameworks that make execution 30% faster.
+    From reference architectures to Frameworks - we don’t start from scratch. We bring tools, code and frameworks that make execution 30% faster.
 ### Key Principle: Value-Driven Development 
 What’s key for us is that **everything we build brings value** to the business context. Every stage during the Build phase is frequently evaluated to ensure that development is heading in the right direction and delivering tangible business benefits. This iterative process allows us to adapt and refine our approach based on feedback, keeping the focus on **value creation.**
 ### Data Platform & Data Products

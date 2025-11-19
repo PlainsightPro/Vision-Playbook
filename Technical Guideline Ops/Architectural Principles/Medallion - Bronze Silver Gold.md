@@ -52,7 +52,7 @@ flowchart TB
     end
     
     subgraph Gold["Gold = Front Room"]
-        Dims[Star - Dimens & Facts] & Facts[One Big Table] & Feat[Feature Stores]
+        Dims[Star - Dims & Facts] & Facts[One Big Table] & Feat[Feature Stores]
     end
     
     Staging --> ADS

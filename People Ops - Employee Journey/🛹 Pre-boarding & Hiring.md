@@ -58,7 +58,7 @@ In this stage, we’ll review your experience, skills, and potential fit with ou
 #### Showcasing Your Skills 🛠️ (+-45min)
 Depending on the role, you might be asked to complete an assessment or case study that simulates the kind of work you’d be doing at Plainsight. This is a chance for you to demonstrate your expertise and for us to see how you approach challenges in a practical context.
 
-- 🧘 **Relax**: No prep needed—just bring your own laptop with a Google account, and we'll explain everything on the spot.
+- 🧘 **Relax**: No prep needed - just bring your own laptop with a Google account, and we'll explain everything on the spot.
 ### 3. The Interview Rounds: Meeting the Team 💼
 Next, you’ll have the opportunity to meet with various members of our team, including potential colleagues and leaders. These interviews are as much about us getting to know you as they are about you learning more about us. We value open, two-way conversations where both sides can explore if there’s a mutual fit.
 

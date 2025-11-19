@@ -9,14 +9,14 @@
 
 ## Why DRY Matters
 
-**Single source of truth:** Changes propagate automatically everywhere—no risk of inconsistent implementations or desynchronized business rules.
+**Single source of truth:** Changes propagate automatically everywhere - no risk of inconsistent implementations or desynchronized business rules.
 **Reduced maintenance:** Update once instead of hunting through N files. Fewer places for bugs to hide, easier code reviews.
 **Improved testing:** Test the shared component once; all consumers inherit the fix automatically.
 **Better collaboration:** Team members reuse proven patterns. Knowledge stays centralized and documented for faster onboarding.
 
 ## When to Break DRY
 
-**Don't over-abstract** — sometimes duplication is acceptable.
+**Don't over-abstract** - sometimes duplication is acceptable.
 ### Acceptable Duplication Scenarios
 
 | Scenario                 | Reason to Duplicate                                               |

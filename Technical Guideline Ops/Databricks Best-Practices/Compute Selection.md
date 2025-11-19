@@ -321,7 +321,7 @@ flowchart TD
 | **Simple transformations (filters, selects)** | ❌ Standard | Minimal joins/aggregations = cost not justified |
 | **ETL with mostly data movement** | ❌ Standard | Reading/writing data doesn't benefit from Photon |
 | **Small to medium datasets (<50GB)** | ❌ Standard | Performance gains too small to justify 2x cost |
-| **DLT pipelines without complex logic** | ❌ Standard | Simple bronze→silver transformations don't need Photon |
+| **DLT pipelines without complex logic** | ❌ Standard | Simple Landing→ADS (Bronze→Silver-equivalent) transformations don't need Photon |
 | **Streaming without aggregations** | ❌ Standard | Simple event processing doesn't benefit |
 | **ML training pipelines** | ❌ Standard | ML libraries don't benefit from Photon (use GPU instead) |
 | **Development/testing environments** | ❌ Standard | Cost not justified for non-production work |
@@ -370,7 +370,7 @@ SELECT
     customer_segment,
     COUNT(*) as customer_count,
     SUM(lifetime_value) as total_value
-FROM gold.customer_metrics
+FROM front_room.customer_metrics  -- Gold-equivalent schema
 GROUP BY customer_segment
 ORDER BY total_value DESC
 ```
@@ -383,12 +383,12 @@ import dlt
 @dlt.table(
     comment="Complex multi-table aggregation - Photon justified"
 )
-def gold_sales_summary():
+def front_room_sales_summary():
     return (
-        dlt.read("silver_sales")
-            .join(dlt.read("silver_customers"), "customer_id")
-            .join(dlt.read("silver_products"), "product_id")
-            .join(dlt.read("silver_regions"), "region_id")
+        dlt.read("ads_sales")
+            .join(dlt.read("ads_customers"), "customer_id")
+            .join(dlt.read("ads_products"), "product_id")
+            .join(dlt.read("ads_regions"), "region_id")
             .groupBy("region", "customer_segment", "product_category")
             .agg(
                 sum("amount").alias("total_revenue"),
@@ -405,11 +405,11 @@ def gold_sales_summary():
 | ✅ Use Photon **only for heavy joins/aggregations** | The ONLY use case where cost is justified |
 | ✅ Enable on **SQL Warehouses for BI** | Already default, optimized for analytical queries |
 | ✅ Require **>100GB datasets** before considering | Small data doesn't benefit enough |
-| ✅ **Benchmark rigorously** before committing | Most workloads won't see ROI—prove it first |
+| ✅ **Benchmark rigorously** before committing | Most workloads won't see ROI - prove it first |
 | ❌ **Don't use Photon by default** | 2x cost increase requires clear justification |
 | ❌ Don't use for **simple ETL pipelines** | Data movement and basic transforms don't benefit |
 | ❌ Don't use for **development/testing** | Cost never justified for non-production |
-| ❌ Don't use without **many joins/aggregations** | Core value proposition—without these, skip Photon |
+| ❌ Don't use without **many joins/aggregations** | Core value proposition - without these, skip Photon |
 
 ---
 

@@ -78,7 +78,7 @@ This structure keeps type & purpose easily parseable for automation.
 | `OA` | Org App | Published apps
 | `VL` | Variable Library | Config/variables
 
-> Tip: choose a small subset of prefixes that match your org scale — you can expand as needed.
+> Tip: choose a small subset of prefixes that match your org scale - you can expand as needed.
 
 ## Item purposes
 
@@ -114,7 +114,7 @@ This structure keeps type & purpose easily parseable for automation.
 > - **Ownership**: Assign ownership automatically using prefix + purpose (e.g., all `LH_*` items owned by the Data Platform team)
 
 ## Related pages
-- [[Workspace Organization]] — where items live
-- [[Technical Guideline Ops/Fabric Best-Practices/Third Party Tooling]] — tools to browse and manage artifacts
+- [[Workspace Organization]] - where items live
+- [[Technical Guideline Ops/Fabric Best-Practices/Third Party Tooling]] - tools to browse and manage artifacts
 
 [^1]: 

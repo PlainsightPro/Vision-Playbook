@@ -109,7 +109,7 @@ Manage historical changes with three primary strategies:
 
 ### SCD Type 1: Overwrite
 
-**Update existing row—no history preserved.**
+**Update existing row - no history preserved.**
 
 **Before Update:**
 
@@ -155,7 +155,7 @@ Manage historical changes with three primary strategies:
 - Attributes requiring accurate historical context (region, manager, status)
 - Audit and compliance requirements
 
-✅ **Benefit:** Historical aggregations remain accurate—sales attributed to the region where the salesperson worked at that time.
+✅ **Benefit:** Historical aggregations remain accurate - sales attributed to the region where the salesperson worked at that time.
 
 > [!tip] Label Attribute for SCD Type 2
 > Include a human-readable label combining key attributes and version context:

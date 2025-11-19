@@ -50,11 +50,11 @@ Each task should perform **one logical function**:
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart TD
-    A[Ingest Raw Data] --> B[Validate Schema]
+    A[Ingest to Landing Layer] --> B[Validate Schema]
     A --> C[Check Data Quality]
-    B --> D[Transform & Enrich]
+    B --> D[Transform in ADS]
     C --> D
-    D --> E[Load to Gold Layer]
+    D --> E[Publish to Front Room]
     D --> F[Train ML Model]
     E --> G[Update Dashboard]
     F --> G
@@ -98,7 +98,7 @@ table_name = dbutils.widgets.get("table_name")
 processing_date = dbutils.widgets.get("date")
 
 # Use parameters
-target_table = f"{env}.bronze.{table_name}"
+target_table = f"{env}.landing.{table_name}"  # Landing/Bronze-equivalent
 print(f"Processing {target_table} for date {processing_date}")
 ```
 
@@ -208,7 +208,7 @@ flowchart TD
 
 **Retry configuration best practices:**
 - Configure retries for **transient failures** (network issues, throttling, cluster startup)
-- Avoid infinite retries—**3 attempts is a common safe default**
+- Avoid infinite retries - **3 attempts is a common safe default**
 - Use exponential backoff for retries
 - Set appropriate timeout values
 

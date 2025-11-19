@@ -1,7 +1,7 @@
 
 
 > [!info] Get in Touch
-> This guide explains how to build production-ready ETL pipelines using **Databricks Lakeflow** — a unified data engineering solution combining ingestion, transformation, and orchestration. For Plainsight-specific implementation guidance, contact **Benoit**, **Nick** or **Lander**.
+> This guide explains how to build production-ready ETL pipelines using **Databricks Lakeflow** - a unified data engineering solution combining ingestion, transformation, and orchestration. For Plainsight-specific implementation guidance, contact **Benoit**, **Nick** or **Lander**.
 
 ---
 
@@ -17,10 +17,6 @@ flowchart LR
     C -->|Lakeflow Jobs| D[Orchestration]
     D --> E[Production Data]
     
-    style B fill:#a8d8ff
-    style C fill:#ffd4a3
-    style D fill:#c9f0c9
-    style E fill:#e8e8e8
 ```
 
 | Component | Purpose | What It Does |
@@ -54,23 +50,18 @@ flowchart TD
     
     D -->|Continuous arrival| G[Auto Loader]
     D -->|Scheduled batches| H[Batch Ingestion]
-    
-    style C fill:#c9f0c9
-    style E fill:#c9f0c9
-    style F fill:#ffd4a3
-    style G fill:#a8d8ff
-    style H fill:#e8e8e8
+
 ```
 
 ### Ingestion Method Decision Table
 
-| Ingestion Method | Use When | Technology | Example |
-|-----------------|----------|------------|---------|
-| **CDC Connectors** | Source is a database | Change Data Capture | SQL Server, MySQL, PostgreSQL, Oracle |
-| **Auto Loader** | Files continuously arrive | Automatic schema detection | Log files dropped to S3 every minute |
-| **Batch Ingestion** | Files arrive on schedule | Simple file reads | Nightly CSV export from legacy system |
-| **Streaming** | Real-time events from queues | Kafka/Event Hub integration | Real-time clickstream from Kafka |
-| **Native Connectors** | Enterprise applications | Pre-built connectors | Salesforce, Workday, ServiceNow |
+| Ingestion Method      | Use When                     | Technology                  | Example                                                   |
+| --------------------- | ---------------------------- | --------------------------- | --------------------------------------------------------- |
+| **CDC Connectors**    | Source is a database         | Change Data Capture         | SQL Server, MySQL, PostgreSQL, Oracle                     |
+| **Auto Loader**       | Files continuously arrive    | Automatic schema detection  | Log files dropped to Azure Data Lake Storage every minute |
+| **Batch Ingestion**   | Files arrive on schedule     | Simple file reads           | Nightly CSV export from legacy system                     |
+| **Streaming**         | Real-time events from queues | Kafka/Event Hub integration | Real-time clickstream from Kafka                          |
+| **Native Connectors** | Enterprise applications      | Pre-built connectors        | Salesforce, Workday, ServiceNow                           |
 
 ---
 
@@ -90,11 +81,9 @@ CDC efficiently captures only changed data (inserts, updates, deletes) from data
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart LR
     A[Source Database] -->|CDC Tracking| B[Change Log]
-    B -->|Lakeflow Connect| C[Bronze Layer]
+    B -->|Lakeflow Connect| C[Staging/Bronze Layer]
     
-    style A fill:#e8e8e8
-    style B fill:#a8d8ff
-    style C fill:#cd7f32,color:#fff
+    style C fill:#CD7F32,stroke:#8B4513,color:#FFFFFF
 ```
 
 **Configuration:**
@@ -123,7 +112,7 @@ flowchart LR
 Auto Loader incrementally and efficiently processes new data files as they arrive in cloud storage, with automatic schema detection and evolution.
 
 **When to use:**
-- Files land continuously in cloud storage (S3, ADLS, GCS)
+- Files land continuously in cloud storage (Azure Data Lake Storage)
 - New files arrive unpredictably throughout the day
 - Need automatic schema detection and evolution
 - Want automatic tracking of processed files
@@ -135,13 +124,9 @@ flowchart TD
     A[Files Land in Storage] --> B[Auto Loader Detects]
     B --> C[Schema Inference]
     C --> D[Process New Files Only]
-    D --> E[Bronze Layer]
+    D --> E[Staging/Bronze Layer]
     
-    style A fill:#e8e8e8
-    style B fill:#a8d8ff
-    style C fill:#a8d8ff
-    style D fill:#a8d8ff
-    style E fill:#cd7f32,color:#fff
+    style E fill:#CD7F32,stroke:#8B4513,color:#FFFFFF
 ```
 
 **Configuration:**
@@ -213,7 +198,7 @@ def bronze_partner_data():
 Real-time data ingestion from message queues and event streams.
 
 **When to use:**
-- Data arrives from queues (Kafka, Event Hub, Kinesis)
+- Data arrives from queues (Kafka, Event Hub)
 - Sub-minute latency required
 - Event-driven architecture
 - High-throughput real-time processing
@@ -258,22 +243,22 @@ def bronze_events():
 | **Streaming Tables** | Real-time processing | Continuous data ingestion and transformation |
 | **Expectations** | Data quality rules | Validation and enforcement at each layer |
 
-### Medal Architecture
+### Layered Architecture in Lakeflow
 
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart TD
-    A[Source Data] --> B[Bronze Tables<br/>Raw ingestion]
-    B --> C[Silver Tables<br/>Cleaned & validated]
-    C --> D[Gold Tables<br/>Business logic]
+    A[Source Data] --> B[Staging Layer<br/>Raw but structured]
+    B --> C[ADS Layer<br/>Cleansed & integrated]
+    C --> D[Front Room Layer<br/>Business model]
     
     B -.->|Expectations| B1[Quality Checks]
     C -.->|Expectations| C1[Quality Checks]
     D -.->|Expectations| D1[Quality Checks]
     
-    style B fill:#cd7f32,color:#fff
-    style C fill:#c0c0c0
-    style D fill:#ffd700
+    style B fill:#cd7f32,stroke:#8b5a2b,color:#FFFFFF
+    style C fill:#c0c0c0,stroke:#808080,color:#111827
+    style D fill:#ffd700,stroke:#DAA520,color:#111827
     style B1 fill:#ff6b6b,color:#fff
     style C1 fill:#ff6b6b,color:#fff
     style D1 fill:#ff6b6b,color:#fff
@@ -306,7 +291,7 @@ flowchart TD
 
 | Aspect | DLT Pipelines | Standard Notebooks |
 |--------|---------------|-------------------|
-| **Multi-layer pipelines** | ✅ Bronze → Silver → Gold | ❌ Single-step transformations |
+| **Multi-layer pipelines** | ✅ Landing → ADS → Front Room (Plainsight semantic layers, optionally mapped to Bronze/Silver/Gold) | ❌ Single-step transformations |
 | **Data quality checks** | ✅ Built-in expectations | ⚠️ Manual validation needed |
 | **Dependency management** | ✅ Automatic | ❌ Manual orchestration |
 | **Quick prototypes** | ❌ More overhead | ✅ Fast iteration |
@@ -319,7 +304,7 @@ flowchart TD
 ### When to Use DLT Pipelines
 
 **Use DLT for:**
-- Production ETL with bronze → silver → gold layers
+- Production ETL across Landing → ADS → Front Room layers (our preferred semantic layering; optionally mapped to bronze/silver/gold where the platform or team already uses Medallion - see [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]] and [[Data Layers and Modeling]])
 - Pipelines requiring data quality validation
 - Team collaboration on shared transformations
 - Automatic dependency management needs
@@ -329,12 +314,12 @@ flowchart TD
 import dlt
 from pyspark.sql.functions import col, current_timestamp, sum, count
 
-# Bronze: Raw data ingestion
+# Landing: Raw data ingestion (Bronze equivalent)
 @dlt.table(
-    comment="Raw sales data from source system",
-    table_properties={"quality": "bronze"}
+    comment="Raw sales data from source system (Landing/Bronze)",
+    table_properties={"layer": "landing"}
 )
-def bronze_sales():
+def landing_sales():
     return (
         spark.readStream
             .format("cloudFiles")
@@ -342,29 +327,29 @@ def bronze_sales():
             .load("/mnt/raw/sales/")
     )
 
-# Silver: Cleaned and validated
+# ADS: Cleaned and integrated (Silver equivalent)
 @dlt.table(
-    comment="Cleaned sales data with quality checks",
-    table_properties={"quality": "silver"}
+    comment="Cleaned, integrated sales data with quality checks (ADS/Silver)",
+    table_properties={"layer": "ads"}
 )
 @dlt.expect_or_drop("valid_sale_id", "sale_id IS NOT NULL")
 @dlt.expect_or_drop("positive_amount", "amount > 0")
 @dlt.expect("recent_data", "sale_date >= current_date() - 365")
-def silver_sales():
+def ads_sales():
     return (
-        dlt.read_stream("bronze_sales")
+        dlt.read_stream("landing_sales")
             .withColumn("processed_at", current_timestamp())
             .dropDuplicates(["sale_id"])
     )
 
-# Gold: Business aggregations
+# Front Room: Business aggregations (Gold equivalent)
 @dlt.table(
-    comment="Daily revenue by product category",
-    table_properties={"quality": "gold"}
+    comment="Daily revenue by product category (Front Room/Gold)",
+    table_properties={"layer": "front_room"}
 )
-def gold_daily_revenue():
+def front_room_daily_revenue():
     return (
-        dlt.read("silver_sales")
+        dlt.read("ads_sales")
             .groupBy("sale_date", "product_category")
             .agg(
                 sum("amount").alias("total_revenue"),
@@ -374,12 +359,12 @@ def gold_daily_revenue():
 ```
 
 **Best practices:**
-- ✅ Follow medal architecture (bronze → silver → gold)
+- ✅ Follow our semantic layering (Landing → ADS → Front Room) and, where needed, map these to Medallion-style bronze/silver/gold for platform alignment (see [[Data Layers and Modeling]] and [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]])
 - ✅ Add quality expectations at each layer
 - ✅ Use streaming for real-time, batch for scheduled updates
 - ✅ Document table purposes and business logic
 - ❌ Don't mix data quality levels in one table
-- ❌ Don't skip bronze layer—always preserve raw data
+- ❌ Don't skip the Staging layer - always preserve structured copies of raw data feeding ADS
 
 > [!tip] DLT for Production
 > Use DLT for production pipelines. The declarative approach and built-in quality checks provide reliability and maintainability worth the initial learning curve.
@@ -433,25 +418,25 @@ transformed.write.mode("overwrite").saveAsTable("catalog.schema.customers")
 | **Batch** | Complex multi-table joins | Hours | Star schema dimension loading |
 | **Batch** | Large historical reprocessing | Days | Backfilling 3 years of historical data |
 
-**Streaming example:**
+**Streaming example (ADS equivalent of Silver):**
 ```python
 # Streaming: Process events in near real-time
 @dlt.table
-def silver_events_stream():
+def ads_events_stream():
     return (
-        dlt.read_stream("bronze_events")
+        dlt.read_stream("landing_events")
             .filter(col("event_type").isin(["click", "purchase"]))
             .withWatermark("event_timestamp", "10 minutes")
     )
 ```
 
-**Batch example:**
+**Batch example (Front Room equivalent of Gold):**
 ```python
 # Batch: Daily aggregation
 @dlt.table
-def gold_daily_metrics():
+def front_room_daily_metrics():
     return (
-        dlt.read("silver_events")  # No stream - batch read
+        dlt.read("ads_events_stream")  # No stream - batch read
             .filter(col("event_date") == current_date())
             .groupBy("user_id", "event_type")
             .agg(count("*").alias("event_count"))
@@ -479,18 +464,18 @@ def gold_daily_metrics():
 @dlt.expect("valid_email", "email IS NOT NULL")  # Track missing emails
 @dlt.expect_or_drop("valid_amount", "amount > 0")  # Drop negative amounts
 @dlt.expect_or_fail("critical_id", "customer_id IS NOT NULL")  # Stop if missing IDs
-def silver_customers():
-    return dlt.read_stream("bronze_customers")
+def ads_customers():
+    return dlt.read_stream("landing_customers")
 ```
 
 **Best practices:**
 - ✅ Use `expect()` for data profiling and monitoring
 - ✅ Use `expect_or_drop()` for most quality checks
 - ✅ Use `expect_or_fail()` only for critical business keys
-- ❌ Don't use `expect_or_fail()` liberally—it stops the entire pipeline
+- ❌ Don't use `expect_or_fail()` liberally - it stops the entire pipeline
 
 > [!warning] Production Consideration
-> Use `expect_or_fail()` sparingly—it will stop your entire pipeline. Reserve it for truly critical validations where data integrity failures would cause downstream issues.
+> Use `expect_or_fail()` sparingly - it will stop your entire pipeline. Reserve it for truly critical validations where data integrity failures would cause downstream issues.
 
 ---
 
@@ -513,10 +498,6 @@ flowchart LR
     C --> C1[Cron or Continuous<br/>Based on needs]
     D --> D1[Email alerts<br/>Quality metrics]
     
-    style A fill:#c9f0c9
-    style B fill:#a8d8ff
-    style C fill:#ffd4a3
-    style D fill:#ffe1e1
 ```
 
 > [!warning] Cost Optimization Rule
@@ -631,11 +612,11 @@ dbutils.notebook.exit(f"Success: {current_count} rows processed at {datetime.now
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart TD
-    A[SQL Server<br/>Transactional DB] -->|Lakeflow Connect<br/>CDC| B[Bronze Layer]
-    C[S3 Bucket<br/>CSV Files] -->|Auto Loader| B
+    A[SQL Server<br/>Transactional DB] -->|Lakeflow Connect<br/>CDC| B[Bronze/Staging Layer]
+    C[Azure Data Lake Storage<br/>CSV Files] -->|Auto Loader| B
     
-    B -->|DLT Pipeline<br/>Batch Mode| D[Silver Layer<br/>with Quality Checks]
-    D -->|DLT Pipeline<br/>Batch Mode| E[Gold Layer<br/>Aggregations]
+    B -->|DLT Pipeline<br/>Batch Mode| D[Silver/ADS Layer<br/>with Quality Checks]
+    D -->|DLT Pipeline<br/>Batch Mode| E[Gold/Front-Room Layer<br/>Aggregations]
     E --> F[Power BI<br/>Daily Reports]
     
     G[Lakeflow Job<br/>2 AM Daily] --> B
@@ -689,7 +670,7 @@ flowchart TD
 | ✅ Add expectations at each layer | Catch quality issues early in pipeline |
 | ✅ Use streaming only when latency requires it | Batch is simpler and cheaper for most use cases |
 | ✅ Document table purposes and business logic | Maintainability for team collaboration |
-| ❌ Don't mix quality levels in one table | Maintain clear bronze/silver/gold boundaries |
+| ❌ Don't mix quality levels in one table | Maintain clear bronze/silver/gold (or Landing/ADS/Front Room) boundaries |
 | ❌ Don't use `expect_or_fail()` liberally | Reserve for truly critical validations |
 | ❌ Don't build production pipelines in notebooks | Use DLT for reliability and monitoring |
 
@@ -715,9 +696,12 @@ flowchart TD
 
 ### Fabric Architecture (Similar Concepts)
 - [[Data Layers and Modeling]] - Medal architecture principles applicable to Lakeflow
-- [[Landing and Staging]] - Bronze layer patterns and best practices
+- [[Landing and Staging]] - Staging (Bronze-equivalent) patterns and best practices
 - [[Data Pipeline Patterns]] - Common pipeline architectures
 - [[Lakehouse Architecture]] - Overall data platform design philosophy
+
+> [!info] External Reference
+> For vendor-agnostic patterns and examples of scalable data and AI architectures on Databricks, see the official **Databricks Architecture Center**: <https://www.databricks.com/resources/architectures>
 
 ### dbt Integration
 - [[Project Structure]] - Organizing transformation code for maintainability

@@ -1,7 +1,7 @@
 # dbt Operations & Testing Playbook
 
 ## Operating Principles
-Keep dbt operations boring by standardizing how jobs run, how failures alert, and which tests guard each layer. Treat runs as production software pipelines—even if analysts write the SQL.
+Keep dbt operations boring by standardizing how jobs run, how failures alert, and which tests guard each layer. Treat runs as production software pipelines - even if analysts write the SQL.
 
 > [!📝 Run Vocabulary]- 
 > - **Development:** local, iterative, `dbt build --select my_model+`
@@ -55,7 +55,7 @@ Document selectors, targets, threads, and variables for each scenario so operato
 | ADS    | Key uniqueness and relationship depth | 
 | Front Room (Dims/Facts) | Contracts, metric-specific assertions, dimensional constraints (e.g., Type 2 checks) | 
 
-> Intermediate models that remain ephemeral should not accumulate dedicated test suites—lean on staging coverage upstream and ADS/front-room constraints downstream.
+> Intermediate models that remain ephemeral should not accumulate dedicated test suites - lean on staging coverage upstream and ADS/front-room constraints downstream.
 
 ---
 
@@ -66,5 +66,5 @@ Document selectors, targets, threads, and variables for each scenario so operato
 ## Performance & Cost Observability
 - Prefer incremental models for large tables to avoid full reloads; ensure `is_incremental()` filters limit processing to new partitions.  
 - Profile slow queries (warehouse query plan, execution stats) and refactor heavy constructs (e.g., `COUNT DISTINCT`) into pre-aggregations when needed.  
-- Review materialization choices periodically—ephemeral chains are great for small datasets but promoting high-cost intermediates to tables can cut runtime and spend.
+- Review materialization choices periodically - ephemeral chains are great for small datasets but promoting high-cost intermediates to tables can cut runtime and spend.
 

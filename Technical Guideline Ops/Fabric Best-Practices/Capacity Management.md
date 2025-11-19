@@ -151,8 +151,8 @@ flowchart LR
 A focused monitoring strategy gives teams the telemetry they need to keep capacities healthy, make data-driven scaling decisions, and control costs. Use a combination of built-in dashboards, usage reports and the Microsoft Fabric Capacity Metrics App for live operations and trend analysis.
 
 ### Primary monitoring sources
-- Fabric Admin Center — real-time operational view (live troubleshooting, active sessions)
-- Capacity Metrics App — trend-driven capacity analysis (CU consumption, memory pressure, autoscale tuning)
+- Fabric Admin Center - real-time operational view (live troubleshooting, active sessions)
+- Capacity Metrics App - trend-driven capacity analysis (CU consumption, memory pressure, autoscale tuning)
 - FUAM (Fabric Usage & Activity Monitoring) - dataset/query growth, adoption and long-term trends
 - Power BI Activity Log - audit, refresh history and query-level troubleshooting
 - Custom scripts / APIs - automation, alerting and bespoke reporting into Azure Monitor or your SIEM

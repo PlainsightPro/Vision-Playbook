@@ -21,7 +21,7 @@ We view knowledge-sharing **across boundaries** as vital to driving innovation a
 - **Founders of the "Fabric Belgium" initiative**, acting as community ambassadors to drive external collaboration. See [[🧑‍🤝‍🧑 Communities]] for more information.
 
 ## 2. The Journey Matters 🪜
-The process of achieving outcomes is just as important as the results. We emphasize building strong partnerships with our customers, engaging in transparent communication, and creating experiences that matter. Our team spirit is built on camaraderie, and we recognize that every step of our journey—from team building to feedback—is an opportunity for growth and improvement.
+The process of achieving outcomes is just as important as the results. We emphasize building strong partnerships with our customers, engaging in transparent communication, and creating experiences that matter. Our team spirit is built on camaraderie, and we recognize that every step of our journey - from team building to feedback - is an opportunity for growth and improvement.
 
 ### How We Live This Value
 - **Placing client collaboration** at the center of every project, ensuring customer-centricity and shared success.

@@ -1,6 +1,6 @@
 # 🚗 Mobility 🛴
 
-> *Mobility is more than just getting from A to B—it's about flexibility, sustainability, and making the journey your own. 🚀  🚴‍♂️🚆🚗*
+> *Mobility is more than just getting from A to B - it's about flexibility, sustainability, and making the journey your own. 🚀  🚴‍♂️🚆🚗*
 
 ---
 
@@ -44,7 +44,7 @@ The Mobility Budget is a fixed amount that you can use to manage your own transp
 - **Parking fees**
 - Up to 30 days per year to rent a diesel car (e.g., for vacation)
 
-Submitting expenses is easy—just upload a photo through the [app](https://play.google.com/store/apps/details?id=com.mobility.olympus&hl=en&pli=1)! 📱
+Submitting expenses is easy - just upload a photo through the [app](https://play.google.com/store/apps/details?id=com.mobility.olympus&hl=en&pli=1)! 📱
 
 ### 🛤️ The 3 Pillars of the Mobility Budget
 

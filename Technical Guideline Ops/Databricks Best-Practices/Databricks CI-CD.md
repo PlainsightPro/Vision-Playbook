@@ -19,9 +19,6 @@ flowchart LR
     G --> H[Monitor]
     H --|Rollback if needed|--> E
     
-    style A fill:#e1f5ff
-    style G fill:#d4edda
-    style H fill:#fff3cd
 ```
 
 ## Core Principles of CI/CD
@@ -57,8 +54,6 @@ Effective CI/CD pipelines share foundational principles regardless of implementa
 - Maintain separate workspaces for development, staging, and production
 - Choose tools that match your cloud ecosystem:
   - **Azure**: Azure DevOps + Databricks Asset Bundles or Terraform
-  - **AWS**: GitHub Actions + Databricks Asset Bundles or Terraform
-  - **GCP**: Cloud Build + Databricks Asset Bundles or Terraform
 
 ### Monitor and Automate Rollbacks
 
@@ -68,7 +63,7 @@ Track key metrics:
 - Test coverage
 - Pipeline execution times
 
-==Implement automated rollback mechanisms for failed deployments to minimize downtime.==
+Implement automated rollback mechanisms for failed deployments to minimize downtime.
 
 ### Unify Asset Management
 
@@ -228,10 +223,7 @@ Actions:
 
 ### Step 2: Upload and Store Artifact
 
-**Store compiled files** in Databricks Unity Catalog volume or artifact repository:
-- AWS S3
-- Azure Blob Storage
-- Databricks Unity Catalog volumes (recommended)
+**Store compiled files** in Databricks Unity Catalog volume or artifact repository Azure Blob Storage or Databricks Unity Catalog volumes (recommended)
 
 **Versioning scheme examples:**
 ```

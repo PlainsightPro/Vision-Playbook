@@ -3,7 +3,7 @@ publish: false
 ---
 # Welcome to Plainsight's GitHub Repository! 🎉
 
-You've found our Git page—welcome! We're excited to have you here.
+You've found our Git page - welcome! We're excited to have you here.
 
 To get started and learn more about how we do things at Plainsight, please read our Vision Playbook.
 

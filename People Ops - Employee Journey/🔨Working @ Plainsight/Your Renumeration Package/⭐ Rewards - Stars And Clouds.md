@@ -42,7 +42,7 @@ Check out the cool swag you can get with your Clouds on [our intranet](https://p
 
 ### Additional Guidelines
 - Clouds ⛅ don’t have a monetary value.
-- Clouds accumulate individually—no splitting required.
+- Clouds accumulate individually - no splitting required.
 - Cloud rewards adhere to Social Contribution guidelines.
 
 ---

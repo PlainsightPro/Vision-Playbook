@@ -38,10 +38,10 @@ graph LR
 
 | Aspect | Details |
 |--------|---------|
-| **Performance** | ⚡ **Fastest** — all data compressed in-memory using columnar storage |
+| **Performance** | ⚡ **Fastest** - all data compressed in-memory using columnar storage |
 | **Data Freshness** | Depends on scheduled refresh (hourly minimum with Premium) |
 | **Data Volume** | Limited by available memory and capacity SKU |
-| **Feature Support** | ✅ Full — all DAX, all visuals, all modeling capabilities |
+| **Feature Support** | ✅ Full - all DAX, all visuals, all modeling capabilities |
 | **Network Dependency** | None after initial load |
 
 ### When to Use Import
@@ -83,10 +83,10 @@ Import should be your **default choice** unless specific constraints force alter
 
 | Aspect | Details |
 |--------|---------|
-| **Performance** | 🐢 **Typically slow** — constrained by source system and network latency |
-| **Data Freshness** | ✅ **Real-time** — always queries live data |
+| **Performance** | 🐢 **Typically slow** - constrained by source system and network latency |
+| **Data Freshness** | ✅ **Real-time** - always queries live data |
 | **Data Volume** | Unlimited (queries execute at source) |
-| **Feature Support** | ⚠️ Limited — some DAX functions unsupported, slower calculations |
+| **Feature Support** | ⚠️ Limited - some DAX functions unsupported, slower calculations |
 | **Network Dependency** | Required for every query |
 
 ### When to Use DirectQuery
@@ -126,7 +126,7 @@ DirectQuery is appropriate when Import is not feasible due to data volume or rea
 
 | Aspect | Details |
 |--------|---------|
-| **Performance** | 🚀 **Fast** — selective columnar reads from optimized parquet files |
+| **Performance** | 🚀 **Fast** - selective columnar reads from optimized parquet files |
 | **Data Freshness** | Near real-time (depends on upstream Delta table refresh) |
 | **Data Volume** | Large scale supported (billions of rows) |
 | **Feature Support** | ✅ Full DAX support |
@@ -156,9 +156,9 @@ DirectLake is the **preferred mode for large-scale Fabric workloads**:
 
 **Don't:**
 - Don't use DirectLake outside Microsoft Fabric ecosystem (not supported)
-- Don't expect instant first-load performance — initial query loads parquet data
-- Don't skip Delta table optimization — poorly structured parquet degrades performance
-- Don't ignore capacity memory limits — DirectLake still requires memory for cache
+- Don't expect instant first-load performance - initial query loads parquet data
+- Don't skip Delta table optimization - poorly structured parquet degrades performance
+- Don't ignore capacity memory limits - DirectLake still requires memory for cache
 
 ---
 
@@ -196,10 +196,10 @@ flowchart TD
 
 ## Related Pages
 
-- [[Data Modeling in Power BI]] — Star schema design principles apply to all connection modes
-- [[Technical Guideline Ops/Power BI Best-Practices/Naming Conventions]] — Consistent naming critical for DirectQuery SQL generation
-- [[Technical Guideline Ops/Power BI Best-Practices/Third Party Tooling]] — VertiPaq Analyzer essential for Import optimization
-- [[DAX Coding Standards]] — DirectQuery requires simpler DAX patterns
-- [[Data Layers and Modeling]] — Architectural context for choosing connection modes
+- [[Data Modeling in Power BI]] - Star schema design principles apply to all connection modes
+- [[Technical Guideline Ops/Power BI Best-Practices/Naming Conventions]] - Consistent naming critical for DirectQuery SQL generation
+- [[Technical Guideline Ops/Power BI Best-Practices/Third Party Tooling]] - VertiPaq Analyzer essential for Import optimization
+- [[DAX Coding Standards]] - DirectQuery requires simpler DAX patterns
+- [[Data Layers and Modeling]] - Architectural context for choosing connection modes
 
 

@@ -19,7 +19,7 @@ Once your proposal is signed, we begin preparing for your arrival:
 Your first day with us is all about getting you settled and connected:
 
 - **Welcome Kit**: You’ll receive your laptop, mouse, a welcome gift, and some time to set up your laptop according to your preferences.
-- **Orientation**: We’ll walk you through everything you need to know — how we work, the tools we use, and where to go when you need help or have questions.
+- **Orientation**: We’ll walk you through everything you need to know - how we work, the tools we use, and where to go when you need help or have questions.
   - We’ll make sure your phone subscription gets transferred to our [Mobile Vikings account](https://mobilevikings.be).
   - You’ll get added to our WhatsApp group.
   - If you chose a company car: you’ll get the keys 🔑.
@@ -27,7 +27,7 @@ Your first day with us is all about getting you settled and connected:
 - **Meet the Team**: After covering the essentials, we’ll schedule time for you to meet some of your new colleagues and start building connections.
 
 ## 🚀 Plainsight Academy
-Every September, we host the Plainsight Academy—a five-week training program designed to kickstart your journey with us:
+Every September, we host the Plainsight Academy - a five-week training program designed to kickstart your journey with us:
 
 - **Consultant-Led Trainings**: Our own consultants lead these sessions, sharing their expertise and real-world experience.
 - **Soft Skills**: We also bring in external experts for soft skills training, ensuring you’re well-rounded and equipped to succeed.

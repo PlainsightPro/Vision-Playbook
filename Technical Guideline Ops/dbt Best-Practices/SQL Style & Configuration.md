@@ -2,7 +2,7 @@
 
 ## SQL File Structure & Style
 - **Config first:** Always open with `{{ config(...) }}` (or a concise comment) so overrides are obvious. Add a blank line before the first CTE.
-- **CTE runway:** Chain CTEs in logical order - sources ➜ transformations ➜ final projection—and document major blocks with short comments.
+- **CTE runway:** Chain CTEs in logical order - sources ➜ transformations ➜ final projection - and document major blocks with short comments.
 - **Alias discipline:** Use lowercase snake_case aliases, select explicit columns (no `select *`), and alias each `ref()`/`source()` once.
 - **Deterministic ordering:** End with a single `final` CTE (or last `select`) to make diffs predictable and enforce “one exit point”.
 - **Macro + var hygiene:** Centralize reusable expressions in macros and read runtime toggles from `var()`/`env_var()` instead of hardcoding constants.

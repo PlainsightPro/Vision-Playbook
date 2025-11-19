@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-This is **Plainsight's Vision Playbook** — an open-source company handbook built on transparency, documenting organizational purpose, values, technical guidelines, and operational processes. The repository is written in **Markdown** with **Obsidian-style wiki links** (`[[Page Name]]`) and is managed as an Obsidian vault synced via Git.
+This is **Plainsight's Vision Playbook** - an open-source company handbook built on transparency, documenting organizational purpose, values, technical guidelines, and operational processes. The repository is written in **Markdown** with **Obsidian-style wiki links** (`[[Page Name]]`) and is managed as an Obsidian vault synced via Git.
 
-**Core philosophy**: "Plain Sight" — transparency builds trust, trust generates speed and impact.
+**Core philosophy**: "Plain Sight" - transparency builds trust, trust generates speed and impact.
 
 ## Repository Structure
 
@@ -25,7 +25,7 @@ Vision-Playbook/
 ## Key Conventions
 
 ### Linking & Navigation
-Use `[[Page Name]]` for internal wiki links (Obsidian convention). Embed images with `![[image.png]]` (no path needed—Obsidian automatically finds images in the `/images/` folder). Preserve emojis in filenames exactly as they appear (e.g., `🙋️ START HERE.md`). Maintain spaces in folder names like `People Ops - Employee Journey/`.
+Use `[[Page Name]]` for internal wiki links (Obsidian convention). Embed images with `![[image.png]]` (no path needed - Obsidian automatically finds images in the `/images/` folder). Preserve emojis in filenames exactly as they appear (e.g., `🙋️ START HERE.md`). Maintain spaces in folder names like `People Ops - Employee Journey/`.
 
 > [!warning] Image Embedding
 > Always use Obsidian wiki-style for images: `![[image.png]]` instead of standard Markdown syntax. This ensures images resolve correctly regardless of file location and maintains consistency across the playbook.
@@ -37,7 +37,7 @@ Use `[[Page Name]]` for internal wiki links (Obsidian convention). Embed images 
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 ```
 
-Keep diagrams clean and professional—use minimal colors to maintain clarity. Readers need visual clarity for quick comprehension.
+Keep diagrams clean and professional - use minimal colors to maintain clarity. Readers need visual clarity for quick comprehension.
 
 ### Obsidian Power Features
 Leverage Obsidian's full formatting capabilities:
@@ -62,7 +62,7 @@ Write for **consultants in action**, not academic completeness. Professional yet
 
 ## When Making Changes
 
-Preserve mermaid config blocks, callout syntax, and table formatting. Update `[[Old Page Name]]` references when renaming. Include practical examples or diagrams—match Plainsight's warm, transparent voice. 
+Preserve mermaid config blocks, callout syntax, and table formatting. Update `[[Old Page Name]]` references when renaming. Include practical examples or diagrams - match Plainsight's warm, transparent voice. 
 
 **Before editing, verify:**
 - Obsidian compatibility maintained?

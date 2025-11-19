@@ -7,7 +7,7 @@ Design your dbt repo so the filesystem narrates how data travels from raw source
 > Each folder should describe *what problem the models solve*, not who authored them. Align structure to the business process or data contract.
 
 > [!warning] Keep dbt’s Top-Level Skeleton
-> Stick to dbt’s default root folders (`models/`, `snapshots/`, `tests/`, `macros/`, `analysis/`, etc.). Only organize within those directories—renaming or reshuffling the top-level structure breaks conventions, tooling, and contributor expectations.
+> Stick to dbt’s default root folders (`models/`, `snapshots/`, `tests/`, `macros/`, `analysis/`, etc.). Only organize within those directories - renaming or reshuffling the top-level structure breaks conventions, tooling, and contributor expectations.
 
 ---
 

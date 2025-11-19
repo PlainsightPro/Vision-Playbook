@@ -26,7 +26,7 @@ flowchart TD
 
 | Aspect | Warehouse | Lakehouse |
 |--------|-----------|-----------|
-| **Best for** | Enterprise SQL/BI analytics, multi-table ACID transactions | Data engineering, mixed data types, medallion architectures |
+| **Best for** | Enterprise SQL/BI analytics, multi-table ACID transactions | Data engineering, mixed data types, medallion architectures (Bronze/Silver/Gold, see [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]]) |
 | **Developer profile** | SQL developers, BI analysts, citizen developers | Data engineers, data scientists, Python/Spark developers |
 | **Data loading** | SQL, pipelines, dataflows | Spark, pipelines, dataflows, shortcuts, notebooks |
 | **Language** | T-SQL (full DQL, DML, DDL) | PySpark, Spark SQL (limited T-SQL via SQL endpoint) |
@@ -71,7 +71,7 @@ flowchart TD
 **When to use:**
 - Mixed data types (logs, images, raw data + structured tables)
 - Data engineering and data science workflows (Spark / Python)
-- Medallion architecture (bronze → silver → gold zones)
+- Medallion architecture (bronze → silver → gold zones, see [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]])
 - Rapid data exploration and prototyping
 - Incremental data pipelines with Spark
 
@@ -81,7 +81,7 @@ flowchart TD
 - **SQL analytics endpoint**: Read-only T-SQL endpoint for querying Delta tables and shortcuts
 - **Open format**: Data in Delta format, accessible via Spark and external tools
 - **Flexible ingestion**: Pipelines, dataflows, shortcuts, notebooks, ETL code
-- **Medallion-friendly**: Zone-based structure for bronze (raw), silver (cleaned), and gold (analytics)
+- **Medallion-friendly**: Zone-based structure for bronze (raw), silver (cleaned), and gold (analytics) - see [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]] for how Plainsight maps this to explicit layers
 - **Large-scale processing**: Spark compute for transformations and ML
 
 **Typical architecture:**
@@ -178,7 +178,7 @@ Reserve capacity for predictable workloads; scale up for ad-hoc or peak analytic
 ---
 
 ## Related Pages
-- [[3. Lakehouse Architecture]] — Deep dive into medallion design patterns
-- [[6. Capacity Management]] — Optimize Fabric capacity for both platforms
-- [[2. Workspace Organization]] — Structure teams and permissions
-- [[4. Data Pipeline Patterns]] — Design data flows for either platform
+- [[3. Lakehouse Architecture]] - Deep dive into medallion design patterns
+- [[6. Capacity Management]] - Optimize Fabric capacity for both platforms
+- [[2. Workspace Organization]] - Structure teams and permissions
+- [[4. Data Pipeline Patterns]] - Design data flows for either platform

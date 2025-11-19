@@ -94,6 +94,6 @@ If your data engineering or data science workloads require a higher quota than y
    - This ensures your Autoscale Billing model can accommodate increased demand without interrupting Spark workloads
 
 ## Related Pages
-- [[6. Capacity Management|Capacity Management]] — Overall capacity planning and monitoring
-- [[4. Data Pipeline Patterns|Data Pipeline Patterns]] — Design Spark jobs for efficiency
-- [[3. Lakehouse Architecture|Lakehouse Architecture]] — Understand medallion architecture patterns
+- [[6. Capacity Management|Capacity Management]] - Overall capacity planning and monitoring
+- [[4. Data Pipeline Patterns|Data Pipeline Patterns]] - Design Spark jobs for efficiency
+- [[3. Lakehouse Architecture|Lakehouse Architecture]] - Understand medallion architecture patterns

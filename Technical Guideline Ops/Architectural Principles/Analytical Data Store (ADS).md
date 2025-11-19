@@ -60,8 +60,8 @@ The ADS layer contains two distinct types of tables working in tandem:
 | **Snapshot Tables** | Historical versions | Multiple rows (all versions) | ✅ ==All columns tracked with SCD Type 2== | `ADS_EntityName_Snapshot`<br/>(e.g., `ADS_Customer_Snapshot`, `ADS_Product_Snapshot`) | ==SCD Type 2 on ALL attributes== |
 
 > [!warning] Key Distinction: Snapshot Tables vs. Dimension Tables
-> **Snapshot tables** in the ADS layer apply SCD Type 2 tracking to ALL columns—every attribute change creates a new version. This differs from [[Dimension Tables]] in the Dimensional Model, which selectively apply SCD strategies:
-> - **Snapshot tables**: Pure SCD Type 2 on all attributes—complete historical lineage for downstream flexibility. This type of table is only used in the ADS layer.
+> **Snapshot tables** in the ADS layer apply SCD Type 2 tracking to ALL columns - every attribute change creates a new version. This differs from [[Dimension Tables]] in the Dimensional Model, which selectively apply SCD strategies:
+> - **Snapshot tables**: Pure SCD Type 2 on all attributes - complete historical lineage for downstream flexibility. This type of table is only used in the ADS layer.
 > - **Dimension tables**: Mix of SCD Type 0 (never changes), SCD Type 1 (overwrite some attributes), and SCD Type 2 (track specific attributes). This type of table is only used in the Dimension/Fact Layer.
 > 
 > This distinction allows dimensional modelers to choose which attributes require history tracking when building dimensions from snapshot sources.
@@ -167,7 +167,7 @@ CREATE TABLE ADS_Customer_Snapshot
 > - Downstream dimensions require SCD Type 2 tracking
 > - Compliance or audit requirements mandate historical tracking
 > 
-> Transaction-oriented tables (like `Invoice`, `SalesBudget`) typically don't need snapshots—they're already point-in-time records.
+> Transaction-oriented tables (like `Invoice`, `SalesBudget`) typically don't need snapshots - they're already point-in-time records.
 
 ## Key Transformations
 
@@ -262,10 +262,10 @@ Traceable data lineage with validation flags ensures regulatory compliance and s
 | **Consistent naming conventions**        | Use `ADS_EntityName` for base tables, `ADS_EntityName_Snapshot` for snapshot tables                   |
 | **Quality checks before entry**          | Don't propagate bad data downstream                                                               |
 | **Balance denormalization**              | Flatten enough for usability, not so much you lose modeling flexibility                           |
-| **Selective snapshotting**               | Only create snapshot tables for entities requiring historical tracking—avoid unnecessary overhead |
+| **Selective snapshotting**               | Only create snapshot tables for entities requiring historical tracking - avoid unnecessary overhead |
 | **Synchronize base and snapshot tables** | Ensure base table updates trigger corresponding snapshot inserts when attributes change           |
 | **Version control transformations**      | Treat ETL code as critical infrastructure                                                         |
-| **Apply DRY principles**                 | Extract reusable transformations into functions/macros—see [[DRY  - Don't Repeat Yourself]] for patterns |
+| **Apply DRY principles**                 | Extract reusable transformations into functions/macros - see [[DRY  - Don't Repeat Yourself]] for patterns |
 
 > [!warning] Common Pitfalls
 > **Over-denormalization**: Don't flatten everything into massive wide tables. You'll lose the modeling flexibility needed for efficient front room design downstream.
