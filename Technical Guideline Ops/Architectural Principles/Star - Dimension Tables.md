@@ -165,9 +165,9 @@ Manage historical changes with three primary strategies:
 > [!warning] Balance Usability vs. Accuracy
 > Too many SCD Type 2 changes create overwhelming version counts. If an attribute changes frequently, consider storing it in the [[Fact Tables]] instead.
 
-### ADS Dimensions
+### Conformed Dimensions
 
-**ADS dimensions** are shared across multiple fact tables, ensuring consistency and reducing redundancy.
+**Conformed dimensions** are shared across multiple fact tables, ensuring consistency and reducing redundancy.
 
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
@@ -192,7 +192,7 @@ graph TD
 
 **Examples:** Date, Product, Customer, Geography
 
-Design ADS dimensions with attributes relevant to ALL related fact tables.
+Design conformed dimensions with attributes relevant to ALL related fact tables.
 
 ### Role-Playing Dimensions
 

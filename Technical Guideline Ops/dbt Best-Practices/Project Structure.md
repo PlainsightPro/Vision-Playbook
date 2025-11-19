@@ -107,7 +107,7 @@ models:
 | Landing      | `land_<source>_<entity>`    | `external` or `view`    | Optional preprocessing step; use external tables or incremental patterns. Skip if staging can directly reference sources. |
 | Staging      | `stg_<source>_<entity>`     | `view`                  | Mirrors upstream grain, grouped by source folders. |
 | Intermediate | `int_<domain>_<action>`     | `ephemeral` or `view`   | Domain folders communicate owners - verbs explain intent (`int_finance_orders_enriched`). |
-| ADS    | `c_<domain>_<entity>`       | `table` / `incremental` | Harmonized, reusable entities that supply multiple experiences. |
+| ADS    | `ads_<entity>`              | `table` / `incremental` | Harmonized, reusable entities that supply multiple experiences. |
 | Front Room   | `<business_concept>`        | `view`                  | Consumer-facing names (e.g., `orders`, `customers_daily`, `dim_finance_account`). |
 
 

@@ -146,8 +146,8 @@ orders_with_customer as (
         o.order_date,
         o.updated_at
     from staged_orders as o
-    left join {{ ref('conf_customer') }} as c
-        on o.customer_id = c.customer_id
+        left join {{ ref('ads_customer') }} as c
+            on o.customer_id = c.customer_id
 ),
 
 -- Final CTE prepares the fact rows
