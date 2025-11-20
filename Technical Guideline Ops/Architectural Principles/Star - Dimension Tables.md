@@ -226,10 +226,10 @@ graph LR
 
 Include rows representing data quality states:
 
-| Surrogate Key | Meaning  | Use Case                        |
-| ------------- | -------- | ------------------------------- |
-| `-1`          | _Unknown | Lookup failure during fact load |
-| `-2`          | _N/A     | Not applicable                  |
+| Surrogate Key | Code | Meaning  | Use Case                        |
+| ------------- | -----| -------- | ------------------------------- |
+| `-1`          | _N/A | _N/A     | Not applicable                  |
+| `-2`          | _UNK | _Unknown | Lookup failure during fact load |
 
 
 ## Related Topics
