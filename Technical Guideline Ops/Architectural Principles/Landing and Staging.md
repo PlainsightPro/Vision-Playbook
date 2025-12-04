@@ -1,7 +1,7 @@
 # Landing and Staging Layers
 
 > [!info] Purpose
-> Landing and Staging form the entry point of your data platform's Back Room. **Landing** is optional (Δ-only preprocessing), while **Staging** is required (full replica of source data).
+> Landing and Staging form the Bronze entry point of your data platform. **Landing** is optional (delta-only preprocessing), while **Staging** is required (full replica of source data).
 
 ## Overview
 
@@ -14,32 +14,33 @@ graph LR
         S[(Source<br/>All data)]
     end
     
-    subgraph Data Platform - Back Room
-        L[Landing<br/>Δ-only<br/>Optional]:::optional
-        B[Staging<br/>All data<br/>Required]:::all
+    subgraph Bronze
+        L[Landing<br/>delta-only<br/>Optional]:::bronzeOptional
+        B[Staging<br/>All data<br/>Required]:::bronze
     end
     
-    subgraph Downstream
-        I[Intermediate]:::delta
-        C[ADS]:::all
+    subgraph Silver
+        I[Intermediate]:::silverOptional
+        C[ADS]:::silver
     end
     
     S -->|Optional| L
     L --> B
     S -.->|Direct| B
     B --> I
-    B --> C
+    I --> C
     
-    classDef optional fill:#E0E7FF,stroke:#6366F1,stroke-width:2px,stroke-dasharray:5 5,color:#4338CA;
-    classDef all fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
-    classDef delta fill:#F3F4F6,stroke:#6B7280,stroke-width:2px,stroke-dasharray:6 3,color:#374151;
+    classDef bronze fill:#CD7F32,stroke:#8B4513,stroke-width:1px,color:#FFFFFF;
+    classDef bronzeOptional fill:#CD7F32,stroke:#8B4513,stroke-width:2px,stroke-dasharray:5 5,color:#FFFFFF;
+    classDef silver fill:#C0C0C0,stroke:#808080,stroke-width:1px,color:#111827;
+    classDef silverOptional fill:#C0C0C0,stroke:#808080,stroke-width:2px,stroke-dasharray:5 5,color:#111827;
 ```
 
 ## Landing Layer (Optional)
 
 **Purpose:** Preprocess incremental data before merging into staging.
 
-**Data pattern:** Δ-only (increments, changes, new records)
+**Data pattern:** Delta-only (increments, changes, new records)
 
 **When to use:**
 - External ingestion tools populate external tables (e.g., replication tools, data connectors)
@@ -56,10 +57,10 @@ graph LR
 
 | Aspect              | Details                              |
 | ------------------- | ------------------------------------ |
-| **Data Volume**     | Incremental only (Δ)                 |
+| **Data Volume**     | Incremental only                     |
 | **Transformation**  | Minimal: parse, flatten, filter      |
 | **Materialization** | External tables, views, or ephemeral |
-| **Naming**          | `land_<source>_<entity>`             |
+| **Naming**          | `lnd_<source>_<entity>`              |
 | **Retention**       | Short-term or transient              |
 
 ### Common Landing Patterns
@@ -102,15 +103,15 @@ graph LR
 
 ### Why Staging Matters
 
-**Single source of truth:** Downstream layers reference staging, not raw sources; consistent data access across the platform.
-**Reprocessing capability:** Rebuild ads/dimensional layers from staging without impacting source systems.
-**Testing entry point:** Data quality checks start here: catch bad data before propagation.
-**Source isolation:** Each source system gets its own staging area - clear lineage and simplified troubleshooting.
+**Single source of truth:** Downstream layers reference staging, not raw sources; consistent data access across the platform.  
+**Reprocessing capability:** Rebuild ADS/dimensional layers from staging without impacting source systems.  
+**Testing entry point:** Data quality checks start here: catch bad data before propagation.  
+**Source isolation:** Each source system gets its own staging area - clear lineage and simplified troubleshooting.  
 
 ---
 ## Related Pages
 
 - [[Data Layers and Modeling]]: Full data platform architecture overview
 - [[Data Sources & Data Loading]]: Source system integration patterns
-- [[Analytical Data Store (ADS)]]:  Next transformation step after staging
+- [[Analytical Data Store (ADS)]]: Next transformation step after staging
 ---

@@ -39,6 +39,14 @@ Use `[[Page Name]]` for internal wiki links (Obsidian convention). Embed images 
 
 Keep diagrams clean and professional - use minimal colors to maintain clarity. Readers need visual clarity for quick comprehension.
 
+**Color legend (Medallion + semantic layers)**  
+- Bronze (Landing/Staging): `#CD7F32` fill, `#8B4513` stroke, light text  
+- Silver (ADS/intermediate): `#C0C0C0` fill, `#808080` stroke, dark text  
+- Gold (Business products: dims/facts/OBT/feature store): `#FFD700` fill, `#DAA520` stroke, dark text  
+Use dashed strokes for optional components and keep the `%%{init...}%%` block intact.
+
+> Avoid Mermaid parsing pitfalls: keep node labels simple (no parentheses/comma-heavy text); prefer separators like `Semantic / Reports / ML` instead of `Semantic, Reports (ML)`.
+
 ### Obsidian Power Features
 Leverage Obsidian's full formatting capabilities:
 

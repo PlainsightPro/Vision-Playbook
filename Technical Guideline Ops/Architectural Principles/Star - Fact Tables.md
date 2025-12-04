@@ -1,7 +1,7 @@
 # Fact Tables
 
 > [!info] Core Concept
-> Fact tables store **numeric measurements** (the "facts") of business events and processes. They contain the quantitative data you analyze - sales amounts, quantities, balances, temperatures - within the context provided by [[Dimension Tables]].
+> Fact tables store **numeric measurements** (the "facts") of business events and processes. They contain the quantitative data you analyze - sales amounts, quantities, balances, temperatures - within the context provided by [[Star - Dimension Tables]].
 
 ## Structure Overview
 
@@ -51,7 +51,7 @@ The **grain of the fact table** (combination of dimension keys) provides an impl
 
 ### Dimension Keys
 
-**Dimension keys determine the dimensionality and grain** of the fact table. These are foreign keys referencing surrogate keys in [[Dimension Tables]].
+**Dimension keys determine the dimensionality and grain** of the fact table. These are foreign keys referencing surrogate keys in [[Star - Dimension Tables]].
 
 ```mermaid
 %%{init: { "classDiagram": { "useMaxWidth": true } } }%%
@@ -209,7 +209,7 @@ Fact tables are typically:
 
 ## Related Topics
 
-- [[Dimension Tables]] - Provide context for fact measures through filtering and grouping
+- [[Star - Dimension Tables]] - Provide context for fact measures through filtering and grouping
 - [[Data Layers and Modeling]] - Where fact tables fit in the architecture
 - [[Analytical Data Store (ADS)]] - Source layer for cleaned data feeding into dimensional model
 

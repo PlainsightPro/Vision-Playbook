@@ -370,7 +370,7 @@ SELECT
     customer_segment,
     COUNT(*) as customer_count,
     SUM(lifetime_value) as total_value
-FROM front_room.customer_metrics  -- Gold-equivalent schema
+FROM gold.customer_metrics  -- Gold-equivalent schema
 GROUP BY customer_segment
 ORDER BY total_value DESC
 ```
@@ -383,7 +383,7 @@ import dlt
 @dlt.table(
     comment="Complex multi-table aggregation - Photon justified"
 )
-def front_room_sales_summary():
+def gold_sales_summary():
     return (
         dlt.read("ads_sales")
             .join(dlt.read("ads_customers"), "customer_id")

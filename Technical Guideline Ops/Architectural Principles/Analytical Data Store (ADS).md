@@ -1,104 +1,75 @@
 # Analytical Data Store (ADS)
 
 > [!info] Core Concept
-> The **Analytical Data Store (ADS)** bridges raw source data and business-ready dimensional models. Think of it as the "data refinement zone" where messy operational data becomes clean, integrated, and analysis-ready.
+> The **Analytical Data Store (ADS)** is our Medallion **Silver** layer. It bridges Landing/Staging (Bronze) and the Gold layer (business products) by turning raw, source-aligned data into clean, integrated, and history-aware entities that dimensional models, feature stores, and downstream products can rely on.
 
 ## Why "Analytical Data Store"?
 
-We call this layer the **Analytical Data Store (ADS)** to clearly communicate its purpose and distinguish it from related concepts:
+We keep the semantic name **ADS** to make responsibilities explicit while aligning it to the Medallion Silver layer.
 
-### ADS vs. Operational Data Store (ODS)
+### ADS vs Operational Data Store (ODS)
 
 | Aspect | Operational Data Store (ODS) | Analytical Data Store (ADS) |
-|--------|------------------------------|----------------------------|
-| **Purpose** | Near real-time operational reporting and monitoring | Integrated, cleansed data for analytics and historical modeling |
-| **Update frequency** | High-frequency (near real-time) | Batch-oriented (scheduled ETL) |
-| **Data structure** | Often normalized, optimized for transactions | Denormalized, optimized for analysis |
-| **Usage pattern** | Operational queries (current state) | Analytical queries (trends, history, integration) |
-| **Historical tracking** | Limited or none | Comprehensive snapshot tracking (SCD Type 2) |
-| **Primary consumers** | Operational systems, dashboards | Data warehouses, BI tools, data scientists |
+|--------|------------------------------|-----------------------------|
+| Purpose | Near real-time operational reporting and monitoring | Integrated, cleansed data for analytics and history |
+| Update frequency | High-frequency (near real-time) | Scheduled batch or micro-batch |
+| Data structure | Often normalized, optimized for transactions | Denormalized, optimized for analysis and integration |
+| Usage pattern | Operational queries (current state) | Analytical queries (trends, history, cross-source integration) |
+| Historical tracking | Limited or none | Snapshot-friendly; SCD-ready |
+| Primary consumers | Operational systems, dashboards | Dimensional models, feature stores, data scientists |
 
-> [!note] Why Not ODS?
-> An ODS serves operational needs with near real-time data, while our ADS serves analytical needs with batch-integrated, historically-tracked, denormalized data. The ADS is purpose-built for feeding dimensional models and feature stores, not operational reporting.
-
-### ADS vs. Dimensional Model (Dimensions & Facts)
-
-The ADS and the Dimensional Model (Dimensions & Facts) serve different roles in the architecture:
+### ADS vs Dimensional Model (Dimensions & Facts)
 
 | Aspect | Analytical Data Store (ADS) | Dimensional Model (Dims & Facts) |
 |--------|----------------------------|----------------------------------|
-| **Focus** | Integration & cleansing | Business-optimized query performance |
-| **Structure** | Denormalized entities | Star schema (Facts + Dimensions) |
-| **SCD approach** | Snapshot tables: SCD Type 2 on **ALL** attributes | Dimensions: Selective SCD (Type 0/1/2 per attribute) |
-| **Granularity** | Entity-level (one table per entity) | Business-process level (facts + supporting dimensions) |
-| **Consumers** | Dimensional modelers, data engineers | Business users, BI reports, dashboards |
-| **Query optimization** | Moderate (analytical workload) | High (star schema query patterns) |
+| Focus | Integration and data quality | Business-optimized consumption |
+| Structure | Denormalized entities | Star schema (Facts + Dimensions) |
+| SCD approach | Snapshot tables can track all attributes (SCD2) | Dimensions selectively track attributes (Type 0/1/2 per need) |
+| Granularity | Entity-level (one table per entity) | Business-process level (facts + supporting dimensions) |
+| Consumers | Data engineers, analytics engineers | Business users, BI tools, ML models |
 
-> [!warning] Key Difference: Complete vs. Selective History
-> - **ADS Snapshot tables**: Track changes to ALL attributes with SCD Type 2, providing complete historical lineage for flexibility
-> - **Dimension tables**: Selectively apply SCD Type 0 (fixed), Type 1 (overwrite), or Type 2 (track) based on business requirements per attribute
-> 
-> This distinction allows dimensional modelers to choose which attribute changes matter for analysis without re-implementing history tracking logic.
+> [!note] Separation of concerns
+> ADS carries the heavy lifting for conformance, history, and integration. Gold-layer models focus on business meaning and performance rather than rebuilding history logic.
 
-## Purpose
+## Purpose and Core Transformations
 
-The ADS layer serves as a critical transformation point in the data architecture, sitting between the Staging/Intermediate layers and the Dimensional Model (see [[Data Layers and Modeling]]). It provides cleaned, denormalized data that feeds both the Front Room (dimensional modeling) and [[Master Data]] systems.
+ADS sits between the Staging/Intermediate steps and the Dimensional Model. It feeds Gold-layer outputs (Dims/Facts, OBTs, Feature Stores) and [[Master Data]].
 
-**Core Transformations:**
-- **Data Quality Validation**: Enforce data quality rules and error handling
-- **Denormalization**: Flatten normalized structures for query performance
-- **Multi-Source Integration**: Merge overlapping entities from different systems
-- **History Tracking**: Establish change tracking infrastructure for downstream SCD2 implementation in [[Dimension Tables]]
+- **Data quality validation**: Enforce rules, quarantine errors.
+- **Denormalization**: Flatten normalized structures for usability.
+- **Multi-source integration**: Merge overlapping entities from multiple systems.
+- **History readiness**: Provide SCD-friendly snapshots so downstream models do not reimplement change tracking.
 
-## Two Table Types: Base vs. Snapshot
+## Table Types: Base and Snapshot
 
-The ADS layer contains two distinct types of tables working in tandem:
+| Table type | Purpose | Rows per entity | History approach | Naming convention |
+|------------|---------|-----------------|------------------|-------------------|
+| **Base tables** | Current, cleansed state | One current row | Overwrite changes (Type 1) | `ADS_<Entity>` (for example `ADS_Customer`) |
+| **Snapshot tables** | Historical versions | Multiple rows per entity | Track all attribute changes (Type 2) | `ADS_<Entity>_Snapshot` (for example `ADS_Customer_Snapshot`) |
 
-| Table Type | Purpose | Rows per Entity | Historical Tracking | Naming Convention | SCD Strategy |
-|------------|---------|-----------------|---------------------|-------------------|--------------|
-| **Base Tables** | Current state | 1 row (latest version) | ❌ No history | `ADS_EntityName`<br/>(e.g., `ADS_Customer`, `ADS_Product`) | SCD Type 1<br/>(overwrite) |
-| **Snapshot Tables** | Historical versions | Multiple rows (all versions) | ✅ ==All columns tracked with SCD Type 2== | `ADS_EntityName_Snapshot`<br/>(e.g., `ADS_Customer_Snapshot`, `ADS_Product_Snapshot`) | ==SCD Type 2 on ALL attributes== |
+> [!warning] Snapshot vs Dimension
+> ADS snapshots capture every attribute change so downstream consumers can choose how to model history. Dimension tables in Gold selectively track only the attributes that matter to the business.
 
-> [!warning] Key Distinction: Snapshot Tables vs. Dimension Tables
-> **Snapshot tables** in the ADS layer apply SCD Type 2 tracking to ALL columns - every attribute change creates a new version. This differs from [[Dimension Tables]] in the Dimensional Model, which selectively apply SCD strategies:
-> - **Snapshot tables**: Pure SCD Type 2 on all attributes - complete historical lineage for downstream flexibility. This type of table is only used in the ADS layer.
-> - **Dimension tables**: Mix of SCD Type 0 (never changes), SCD Type 1 (overwrite some attributes), and SCD Type 2 (track specific attributes). This type of table is only used in the Dimension/Fact Layer.
-> 
-> This distinction allows dimensional modelers to choose which attributes require history tracking when building dimensions from snapshot sources.
+### Base Tables (current state)
 
-## Table Types in the ADS Layer
-
-### Base Tables (Current State)
-
-**Base tables** store the current, cleaned state of entities with denormalization applied. These represent the "as-is now" view of your data.
-
-**Characteristics:**
-- One row per entity (current state only)
-- Denormalized structure (flattened from source normalized tables)
-- Data quality rules enforced
+**Characteristics**
+- One row per entity (latest state)
+- Denormalized structure with data quality enforced
 - Multi-source integration applied
 
-**Naming convention:** `ADS_` prefix + entity name (e.g., `ADS_Customer`, `ADS_Product`, `ADS_Invoice`)
-
-**Example structure:**
+**Example**
 ```sql
 CREATE TABLE ADS_Customer
 (
     CustomerID INT NOT NULL PRIMARY KEY,
     CustomerNumber VARCHAR(20) NOT NULL,
     CustomerName VARCHAR(100) NOT NULL,
-    
-    -- Embedded address (denormalized)
     AddressLine1 VARCHAR(100),
     City VARCHAR(50),
     StateProvince VARCHAR(50),
     Country VARCHAR(50),
-    
-    -- Business attributes
     CustomerSegment VARCHAR(20),
     CreditRating VARCHAR(10),
-    
-    -- Technical columns
     T_CreatedRunId UNIQUEIDENTIFIER NOT NULL,
     T_ModifiedRunId UNIQUEIDENTIFIER NOT NULL,
     T_CreatedDateTime DATETIME NOT NULL,
@@ -106,24 +77,14 @@ CREATE TABLE ADS_Customer
 );
 ```
 
-**Use cases:**
-- Direct querying for current-state analytics
-- Feeding [[Master Data]] with latest entity information
-- Source for transaction fact tables where historical context isn't critical
+### Snapshot Tables (historical tracking)
 
-### Snapshot Tables (Historical Tracking)
+**Characteristics**
+- Multiple rows per entity (per version)
+- `T_ValidFromDateTime`, `T_ValidToDateTime`, `T_IsCurrent` columns
+- Default approach: track all attribute changes with SCD Type 2 (adjust if justified)
 
-**Snapshot tables** track every version of entity changes over time with SCD Type 2 patterns applied. These capture the "as-was-then" history for accurate temporal analysis.
-
-**Characteristics:**
-- Multiple rows per entity (one per version)
-- Includes `T_ValidFromDateTime`, `T_ValidToDateTime`, `T_IsCurrent` columns
-- All attributes tracked with SCD Type 2: every column change creates a new version
-- Complete historical lineage preserved for downstream dimensional modeling flexibility
-
-**Naming convention:** `ADS_` prefix + entity name + `_Snapshot` suffix (e.g., `ADS_Customer_Snapshot`, `ADS_Product_Snapshot`)
-
-**Example structure:**
+**Example**
 ```sql
 CREATE TABLE ADS_Customer_Snapshot
 (
@@ -131,23 +92,15 @@ CREATE TABLE ADS_Customer_Snapshot
     CustomerID INT NOT NULL,
     CustomerNumber VARCHAR(20) NOT NULL,
     CustomerName VARCHAR(100) NOT NULL,
-    
-    -- Embedded address (denormalized)
     AddressLine1 VARCHAR(100),
     City VARCHAR(50),
     StateProvince VARCHAR(50),
     Country VARCHAR(50),
-    
-    -- Business attributes (tracked over time)
     CustomerSegment VARCHAR(20),
     CreditRating VARCHAR(10),
-    
-    -- Historical tracking (SCD Type 2)
     T_ValidFromDateTime DATETIME NOT NULL,
     T_ValidToDateTime DATETIME NULL,
     T_IsCurrent BIT NOT NULL,
-    
-    -- Technical columns
     T_CreatedRunId UNIQUEIDENTIFIER NOT NULL,
     T_ModifiedRunId UNIQUEIDENTIFIER NOT NULL,
     T_CreatedDateTime DATETIME NOT NULL,
@@ -155,128 +108,62 @@ CREATE TABLE ADS_Customer_Snapshot
 );
 ```
 
-**Use cases:**
-- Source for SCD Type 2 dimension tables in the [[Dimension Tables|Dimensional Model]]
-- Historical trend analysis and "point-in-time" queries
-- Audit trails and compliance reporting
-- Understanding how entities evolved over time
+> [!tip] When to create snapshots
+> Create a snapshot only when downstream analysis needs attribute change history, compliance requires it, or dimensions will consume the history. Transaction-style tables (for example invoices) are already point-in-time and rarely need snapshots.
 
-> [!tip] When to Create Snapshot Tables
-> Not every base table needs a snapshot companion. Create snapshot tables only for entities where:
-> - Historical attribute changes matter for analysis (e.g., customer segments, product categories, organizational hierarchies)
-> - Downstream dimensions require SCD Type 2 tracking
-> - Compliance or audit requirements mandate historical tracking
-> 
-> Transaction-oriented tables (like `Invoice`, `SalesBudget`) typically don't need snapshots - they're already point-in-time records.
+## Key Transformations in Silver (ADS)
 
-## Key Transformations
+### Data quality validation
+- Schema enforcement and required field checks
+- Referential integrity where applicable
+- Business rule validation (for example `OrderDate <= ShipDate`)
 
-### Data Quality Validation
-Rules are applied and enforced before data enters this layer. Invalid records are flagged, corrected, or routed to error handling.
+### Progressive denormalization
 
-**Examples:**
-- Email format validation
-- Required field checks
-- Referential integrity verification
-- Business rule enforcement (e.g., OrderDate ≤ ShipDate)
+| Before (normalized) | After (denormalized) |
+|---------------------|----------------------|
+| Customer + Address tables | Customer with embedded address columns |
+| Product + Category + Subcategory | Product with category/subcategory columns |
+| Monthly columns (Jan, Feb, Mar...) | Month + Value rows (unpivoted) |
 
-### Denormalization
+### Source system integration
+- Deduplicate across systems.
+- Standardize codes and naming.
+- Resolve authority (which source wins on conflicts).
+- Assign surrogate keys for downstream joins.
 
-Raw operational systems store data normalized (for transaction efficiency). The ADS layer begins flattening these structures.
+### History tracking with snapshots
 
-| Before (Normalized)                         | After (Denormalized)                          |
-| ------------------------------------------- | --------------------------------------------- |
-| Customer → Address (separate tables)        | Customer with embedded address columns        |
-| Product → Category → Subcategory (3 tables) | Product with Category and Subcategory columns |
-| Monthly columns (Jan, Feb, Mar...)          | Month + Value rows (unpivoted)                |
-
-**Why?** Denormalized data is faster to query and easier to understand for analysts and downstream dimensional modeling.
-
-### Source System Integration
-
-Multiple source systems often contain overlapping entities. The ADS layer is where these merge.
-
-```mermaid
-%%{init: { "flowchart": { "useMaxWidth": true } } }%%
-graph TD
-    CRM[(CRM System<br/>Customer Data)]
-    ERP[(ERP System<br/>Customer Data)]
-    SUPP[(Support System<br/>Customer Data)]
-    
-    ADS[ADS Customer<br/>Single Integrated View]
-    
-    CRM --> ADS
-    ERP --> ADS
-    SUPP --> ADS
-```
-
-**Integration challenges solved:**
-- Deduplication across sources
-- Standardized naming (e.g., "USA" vs "United States" vs "US")
-- Conflict resolution (which source is authoritative?)
-- Surrogate key assignment
-
-### History Tracking with Snapshot Tables
-
-The ADS layer establishes change tracking infrastructure through snapshot tables, which downstream [[Dimension Tables]] consume for SCD Type 2 implementation.
-
-**Example: ADS_Customer_Snapshot tracking region changes (SCD Type 2 on ALL attributes)**
-
-| CustomerSnapshotID | CustomerID | Name      | Region | T_ValidFromDateTime | T_ValidToDateTime   | T_IsCurrent |
-| ------------------ | ---------- | --------- | ------ | ------------------- | ------------------- | ----------- |
-| 1001               | 1          | Acme Corp | East   | 2024-01-01 00:00:00 | 2025-03-15 00:00:00 | 0           |
-| 1002               | 1          | Acme Corp | West   | 2025-03-15 00:00:00 | NULL                | 1           |
-
-Meanwhile, the base `ADS_Customer` table would only contain the current record:
-
-| CustomerID | Name      | Region | T_ModifiedDateTime  |
-| ---------- | --------- | ------ | ------------------- |
-| 1          | Acme Corp | West   | 2025-03-15 00:00:00 |
-
-> [!tip] Why Track Here?
-> Implementing snapshotting logic in the ADS layer (rather than directly in dimensions) provides:
-> - **Reusability**: Multiple downstream processes can consume the same historical data without rebuilding tracking logic
-> - **Separation of concerns**: History tracking logic separated from dimensional modeling logic
-> - **Flexibility**: Base tables for current-state queries, snapshot tables for historical analysis
-> - **Performance**: Dimensional models can be rebuilt from snapshots without reprocessing source systems
+| CustomerSnapshotID | CustomerID | Region | ValidFrom | ValidTo | IsCurrent |
+|--------------------|------------|--------|-----------|---------|-----------|
+| 1001 | 1 | East | 2024-01-01 00:00:00 | 2025-03-15 00:00:00 | 0 |
+| 1002 | 1 | West | 2025-03-15 00:00:00 | NULL | 1 |
 
 ## Common Use Cases
 
-### Multi-Source Customer Integration
-Combine customer records from CRM (sales perspective), ERP (billing perspective), and support systems (service history) into a single, authoritative customer entity.
-
-### Master Data Management
-The ADS layer feeds [[Master Data]] with clean entities ready for business user classification, categorization, and enrichment.
-
-### Historical Trend Analysis
-Data scientists and analysts leverage SCD2-tracked entities to understand how attributes changed over time (e.g., customer segments, product categories, organizational structures).
-
-### Audit & Compliance
-Traceable data lineage with validation flags ensures regulatory compliance and supports forensic analysis.
+- Multi-source customer, product, or supplier integration.
+- Feeding [[Master Data]] with clean entities.
+- Providing SCD-ready sources for dimension builds.
+- Enabling point-in-time analysis for analysts and data scientists.
 
 ## Best Practices
 
-| Practice                                 | Rationale                                                                                         |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **Document transformation rules**        | Future maintainers need to understand ADS logic                                                   |
-| **Consistent naming conventions**        | Use `ADS_EntityName` for base tables, `ADS_EntityName_Snapshot` for snapshot tables                   |
-| **Quality checks before entry**          | Don't propagate bad data downstream                                                               |
-| **Balance denormalization**              | Flatten enough for usability, not so much you lose modeling flexibility                           |
-| **Selective snapshotting**               | Only create snapshot tables for entities requiring historical tracking - avoid unnecessary overhead |
-| **Synchronize base and snapshot tables** | Ensure base table updates trigger corresponding snapshot inserts when attributes change           |
-| **Version control transformations**      | Treat ETL code as critical infrastructure                                                         |
-| **Apply DRY principles**                 | Extract reusable transformations into functions/macros - see [[DRY  - Don't Repeat Yourself]] for patterns |
-
-> [!warning] Common Pitfalls
-> **Over-denormalization**: Don't flatten everything into massive wide tables. You'll lose the modeling flexibility needed for efficient front room design downstream.
-> 
-> **Over-snapshotting**: Don't create snapshot tables for every entity. Transaction tables, budget tables, and other point-in-time records typically don't need snapshots; they're already historical by nature.
+| Practice | Why it matters |
+|----------|----------------|
+| Document transformation rules | Future maintainers need to understand ADS logic |
+| Consistent naming | `ADS_<Entity>` for base, `ADS_<Entity>_Snapshot` for history |
+| Quality gates before entry | Stop bad data before it pollutes Silver/Gold |
+| Balance denormalization | Flatten for usability without losing modeling flexibility |
+| Selective snapshotting | Only create snapshots when history is needed |
+| Sync base and snapshot | Ensure base updates create matching snapshot versions |
+| Rebuildable from Staging | Preserve reload paths from Landing/Staging for recovery |
 
 ---
 
 ## Related Topics
 
 - [[Data Layers and Modeling]] - Overall architecture context
-- [[Dimension Tables]] - Downstream consumer of ADS data for dimensional modeling
-- [[Fact Tables]] - Downstream consumer of ADS data for dimensional modeling
+- [[Medallion - Bronze Silver Gold]] - How ADS maps to Silver
+- [[Star - Dimension Tables]] - Downstream consumer for dimensional modeling
+- [[Star - Fact Tables]] - Downstream consumer for dimensional modeling
 - [[Master Data]] - Parallel consumer for reference data management

@@ -250,7 +250,7 @@ def bronze_events():
 flowchart TD
     A[Source Data] --> B[Staging Layer<br/>Raw but structured]
     B --> C[ADS Layer<br/>Cleansed & integrated]
-    C --> D[Front Room Layer<br/>Business model]
+    C --> D[Gold Layer<br/>Business model]
     
     B -.->|Expectations| B1[Quality Checks]
     C -.->|Expectations| C1[Quality Checks]
@@ -291,7 +291,7 @@ flowchart TD
 
 | Aspect | DLT Pipelines | Standard Notebooks |
 |--------|---------------|-------------------|
-| **Multi-layer pipelines** | ✅ Landing → ADS → Front Room (Plainsight semantic layers, optionally mapped to Bronze/Silver/Gold) | ❌ Single-step transformations |
+| **Multi-layer pipelines** | ✅ Landing → ADS → Gold (Plainsight semantic layers, mapped to Bronze/Silver/Gold) | ❌ Single-step transformations |
 | **Data quality checks** | ✅ Built-in expectations | ⚠️ Manual validation needed |
 | **Dependency management** | ✅ Automatic | ❌ Manual orchestration |
 | **Quick prototypes** | ❌ More overhead | ✅ Fast iteration |
@@ -304,7 +304,7 @@ flowchart TD
 ### When to Use DLT Pipelines
 
 **Use DLT for:**
-- Production ETL across Landing → ADS → Front Room layers (our preferred semantic layering; optionally mapped to bronze/silver/gold where the platform or team already uses Medallion - see [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]] and [[Data Layers and Modeling]])
+- Production ETL across Landing -> ADS -> Gold layers (our semantic layering) mapped to bronze/silver/gold Medallion zones for platform alignment - see [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]] and [[Data Layers and Modeling]]
 - Pipelines requiring data quality validation
 - Team collaboration on shared transformations
 - Automatic dependency management needs
@@ -342,12 +342,12 @@ def ads_sales():
             .dropDuplicates(["sale_id"])
     )
 
-# Front Room: Business aggregations (Gold equivalent)
+# Gold layer: Business aggregations
 @dlt.table(
-    comment="Daily revenue by product category (Front Room/Gold)",
-    table_properties={"layer": "front_room"}
+    comment="Daily revenue by product category (Gold layer)",
+    table_properties={"layer": "gold"}
 )
-def front_room_daily_revenue():
+def gold_daily_revenue():
     return (
         dlt.read("ads_sales")
             .groupBy("sale_date", "product_category")
@@ -359,7 +359,7 @@ def front_room_daily_revenue():
 ```
 
 **Best practices:**
-- ✅ Follow our semantic layering (Landing → ADS → Front Room) and, where needed, map these to Medallion-style bronze/silver/gold for platform alignment (see [[Data Layers and Modeling]] and [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]])
+- ✅ Follow our semantic layering (Landing -> ADS -> Gold) and map to Medallion bronze/silver/gold for platform alignment (see [[Data Layers and Modeling]] and [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]])
 - ✅ Add quality expectations at each layer
 - ✅ Use streaming for real-time, batch for scheduled updates
 - ✅ Document table purposes and business logic
@@ -430,11 +430,11 @@ def ads_events_stream():
     )
 ```
 
-**Batch example (Front Room equivalent of Gold):**
+**Batch example (Gold layer):**
 ```python
 # Batch: Daily aggregation
 @dlt.table
-def front_room_daily_metrics():
+def gold_daily_metrics():
     return (
         dlt.read("ads_events_stream")  # No stream - batch read
             .filter(col("event_date") == current_date())
@@ -616,7 +616,7 @@ flowchart TD
     C[Azure Data Lake Storage<br/>CSV Files] -->|Auto Loader| B
     
     B -->|DLT Pipeline<br/>Batch Mode| D[Silver/ADS Layer<br/>with Quality Checks]
-    D -->|DLT Pipeline<br/>Batch Mode| E[Gold/Front-Room Layer<br/>Aggregations]
+    D -->|DLT Pipeline<br/>Batch Mode| E[Gold Layer<br/>Aggregations]
     E --> F[Power BI<br/>Daily Reports]
     
     G[Lakeflow Job<br/>2 AM Daily] --> B
@@ -670,7 +670,7 @@ flowchart TD
 | ✅ Add expectations at each layer | Catch quality issues early in pipeline |
 | ✅ Use streaming only when latency requires it | Batch is simpler and cheaper for most use cases |
 | ✅ Document table purposes and business logic | Maintainability for team collaboration |
-| ❌ Don't mix quality levels in one table | Maintain clear bronze/silver/gold (or Landing/ADS/Front Room) boundaries |
+| ❌ Don't mix quality levels in one table | Maintain clear bronze/silver/gold (or Landing/ADS/Gold) boundaries |
 | ❌ Don't use `expect_or_fail()` liberally | Reserve for truly critical validations |
 | ❌ Don't build production pipelines in notebooks | Use DLT for reliability and monitoring |
 

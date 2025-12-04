@@ -78,7 +78,7 @@ from orders
 
 ## Configuration Inheritance
 - Define defaults high in `dbt_project.yml` (materializations, tags, quoting) and override only when necessary.
-- Example: enforce quoting + incremental strategy for ADS and Front Room folders.
+- Example: enforce quoting + incremental strategy for ADS and Gold folders.
 
 ```yaml
 models:
@@ -86,7 +86,7 @@ models:
     ads:
       +materialized: table
       +on_schema_change: append_new_columns
-    front_room/logistics:
+    gold/logistics:  # Gold layer
       +incremental_strategy: merge
       +unique_key: order_id
 ```

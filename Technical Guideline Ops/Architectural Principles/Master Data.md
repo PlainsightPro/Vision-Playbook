@@ -120,5 +120,5 @@ When out-of-the-box solutions don't fit, **custom applications** can be develope
 ## Related Topics
 
 - [[Analytical Data Store (ADS)]] - The primary integration point for Master Data
-- [[Dimension Tables]] - How Master Data enriches dimensional models
+- [[Star - Dimension Tables]] - How Master Data enriches dimensional models
 - [[Data Layers and Modeling]] - Where Master Data fits in the overall architecture

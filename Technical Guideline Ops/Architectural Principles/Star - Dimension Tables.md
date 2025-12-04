@@ -1,7 +1,7 @@
 # Dimension Tables
 
 > [!info] Core Concept
-> Dimension tables describe the **who, what, where, when, and why** of your business. They provide context for the numeric measures stored in [[Fact Tables]], enabling analysts to filter, group, and slice data meaningfully.
+> Dimension tables describe the **who, what, where, when, and why** of your business. They provide context for the numeric measures stored in [[Star - Fact Tables]], enabling analysts to filter, group, and slice data meaningfully.
 
 ## Structure Overview
 
@@ -163,7 +163,7 @@ Manage historical changes with three primary strategies:
 > - `"Lynn Tsoflias (United Kingdom)"` (current version)
 
 > [!warning] Balance Usability vs. Accuracy
-> Too many SCD Type 2 changes create overwhelming version counts. If an attribute changes frequently, consider storing it in the [[Fact Tables]] instead.
+> Too many SCD Type 2 changes create overwhelming version counts. If an attribute changes frequently, consider storing it in the [[Star - Fact Tables]] instead.
 
 ### Conformed Dimensions
 
@@ -234,7 +234,7 @@ Include rows representing data quality states:
 
 ## Related Topics
 
-- [[Fact Tables]] - Numeric measures that dimensions provide context for
+- [[Star - Fact Tables]] - Numeric measures that dimensions provide context for
 - [[Surrogate, Primary & Foreign Keys]] - Key design principles and best practices
 - [[Data Layers and Modeling]] - Where dimensions fit in the architecture
 - [[Analytical Data Store (ADS)]] - Source of cleaned, denormalized data for dimension loading

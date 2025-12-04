@@ -52,9 +52,9 @@ Each task should perform **one logical function**:
 flowchart TD
     A[Ingest to Landing Layer] --> B[Validate Schema]
     A --> C[Check Data Quality]
-    B --> D[Transform in ADS]
+    B --> D[Transform in ADS (Silver)]
     C --> D
-    D --> E[Publish to Front Room]
+    D --> E[Publish to Gold layer]
     D --> F[Train ML Model]
     E --> G[Update Dashboard]
     F --> G
