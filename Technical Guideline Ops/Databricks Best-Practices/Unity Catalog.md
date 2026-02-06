@@ -15,31 +15,42 @@ The Unity Catalog uses a four-level structure: Metastore, Catalog (top level), S
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart LR
-    %% Schemas per layer
     MS[Metastore] --> UC[Catalog: prod]
-    UC --> Landing[Schema: landing]
-    UC --> Staging[Schema: staging]
+
+    %% Bronze: schemas per source system (Landing optional, Staging required)
+    UC --> LandingSAP[Schema: landing_sap]
+    UC --> StagingSAP[Schema: staging_sap]
+    UC --> LandingSF[Schema: landing_salesforce]
+    UC --> StagingSF[Schema: staging_salesforce]
+
+    %% Silver: typically shared by domain/data product (integrates multiple sources)
     UC --> ADS[Schema: ads]
-    UC --> Gold[Schema: gold]
+
+    %% Gold: separate schemas per consumption pattern
+    UC --> Star[Schema: star]
+    UC --> FeatureStore[Schema: feature_store]
 
     %% Example objects
-    Landing --> L1[lnd_sap_sales]
-    Landing --> L2[lnd_sf_accounts]
-    Staging --> S1[stg_sap_sales]
-    Staging --> S2[stg_sf_accounts]
+    LandingSAP --> LS1[sales_order_items_delta]
+    StagingSAP --> SS1[sales_order_items]
+    LandingSF --> LF1[accounts_delta]
+    StagingSF --> SF1[accounts]
     ADS --> A1[ads_customer]
     ADS --> A2[ads_product]
     ADS --> A3[ads_customer_snapshot]
-    Gold --> G1[d_customer]
-    Gold --> G2[f_sales]
-    Gold --> G3[feature_customer_monthlysnapshot]
-    Gold --> G4[feature_customer_kpi]
+    Star --> G1[d_customer]
+    Star --> G2[f_sales]
+    FeatureStore --> G3[feature_customer_monthlysnapshot]
+    FeatureStore --> G4[feature_customer_kpi]
 
     %% Layer coloring aligned with Medallion mapping
-    style Landing fill:#CD7F32,stroke:#8B4513,color:#FFFFFF
-    style Staging fill:#CD7F32,stroke:#8B4513,color:#FFFFFF
+    style LandingSAP fill:#CD7F32,stroke:#8B4513,color:#FFFFFF
+    style StagingSAP fill:#CD7F32,stroke:#8B4513,color:#FFFFFF
+    style LandingSF fill:#CD7F32,stroke:#8B4513,color:#FFFFFF
+    style StagingSF fill:#CD7F32,stroke:#8B4513,color:#FFFFFF
     style ADS fill:#C0C0C0,stroke:#808080,color:#000000
-    style Gold fill:#FFD700,stroke:#DAA520,color:#000000
+    style Star fill:#FFD700,stroke:#DAA520,color:#000000
+    style FeatureStore fill:#FFD700,stroke:#DAA520,color:#000000
 ```
 
 The metastore is always present and fixed across the Databricks account. When creating or reading tables, reference the catalog, schema, and table/view/volume/model name using `catalog.schema.object`. When not specified, Spark assumes the `default` catalog and/or `default` schema.
@@ -47,10 +58,10 @@ The metastore is always present and fixed across the Databricks account. When cr
 The best way to read and write data is by using the `read_table` and `saveAsTable` functions in Python:
 
 ```python
-# Read from the Landing/bronze schema
-df = spark.read_table("prod.landing.sap_sales_order_items")
-# Optionally read from staging/bronze if present
-stg = spark.read_table("prod.staging.sap_sales_order_items")
+# Read from the Staging (Bronze) schema for a specific source
+df = spark.read_table("prod.staging_sap.sales_order_items")
+# Optionally read from Landing (Bronze) for that same source
+lnd = spark.read_table("prod.landing_sap.sales_order_items_delta")
 # Write to ADS (Silver-equivalent)
 df.write.saveAsTable("prod.ads.sales")
 ```
@@ -58,8 +69,8 @@ df.write.saveAsTable("prod.ads.sales")
 In SQL:
 
 ```sql
--- Read from Landing (Bronze-equivalent)
-SELECT * FROM prod.landing.sap_sales_order_items;
+-- Read from Staging (Bronze-equivalent)
+SELECT * FROM prod.staging_sap.sales_order_items;
 -- Write into ADS (Silver-equivalent)
 CREATE TABLE prod.ads.sales AS SELECT * FROM some_source_table;
 ```
@@ -72,8 +83,8 @@ Unity Catalog supports managed and external tables. **Prefer managed tables** so
 # Adding a path parameter to saveAsTable results in an external table
 (
     df.write
-      .option("path", "abfss://container@storageaccount.dfs.core.windows.net/gold/sales_data")
-      .saveAsTable("prod.gold.sales_data")
+      .option("path", "abfss://container@storageaccount.dfs.core.windows.net/star/f_sales")
+      .saveAsTable("prod.star.f_sales")
 )
 ```
 
@@ -86,7 +97,17 @@ AS SELECT * FROM source_table;
 
 ## Unity Catalog organization
 
-Two organizational units matter: catalogs and schemas. Organize catalogs by environment (`dev`, `test`, `acc`, `prod`) to simplify promotion and isolation. Schemas can be organized by data domains or by **data layers**. Unity Catalog supports our semantic layers (`landing`, `staging`, `ads`, `gold` / `star`, see [[Data Layers and Modeling]] and [[Analytical Data Store (ADS)]]) and maps directly to Medallion zones: bronze = landing/staging, silver = ads, gold = gold/star (see [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]]).
+Two organizational units matter: catalogs and schemas.
+
+- **Catalogs:** organize by environment (`dev`, `test`, `acc`, `prod`) to simplify promotion and isolation.
+- **Schemas:** organize by **source system in Bronze** (Landing/Staging) and by **domain / data product in Silver/Gold**.
+  - Bronze schemas per source system keeps data lineage clear and makes troubleshooting and reloads simpler (see [[Landing and Staging]] and [[Data Layers and Modeling]]).
+  - Silver/Gold layers often integrate multiple sources, so schemas are typically shared (for example a single `ads` schema) or split by domain (for example `ads_sales`, `star_finance`).
+
+Recommended baseline naming:
+- Bronze (Landing optional): `landing_<source>` and `staging_<source>`
+- Silver: `ads` (or `ads_<domain>`)
+- Gold: split schemas by consumption pattern (for example `star`, `feature_store`) and optionally by domain (for example `star_sales`)
 
 ```python
 # Set up the catalog to use for the current session

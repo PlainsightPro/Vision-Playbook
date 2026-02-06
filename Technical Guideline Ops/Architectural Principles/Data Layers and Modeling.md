@@ -39,7 +39,6 @@ graph TD
 
         subgraph Gold["Gold (Business Products)"]
             FS[Feature Store<br/>optional]:::goldOptional
-            OBT[One Big Table<br/>optional]:::goldOptional
             D[Dimensional Model]:::gold
         end
 
@@ -63,13 +62,11 @@ M --> C
 C --> O
 O --> D
 O -.-> FS
-O -.-> OBT
 C <--> G
 D --> Semantic
 D --> Reports
 D --> ML
 FS --> ML
-OBT --> Reports
 Semantic --> Reports
 
 %% Node styles
@@ -149,8 +146,7 @@ Here we see all data that the information is flowing through.
 
 6. The **Gold layer** provides business-optimized data structures for reporting, analytics, and machine learning:
    - **Star - Dimensional Model** (Facts & Dimensions): Star schema optimized for fast querying and business user exploration. Read more in [[Star - Dimension Tables]] and [[Star - Fact Tables]].
-   - **One Big Table (OBT)**: Fully denormalized wide table for simplified access and specific analytical use cases.
-   - **Feature Store**: Curated features for machine learning model training and inference. 
+   - **Feature Store**: Curated, reusable feature tables (often wide / denormalized) for machine learning model training, inference, and advanced analytics.
 
 
 # Architecture Philosophy

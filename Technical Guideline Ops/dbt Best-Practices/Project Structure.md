@@ -42,8 +42,7 @@ models/
    │  ├─ d_customer.sql
    │  ├─ d_product.sql
    │  └─ f_orders.sql
-   ├─ feature_store/
-   └─ one_big_table/
+   └─ feature_store/
 ```
 
 ### Landing (Optional Source-ADS)
@@ -88,7 +87,7 @@ models:
 
 ### Gold (Presentation & Experience)
 - Deliver business-ready dimensional models, fact tables, master data, feature stores, and other consumer outputs that BI/ML teams query directly.
-- Organize subfolders by consumption pattern (`gold/star_dim_fact`,  `gold/feature_store`, `gold/one_big_table`, ...) and use business-friendly names (no prefixes) for models.
+- Organize subfolders by consumption pattern (`gold/star_dim_fact`,  `gold/feature_store`, ...) and use business-friendly names (no prefixes) for models.
 - Keep transformations light: the goal is to expose curated tables, not re-implement ADS logic. Default to `view` for agility, switching to `table`/`incremental` only when SLA or cost requires it.
 
 ---
