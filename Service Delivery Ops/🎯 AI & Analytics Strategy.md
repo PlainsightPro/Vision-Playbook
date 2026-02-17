@@ -1,3 +1,6 @@
+---
+publish: false
+---
 # AI & Analytics Strategy
 
 > Crafting the foundation for impactful data & AI initiatives
