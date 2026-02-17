@@ -5,13 +5,14 @@ Plainsight loves to put things in Plain Sight (🥁). Open source code is the bl
 
 Suggestions to improve our organization?
 You are just one merge request away: <a name="top"></a>
-[![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-FDCAD2?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/PlainsightPro/Vision-Playbook/tree/Launched/Playbook%20Usage)
+[![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-FDCAD2?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/PlainsightPro/Vision-Playbook/tree/Launched/About%20Plainsight)
 
 
 # Where to start? 🤔
 
-1. Purpose & [[🥇 The Foundation of Plainsight]]🚀
-2. What makes us different next to the above?
+1. Purpose & [[🥇 The Foundation of Plainsight]] 🚀
+2. How we're organised → [[🏗️ How We're Organised]] 
+3. What makes us different next to the above?
 	1. Making people grow in their careers is prio 1. Read our Career Framework: [[🎯 Evolution Process]]
 	2. Is there a limit on my growth? Spoiler alert: "No, sorry". Read: [[🚀 Impact by Ownership]]
 	3. Sharing knowledge freely, openly and over boundaries of organisations is our success recipe: [[🧑‍🤝‍🧑 Communities]]

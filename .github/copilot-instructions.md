@@ -10,7 +10,7 @@ This is **Plainsight's Vision Playbook** - an open-source company handbook built
 
 ```
 Vision-Playbook/
-├── Playbook Usage/           # Company mission, values, getting started
+├── About Plainsight/          # Company mission, values, how we're organised
 ├── People Ops - Employee Journey/  # HR processes: onboarding, compensation, holidays
 ├── Service Delivery Ops/     # Customer engagement: strategy, execution, support
 ├── Technical Guideline Ops/  # Data platform architecture & Power BI best practices
