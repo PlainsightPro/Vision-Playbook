@@ -30,7 +30,7 @@ We encourage you to join us on our bi-weekly coworking days, which are geographi
 
 ## Flexibility and Remote Work
 
-The most important part of your work is that it’s done in a qualitative and timely manner. This means you don’t need to be present in one of our offices unless it benefits your project or collaboration with others. Efficiency drives results, so feel free to choose the work environment that best suits your needs—whether that’s from one of our offices, a co-working space, or your home.
+The most important part of your work is that it’s done in a qualitative and timely manner. This means you don’t need to be present in one of our offices unless it benefits your project or collaboration with others. Efficiency drives results, so feel free to choose the work environment that best suits your needs - whether that’s from one of our offices, a co-working space, or your home.
 
 ---
 

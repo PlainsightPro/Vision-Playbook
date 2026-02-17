@@ -20,7 +20,7 @@ You are just one merge request away: <a name="top"></a>
 
 # Why This Playbook? 🤔
 
-This playbook exists to align everyone with our purpose, values, and processes. We want to show who we are to all our stakeholders—our colleagues, customers, partners, friends, and family, and anyone who wants to know what Plainsight stands for and how we do business. It’s a living document that evolves with us, ensuring that we stay on course as we grow and innovate together.
+This playbook exists to align everyone with our purpose, values, and processes. We want to show who we are to all our stakeholders - our colleagues, customers, partners, friends, and family, and anyone who wants to know what Plainsight stands for and how we do business. It’s a living document that evolves with us, ensuring that we stay on course as we grow and innovate together.
 
 **Principles:**
 
@@ -44,5 +44,5 @@ This playbook exists to align everyone with our purpose, values, and processes. 
 
 ## What’s Next? Join Us on This Journey 🎯
 
-The introduction is just the beginning of the Plainsight story. As you explore this playbook, you’ll discover the many facets of our company—from our people and culture to our strategies and successes. We invite you to dive in, learn more, and join us on this exciting journey towards the future.
+The introduction is just the beginning of the Plainsight story. As you explore this playbook, you’ll discover the many facets of our company - from our people and culture to our strategies and successes. We invite you to dive in, learn more, and join us on this exciting journey towards the future.
 ![[plainsight playbook himym.png|300]]

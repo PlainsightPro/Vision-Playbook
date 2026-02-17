@@ -9,7 +9,7 @@ Use robust relationships (single-direction where possible), prefer whole-number 
 **Do**
 - Model as a star schema for clarity and performance.  
 - Ensure one-to-many relationships with unique dimension keys.  
-- Use integer surrogate keys (Primary Keys, Foreign Keys); avoid text/GUID keys for relationships. Read more here: [[Primary & Foreign Keys]]  
+- Use integer surrogate keys (Primary Keys, Foreign Keys); avoid text/GUID keys for relationships. Read more here: [[Surrogate, Primary & Foreign Keys]]  
 - Use Date dimension(s); mark it as a Date table.  
 - Declare the grain of each fact table (e.g., “one row per order line”) to avoid confusion.  
 - Add an Unknown / Not Applicabl key (e.g., `-1`) in dimensions to handle orphaned fact rows.  
@@ -56,7 +56,7 @@ F_Sales: One row per order line
 - Don’t snowflake dimensions unless reuse or maintenance clearly requires it.  
 - Don’t enable bi-directional relationships by default. Bi-directional relationships can lead to ambiguity. If bi-directional relationships are required, override the filtering behaviour **in your measure** by using CROSSFILTER[^1].  
 - Don’t apply RLS with complex filters directly on large fact tables.  
-- Don’t leave large descriptive text or high-cardinality columns in facts—split them into separate detail tables if needed.  
+- Don’t leave large descriptive text or high-cardinality columns in facts - split them into separate detail tables if needed.  
 - Don’t hard-code data sources; use parameters for environment portability.  
 - Don’t deploy straight to production; always validate in test first.  
 

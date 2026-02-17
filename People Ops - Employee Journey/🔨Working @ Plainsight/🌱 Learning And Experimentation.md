@@ -23,4 +23,4 @@ Want more control? You can request a personal Azure subscription with a $150 mon
 
 ---
 
-Plainsight is committed to empowering you with the tools, resources, and support you need to thrive. Let’s innovate, experiment, and learn—together!
+Plainsight is committed to empowering you with the tools, resources, and support you need to thrive. Let’s innovate, experiment, and learn - together!

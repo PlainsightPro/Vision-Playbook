@@ -18,7 +18,7 @@ Before you go, we’ll work with you to ensure a smooth transition of your respo
 We’ll coordinate the return of any company assets, such as laptops, access cards, or other equipment. This process is straightforward, and our IT team will assist in managing account access and data transfer securely.
 
 ### 4. Celebrating on Your Terms 🎉
-While it’s completely optional, we encourage departing team members to consider organizing a farewell drink or gathering if they wish to celebrate their time at Plainsight. This initiative is up to you—whether it's a casual coffee, a drink after work, or any other way you’d like to say goodbye. It’s your moment, so feel free to make it how you want it to be!
+While it’s completely optional, we encourage departing team members to consider organizing a farewell drink or gathering if they wish to celebrate their time at Plainsight. This initiative is up to you - whether it's a casual coffee, a drink after work, or any other way you’d like to say goodbye. It’s your moment, so feel free to make it how you want it to be!
 
 ### 5. Final Payroll and Benefits 🧾
 We’ll ensure that your final paycheck and any outstanding benefits are processed promptly. Our People Team will provide you with all the necessary details regarding your final payment, benefits continuation, and any other important information.
