@@ -2,8 +2,6 @@
 > [!tip] TL;DR
 > No hierarchy. No ivory towers. A team of experts, each with a different role, all playing for the same goal.
 
----
-
 ## The Plainsight Flywheel
 
 Think of Plainsight as a **football team**, not a corporate ladder. Every player has a different role: goalkeeper, midfielder, striker. But no role is more important than another. The team wins or loses *together*. That's exactly how we operate.
@@ -26,7 +24,43 @@ On the **left** sit the supporting services that keep the machine running: backo
 
 Both sides are equally important. The cogs only turn when they work together. An expert building a customer's data platform is just as vital as the person making sure the right people find their way to Plainsight.
 
----
+## Offer Leads: Bridge Between Capability and Customer
+
+Offer Leads focus on translating Plainsight's capabilities into strong offers for (potential) customers. You can also think of this as our sales-facing offer function.
+
+Their main purpose is to:
+
+- turn our expertise, tools, and technologies into clear offers
+- show customers what Plainsight is capable of
+- guide (potential) customers toward the right approach
+
+Offer Leads are expected to have broad, high-level knowledge across what we do as Plainsight. They are not expected to know every technical detail or the nitty-gritty of each implementation.
+
+Consultants are not split into fixed "one consultant per offer" boxes. A consultant can work on a Data Engineering trajectory today and move to another project that is closer to a different offer tomorrow.
+
+```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
+
+flowchart TB
+  subgraph TOP[Offer Leads]
+    direction LR
+    O1[Data/AI Strategy & Governance]
+    O2[AI & GenAI Implementation]
+    O3[Data & Analytics]
+  end
+
+  subgraph BOTTOM[Projects & Experts]
+    direction LR
+    C[Shared Consultant Pool<br/>Experts assigned based on project need]
+  end
+
+  %% make the bottom banner "span" the three top blocks:
+  O1 <---> C
+  O2 <---> C
+  O3 <---> C
+
+```
+
 
 ## How We Grow: Career Coaches
 
@@ -35,21 +69,23 @@ Every person at Plainsight has a **career coach**: someone dedicated to their pe
 Career coaches aren't managers. They don't assign work or approve timesheets. They exist for one reason: to make sure you're evolving in the direction *you* want to go.
 
 ```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
+
 flowchart LR
     YOU[You] -->|regular check-ins| COACH[Your Career Coach]
     COACH -->|growth direction| EVO[Evolution Process]
     COACH -->|visibility| IMPACT[Impact by Ownership]
 ```
 
-> Read more about how growth works in [[🎯 Evolution Process]].
+> Read more about [[🎯 Evolution Process]].
+> Read more about [[🚀 Impact by Ownership]].
 
----
 
 ## How We Learn: Knowledge Hubs
 
 Knowledge doesn't live in silos. It circulates.
 
-**Knowledge Hubs** are informal, topic-driven groups that form around subjects our experts want to go deeper on. They're not permanent departments. They come and go based on what's relevant.
+**Knowledge Hubs** are informal, topic-driven groups/initiative that form around subjects our experts want to go deeper on. They're not permanent departments. They come and go based on what's relevant.
 
 | Aspect | How it works |
 |---|---|
@@ -59,9 +95,13 @@ Knowledge doesn't live in silos. It circulates.
 | **How long do they last?** | As long as the topic is relevant: weeks, months, or longer |
 | **What do they produce?** | Shared knowledge: playbook pages, internal sessions, reusable assets |
 
-%% Examples might include: dbt best practices, LLM/RAG patterns, Fabric adoption, streaming architectures %%
-
 This model keeps us sharp without bureaucracy. If something matters, someone will pick it up. That's how a team of experts operates.
+
+> [!📝 Examples of knowledge hubs we had over the past...]-
+> Databricks, dbt, LLM/RAG patterns, Fabric adoption, streaming architectures, CI/CD best practices, Azure Landing Zones, Agentic AI Architectures, Databricks AI (LLMOps), Vibe Coding/Engineering, DAX Optimizers, Data Mesh, Data Governance, Databricks Frameworks, Fabric Framework, ...
+
+
+> [!info] We've deliberately not chosen to put people in boxes in terms of knowledge. It's the people themselves that want to be part of an 'initiative' allowing them to be part of one, multiple or no initiatives. 
 
 ---
 
