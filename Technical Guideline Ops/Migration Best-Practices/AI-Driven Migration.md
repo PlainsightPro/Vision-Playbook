@@ -34,6 +34,20 @@ The AI-assisted migration framework is designed to support the core Microsoft da
 
 ---
 
+### Core Principles of the AI-Driven Migration Framework
+
+The AI-assisted migration framework operates as a continuous lifecycle of Analyze → Design → Generate → Validate. Legacy workloads are first analyzed to understand structure and risks, then translated into an optimal Fabric design, automatically generated into deployable assets, and finally validated to ensure correctness and reliability.
+
+This closed-loop approach enables scalable, repeatable, and high-quality migrations while keeping human experts in control at critical decision points.
+```mermaid
+flowchart LR
+  A[Analyze] --> D[Design]
+  D --> G[Generate]
+  G --> V[Validate]
+  V --> A
+```
+---
+
 ### AI-Driven Migration Framework
 
 This section introduces the AI-driven migration framework used to accelerate and standardize the transition of SQL-based integration workloads to Microsoft Fabric. The framework applies a modular, multi-agent approach in which specialized AI agents collaborate to analyze legacy solutions, design the optimal Fabric architecture, and generate production-ready assets.
@@ -84,7 +98,7 @@ flowchart TD
   %% =========================
   subgraph BUILD[Build & Validation]
     G[Fabric Generator Agent]
-    H[Validation Agent]
+    H[Fabric Validation Agent]
   end
 
   %% =========================
@@ -107,6 +121,9 @@ flowchart TD
   H --> O
 ```
 
+Below is a concise explanation of each part of the AI-driven migration framework.
+
+---
 
 ### Source Inputs
 
@@ -114,23 +131,32 @@ These are the starting artifacts that contain the legacy integration logic.
 
 - **SSIS Project** — `.ispac` or `.dtsx` packages representing existing ETL workflows.  
 - **ADF Git Repository** — JSON definitions of pipelines, datasets, linked services, and triggers from Azure Data Factory.  
-- **Synapse Git Repository** — Synapse pipeline and related artifacts.
+- **Synapse Git Repository** — Synapse pipeline and related artifacts extracted from the workspace repo.
 
 **Purpose:** Provide the authoritative source logic that the analyzers will interpret.
 
+---
 
-### SSIS Analyzer Agent  
+### Source Analysis
+
+This layer contains tool-specific analyzer agents that reconstruct the functional behavior of the legacy workloads.
+
+#### SSIS Analyzer Agent  
 Parses SSIS packages to extract control/data flows, SQL logic, dependencies, and risk indicators (e.g., Script Tasks). It produces a structured logical view of each SSIS pipeline.
 
-### ADF Analyzer Agent  
+#### ADF Analyzer Agent  
 Reads ADF Git artifacts and rebuilds the pipeline dependency graph, parameter usage, and transformation patterns. It identifies sources, sinks, and potential migration risks.
 
-### Synapse Analyzer Agent  
+#### Synapse Analyzer Agent  
 Analyzes Synapse pipelines and detects workspace-specific dependencies such as SQL pool coupling or hybrid Spark/SQL patterns. It produces a structured logical model similar to the other analyzers.
 
 **Outcome of this layer:** Each legacy tool is translated into a structured, comparable representation.
 
-### Normalization Agent  
+---
+
+### Migration Intelligence
+
+#### Normalization Agent  
 This agent converts the tool-specific analyzer outputs into a single **Canonical Migration Model (CMM)**. It standardizes pipeline structure, transformation types, parameters, and scheduling information.
 
 **What it enables:**
@@ -140,20 +166,22 @@ This agent converts the tool-specific analyzer outputs into a single **Canonical
 - Complexity and confidence scoring  
 - Unified lineage representation  
 
-**Outcome:** One normalized view of the migration workload, regardless of the original technology.
-
-### Fabric Designer Agent  
+#### Fabric Designer Agent  
 Determines the optimal Microsoft Fabric implementation for each pipeline. It selects the appropriate Fabric components (e.g., Data Factory pipeline, Warehouse SQL, Notebook) and applies company standards such as naming, medallion mapping, and error-handling strategy.
 
-**Outcome:** Target Design Specification (TDS) describing how the solution should look in Fabric.
+**Outcome:** One normalized view of the migration workload, regardless of the original technology. Proposed Target Design Specification (TDS) describing how the solution should look in Fabric.
 
-### Fabric Generator Agent  
+---
+
+### Build & Validate
+
+#### Fabric Generator Agent  
 Transforms the approved design into deployable Fabric assets. It generates pipelines, SQL scripts, notebook scaffolding, and configuration templates aligned with project standards.
 
-**Outcome:** Ready-to-deploy Fabric implementation artifacts.
+**Outcome:** Ready-to-deploy Fabric implementation artifacts. Optionally automatically creates the artifacts.
 
-### Validation Agent  
-Verifies that the generated Fabric solution produces correct and reliable results compared to the source system. It performs automated checks such as row counts, schema validation, duplicate detection, and incremental load verification.
+#### Fabric Validation Agent  
+Verifies that the generated Fabric solution compared to the TDS. Detects issues in the the solution that is built.
 
 **What it enables:**
 
@@ -163,7 +191,11 @@ Verifies that the generated Fabric solution produces correct and reliable result
 
 **Outcome:** Validation report and approved Fabric assets.
 
-### Validated Fabric Assets  
+---
+
+### Final Output
+
+#### Validated Fabric Assets  
 The end result is a set of Fabric pipelines and related artifacts that have been:
 
 - analyzed  
@@ -174,3 +206,6 @@ The end result is a set of Fabric pipelines and related artifacts that have been
 
 These assets are ready for promotion through DEV → ACC → PRD using the organization’s DevOps process.
 
+---
+
+⚠️ **Reminder:** The framework is **AI-assisted**. Human review and approval remain essential, especially for complex business logic and production promotion.
