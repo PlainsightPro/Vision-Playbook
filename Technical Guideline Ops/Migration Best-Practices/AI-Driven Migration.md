@@ -107,12 +107,6 @@ flowchart TD
   H --> O
 ```
 
----
-
-## AI-Driven Migration Framework — Explanation
-
-Below is a concise explanation of each part of the AI-driven migration framework.
-
 
 ### Source Inputs
 
@@ -120,7 +114,7 @@ These are the starting artifacts that contain the legacy integration logic.
 
 - **SSIS Project** — `.ispac` or `.dtsx` packages representing existing ETL workflows.  
 - **ADF Git Repository** — JSON definitions of pipelines, datasets, linked services, and triggers from Azure Data Factory.  
-- **Synapse Git Repository** — Synapse pipeline and related artifacts extracted from the workspace repo.
+- **Synapse Git Repository** — Synapse pipeline and related artifacts.
 
 **Purpose:** Provide the authoritative source logic that the analyzers will interpret.
 
