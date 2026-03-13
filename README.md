@@ -1,80 +1,68 @@
----
-publish: false
----
-# Welcome to Plainsight's GitHub Repository! 🎉
+# Plainsight Vision Playbook 📔
 
-You've found our Git page - welcome! We're excited to have you here.
+[![Deploy](https://img.shields.io/badge/Live_Site-playbook.plainsight.pro-000075?style=for-the-badge)](https://playbook.plainsight.pro)
+[![Build](https://img.shields.io/github/actions/workflow/status/PlainsightPro/Vision-Playbook/deploy.yml?branch=main&style=for-the-badge&label=Build)](https://github.com/PlainsightPro/Vision-Playbook/actions)
 
-To get started and learn more about how we do things at Plainsight, please read our Vision Playbook.
+Plainsight's open-source company handbook — our purpose, values, technical guidelines, and operational processes, built on transparency.
 
-👉 [Read the Vision Playbook Instructions](./About%20Plainsight/🙋️%20START%20HERE.md)
-
-This document will guide you through our vision, values, and the strategic goals that drive our work. Happy exploring!
+**Live at [playbook.plainsight.pro](https://playbook.plainsight.pro)**
 
 ---
 
-# Contributing to this Playbook!
+## How to Contribute
 
-We encourage all colleagues and domain owners to contribute to the Vision Playbook. Whether you're adding new content, updating existing pages, or fixing errors, your contributions help keep our documentation accurate and valuable for everyone.
+Every change follows a **branch-per-change** workflow:
 
-## Getting Started
+1. **Clone** the repository (or pull latest `main`)
+2. **Create a branch** with a descriptive name:
+   ```bash
+   git checkout -b update-power-bi-guidelines
+   ```
+3. **Edit** Markdown files in `docs/` — this is where all content lives
+4. **Preview locally** (optional):
+   ```bash
+   pip install -r requirements.txt
+   mkdocs serve
+   ```
+   Open [http://127.0.0.1:8000](http://127.0.0.1:8000) — auto-reloads on save.
+5. **Commit & push** your branch:
+   ```bash
+   git add .
+   git commit -m "Describe your change"
+   git push origin update-power-bi-guidelines
+   ```
+6. **Open a Pull Request** targeting `main` — a staging preview deploys automatically
+7. **Get a review** — once approved and merged, the site deploys to production
 
-**Create your branch** for this GitHub repository:
-1. Clone the repository to your local machine
-2. Create a new branch from `main` with a descriptive name (e.g., `update-power-bi-guidelines` or `add-onboarding-checklist`)
-3. Make your changes in this branch
-
-## Making Changes
-
-You have two primary options for editing content:
-
-### Option 1: Obsidian (Recommended)
-**Use [Obsidian](https://obsidian.md/) to open the folder and start creating notes in Markdown format.**
-- Open the Vision-Playbook folder as an Obsidian vault
-- Create and edit pages using Obsidian's wiki-link syntax: `[[Page Name]]`
-- Use Obsidian's formatting features: callouts (`> [!info]`), highlights (`==text==`), tables, etc.
-- Preview how your content will look before committing
-
-### Option 2: Visual Studio Code
-**You can also write in Visual Studio Code** (especially useful for generating Mermaid diagrams):
-- VS Code has excellent Markdown preview support (but not all features are available)
-- Great for technical edits and code examples
-- **Important**: Always test your changes in Obsidian afterward to ensure compatibility
-
-> **Always Test in Obsidian:**
-> This repository uses Obsidian-flavored Markdown with custom plugins. Always verify your changes render correctly in Obsidian before submitting your pull request.
-
-### Content Guidelines
-- Follow the patterns in [.github/copilot-instructions.md](.github/copilot-instructions.md)
-- Prioritize diagrams over text: KISS! 
-- Link related pages using `[[Page Name]]` wiki-links
-- Include callouts for important information: `> [!info]`, `> [!warning]`, `> [!tip]`
-
-## Publishing to Our Website
-
-When you're ready to publish your changes:
-
-1. **Commit your changes** to your branch with clear commit messages
-2. **Push your branch** to GitHub
-3. **Create a pull request** targeting the `main` branch
-4. **Request review**: Email [sander.allert@plainsight.pro](mailto:sander.allert@plainsight.pro) to review your changes, accept the pull request, and publish the new or altered pages
-
-The HR team will review your contribution for accuracy, consistency, and alignment with Plainsight values before merging and publishing to our website.
+> **One change = one branch.** Keep PRs focused and reviewable.
 
 ---
 
-**Questions?** Reach out to [sander.allert@plainsight.pro](mailto:sander.allert@plainsight.pro) for guidance on contributing to the Playbook.
+## Project Structure
+
+| Path | Purpose |
+|---|---|
+| `docs/` | All content — Markdown files, images, stylesheets |
+| `mkdocs.yml` | MkDocs site configuration |
+| `overrides/` | MkDocs theme customizations |
+| `branding/` | Internal branding reference (not published) |
+| `requirements.txt` | Python dependencies (`mkdocs-material`) |
+| `.github/workflows/` | CI/CD — build, link-check, deploy |
+
+The `site/` folder is generated by `mkdocs build` and is not committed.
 
 ---
 
-## ⚠️ Branch Protection Reminder
+## Branch Protection (Recommended)
 
-> **Action required:** Enable branch protection on `main` in GitHub so all changes require a Pull Request with at least one approval before merge.
->
-> **Settings → Branches → Add rule:**
-> - Branch name pattern: `main`
-> - ✅ Require a pull request before merging
-> - ✅ Require approvals (minimum 1)
-> - ✅ Require status checks to pass before merging (select the `Build and Deploy` check)
-> - ✅ Do not allow bypassing the above settings
+Enable on `main` in **Settings → Branches → Add rule**:
+
+- ✅ Require a pull request before merging
+- ✅ Require 1 approval
+- ✅ Require status checks to pass (`Build and Deploy`)
+- ✅ Do not allow bypassing the above settings
+
+---
+
+**Questions?** Reach out to [sander.allert@plainsight.pro](mailto:sander.allert@plainsight.pro).
 

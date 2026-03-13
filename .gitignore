@@ -1,2 +1,3 @@
-.obsidian/*.json
-.obsidian/workspace
+site/
+__pycache__/
+*.pyc
