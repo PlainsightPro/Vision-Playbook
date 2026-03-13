@@ -31,8 +31,10 @@ jobs:
         with:
           args: >-
             --no-progress
+            --root-dir site
             --exclude '^https://plainsightis\.sharepoint\.com/.*'
             --exclude '^https://support\.plainsight\.pro/?$'
+            --exclude '^https://playbook\.plainsight\.pro(/.*)?$'
             site/
           fail: true
         env:
