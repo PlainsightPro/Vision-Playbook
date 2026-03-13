@@ -17,9 +17,9 @@
 | **Abbreviation** | Extract > Transform > Load                                                                                                                              | Extract > Load > Transform                                                                                                                           |
 | **Explanation**  | The data is first extracted by an extraction tool, then transformed (typically in-memory of this extraction tool) and then loaded into a data platform. | The data is first extracted from the source system and directly loaded into a data platform. Transformations are applied within this data platform.  |
 
-> [!NOTE] ETL or ELT? Frankly, we don't care  
-> While our frameworks implement the 'ELT' principle, we often mix and match the older more used term 'ETL'. The term 'ETL' is more used by business and the difference between ETL and ELT is not always worth explaining (or an explanation could even lead to more confusion).  
-> Our main goal is to provide insightful data layers meant for analytics; as long as this is achieved in a best-practice manner we don't care if you use the term 'ETL' or 'ELT'.
+!!! note "ETL or ELT? Frankly, we don't care"
+    While our frameworks implement the 'ELT' principle, we often mix and match the older more used term 'ETL'. The term 'ETL' is more used by business and the difference between ETL and ELT is not always worth explaining (or an explanation could even lead to more confusion).  
+    Our main goal is to provide insightful data layers meant for analytics; as long as this is achieved in a best-practice manner we don't care if you use the term 'ETL' or 'ELT'.
 
 ## Data Ingestion Strategies
 
@@ -122,5 +122,5 @@ classDef all fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
 
 ## Related Topics
 
-- [[Data Layers and Modeling]] - Overall architecture showing how data sources fit into the platform
-- [[Analytical Data Store (ADS)]] - Where source data is cleaned and integrated
+- [Data Layers and Modeling](data-layers-and-modeling.md) - Overall architecture showing how data sources fit into the platform
+- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - Where source data is cleaned and integrated

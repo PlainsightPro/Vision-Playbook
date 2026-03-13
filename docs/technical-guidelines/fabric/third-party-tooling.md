@@ -3,11 +3,11 @@
 ## Overview
 The right tooling choices accelerate development and simplify administration of Fabric environments. This guide outlines recommended tools for different aspects of Fabric development and management.
 
-> [!info] Core Principles
-> 1. Use the right tool for each task
-> 2. Standardize tooling across teams
-> 3. Prioritize tools with Git integration
-> 4. Enable automation where possible
+!!! info "Core Principles"
+    1. Use the right tool for each task
+    2. Standardize tooling across teams
+    3. Prioritize tools with Git integration
+    4. Enable automation where possible
 
 ## Tool Categories
 
@@ -53,15 +53,15 @@ flowchart TD
    - Monitor capacity usage
    - Review and update configurations
 
-> [!tip] About Copilot
-> Copilot features in Fabric and Power BI can significantly boost productivity. Available on all capacity tiers (F2 and above). Consider workload requirements when choosing capacity tiers for Copilot-enabled experiences.
+!!! tip "About Copilot"
+    Copilot features in Fabric and Power BI can significantly boost productivity. Available on all capacity tiers (F2 and above). Consider workload requirements when choosing capacity tiers for Copilot-enabled experiences.
 
 - Copilot features (in Fabric and Power BI) can significantly boost productivity for exploration and report generation. Copilot capabilities are available on all capacity tiers (starting from F2). Consider your workload requirements when choosing the appropriate capacity tier for your Copilot-enabled experiences.
 
 # Key Tools
 
 ### Visual Studio Code (⭐ Essential)
-![[logo_vscode.svg]]
+![logo_vscode](../../images/logo_vscode.svg)
 
 - **Purpose:** Primary development environment for Fabric workspaces
 - **Key Capabilities:**
@@ -94,7 +94,7 @@ flowchart TD
 ---
 
 ### SQL Server Management Studio (SSMS)
-![[logo_ssms.png]]
+![logo_ssms](../../images/logo_ssms.png)
 
 - **Purpose:** Deep SQL development and performance tuning
 - **Key Capabilities:**
@@ -118,7 +118,7 @@ flowchart TD
 ---
 
 ### OneLake Explorer
-![[logo_onelake.jpg]]
+![logo_onelake](../../images/logo_onelake.jpg)
 
 - **Purpose:** File-level operations and sync for Fabric lakehouses
 - **Key Capabilities:**
@@ -145,7 +145,7 @@ flowchart TD
 ---
 
 ### Power BI Desktop
-![[logo_powerbi.svg]]
+![logo_powerbi](../../images/logo_powerbi.svg)
 
 - **Purpose:** Data modeling and report development
 - **Key Capabilities:**
@@ -166,8 +166,8 @@ flowchart TD
   - Enable Copilot features for productivity
 - **Website:** [Power BI Desktop](https://powerbi.microsoft.com/desktop/)
 
-> [!note]
-> Azure Data Studio is intentionally excluded from recommendations in this guide.
+!!! note "note"
+    Azure Data Studio is intentionally excluded from recommendations in this guide.
 
 ## Tool Selection Guide
 
@@ -193,6 +193,6 @@ flowchart TD
   - Rotate access keys regularly
 
 ## Related Documentation
-- [[Technical Guideline Ops/Fabric Best-Practices/Naming Conventions]]
-- [[Workspace Organization]]
-- [[Lakehouse Architecture]]
+- [Naming Conventions](../power-bi/naming-conventions.md)
+- [Workspace Organization](workspace-organization.md)
+- [Lakehouse Architecture](lakehouse-architecture.md)

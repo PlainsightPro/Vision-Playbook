@@ -1,6 +1,6 @@
 
-> [!tip] TL;DR
-> No hierarchy. No ivory towers. A team of experts, each with a different role, all playing for the same goal.
+!!! tip "TL;DR"
+    No hierarchy. No ivory towers. A team of experts, each with a different role, all playing for the same goal.
 
 ## The Plainsight Flywheel
 
@@ -10,7 +10,7 @@ We don't have "managers" in the traditional sense. We have people who take owner
 
 Our organisation is built around two sides of the same machine, linked together like cogs in a wheel:
 
-![[Organisation structure.png]]
+![Organisation structure](../images/Organisation%20structure.png)
 
 On the **right** sit our three offerings. This is where our experts do what they do best:
 
@@ -77,8 +77,8 @@ flowchart LR
     COACH -->|visibility| IMPACT[Impact by Ownership]
 ```
 
-> Read more about [[🎯 Evolution Process]].
-> Read more about [[🚀 Impact by Ownership]].
+> Read more about [🎯 Evolution Process](../people-ops/working/evolution-process.md).
+> Read more about [🚀 Impact by Ownership](../people-ops/working/impact-by-ownership.md).
 
 
 ## How We Learn: Knowledge Hubs
@@ -97,11 +97,11 @@ Knowledge doesn't live in silos. It circulates.
 
 This model keeps us sharp without bureaucracy. If something matters, someone will pick it up. That's how a team of experts operates.
 
-> [!📝 Examples of knowledge hubs we had over the past...]-
-> Databricks, dbt, LLM/RAG patterns, Fabric adoption, streaming architectures, CI/CD best practices, Azure Landing Zones, Agentic AI Architectures, Databricks AI (LLMOps), Vibe Coding/Engineering, DAX Optimizers, Data Mesh, Data Governance, Databricks Frameworks, Fabric Framework, ...
+??? note "📝 Examples of knowledge hubs we had over the past..."
+    Databricks, dbt, LLM/RAG patterns, Fabric adoption, streaming architectures, CI/CD best practices, Azure Landing Zones, Agentic AI Architectures, Databricks AI (LLMOps), Vibe Coding/Engineering, DAX Optimizers, Data Mesh, Data Governance, Databricks Frameworks, Fabric Framework, ...
 
 
-> [!info] We've deliberately not chosen to put people in boxes in terms of knowledge. It's the people themselves that want to be part of an 'initiative' allowing them to be part of one, multiple or no initiatives. 
+!!! info "We've deliberately not chosen to put people in boxes in terms of knowledge. It's the people themselves that want to be part of an 'initiative' allowing them to be part of one, multiple or no initiatives."
 
 ---
 
@@ -111,8 +111,8 @@ We keep communication lines **short on purpose**.
 
 No layers of approvals. No "let me check with my manager's manager." If you need something, you talk to the person who can help. Directly. This isn't an accident; it's a deliberate choice we protect as we grow.
 
-> [!warning] Scaling without layers
-> Growing the team doesn't mean adding hierarchy. It means building stronger habits: better async communication, clearer ownership, and a culture where anyone can raise their hand.
+!!! warning "Scaling without layers"
+    Growing the team doesn't mean adding hierarchy. It means building stronger habits: better async communication, clearer ownership, and a culture where anyone can raise their hand.
 
 ---
 
@@ -122,7 +122,7 @@ Our culture isn't a poster on the wall. It's **how we actually work**.
 
 Everyone is free to give and receive feedback, at any time, in any direction. Not because a process tells us to, but because it makes us grow faster as people and as a company. We're all learning every minute of the day, and we actively support that in each other.
 
-Want to know what drives that culture? Read [[🥇 The Foundation of Plainsight]].
+Want to know what drives that culture? Read [🥇 The Foundation of Plainsight](the-foundation-of-plainsight.md).
 
 ---
 
@@ -130,7 +130,7 @@ Want to know what drives that culture? Read [[🥇 The Foundation of Plainsight]
 
 | Topic | Page |
 |---|---|
-| Our purpose and values | [[🥇 The Foundation of Plainsight]] |
-| How you grow here | [[🎯 Evolution Process]] |
-| The employee journey | [[🚀 Onboarding]] |
-| Our technical guidelines | [[Why 'Technical Guideline Ops']] |
+| Our purpose and values | [🥇 The Foundation of Plainsight](the-foundation-of-plainsight.md) |
+| How you grow here | [🎯 Evolution Process](../people-ops/working/evolution-process.md) |
+| The employee journey | [🚀 Onboarding](../people-ops/onboarding.md) |
+| Our technical guidelines | [Why 'Technical Guideline Ops'](Why%20'Technical%20Guideline%20Ops'.md) |

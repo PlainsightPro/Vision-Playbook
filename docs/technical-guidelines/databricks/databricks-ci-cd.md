@@ -1,7 +1,7 @@
 # Databricks CI/CD Best Practices
 
-> [!info] Purpose
-> This guide provides best practices for designing robust CI/CD pipelines on Databricks, ensuring rapid and reliable deployment of data engineering and analytics workloads.
+!!! info "Purpose"
+    This guide provides best practices for designing robust CI/CD pipelines on Databricks, ensuring rapid and reliable deployment of data engineering and analytics workloads.
 
 ## Overview
 
@@ -39,8 +39,8 @@ Effective CI/CD pipelines share foundational principles regardless of implementa
 | Validation Tests  | Databricks CLI `bundle validate`       | Check notebook and workflow functionality  |
 | Integration Tests | `chispa` for Spark DataFrames          | Test complete workflows and data pipelines |
 
-> [!tip] Testing Strategy
-> Implement multiple layers of testing to catch issues early in the development cycle.
+!!! tip "Testing Strategy"
+    Implement multiple layers of testing to catch issues early in the development cycle.
 
 ### Employ Infrastructure as Code (IaC)
 
@@ -67,11 +67,11 @@ Implement automated rollback mechanisms for failed deployments to minimize downt
 
 ### Unify Asset Management
 
-> [!warning] Avoid Siloed Management
-> Use Databricks Asset Bundles to deploy code, jobs, and infrastructure as a single unit. Avoid managing notebooks, libraries, and workflows separately.
-
-> [!info] Authentication Recommendation
-> Databricks recommends **workload identity federation** for CI/CD authentication. This eliminates the need for Databricks secrets, making it the most secure authentication method for automated flows.
+!!! warning "Avoid Siloed Management"
+    Use Databricks Asset Bundles to deploy code, jobs, and infrastructure as a single unit. Avoid managing notebooks, libraries, and workflows separately.
+    
+    [!info] Authentication Recommendation
+    Databricks recommends **workload identity federation** for CI/CD authentication. This eliminates the need for Databricks secrets, making it the most secure authentication method for automated flows.
 
 ## Databricks Asset Bundles for CI/CD
 
@@ -167,8 +167,8 @@ databricks-dab-repo/
 - ❌ Additional coordination required
 - ❌ Must ensure version compatibility
 
-> [!warning] Version Artifacts
-> Always use versioned artifacts (Git commit hashes) when uploading to Databricks or external storage to ensure traceability and rollback capabilities.
+!!! warning "Version Artifacts"
+    Always use versioned artifacts (Git commit hashes) when uploading to Databricks or external storage to ensure traceability and rollback capabilities.
 
 ### Reference Compiled Artifacts in Bundles
 
@@ -243,8 +243,8 @@ This ensures:
 - Proper resource references
 - Environment-specific parameters are valid
 
-> [!tip] Catch Issues Early
-> Run validation during pull requests to catch misconfigurations before deployment.
+!!! tip "Catch Issues Early"
+    Run validation during pull requests to catch misconfigurations before deployment.
 
 ### Step 4: Deploy Bundle
 
@@ -312,9 +312,9 @@ MLOps Stacks combine:
 2. **Data scientists** submit ML code → unit tests run → deploy to staging workspace for integration testing
 3. **MLOps engineers** review validation metrics → promote vetted models to production via MLflow Registry
 
-> [!info] Learn More
-> - [MLOps Stacks bundle documentation](https://docs.databricks.com)
-> - [MLOps Stacks GitHub repository](https://github.com/databricks/mlops-stacks)
+!!! info "Learn More"
+    - [MLOps Stacks bundle documentation](https://docs.databricks.com)
+    - [MLOps Stacks GitHub repository](https://github.com/databricks/mlops-stacks)
 
 ## CI/CD for SQL Developers
 
@@ -423,16 +423,16 @@ env:
 - **Use `bundle generate --watch`** to continuously sync local dashboard JSON files with Databricks UI changes
 - **Force overwrite** with `--force` flag during deployment if discrepancies occur
 
-> [!tip] Dashboard Workflow
-> Maintain dashboard definitions in Git, deploy through automated pipelines, and use variables for environment-specific configurations.
+!!! tip "Dashboard Workflow"
+    Maintain dashboard definitions in Git, deploy through automated pipelines, and use variables for environment-specific configurations.
 
 ---
 
 ## Related Pages
 
-- [[Databricks Jobs & Asset Bundles]]
-- [[Data Pipeline Patterns]]
-- [[Workspace Organization]]
+- [Databricks Jobs & Asset Bundles](Databricks%20Jobs%20&%20Asset%20Bundles.md)
+- [Data Pipeline Patterns](../fabric/data-pipeline-patterns.md)
+- [Workspace Organization](../fabric/workspace-organization.md)
 
 ---
 

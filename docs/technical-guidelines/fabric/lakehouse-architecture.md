@@ -1,7 +1,7 @@
 # Lakehouse Architecture
 
-> [!info] Purpose
-> We align Fabric lakehouses to the Medallion architecture (Bronze/Silver/Gold) and map those tiers to our semantic layers (Landing/Staging -> ADS -> Gold business products). Combined with Delta Lake optimization, this creates a clear path from raw data to business-ready products with strong data quality and performance.
+!!! info "Purpose"
+    We align Fabric lakehouses to the Medallion architecture (Bronze/Silver/Gold) and map those tiers to our semantic layers (Landing/Staging -> ADS -> Gold business products). Combined with Delta Lake optimization, this creates a clear path from raw data to business-ready products with strong data quality and performance.
 
 ## Overview
 The Lakehouse enforces a clear path from raw data to analytics-ready assets (Bronze -> Silver -> Gold). The table below highlights the primary responsibilities of each layer.
@@ -21,7 +21,7 @@ graph LR
   Gold --> Semantic["Semantic Models & Reports"]
 ```
 
-![[medallion_architecture.png]]
+![medallion_architecture](../../images/medallion_architecture.png)
 
 ## Quick Reference: Do's and Don'ts
 
@@ -66,7 +66,7 @@ Separation of concerns by layer simplifies governance and enables targeted perfo
   - Table Shortcuts: point to Delta/managed tables and are ideal in Silver/Gold layers to share curated data across lakehouses.
 - Consider enabling Shortcuts Cache for cross-geo reads to reduce egress costs; weigh cache costs vs egress savings for high-read volumes.
 
-![[onelake_shortcuts.png]]
+![onelake_shortcuts](../../images/onelake_shortcuts.png)
 
 ## Multiple Lakehouses & sensitivity
 
@@ -103,8 +103,8 @@ Implement as automated notebooks/jobs with failure alerts.
 | Z-ordering      | Better predicate pruning  | Use on high-selectivity columns |
 | Caching         | Faster repeated queries   | Use sparingly                   |
 
-> [!tip]
-> You can define table properties to lift performance
+!!! tip "tip"
+    You can define table properties to lift performance
 
 ```sql
 ALTER TABLE silver.orders SET TBLPROPERTIES (
@@ -124,10 +124,10 @@ Track ingestion latency, freshness, error rates, and storage growth. Define SLA 
 - [ ] Monitoring and alerts configured
 
 ## Related pages
-- [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]] - How Bronze/Silver/Gold map to our semantic layers
-- [[Technical Guideline Ops/Architectural Principles/Data Layers and Modeling|Data Layers and Modeling]] - Plainsight's explicit layer definitions
-- [[Technical Guideline Ops/Fabric Best-Practices/Naming Conventions|Naming Conventions]]
-- [[Data Pipeline Patterns]]
+- [Medallion Architecture](Technical%20Guideline%20Ops/Architectural%20Principles/Medallion%20-%20Bronze%20Silver%20Gold.md) - How Bronze/Silver/Gold map to our semantic layers
+- [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) - Plainsight's explicit layer definitions
+- [Naming Conventions](../power-bi/naming-conventions.md)
+- [Data Pipeline Patterns](data-pipeline-patterns.md)
 
-> [!tip]
-> Start small: implement Bronze -> Silver first, then expand to Gold as business needs stabilize.
+!!! tip "tip"
+    Start small: implement Bronze -> Silver first, then expand to Gold as business needs stabilize.

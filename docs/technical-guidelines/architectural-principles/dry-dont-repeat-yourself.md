@@ -1,7 +1,7 @@
 # DRY - Don't Repeat Yourself
 
-> [!info] Purpose
-> DRY (Don't Repeat Yourself) is a fundamental software engineering principle: every piece of knowledge should have a single, authoritative representation in your system. This guide provides tool-agnostic patterns for eliminating duplication across SQL, Python, and data platform development.
+!!! info "Purpose"
+    DRY (Don't Repeat Yourself) is a fundamental software engineering principle: every piece of knowledge should have a single, authoritative representation in your system. This guide provides tool-agnostic patterns for eliminating duplication across SQL, Python, and data platform development.
 
 ## Overview
 

@@ -1,7 +1,7 @@
 # Data Pipeline Patterns
 
-> [!info] Purpose
-> Proven pipeline patterns ensure reliable data processing and optimal resource utilization in Fabric implementations. Through incremental processing, smart CDC handling, and comprehensive observability, teams can maintain data freshness and recover gracefully from failures. Robust error handling and checkpointing strategies enable automated recovery while optimizing resource usage through intelligent scheduling.
+!!! info "Purpose"
+    Proven pipeline patterns ensure reliable data processing and optimal resource utilization in Fabric implementations. Through incremental processing, smart CDC handling, and comprehensive observability, teams can maintain data freshness and recover gracefully from failures. Robust error handling and checkpointing strategies enable automated recovery while optimizing resource usage through intelligent scheduling.
 
 ## Overview
 
@@ -53,10 +53,10 @@ WHEN NOT MATCHED THEN INSERT (...)
 | Notebooks | Advanced data processing, custom transform logic and ML experiments. Use when custom code, libraries or iterative exploration is needed. Notebooks can be orchestrated from Data Pipelines. |
 | Dataflow Gen2 | Self-service transformations for Power BI users (Power Query experience). Best for light-weight transformations tightly coupled to Power BI workflows. |
 
-![[pipelines_editor.png]]
-![[dataflow_gen2.png]]
+![pipelines_editor](../../images/pipelines_editor.png)
+![dataflow_gen2](../../images/dataflow_gen2.png)
 
-![[notebook_sample.png]]
+![notebook_sample](../../images/notebook_sample.png)
 
 ## Error handling patterns
 
@@ -81,6 +81,6 @@ WHEN NOT MATCHED THEN INSERT (...)
 
 ---
 ## Related pages
-- [[Technical Guideline Ops/Fabric Best-Practices/Naming Conventions]]
-- [[Workspace Organization]]
-- [[Lakehouse Architecture]]
+- [Naming Conventions](../power-bi/naming-conventions.md)
+- [Workspace Organization](workspace-organization.md)
+- [Lakehouse Architecture](lakehouse-architecture.md)

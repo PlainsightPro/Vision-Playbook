@@ -1,7 +1,7 @@
 # Medallion Architecture - Bronze, Silver, Gold
 
-> [!info] Overview
-> Plainsight uses the Medallion pattern as a shared language (Bronze -> Silver -> Gold) while keeping our semantic layer names for clarity (Landing/Staging -> ADS -> Gold business products). Medallion names keep us aligned with platform defaults; semantic names keep responsibilities explicit.
+!!! info "Overview"
+    Plainsight uses the Medallion pattern as a shared language (Bronze -> Silver -> Gold) while keeping our semantic layer names for clarity (Landing/Staging -> ADS -> Gold business products). Medallion names keep us aligned with platform defaults; semantic names keep responsibilities explicit.
 
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true, "curve": "basis" }, "theme": "base" } }%%
@@ -42,8 +42,8 @@ The Dim/Fact, ADS, Staging, and Landing layers remain the canonical implementati
 - Use **Landing/Staging, ADS, Gold business products** when documenting responsibilities or writing code.
 - Tag schemas, jobs, and storage paths with both when it helps discoverability (`layer=ads`, `medallion=silver`). For Bronze, also tag the source (`layer=staging`, `medallion=bronze`, `source=sap`).
 
-> [!tip] Avoid layer sprawl
-> Stick to Bronze, Silver, and Gold. If you need intermediate logic, model it as views or transient steps inside the nearest layer instead of inventing new metals.
+!!! tip "Avoid layer sprawl"
+    Stick to Bronze, Silver, and Gold. If you need intermediate logic, model it as views or transient steps inside the nearest layer instead of inventing new metals.
 
 ## Recommended Flow
 
@@ -93,7 +93,7 @@ flowchart TB
 ---
 ## Related Pages
 
-- [[Data Layers and Modeling]]: End-to-end architecture
-- [[Landing and Staging]]: Bronze equivalent
-- [[Analytical Data Store (ADS)]]: Silver equivalent
-- [[Star - Dimension Tables]] and [[Star - Fact Tables]]: Gold equivalents
+- [Data Layers and Modeling](data-layers-and-modeling.md): End-to-end architecture
+- [Landing and Staging](landing-and-staging.md): Bronze equivalent
+- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md): Silver equivalent
+- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) and [Star - Fact Tables](Star%20-%20Fact%20Tables.md): Gold equivalents

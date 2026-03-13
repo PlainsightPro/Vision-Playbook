@@ -71,7 +71,7 @@ Examples include:
 - There is no way to transfer this remainder to the next year
 - Note: The payout is taxed at **38.08%**
 
-![[mobilitybudget.png]]
+![mobilitybudget](../../images/mobilitybudget.png)
 
 ### 📜 Rules & Regulations
 

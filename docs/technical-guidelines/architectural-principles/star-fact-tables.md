@@ -1,7 +1,7 @@
 # Fact Tables
 
-> [!info] Core Concept
-> Fact tables store **numeric measurements** (the "facts") of business events and processes. They contain the quantitative data you analyze - sales amounts, quantities, balances, temperatures - within the context provided by [[Star - Dimension Tables]].
+!!! info "Core Concept"
+    Fact tables store **numeric measurements** (the "facts") of business events and processes. They contain the quantitative data you analyze - sales amounts, quantities, balances, temperatures - within the context provided by [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md).
 
 ## Structure Overview
 
@@ -51,7 +51,7 @@ The **grain of the fact table** (combination of dimension keys) provides an impl
 
 ### Dimension Keys
 
-**Dimension keys determine the dimensionality and grain** of the fact table. These are foreign keys referencing surrogate keys in [[Star - Dimension Tables]].
+**Dimension keys determine the dimensionality and grain** of the fact table. These are foreign keys referencing surrogate keys in [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md).
 
 ```mermaid
 %%{init: { "classDiagram": { "useMaxWidth": true } } }%%
@@ -97,8 +97,8 @@ classDiagram
 
 **Best practices:**
 - Set all dimension keys as `NOT NULL`
-- Use [[Dimension Tables#Special Dimension Members|special dimension members]] (-1, -2) for `_UNK` and `_N/A`
-- Support [[Dimension Tables#Role-Playing Dimensions|role-playing dimensions]] with multiple keys to the same dimension (e.g., `OrderDate_FK`, `ShipDate_FK`, `DeliveryDate_FK`)
+- Use [special dimension members](Dimension%20Tables.md#special-dimension-members) (-1, -2) for `_UNK` and `_N/A`
+- Support [role-playing dimensions](Dimension%20Tables.md#role-playing-dimensions) with multiple keys to the same dimension (e.g., `OrderDate_FK`, `ShipDate_FK`, `DeliveryDate_FK`)
 
 ### Business Keys (Natural Keys)
 
@@ -122,12 +122,12 @@ Product_FK INT NOT NULL,           -- Surrogate key (foreign key to D_Product)
 ProductCode_BK VARCHAR(50) NOT NULL, -- Business key (natural identifier from source)
 ```
 
-> [!tip] Late-Arriving Fact Handling
-> When a fact arrives but the dimension record doesn't exist yet:
-> 1. Store the business key in the fact table (`ProductCode_BK = 'ABC-123'`)
-> 2. Set the surrogate key to special member `-1` (`Product_FK = -1`)
-> 3. Later, when the dimension loads, reprocess the fact to update `Product_FK` with the correct surrogate key
-> 4. The business key ensures you can always trace back to the source and correctly match facts to dimensions
+!!! tip "Late-Arriving Fact Handling"
+    When a fact arrives but the dimension record doesn't exist yet:
+    1. Store the business key in the fact table (`ProductCode_BK = 'ABC-123'`)
+    2. Set the surrogate key to special member `-1` (`Product_FK = -1`)
+    3. Later, when the dimension loads, reprocess the fact to update `Product_FK` with the correct surrogate key
+    4. The business key ensures you can always trace back to the source and correctly match facts to dimensions
 
 **Storage trade-off:** Business keys increase fact table width, but the benefits for query simplicity, troubleshooting, and late-arriving fact handling typically outweigh the storage cost. 
 
@@ -150,8 +150,8 @@ The grain is the most critical design decision for a fact table. It defines the 
 | Sales Target | One row per salesperson per quarter |
 | Customer Account Balance | One row per account per month-end |
 
-> [!tip] Grain Rule
-> **Store facts at the lowest atomic level possible** unless data volumes or query requirements justify a higher grain. It's easy to aggregate up but impossible to disaggregate down.
+!!! tip "Grain Rule"
+    **Store facts at the lowest atomic level possible** unless data volumes or query requirements justify a higher grain. It's easy to aggregate up but impossible to disaggregate down.
 
 ### Attributes (Degenerate Dimensions)
 
@@ -162,7 +162,7 @@ Attributes in fact tables provide additional context but are neither measures no
 - Transaction IDs: `TransactionID`, `TicketNumber`
 - Tracking numbers: `ShipmentTrackingNo`
 
-These form [[Dimension Tables#Degenerate Dimensions|degenerate dimensions]];dimensional data stored directly in the fact table without a separate dimension table.
+These form [degenerate dimensions](Dimension%20Tables.md#degenerate-dimensions);dimensional data stored directly in the fact table without a separate dimension table.
 
 ### Measures
 
@@ -209,9 +209,9 @@ Fact tables are typically:
 
 ## Related Topics
 
-- [[Star - Dimension Tables]] - Provide context for fact measures through filtering and grouping
-- [[Data Layers and Modeling]] - Where fact tables fit in the architecture
-- [[Analytical Data Store (ADS)]] - Source layer for cleaned data feeding into dimensional model
+- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - Provide context for fact measures through filtering and grouping
+- [Data Layers and Modeling](data-layers-and-modeling.md) - Where fact tables fit in the architecture
+- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - Source layer for cleaned data feeding into dimensional model
 
 ---
 

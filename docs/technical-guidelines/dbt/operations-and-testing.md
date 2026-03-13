@@ -3,10 +3,10 @@
 ## Operating Principles
 Keep dbt operations boring by standardizing how jobs run, how failures alert, and which tests guard each layer. Treat runs as production software pipelines - even if analysts write the SQL.
 
-> [!📝 Run Vocabulary]- 
-> - **Development:** local, iterative, `dbt build --select my_model+`
-> - **Pre-Prod:** automated validation on feature branches or staging datasets
-> - **Production:** scheduled jobs that own SLAs and downstream contracts
+??? note "📝 Run Vocabulary"
+    - **Development:** local, iterative, `dbt build --select my_model+`
+    - **Pre-Prod:** automated validation on feature branches or staging datasets
+    - **Production:** scheduled jobs that own SLAs and downstream contracts
 
 ---
 
@@ -25,11 +25,11 @@ Document selectors, targets, threads, and variables for each scenario so operato
 
 ## Testing Ladder
 
-> [!important] 🚨 Ship Nothing With Failing Tests
-> CI pipelines and scheduled jobs must fail fast on any broken test. Production deployments without a green `dbt test` (or `dbt build`) are not allowed.
-
-> [!tip] 💡 Testing Tactic
-> - **Hit sources hard:** Saturate staging/source models with `not_null`, `unique`, freshness, and schema-conformance tests so bad data is blocked before it propagates.  
+!!! note "🚨 Ship Nothing With Failing Tests"
+    CI pipelines and scheduled jobs must fail fast on any broken test. Production deployments without a green `dbt test` (or `dbt build`) are not allowed.
+    
+    [!tip] 💡 Testing Tactic
+    - **Hit sources hard:** Saturate staging/source models with `not_null`, `unique`, freshness, and schema-conformance tests so bad data is blocked before it propagates.  
 - **Guard dimensions & facts:** In the ADS/Gold layers (dimensions & facts), prioritize relationship tests, contracts, and business constraints to ensure metrics stay trustworthy.
 
 ### 1. Built-In Data Quality
@@ -40,7 +40,7 @@ Document selectors, targets, threads, and variables for each scenario so operato
 ### 2. Business Logic, Anomaly Tests & Freshness
 - Store reusable custom tests in `tests/generic/` (e.g., `test_positive_amounts.sql`).
 - Capture scenario-specific checks via singular tests (SQL queries that return zero rows).
-- Parameterize tests so new models inherit the logic automatically by referencing macros (see [[DRY  - Don't Repeat Yourself]] for patterns).
+- Parameterize tests so new models inherit the logic automatically by referencing macros (see [DRY  - Don't Repeat Yourself](DRY%20%20-%20Don't%20Repeat%20Yourself.md) for patterns).
 - Configure `freshness` blocks per critical source with warn/error thresholds (e.g., warn after 18h, error after 26h).
 
 

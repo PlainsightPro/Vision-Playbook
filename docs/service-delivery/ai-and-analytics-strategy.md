@@ -1,6 +1,3 @@
----
-publish: false
----
 # AI & Analytics Strategy
 
 > Crafting the foundation for impactful data & AI initiatives
@@ -17,7 +14,7 @@ In the Strategy phase, we focus on crafting a tailored AI & Analytics strategy t
 
 2. **Business Prioritization for Strategic Fit**: 
    To maximize the impact of data and AI initiatives, we evaluate the identified use cases based on two dimensions: **business impact** and **technical feasibility**. This allows us to prioritize opportunities that provide the greatest return on investment (**ROI**) while being achievable with the existing or planned capabilities. Sometimes a simpler solution outperforms a perfect one - because it’s usable, adaptable, and immediately valuable. Value is key!
-![[Techfeas_busImpact.png|400]]
+![Techfeas_busImpact](../images/Techfeas_busImpact.png)
 
 3. **Roadmap Execution & Governance**: 
    With clarity on direction, we design an actionable roadmap that aligns with your broader goals. We identify quick wins and long-term bets, define reference architectures to support scalable solutions, and establish governance to keep the course steady as the landscape evolves.

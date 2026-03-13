@@ -10,12 +10,12 @@ You are just one merge request away: <a name="top"></a>
 
 # Where to start? 🤔
 
-1. Purpose & [[🥇 The Foundation of Plainsight]] 🚀
-2. How we're organised → [[🏗️ How We're Organised]] 
+1. Purpose & [🥇 The Foundation of Plainsight](the-foundation-of-plainsight.md) 🚀
+2. How we're organised → [🏗️ How We're Organised](🏗️%20How%20We're%20Organised.md) 
 3. What makes us different next to the above?
-	1. Making people grow in their careers is prio 1. Read our Career Framework: [[🎯 Evolution Process]]
-	2. Is there a limit on my growth? Spoiler alert: "No, sorry". Read: [[🚀 Impact by Ownership]]
-	3. Sharing knowledge freely, openly and over boundaries of organisations is our success recipe: [[🧑‍🤝‍🧑 Communities]]
+	1. Making people grow in their careers is prio 1. Read our Career Framework: [🎯 Evolution Process](../people-ops/working/evolution-process.md)
+	2. Is there a limit on my growth? Spoiler alert: "No, sorry". Read: [🚀 Impact by Ownership](../people-ops/working/impact-by-ownership.md)
+	3. Sharing knowledge freely, openly and over boundaries of organisations is our success recipe: [🧑‍🤝‍🧑 Communities](../partners/communities.md)
 	4. We believe in an eco-system of people that can provide value when our customers need them. Therefore we closely work together via employment and/or contract based.
 
 
@@ -46,4 +46,4 @@ This playbook exists to align everyone with our purpose, values, and processes. 
 ## What’s Next? Join Us on This Journey 🎯
 
 The introduction is just the beginning of the Plainsight story. As you explore this playbook, you’ll discover the many facets of our company - from our people and culture to our strategies and successes. We invite you to dive in, learn more, and join us on this exciting journey towards the future.
-![[plainsight playbook himym.png|300]]
+![plainsight playbook himym](../images/plainsight%20playbook%20himym.png)

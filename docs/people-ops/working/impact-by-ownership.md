@@ -19,7 +19,7 @@ It's all about going above and beyond. We have defined multiple areas that are t
 - Services Management
 - Partnership & Community Management
 
-![[Partnership Activities.png]]
+![Partnership Activities](../../images/Partnership%20Activities.png)
 
 That's a lot! Do I need to be the best in all these domains? No, but an olympic minimum and shown expertise is required. 
 
@@ -27,7 +27,7 @@ Do I need to execute all these tasks? No, luckily we are a team where everyone h
 
 That's how a team of people with everyone's strengths can be top notch on all domains to achieve business success.
 
-![[Partnership Radar Chart.png]]
+![Partnership Radar Chart](../../images/Partnership%20Radar%20Chart.png)
 
 Questions on your ambitions to become a collaborative partner?
 Talk to one of the collaborative partners.
@@ -35,7 +35,7 @@ Talk to one of the collaborative partners.
 # Collaborative partnership
 
 We believe that the act of distributing ownership generates impact beyond what a single person could ever achieve. Therefore ownership gets distributed based upon company growth towards the shoulders that makes the most impact and perform above the Olympic minimum on all domains.
-![[Equity.png]]
+![Equity](../../images/Equity.png)
 
 Questions on the nitty gritty details?
 **Talk to one of the collaborative partners**.

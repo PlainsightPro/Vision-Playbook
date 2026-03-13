@@ -12,7 +12,7 @@ Files:
 
 How to add local images:
 1. Download media and save it in this folder with an appropriate name (e.g., medallion_architecture.png).
-2. Update markdown pages to reference local image using Obsidian style: `![[medallion_architecture.png]]` or standard markdown `![alt](images/medallion_architecture.png)`.
+2. Update markdown pages to reference local image using Obsidian style: `![medallion_architecture](./medallion_architecture.png)` or standard markdown `![alt](images/medallion_architecture.png)`.
 
 If you need to re-download any images, please contact the documentation maintainers for the correct media sources.
 

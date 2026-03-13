@@ -1,8 +1,8 @@
 # Working with the Unity Catalog
 
-> [!info]
-> **Audience:** Data engineers, analytics engineers, and platform administrators working with Databricks.  
-> This guide shares quick tips to get productive with Unity Catalog in a scalable way.
+!!! info "info"
+    **Audience:** Data engineers, analytics engineers, and platform administrators working with Databricks.  
+    This guide shares quick tips to get productive with Unity Catalog in a scalable way.
 
 ## Overview
 
@@ -101,7 +101,7 @@ Two organizational units matter: catalogs and schemas.
 
 - **Catalogs:** organize by environment (`dev`, `test`, `acc`, `prod`) to simplify promotion and isolation.
 - **Schemas:** organize by **source system in Bronze** (Landing/Staging) and by **domain / data product in Silver/Gold**.
-  - Bronze schemas per source system keeps data lineage clear and makes troubleshooting and reloads simpler (see [[Landing and Staging]] and [[Data Layers and Modeling]]).
+  - Bronze schemas per source system keeps data lineage clear and makes troubleshooting and reloads simpler (see [Landing and Staging](../architectural-principles/landing-and-staging.md) and [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md)).
   - Silver/Gold layers often integrate multiple sources, so schemas are typically shared (for example a single `ads` schema) or split by domain (for example `ads_sales`, `star_finance`).
 
 Recommended baseline naming:

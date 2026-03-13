@@ -9,7 +9,7 @@ Use robust relationships (single-direction where possible), prefer whole-number 
 **Do**
 - Model as a star schema for clarity and performance.  
 - Ensure one-to-many relationships with unique dimension keys.  
-- Use integer surrogate keys (Primary Keys, Foreign Keys); avoid text/GUID keys for relationships. Read more here: [[Surrogate, Primary & Foreign Keys]]  
+- Use integer surrogate keys (Primary Keys, Foreign Keys); avoid text/GUID keys for relationships. Read more here: [Surrogate, Primary & Foreign Keys](Surrogate,%20Primary%20&%20Foreign%20Keys.md)  
 - Use Date dimension(s); mark it as a Date table.  
 - Declare the grain of each fact table (e.g., “one row per order line”) to avoid confusion.  
 - Add an Unknown / Not Applicabl key (e.g., `-1`) in dimensions to handle orphaned fact rows.  

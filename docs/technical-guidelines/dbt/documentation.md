@@ -1,7 +1,7 @@
 # dbt Documentation Best Practices
 
-> [!info] Purpose  
-> Keep documentation current, enforceable, and tied to ownership so reviews can reject incomplete PRs before code is merged.
+!!! info "Purpose"
+    Keep documentation current, enforceable, and tied to ownership so reviews can reject incomplete PRs before code is merged.
 
 ## Overview
 Document every model, source, and column at the same time you build it. Treat docs as part of the definition of the contract for downstream consumers (BI, data apps, ML). Use `_models.yml` and `_sources.yml` colocated with models to keep context close to code and to unlock automated checks.
@@ -23,8 +23,8 @@ Document every model, source, and column at the same time you build it. Treat do
 - **Ownership:** Every model/source carries an `owner` or `team` field so support paths are clear.
 - **Contracts:** Use `constraints`/`tests` alongside docs so descriptions and enforcement stay aligned.
 
-> [!tip] Folder-level YAML  
-> Use `_models.yml` and `_sources.yml` in each folder (staging, intermediate, ADS, gold). This keeps metadata close to code and enables targeted `dbt build --select staging.*` runs with complete documentation.
+!!! tip "Folder-level YAML"
+    Use `_models.yml` and `_sources.yml` in each folder (staging, intermediate, ADS, gold). This keeps metadata close to code and enables targeted `dbt build --select staging.*` runs with complete documentation.
 
 ---
 
@@ -78,8 +78,8 @@ exposures:
     description: "Executive view of revenue, pipeline, and retention metrics."
 ```
 
-> [!note] Adapter-specific considerations  
-> URL formats and authentication vary by adapter; keep the exposure definition adapter-agnostic and store secrets in the consuming platform, not in dbt.
+!!! note "Adapter-specific considerations"
+    URL formats and authentication vary by adapter; keep the exposure definition adapter-agnostic and store secrets in the consuming platform, not in dbt.
 
 ---
 
@@ -108,5 +108,5 @@ dbt docs serve --port 8080 --no-browser
 ---
 
 ## Related Pages
-- [[Technical Guideline Ops/DBT Best-Practices/Third Party Tooling]]
-- [[Technical Guideline Ops/DBT Best-Practices/Free Packages]]
+- [Third Party Tooling](../power-bi/third-party-tooling.md)
+- [Free Packages](Technical%20Guideline%20Ops/DBT%20Best-Practices/Free%20Packages.md)

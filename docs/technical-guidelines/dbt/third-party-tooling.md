@@ -69,8 +69,8 @@ Use a small, pinned set of packages; avoid floating versions. Evaluate maintenan
 | `dbt-bounce`            | Validate refs/tests connectivity             | Optional; useful for dependency sanity checks.                             |
 | `elementary`            | Monitoring/observability for dbt runs        | Adds overhead; justify for teams needing run-time telemetry.               |
 
-> [!tip] Keep `packages.yml` pinned  
-> Pin every package version and review upgrades alongside dbt-core minor releases.
+!!! tip "Keep `packages.yml` pinned"
+    Pin every package version and review upgrades alongside dbt-core minor releases.
 
 ---
 
@@ -96,4 +96,4 @@ Use a small, pinned set of packages; avoid floating versions. Evaluate maintenan
 ---
 
 ## Related Pages
-- [[Technical Guideline Ops/DBT Best-Practices/Documentation]]
+- [Documentation](documentation.md)

@@ -1,7 +1,7 @@
 # Landing and Staging Layers
 
-> [!info] Purpose
-> Landing and Staging form the Bronze entry point of your data platform. **Landing** is optional (delta-only preprocessing), while **Staging** is required (full replica of source data).
+!!! info "Purpose"
+    Landing and Staging form the Bronze entry point of your data platform. **Landing** is optional (delta-only preprocessing), while **Staging** is required (full replica of source data).
 
 ## Overview
 
@@ -80,8 +80,8 @@ graph LR
 - Landing captures operations with sequence tracking
 - Staging applies CDC logic to build full state
 
-> [!tip] Start Without Landing
-> Most projects don't need landing initially. Add it only when preprocessing complexity (external tools, file parsing, CDC) justifies the extra layer.
+!!! tip "Start Without Landing"
+    Most projects don't need landing initially. Add it only when preprocessing complexity (external tools, file parsing, CDC) justifies the extra layer.
 
 ## Staging Layer (Required)
 
@@ -111,7 +111,7 @@ graph LR
 ---
 ## Related Pages
 
-- [[Data Layers and Modeling]]: Full data platform architecture overview
-- [[Data Sources & Data Loading]]: Source system integration patterns
-- [[Analytical Data Store (ADS)]]: Next transformation step after staging
+- [Data Layers and Modeling](data-layers-and-modeling.md): Full data platform architecture overview
+- [Data Sources & Data Loading](Data%20Sources%20&%20Data%20Loading.md): Source system integration patterns
+- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md): Next transformation step after staging
 ---

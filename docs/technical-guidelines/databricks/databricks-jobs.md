@@ -1,7 +1,7 @@
 # Databricks Jobs Best Practices
 
-> [!info] Purpose
-> Databricks Jobs provide a reliable way to orchestrate data pipelines, machine learning workflows, and scheduled tasks at scale. This guide outlines best practices to ensure your jobs are efficient, maintainable, and cost-effective.
+!!! info "Purpose"
+    Databricks Jobs provide a reliable way to orchestrate data pipelines, machine learning workflows, and scheduled tasks at scale. This guide outlines best practices to ensure your jobs are efficient, maintainable, and cost-effective.
 
 ## Overview
 
@@ -27,8 +27,8 @@ flowchart LR
 
 ## 1. Design Jobs with Clear, Modular Responsibilities
 
-> [!warning] Avoid Monolithic Jobs
-> Don't create a single job that does "everything." Break complex workflows into smaller, focused tasks.
+!!! warning "Avoid Monolithic Jobs"
+    Don't create a single job that does "everything." Break complex workflows into smaller, focused tasks.
 
 ### Break Complex Workflows into Smaller Tasks
 
@@ -102,8 +102,8 @@ target_table = f"{env}.landing.{table_name}"  # Landing/Bronze-equivalent
 print(f"Processing {target_table} for date {processing_date}")
 ```
 
-> [!tip] Environment Flexibility
-> Parameterization helps you run the same code across dev, staging, and prod environments without manual edits.
+!!! tip "Environment Flexibility"
+    Parameterization helps you run the same code across dev, staging, and prod environments without manual edits.
 
 ## 3. Use Cluster Policies and Job Clusters
 
@@ -147,8 +147,8 @@ flowchart TD
 
 ## 4. Manage Dependencies Properly
 
-> [!warning] Dependency Conflicts
-> Dependency conflicts can break pipelines. Proper management is critical for reliability.
+!!! warning "Dependency Conflicts"
+    Dependency conflicts can break pipelines. Proper management is critical for reliability.
 
 ### Dependency Management Strategies
 
@@ -315,20 +315,20 @@ flowchart LR
 
 ## 7. Integrate Jobs with CI/CD Pipelines
 
-> [!tip] Production-Grade Pipelines
-> Production-grade pipelines rely on automation. Manual deployments don't scale.
+!!! tip "Production-Grade Pipelines"
+    Production-grade pipelines rely on automation. Manual deployments don't scale.
 
 Use Databricks asset bundles to store jobs and deploy in different environments.
 
 This ensures **consistent deployment between environments**.
 
-> [!info] Related Resources
-> See [[Databricks CI-CD]] for detailed CI/CD guidance.
+!!! info "Related Resources"
+    See [Databricks CI-CD](databricks-ci-cd.md) for detailed CI/CD guidance.
 
 ## 8. Secure Your Jobs Properly
 
-> [!warning] Security First
-> Security should never be an afterthought. Build it in from the start.
+!!! warning "Security First"
+    Security should never be an afterthought. Build it in from the start.
 
 ### Key Security Practices
 
@@ -445,8 +445,8 @@ logger.info(f"Operation took {elapsed:.2f} seconds")
 
 ## 10. Test Thoroughly Before Production
 
-> [!warning] Testing is Non-Negotiable
-> Do not deploy untested workflows to production systems.
+!!! warning "Testing is Non-Negotiable"
+    Do not deploy untested workflows to production systems.
 
 Always test jobs in development and acceptation before deploying to production.
 
@@ -471,10 +471,10 @@ When creating or reviewing a Databricks Job, ensure you've addressed:
 
 ## Related Pages
 
-- [[Databricks CI-CD]]
-- [[Data Pipeline Patterns]]
-- [[Lakehouse Architecture]]
-- [[Workspace Organization]]
+- [Databricks CI-CD](databricks-ci-cd.md)
+- [Data Pipeline Patterns](../fabric/data-pipeline-patterns.md)
+- [Lakehouse Architecture](../fabric/lakehouse-architecture.md)
+- [Workspace Organization](../fabric/workspace-organization.md)
 
 ---
 

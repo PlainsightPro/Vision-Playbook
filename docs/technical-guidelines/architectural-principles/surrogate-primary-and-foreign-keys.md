@@ -24,13 +24,13 @@ and speed up filters and joins at scale. GUID relationships are stored as string
 - `FactSales[CustomerID]` (e.g., 12356) → `Dim_Customer[CustomerID]`
 
 
-> [!NOTE] Dates as PK/FK?
-> Within modern analytics platforms, dates are often stored as integers and benefit from excellent compression. Having date columns in your transactional/fact tables can provide advantages (they can be treated as degenerate dimensions and shown directly on the table without requiring a separate Date dimension). As such, dates are commonly allowed as keys. 
+!!! note "Dates as PK/FK?"
+    Within modern analytics platforms, dates are often stored as integers and benefit from excellent compression. Having date columns in your transactional/fact tables can provide advantages (they can be treated as degenerate dimensions and shown directly on the table without requiring a separate Date dimension). As such, dates are commonly allowed as keys. 
 
 ---
 
 ## Related Topics
 
-- [[Star - Dimension Tables]] - How surrogate keys are used in dimension design
-- [[Star - Fact Tables]] - How foreign keys reference dimension surrogate keys
-- [[Data Layers and Modeling]] - Where keys fit in the overall architecture 
+- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - How surrogate keys are used in dimension design
+- [Star - Fact Tables](Star%20-%20Fact%20Tables.md) - How foreign keys reference dimension surrogate keys
+- [Data Layers and Modeling](data-layers-and-modeling.md) - Where keys fit in the overall architecture 

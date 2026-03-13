@@ -1,7 +1,7 @@
 # Analytical Data Store (ADS)
 
-> [!info] Core Concept
-> The **Analytical Data Store (ADS)** is our Medallion **Silver** layer. It bridges Landing/Staging (Bronze) and the Gold layer (business products) by turning raw, source-aligned data into clean, integrated, and history-aware entities that dimensional models, feature stores, and downstream products can rely on.
+!!! info "Core Concept"
+    The **Analytical Data Store (ADS)** is our Medallion **Silver** layer. It bridges Landing/Staging (Bronze) and the Gold layer (business products) by turning raw, source-aligned data into clean, integrated, and history-aware entities that dimensional models, feature stores, and downstream products can rely on.
 
 ## Why "Analytical Data Store"?
 
@@ -28,12 +28,12 @@ We keep the semantic name **ADS** to make responsibilities explicit while aligni
 | Granularity | Entity-level (one table per entity) | Business-process level (facts + supporting dimensions) |
 | Consumers | Data engineers, analytics engineers | Business users, BI tools, ML models |
 
-> [!note] Separation of concerns
-> ADS carries the heavy lifting for conformance, history, and integration. Gold-layer models focus on business meaning and performance rather than rebuilding history logic.
+!!! note "Separation of concerns"
+    ADS carries the heavy lifting for conformance, history, and integration. Gold-layer models focus on business meaning and performance rather than rebuilding history logic.
 
 ## Purpose and Core Transformations
 
-ADS sits between the Staging/Intermediate steps and the Dimensional Model. It feeds Gold-layer outputs (Dims/Facts, OBTs, Feature Stores) and [[Master Data]].
+ADS sits between the Staging/Intermediate steps and the Dimensional Model. It feeds Gold-layer outputs (Dims/Facts, OBTs, Feature Stores) and [Master Data](master-data.md).
 
 - **Data quality validation**: Enforce rules, quarantine errors.
 - **Denormalization**: Flatten normalized structures for usability.
@@ -47,8 +47,8 @@ ADS sits between the Staging/Intermediate steps and the Dimensional Model. It fe
 | **Base tables** | Current, cleansed state | One current row | Overwrite changes (Type 1) | `ADS_<Entity>` (for example `ADS_Customer`) |
 | **Snapshot tables** | Historical versions | Multiple rows per entity | Track all attribute changes (Type 2) | `ADS_<Entity>_Snapshot` (for example `ADS_Customer_Snapshot`) |
 
-> [!warning] Snapshot vs Dimension
-> ADS snapshots capture every attribute change so downstream consumers can choose how to model history. Dimension tables in Gold selectively track only the attributes that matter to the business.
+!!! warning "Snapshot vs Dimension"
+    ADS snapshots capture every attribute change so downstream consumers can choose how to model history. Dimension tables in Gold selectively track only the attributes that matter to the business.
 
 ### Base Tables (current state)
 
@@ -108,8 +108,8 @@ CREATE TABLE ADS_Customer_Snapshot
 );
 ```
 
-> [!tip] When to create snapshots
-> Create a snapshot only when downstream analysis needs attribute change history, compliance requires it, or dimensions will consume the history. Transaction-style tables (for example invoices) are already point-in-time and rarely need snapshots.
+!!! tip "When to create snapshots"
+    Create a snapshot only when downstream analysis needs attribute change history, compliance requires it, or dimensions will consume the history. Transaction-style tables (for example invoices) are already point-in-time and rarely need snapshots.
 
 ## Key Transformations in Silver (ADS)
 
@@ -142,7 +142,7 @@ CREATE TABLE ADS_Customer_Snapshot
 ## Common Use Cases
 
 - Multi-source customer, product, or supplier integration.
-- Feeding [[Master Data]] with clean entities.
+- Feeding [Master Data](master-data.md) with clean entities.
 - Providing SCD-ready sources for dimension builds.
 - Enabling point-in-time analysis for analysts and data scientists.
 
@@ -162,8 +162,8 @@ CREATE TABLE ADS_Customer_Snapshot
 
 ## Related Topics
 
-- [[Data Layers and Modeling]] - Overall architecture context
-- [[Medallion - Bronze Silver Gold]] - How ADS maps to Silver
-- [[Star - Dimension Tables]] - Downstream consumer for dimensional modeling
-- [[Star - Fact Tables]] - Downstream consumer for dimensional modeling
-- [[Master Data]] - Parallel consumer for reference data management
+- [Data Layers and Modeling](data-layers-and-modeling.md) - Overall architecture context
+- [Medallion - Bronze Silver Gold](Medallion%20-%20Bronze%20Silver%20Gold.md) - How ADS maps to Silver
+- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - Downstream consumer for dimensional modeling
+- [Star - Fact Tables](Star%20-%20Fact%20Tables.md) - Downstream consumer for dimensional modeling
+- [Master Data](master-data.md) - Parallel consumer for reference data management

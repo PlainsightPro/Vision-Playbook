@@ -1,7 +1,7 @@
 # Fabric Naming Conventions
 
-> [!info] Purpose
-> Standardized naming patterns create clarity and enable automation across the Fabric data estate. Through semantic prefixes, version indicators, and type codes, teams can automate governance processes and maintain clear data lineage. When implemented properly, these conventions accelerate development through discoverability while building trust through consistent, meaningful artifact names.
+!!! info "Purpose"
+    Standardized naming patterns create clarity and enable automation across the Fabric data estate. Through semantic prefixes, version indicators, and type codes, teams can automate governance processes and maintain clear data lineage. When implemented properly, these conventions accelerate development through discoverability while building trust through consistent, meaningful artifact names.
 
 ## Overview
 This section captures pragmatic rules you can enforce via templates and CI. Benefits and rationale are summarized below.
@@ -13,7 +13,7 @@ This section captures pragmatic rules you can enforce via templates and CI. Bene
 | Governance | Regex-based policy checks make it possible to deny or flag non-conforming artifacts in PRs |
 | Clarity | Separates technical names from business-facing display names, reducing ambiguity |
 
-[^1]![[datamarc_naming.png]]
+[^1]![datamarc_naming](../../images/datamarc_naming.png)
 
 *Image source: [Marc Lelijveld](https://data-marc.com/2025/02/13/structure-fabric-items-by-applying-naming-conventions/)*
 
@@ -106,15 +106,15 @@ This structure keeps type & purpose easily parseable for automation.
 | Report | `RP_ANLYZ_ExecSummary` | Business-facing Exec summary dashboard |
 
 
-> [!warning] Keep Environment Names Out of Artifact Names
-> Avoid embedding environment names into canonical artifact names (prefer `Lakehouse_Bronze` over `Lakehouse_Bronze_DEV`). Environment-aware behavior is better handled by workspace scoping, deployment pipelines, or display names. This keeps canonical names environment-agnostic and simplifies promotion across environments.
-
-> [!tip] Validating & Automating Naming Conventions
-> - **Validation**: Use this regex pattern to validate names: `^[A-Z]{2}_[A-Z]{4,7}_[A-Za-z0-9_]+$`
-> - **Ownership**: Assign ownership automatically using prefix + purpose (e.g., all `LH_*` items owned by the Data Platform team)
+!!! warning "Keep Environment Names Out of Artifact Names"
+    Avoid embedding environment names into canonical artifact names (prefer `Lakehouse_Bronze` over `Lakehouse_Bronze_DEV`). Environment-aware behavior is better handled by workspace scoping, deployment pipelines, or display names. This keeps canonical names environment-agnostic and simplifies promotion across environments.
+    
+    [!tip] Validating & Automating Naming Conventions
+    - **Validation**: Use this regex pattern to validate names: `^[A-Z]{2}_[A-Z]{4,7}_[A-Za-z0-9_]+$`
+    - **Ownership**: Assign ownership automatically using prefix + purpose (e.g., all `LH_*` items owned by the Data Platform team)
 
 ## Related pages
-- [[Workspace Organization]] - where items live
-- [[Technical Guideline Ops/Fabric Best-Practices/Third Party Tooling]] - tools to browse and manage artifacts
+- [Workspace Organization](workspace-organization.md) - where items live
+- [Third Party Tooling](../power-bi/third-party-tooling.md) - tools to browse and manage artifacts
 
 [^1]: 

@@ -1,7 +1,7 @@
 # Capacity Management & Optimization
 
-> [!info] Purpose
-> Strategic capacity management ensures optimal performance and cost-effectiveness in Fabric environments. Through careful workload isolation, performance optimization, and intelligent scaling strategies, teams can maintain predictable performance while controlling costs. Proper capacity planning combined with workload smoothing enables efficient resource utilization while meeting service level objectives.
+!!! info "Purpose"
+    Strategic capacity management ensures optimal performance and cost-effectiveness in Fabric environments. Through careful workload isolation, performance optimization, and intelligent scaling strategies, teams can maintain predictable performance while controlling costs. Proper capacity planning combined with workload smoothing enables efficient resource utilization while meeting service level objectives.
 
 ## Overview
 Capacity management follows a four-step cycle: Size → Split → Optimize → Monitor. Success requires both initial planning and ongoing operational excellence.
@@ -55,8 +55,8 @@ flowchart LR
 ✓ Business SLAs and performance targets
 ✓ Growth projections (6-12 months)
 
-> [!warning]
-> Avoid F2 for production use - suitable only for POCs and light testing. F2 becomes constrained for Spark operations and cannot support Copilot features.
+!!! warning "warning"
+    Avoid F2 for production use - suitable only for POCs and light testing. F2 becomes constrained for Spark operations and cannot support Copilot features.
 
 ## 2. Workload Isolation
 
@@ -93,22 +93,22 @@ flowchart LR
    - Better for predictable workloads
    - Requires careful scheduling
 
-   ![[smoothing.png]]
+   ![smoothing](../../images/smoothing.png)
    *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
 
 
    **Impact of Smoothing on Capacity Metrics**
 
    Without smoothing - CPU usage shows sharp spikes:
-   ![[capacity_metrics_no_smoothing.png]]
+   ![capacity_metrics_no_smoothing](../../images/capacity_metrics_no_smoothing.png)
 
    With smoothing - More even resource utilization:
-   ![[capacity_metrics_with_smoothing.png]]
+   ![capacity_metrics_with_smoothing](../../images/capacity_metrics_with_smoothing.png)
    *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
 
 
-   > [!tip]
-   > Notice how workload smoothing reduces sharp CPU spikes and creates a more consistent resource utilization pattern. This leads to better performance predictability and more efficient capacity usage.
+   !!! tip "tip"
+       Notice how workload smoothing reduces sharp CPU spikes and creates a more consistent resource utilization pattern. This leads to better performance predictability and more efficient capacity usage.
 
    b. **Bursting**
    - Scale up temporarily for peaks
@@ -122,11 +122,11 @@ flowchart LR
    - Responds to both predictable and unexpected demands
    - Sets min/max boundaries for control
 
-   ![[autoscale.png]]
+   ![autoscale](../../images/autoscale.png)
    *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
 
-   > [!tip]
-   > Autoscaling automatically increases or decreases your capacity size based on workload demands. It helps optimize costs by scaling down during quiet periods and scaling up to handle peak loads. Configure min/max boundaries to control costs while ensuring performance.
+   !!! tip "tip"
+       Autoscaling automatically increases or decreases your capacity size based on workload demands. It helps optimize costs by scaling down during quiet periods and scaling up to handle peak loads. Configure min/max boundaries to control costs while ensuring performance.
 
 2. **Admin Portal Settings**
 
@@ -143,8 +143,8 @@ flowchart LR
    - Tag resources for cost allocation
    - Set spend alerts and thresholds
 
-> [!tip]
-> Start with conservative limits and adjust based on monitoring data. For Spark-based Lakehouse workloads, see [[Spark Autoscaling|Spark Autoscaling]] for detailed configuration guidance.
+!!! tip "tip"
+    Start with conservative limits and adjust based on monitoring data. For Spark-based Lakehouse workloads, see [Spark Autoscaling](spark-autoscaling.md) for detailed configuration guidance.
 
 ## 4. Monitoring & Governance
 
@@ -169,6 +169,6 @@ Tip: treat sustained warnings (multiple intervals) as actionable signals; invest
 
 ---
 ## Related pages
-- [[Workspace Organization]]
-- [[Lakehouse Architecture]]
-- [[Data Pipeline Patterns]]
+- [Workspace Organization](workspace-organization.md)
+- [Lakehouse Architecture](lakehouse-architecture.md)
+- [Data Pipeline Patterns](data-pipeline-patterns.md)

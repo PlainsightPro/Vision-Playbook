@@ -1,7 +1,7 @@
 # Workspace Organization
 
-> [!info] Purpose
-> Strategic workspace organization enables reliable development workflows and clear operational boundaries in Fabric environments. By implementing proper workspace scoping, RBAC models, and promotion patterns, teams can maintain security, predict costs, and accelerate development cycles. Well-structured workspaces form the foundation for scalable analytics delivery while maintaining clear ownership and access controls.
+!!! info "Purpose"
+    Strategic workspace organization enables reliable development workflows and clear operational boundaries in Fabric environments. By implementing proper workspace scoping, RBAC models, and promotion patterns, teams can maintain security, predict costs, and accelerate development cycles. Well-structured workspaces form the foundation for scalable analytics delivery while maintaining clear ownership and access controls.
 
 ## Overview
 Well-structured workspaces reduce accidental access, simplify promotion, and make costs predictable. Key outcomes are summarized below.
@@ -99,8 +99,8 @@ Workspace scoping, role-based access control (RBAC), and promotion mechanics tog
 - [ ] Backup & soft-delete configured
 
 ## Related pages
-- [[Technical Guideline Ops/Fabric Best-Practices/Naming Conventions]]
-- [[Capacity Management]]
+- [Naming Conventions](../power-bi/naming-conventions.md)
+- [Capacity Management](capacity-management.md)
 
-> [!tip]
-> Keep production workspaces minimal; use sharing (Apps) to present friendly names to end users.
+!!! tip "tip"
+    Keep production workspaces minimal; use sharing (Apps) to present friendly names to end users.

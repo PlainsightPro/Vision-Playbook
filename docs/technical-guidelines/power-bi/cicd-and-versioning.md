@@ -5,11 +5,11 @@ Treat Power BI like software.
 Prefer **Power BI Desktop Projects (.pbip)** so semantic model and report definitions are **text-based, diffable, and Git-friendly**.  
 This enables proper versioning, branching, and CI/CD.  
 
-> [!📝 What are .pbip and .pbir files?]-
-> A `.pbip` file is a **project manifest** that points to the actual definition files:  
-> - **`.tmdl` (Tabular Model Definition Language):** semantic model definition (tables, relationships, measures).  
-> - **`.pbir` (Power BI Report):** report layout, visuals, and metadata.  
-> These text-based files replace binary `.pbix` files as the preferred format for collaborative, versioned development.
+??? note "📝 What are .pbip and .pbir files?"
+    A `.pbip` file is a **project manifest** that points to the actual definition files:  
+    - **`.tmdl` (Tabular Model Definition Language):** semantic model definition (tables, relationships, measures).  
+    - **`.pbir` (Power BI Report):** report layout, visuals, and metadata.  
+    These text-based files replace binary `.pbix` files as the preferred format for collaborative, versioned development.
 
 ---
 
@@ -85,8 +85,8 @@ This enables proper versioning, branching, and CI/CD.
 - **Use when:**  
   - **Default choice** for production-grade, multi-developer, and enterprise BI projects.  
 
-> [!🔍 Quality Assurance in Git Workflows]-
-> 
+??? note "🔍 Quality Assurance in Git Workflows"
+    
 When integrating Power BI with Git, you can also introduce **automated quality checks** for semantic models and reports:
 > 
 > - **[Tabular Editor Best Practice Analyzer (BPA)](https://github.com/TabularEditor/BestPracticeRules)**  

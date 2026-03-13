@@ -1,7 +1,7 @@
 # Autoscale Billing for Spark in Microsoft Fabric
 
-> [!info] Purpose
-> Autoscale Billing for Spark enables serverless, pay-as-you-go compute for Spark workloads in Microsoft Fabric. Once enabled, Spark jobs no longer consume the shared capacity, giving you the flexibility to scale Spark workloads independently and optimize costs.
+!!! info "Purpose"
+    Autoscale Billing for Spark enables serverless, pay-as-you-go compute for Spark workloads in Microsoft Fabric. Once enabled, Spark jobs no longer consume the shared capacity, giving you the flexibility to scale Spark workloads independently and optimize costs.
 
 ## Requirements
 
@@ -10,8 +10,8 @@
 | **Capacity** | Only available for Fabric F-SKUs (F2 and above). Not supported on P-SKUs or Fabric Trial capacities. |
 | **Access** | You must be a Fabric Capacity Administrator to configure Autoscale Billing. |
 
-> [!warning] Important
-> Enabling, disabling, or reducing the Maximum Capacity Units will cancel all active Spark jobs running under Autoscale Billing to avoid billing overlaps.
+!!! warning "Important"
+    Enabling, disabling, or reducing the Maximum Capacity Units will cancel all active Spark jobs running under Autoscale Billing to avoid billing overlaps.
 
 ## How to Configure Autoscale Billing for Spark
 
@@ -34,14 +34,14 @@ Follow these steps to enable and manage Autoscale Billing settings for a Fabric 
      - The quota approved for your Azure subscription
      - The type of subscription you're using
    - You are only billed for the compute used, up to this limit
-   - To increase quota, see [[#Request additional quotas|Request additional quotas]] below
+   - To increase quota, see [Request additional quotas](#request-additional-quotas) below
 
 5. **Save Your Settings**
    - Click Save to apply your configuration
    - Your Spark Pools can now utilize the new CU quota set by Autoscale Billing
 
-> [!tip]
-> Once Autoscale Billing is enabled, consider whether you can resize your shared Fabric capacity down (see [[#Optional: Resize and reset capacity for cost optimization|Optional: Resize and reset capacity]] below), since Spark workloads are now billed separately.
+!!! tip "tip"
+    Once Autoscale Billing is enabled, consider whether you can resize your shared Fabric capacity down (see [Optional: Resize and reset capacity](#optional-resize-and-reset-capacity-for-cost-optimization) below), since Spark workloads are now billed separately.
 
 ## Optional: Resize and Reset Capacity for Cost Optimization
 
@@ -58,8 +58,8 @@ After enabling Autoscale Billing, you can downsize your shared Fabric capacity i
 3. **Resize to a Lower SKU**
    - Resize the capacity to a lower SKU that fits your remaining workloads (e.g., Power BI, Data Warehouse, Real-Time Intelligence, Databases)
 
-> [!warning] Note
-> Only Azure administrators can resize SKUs. This change is made in the Azure portal, not within Fabric settings.
+!!! warning "Note"
+    Only Azure administrators can resize SKUs. This change is made in the Azure portal, not within Fabric settings.
 
 ## Monitor Billing and Usage
 
@@ -94,6 +94,6 @@ If your data engineering or data science workloads require a higher quota than y
    - This ensures your Autoscale Billing model can accommodate increased demand without interrupting Spark workloads
 
 ## Related Pages
-- [[6. Capacity Management|Capacity Management]] - Overall capacity planning and monitoring
-- [[4. Data Pipeline Patterns|Data Pipeline Patterns]] - Design Spark jobs for efficiency
-- [[3. Lakehouse Architecture|Lakehouse Architecture]] - Understand medallion architecture patterns
+- [Capacity Management](6.%20Capacity%20Management.md) - Overall capacity planning and monitoring
+- [Data Pipeline Patterns](4.%20Data%20Pipeline%20Patterns.md) - Design Spark jobs for efficiency
+- [Lakehouse Architecture](3.%20Lakehouse%20Architecture.md) - Understand medallion architecture patterns

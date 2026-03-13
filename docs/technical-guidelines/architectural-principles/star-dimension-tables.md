@@ -1,7 +1,7 @@
 # Dimension Tables
 
-> [!info] Core Concept
-> Dimension tables describe the **who, what, where, when, and why** of your business. They provide context for the numeric measures stored in [[Star - Fact Tables]], enabling analysts to filter, group, and slice data meaningfully.
+!!! info "Core Concept"
+    Dimension tables describe the **who, what, where, when, and why** of your business. They provide context for the numeric measures stored in [Star - Fact Tables](Star%20-%20Fact%20Tables.md), enabling analysts to filter, group, and slice data meaningfully.
 
 ## Structure Overview
 
@@ -45,16 +45,16 @@ CREATE TABLE D_Salesperson
 
 ==Always use surrogate keys== as the primary key for dimension tables. A surrogate key is a system-generated, single-column **integer** unique identifier.
 
-For complete details on key design principles, see [[Surrogate, Primary & Foreign Keys]].
+For complete details on key design principles, see [Surrogate, Primary & Foreign Keys](Surrogate,%20Primary%20&%20Foreign%20Keys.md).
 
 **Why surrogate keys for dimensions:**
-- Enables [[Slowly Changing Dimensions]] (SCD Type 2) for historical tracking
+- Enables [Slowly Changing Dimensions](Slowly%20Changing%20Dimensions.md) (SCD Type 2) for historical tracking
 - Consolidates multiple data sources without identifier conflicts
 - Simplifies multi-column natural keys into efficient single-column keys
 - Insulates the data warehouse from source system changes
 
-> [!warning] Exception: Date & Time Dimensions
-> Date dimensions should use `YYYYMMDD` format (e.g., `20251028`) as the surrogate key. This is human-readable, sortable, and conforms to ISO 8601 standards.
+!!! warning "Exception: Date & Time Dimensions"
+    Date dimensions should use `YYYYMMDD` format (e.g., `20251028`) as the surrogate key. This is human-readable, sortable, and conforms to ISO 8601 standards.
 
 ### Natural Keys (Business Keys)
 The **natural key** (or business key) is the identifier from the source system. Store this to maintain traceability and enable ETL lookups.
@@ -71,8 +71,8 @@ Dimension attributes provide the descriptive context used for filtering and grou
 - Numeric codes: `ProductSize`, `Priority`
 - Flags: `IsActive`, `IsPreferred`
 
-> [!tip] Discovering Attributes
-> Listen for the word **"by"** in conversations: "analyze sales **by** salesperson, **by** month, **by** product category" → These are your dimension attributes!
+!!! tip "Discovering Attributes"
+    Listen for the word **"by"** in conversations: "analyze sales **by** salesperson, **by** month, **by** product category" → These are your dimension attributes!
 
 ### Technical Columns (Historical Tracking & Audit)
 
@@ -157,13 +157,13 @@ Manage historical changes with three primary strategies:
 
 ✅ **Benefit:** Historical aggregations remain accurate - sales attributed to the region where the salesperson worked at that time.
 
-> [!tip] Label Attribute for SCD Type 2
-> Include a human-readable label combining key attributes and version context:
-> - `"Lynn Tsoflias (Australia)"` (old version)
-> - `"Lynn Tsoflias (United Kingdom)"` (current version)
-
-> [!warning] Balance Usability vs. Accuracy
-> Too many SCD Type 2 changes create overwhelming version counts. If an attribute changes frequently, consider storing it in the [[Star - Fact Tables]] instead.
+!!! tip "Label Attribute for SCD Type 2"
+    Include a human-readable label combining key attributes and version context:
+    - `"Lynn Tsoflias (Australia)"` (old version)
+    - `"Lynn Tsoflias (United Kingdom)"` (current version)
+    
+    [!warning] Balance Usability vs. Accuracy
+    Too many SCD Type 2 changes create overwhelming version counts. If an attribute changes frequently, consider storing it in the [Star - Fact Tables](Star%20-%20Fact%20Tables.md) instead.
 
 ### Conformed Dimensions
 
@@ -234,11 +234,11 @@ Include rows representing data quality states:
 
 ## Related Topics
 
-- [[Star - Fact Tables]] - Numeric measures that dimensions provide context for
-- [[Surrogate, Primary & Foreign Keys]] - Key design principles and best practices
-- [[Data Layers and Modeling]] - Where dimensions fit in the architecture
-- [[Analytical Data Store (ADS)]] - Source of cleaned, denormalized data for dimension loading
-- [[Master Data]] - Operational database for user-maintained reference data
+- [Star - Fact Tables](Star%20-%20Fact%20Tables.md) - Numeric measures that dimensions provide context for
+- [Surrogate, Primary & Foreign Keys](Surrogate,%20Primary%20&%20Foreign%20Keys.md) - Key design principles and best practices
+- [Data Layers and Modeling](data-layers-and-modeling.md) - Where dimensions fit in the architecture
+- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - Source of cleaned, denormalized data for dimension loading
+- [Master Data](master-data.md) - Operational database for user-maintained reference data
 
 ---
 

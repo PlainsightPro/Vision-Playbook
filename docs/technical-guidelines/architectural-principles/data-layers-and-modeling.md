@@ -126,7 +126,7 @@ class A,C blueBox;
 ```
 
 Here we see all data that the information is flowing through. 
-1. The **Source** contains all information but is not part of our Data Platform. Read more about sources in [[Data Sources & Data Loading]]
+1. The **Source** contains all information but is not part of our Data Platform. Read more about sources in [Data Sources & Data Loading](Data%20Sources%20&%20Data%20Loading.md)
 
 2. **Landing (Optional, Bronze)** contains the increments extracted from the source or external tables populated by ingestion tools. This layer is useful when:
    - External tools (Fabric Pipelines, Databricks Lakeflow Connect, replication, ...) populate external tables
@@ -134,18 +134,18 @@ Here we see all data that the information is flowing through.
    - Raw files (JSON, Parquet) require parsing before staging
    - Change data capture (CDC) streams need transformation
    
-> [!tip] The 'Landing' layer can be skipped when no intermediary steps are required to fill 'Staging'
+!!! tip "The 'Landing' layer can be skipped when no intermediary steps are required to fill 'Staging'"
    
-4. The **Staging layer (Bronze)** contains a replica of the source information. This layer contains a replica of the source after an ETL load. The data in this layer is as close to the source as possible (similar column names, similar table names) and nearly no data corrections are applied here. This layer is used for reloads of data to subsequent layers. Read more in [[Landing and Staging]].
+4. The **Staging layer (Bronze)** contains a replica of the source information. This layer contains a replica of the source after an ETL load. The data in this layer is as close to the source as possible (similar column names, similar table names) and nearly no data corrections are applied here. This layer is used for reloads of data to subsequent layers. Read more in [Landing and Staging](landing-and-staging.md).
 
 5. The **Intermediate layers (Silver)** provide helpful steps to apply changes to the staging and ADS layers such as flattening, filtering, grouping, denormalizing/flattening and more. The intermediary layers can consist of volatile views, of small increments, persisted tables and more. These layers help split up the ETL for more modularity, re-use of logic and more. 
    
-> [!tip] The 'Intermediate' layer can be skipped when no intermediary steps are required to fill 'ADS' or 'Gold' layers
+!!! tip "The 'Intermediate' layer can be skipped when no intermediary steps are required to fill 'ADS' or 'Gold' layers"
    
-5. The **ADS layer (Silver)** provides cleaned data with data quality rules applied and initial denormalization. Tables are unpivoted, making the data more accessible while still allowing for further business-friendly modeling. This layer is used to integrate different sources, for historical build-up (supporting SCD2 logic in later-on streams), and for increased querying capacity to address business questions. This is the ideal phase to feed Master Data Services (MDS). This layer can be used by experienced data engineers and data analysts. Read more about this layer in [[Analytical Data Store (ADS)]]. 
+5. The **ADS layer (Silver)** provides cleaned data with data quality rules applied and initial denormalization. Tables are unpivoted, making the data more accessible while still allowing for further business-friendly modeling. This layer is used to integrate different sources, for historical build-up (supporting SCD2 logic in later-on streams), and for increased querying capacity to address business questions. This is the ideal phase to feed Master Data Services (MDS). This layer can be used by experienced data engineers and data analysts. Read more about this layer in [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md). 
 
 6. The **Gold layer** provides business-optimized data structures for reporting, analytics, and machine learning:
-   - **Star - Dimensional Model** (Facts & Dimensions): Star schema optimized for fast querying and business user exploration. Read more in [[Star - Dimension Tables]] and [[Star - Fact Tables]].
+   - **Star - Dimensional Model** (Facts & Dimensions): Star schema optimized for fast querying and business user exploration. Read more in [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) and [Star - Fact Tables](Star%20-%20Fact%20Tables.md).
    - **Feature Store**: Curated, reusable feature tables (often wide / denormalized) for machine learning model training, inference, and advanced analytics.
 
 
@@ -236,19 +236,19 @@ graph LR
 - **Silver (ADS) — 6 tables**: Denormalized into `ADS_Customer` (Customer + Address), `ADS_Customer_Snapshot` (history tracking from Customer), `ADS_Product` (Product + Color + Category), `ADS_ProductCategory` (aggregated product categories from Sales Budget), `ADS_Invoice` (Invoice Header + Lines), `ADS_SalesBudget` (budget targets from Sales Budget and Product Category).
 - **Gold (Dimensional Model) — 4 tables**: Star schema with 2 facts (`F_Sales`, `F_SalesBudget`) and 2 dimensions (`D_Customer`, `D_Product` merging both detail and category levels).
 
-> [!tip] Progressive Denormalization
-> Notice the progressive reduction in table count as data moves through layers:
-> - **Staging**: 8 tables with complex relationships
-> - **ADS**: 6 tables with denormalization, history tracking (`ADS_Customer_Snapshot`), business categorization (`ADS_ProductCategory`), and budgets (`ADS_SalesBudget`)
-> - **Dimensional**: 2 fact tables + 2 dimension tables in star schema
-> 
-> Key insight: `D_Product` merges both `ADS_Product` (detail level with individual products) and `ADS_ProductCategory` (aggregate category level) into a single dimensional hierarchy. This allows both `F_Sales` (detailed transactions at product level) and `F_SalesBudget` (aggregated budgets at category level) to share the same dimension, enabling actual vs. budget comparisons across the product hierarchy.
+!!! tip "Progressive Denormalization"
+    Notice the progressive reduction in table count as data moves through layers:
+    - **Staging**: 8 tables with complex relationships
+    - **ADS**: 6 tables with denormalization, history tracking (`ADS_Customer_Snapshot`), business categorization (`ADS_ProductCategory`), and budgets (`ADS_SalesBudget`)
+    - **Dimensional**: 2 fact tables + 2 dimension tables in star schema
+    
+    Key insight: `D_Product` merges both `ADS_Product` (detail level with individual products) and `ADS_ProductCategory` (aggregate category level) into a single dimensional hierarchy. This allows both `F_Sales` (detailed transactions at product level) and `F_SalesBudget` (aggregated budgets at category level) to share the same dimension, enabling actual vs. budget comparisons across the product hierarchy.
 ---
 
 ## Related Topics
 
-- [[Data Sources & Data Loading]] - How data enters the platform
-- [[Analytical Data Store (ADS)]] - Silver layer between Bronze and Gold
-- [[Star - Dimension Tables]] - Star schema dimension design patterns
-- [[Star - Fact Tables]] - Star schema fact table design patterns  
-- [[Master Data]] - Operational database for business-maintained reference data
+- [Data Sources & Data Loading](Data%20Sources%20&%20Data%20Loading.md) - How data enters the platform
+- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - Silver layer between Bronze and Gold
+- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - Star schema dimension design patterns
+- [Star - Fact Tables](Star%20-%20Fact%20Tables.md) - Star schema fact table design patterns  
+- [Master Data](master-data.md) - Operational database for business-maintained reference data

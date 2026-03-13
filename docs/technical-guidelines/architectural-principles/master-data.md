@@ -1,7 +1,7 @@
 # Master Data
 
-> [!info] Core Concept
-> Master Data is an **operational database** that serves as a centralized hub for managing critical reference data, lists, lookups, budgets, and other business-maintained information within the data platform. Unlike source systems or analytical layers, Master Data is actively managed by business users and provides a bidirectional interface with the [[Analytical Data Store (ADS)]].
+!!! info "Core Concept"
+    Master Data is an **operational database** that serves as a centralized hub for managing critical reference data, lists, lookups, budgets, and other business-maintained information within the data platform. Unlike source systems or analytical layers, Master Data is actively managed by business users and provides a bidirectional interface with the [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md).
 
 ## Purpose
 
@@ -100,8 +100,8 @@ For smaller projects, **SharePoint Lists combined with Power Apps** provide a li
 - Budget input forms
 - Simple reference lists
 
-> [!tip] SharePoint + Power Apps Pattern
-> Use SharePoint Lists as the data store and build a Power Apps interface for data entry. Connect your ETL processes to read from SharePoint via connectors or export to CSV for batch processing.
+!!! tip "SharePoint + Power Apps Pattern"
+    Use SharePoint Lists as the data store and build a Power Apps interface for data entry. Connect your ETL processes to read from SharePoint via connectors or export to CSV for batch processing.
 
 ### Custom Applications
 
@@ -119,6 +119,6 @@ When out-of-the-box solutions don't fit, **custom applications** can be develope
 
 ## Related Topics
 
-- [[Analytical Data Store (ADS)]] - The primary integration point for Master Data
-- [[Star - Dimension Tables]] - How Master Data enriches dimensional models
-- [[Data Layers and Modeling]] - Where Master Data fits in the overall architecture
+- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - The primary integration point for Master Data
+- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - How Master Data enriches dimensional models
+- [Data Layers and Modeling](data-layers-and-modeling.md) - Where Master Data fits in the overall architecture

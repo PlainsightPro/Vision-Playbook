@@ -3,11 +3,11 @@
 ## Overview
 Design your dbt repo so the filesystem narrates how data travels from raw sources through Bronze (landing/staging) and Silver (ADS) into a grouped Gold presentation layer. A tidy tree makes onboarding faster, testing easier, and CI/CD predictable. Use layers, conventions, and shared configuration to avoid model sprawl.
 
-> [!tip] Golden Rule
-> Each folder should describe *what problem the models solve*, not who authored them. Align structure to the business process or data contract.
-
-> [!warning] Keep dbt's Top-Level Skeleton
-> Stick to dbt's default root folders (`models/`, `snapshots/`, `tests/`, `macros/`, `analysis/`, etc.). Only organize within those directories - renaming or reshuffling the top-level structure breaks conventions, tooling, and contributor expectations.
+!!! tip "Golden Rule"
+    Each folder should describe *what problem the models solve*, not who authored them. Align structure to the business process or data contract.
+    
+    [!warning] Keep dbt's Top-Level Skeleton
+    Stick to dbt's default root folders (`models/`, `snapshots/`, `tests/`, `macros/`, `analysis/`, etc.). Only organize within those directories - renaming or reshuffling the top-level structure breaks conventions, tooling, and contributor expectations.
 
 ---
 
@@ -56,8 +56,8 @@ models/
   - Change data capture (CDC) streams require transformation
 - **Can be skipped** when staging can directly reference `source()` tables without preprocessing.
 
-> [!tip] When to Use Landing
-> Use landing when external tools or incremental patterns require a preprocessing step before staging. If your sources are clean and directly queryable, skip this layer and start at staging.
+!!! tip "When to Use Landing"
+    Use landing when external tools or incremental patterns require a preprocessing step before staging. If your sources are clean and directly queryable, skip this layer and start at staging.
 
 ### Staging (Source-ADS)
 - One dbt model per `source()` table, named `stg_<source>_<entity>`.

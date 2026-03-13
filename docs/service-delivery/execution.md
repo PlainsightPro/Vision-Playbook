@@ -1,6 +1,3 @@
----
-publish: false
----
 # From plan to platform - turning data into value
 
 >Strategy sets the blueprint, but execution builds the rocket. This phase is where we bring the vision to life - fast, focused, and aligned with your goals.
@@ -10,7 +7,7 @@ In the Execution phase, we translate strategy into real, working solutions. Whet
 
 Our interdisciplinary teams - **strategists, analysts, engineers, scientists, and architects** - work side by side with your business to build outcomes, not just deliverables.
 
-![[Pasted image 20241001125758.png]]
+![Pasted image 20241001125758](../images/Pasted%20image%2020241001125758.png)
 
 ## Focus Areas in the Execution Phase:
 
@@ -22,10 +19,10 @@ Our interdisciplinary teams - **strategists, analysts, engineers, scientists, an
 
 - **AI & Machine Learning**: Leveraging advanced analytics to develop predictive models, automation, and data-driven decision-making processes. The Execution phase includes setting up the infrastructure to support AI/ML algorithms and ensuring that these solutions can be integrated seamlessly into business processes.
 ### How We Accelerate Value
-![[Pasted image 20250603155900.png]]
+![Pasted image 20250603155900](../images/Pasted%20image%2020250603155900.png)
 - **Certified Experts**  
     Our teams combine deep expertise with cross-functional thinking. From cloud to ML, from UX to architecture - we’ve got the right mix to move fast and think holistically.
-    ![[Pasted image 20250603155704.png]]
+    ![Pasted image 20250603155704](../images/Pasted%20image%2020250603155704.png)
 - **Proven Methodology**  
     Our battle-tested delivery approach keeps projects aligned with value. Iterative, transparent, and always tied to outcomes.
     
@@ -35,7 +32,7 @@ Our interdisciplinary teams - **strategists, analysts, engineers, scientists, an
 What’s key for us is that **everything we build brings value** to the business context. Every stage during the Build phase is frequently evaluated to ensure that development is heading in the right direction and delivering tangible business benefits. This iterative process allows us to adapt and refine our approach based on feedback, keeping the focus on **value creation.**
 ### Data Platform & Data Products
 In the Build phase, the **Data Platform** serves as the backbone that supports all data products. These data products are tailored to address specific business needs and are designed to be modular and scalable, allowing easy integration with various analytical tools and applications.
-![[Dataproducts.png]]
+![Dataproducts](../images/Dataproducts.png)
 ### Deliverables:
 
 - A production-ready data platform tailored to your context

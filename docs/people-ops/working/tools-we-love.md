@@ -14,7 +14,7 @@ At Plainsight, we rely on a variety of tools to get the job done efficiently and
 
 ## Power BI Tools
 
-See [[Technical Guideline Ops/Power BI Best-Practices/Third Party Tooling]]
+See [Third Party Tooling](../../technical-guidelines/power-bi/third-party-tooling.md)
 ## Development Tools
 
 ### Visual Studio Code

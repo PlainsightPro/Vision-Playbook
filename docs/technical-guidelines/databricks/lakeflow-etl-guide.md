@@ -1,7 +1,7 @@
 
 
-> [!info] Get in Touch
-> This guide explains how to build production-ready ETL pipelines using **Databricks Lakeflow** - a unified data engineering solution combining ingestion, transformation, and orchestration. For Plainsight-specific implementation guidance, contact **Benoit**, **Nick** or **Lander**.
+!!! info "Get in Touch"
+    This guide explains how to build production-ready ETL pipelines using **Databricks Lakeflow** - a unified data engineering solution combining ingestion, transformation, and orchestration. For Plainsight-specific implementation guidance, contact **Benoit**, **Nick** or **Lander**.
 
 ---
 
@@ -25,8 +25,8 @@ flowchart LR
 | **Lakeflow Pipelines** | Data transformation | Declarative pipelines with built-in quality checks (Delta Live Tables / Spark Declarative Pipelines) |
 | **Lakeflow Jobs** | Orchestration | Reliable scheduling, monitoring, and production deployment |
 
-> [!info] Naming Note
-> Lakeflow Pipelines is also known as **Spark Declarative Pipelines** since its full integration with Spark. Some DLT commands may reflect this updated naming.
+!!! info "Naming Note"
+    Lakeflow Pipelines is also known as **Spark Declarative Pipelines** since its full integration with Spark. Some DLT commands may reflect this updated naming.
 
 ---
 
@@ -152,8 +152,8 @@ def bronze_transactions():
 - ❌ Don't use batch processing for continuous file arrival
 - ❌ Don't manually track processed files (Auto Loader handles this)
 
-> [!tip] Auto Loader Advantages
-> Auto Loader automatically tracks processed files, handles schema evolution, and scales efficiently. Use it whenever files arrive continuously rather than in scheduled batches.
+!!! tip "Auto Loader Advantages"
+    Auto Loader automatically tracks processed files, handles schema evolution, and scales efficiently. Use it whenever files arrive continuously rather than in scheduled batches.
 
 ---
 
@@ -187,8 +187,8 @@ def bronze_partner_data():
 - ❌ Don't use batch for continuous file arrival (use Auto Loader)
 - ❌ Don't manually implement file tracking logic
 
-> [!warning] Avoid Batch for Continuous Data
-> If files arrive continuously, use Auto Loader instead. Manual file tracking adds unnecessary complexity and error potential.
+!!! warning "Avoid Batch for Continuous Data"
+    If files arrive continuously, use Auto Loader instead. Manual file tracking adds unnecessary complexity and error potential.
 
 ---
 
@@ -304,7 +304,7 @@ flowchart TD
 ### When to Use DLT Pipelines
 
 **Use DLT for:**
-- Production ETL across Landing -> ADS -> Gold layers (our semantic layering) mapped to bronze/silver/gold Medallion zones for platform alignment - see [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]] and [[Data Layers and Modeling]]
+- Production ETL across Landing -> ADS -> Gold layers (our semantic layering) mapped to bronze/silver/gold Medallion zones for platform alignment - see [Medallion Architecture](Technical%20Guideline%20Ops/Architectural%20Principles/Medallion%20-%20Bronze%20Silver%20Gold.md) and [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md)
 - Pipelines requiring data quality validation
 - Team collaboration on shared transformations
 - Automatic dependency management needs
@@ -359,15 +359,15 @@ def gold_daily_revenue():
 ```
 
 **Best practices:**
-- ✅ Follow our semantic layering (Landing -> ADS -> Gold) and map to Medallion bronze/silver/gold for platform alignment (see [[Data Layers and Modeling]] and [[Technical Guideline Ops/Architectural Principles/Medallion - Bronze Silver Gold|Medallion Architecture]])
+- ✅ Follow our semantic layering (Landing -> ADS -> Gold) and map to Medallion bronze/silver/gold for platform alignment (see [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) and [Medallion Architecture](Technical%20Guideline%20Ops/Architectural%20Principles/Medallion%20-%20Bronze%20Silver%20Gold.md))
 - ✅ Add quality expectations at each layer
 - ✅ Use streaming for real-time, batch for scheduled updates
 - ✅ Document table purposes and business logic
 - ❌ Don't mix data quality levels in one table
 - ❌ Don't skip the Staging layer - always preserve structured copies of raw data feeding ADS
 
-> [!tip] DLT for Production
-> Use DLT for production pipelines. The declarative approach and built-in quality checks provide reliability and maintainability worth the initial learning curve.
+!!! tip "DLT for Production"
+    Use DLT for production pipelines. The declarative approach and built-in quality checks provide reliability and maintainability worth the initial learning curve.
 
 ---
 
@@ -443,8 +443,8 @@ def gold_daily_metrics():
     )
 ```
 
-> [!warning] Don't Over-Stream
-> Streaming adds complexity and cost. If hourly or daily updates meet business needs, use batch processing. Most BI reports don't need sub-minute latency.
+!!! warning "Don't Over-Stream"
+    Streaming adds complexity and cost. If hourly or daily updates meet business needs, use batch processing. Most BI reports don't need sub-minute latency.
 
 ---
 
@@ -474,8 +474,8 @@ def ads_customers():
 - ✅ Use `expect_or_fail()` only for critical business keys
 - ❌ Don't use `expect_or_fail()` liberally - it stops the entire pipeline
 
-> [!warning] Production Consideration
-> Use `expect_or_fail()` sparingly - it will stop your entire pipeline. Reserve it for truly critical validations where data integrity failures would cause downstream issues.
+!!! warning "Production Consideration"
+    Use `expect_or_fail()` sparingly - it will stop your entire pipeline. Reserve it for truly critical validations where data integrity failures would cause downstream issues.
 
 ---
 
@@ -500,8 +500,8 @@ flowchart LR
     
 ```
 
-> [!warning] Cost Optimization Rule
-> **Every production job must have a dedicated Job Cluster.** Never use All-Purpose clusters for scheduled production jobs.
+!!! warning "Cost Optimization Rule"
+    **Every production job must have a dedicated Job Cluster.** Never use All-Purpose clusters for scheduled production jobs.
 
 **Why Job Clusters?**
 - Automatically terminate after job completion (no idle costs)
@@ -510,7 +510,7 @@ flowchart LR
 - Better cost tracking per pipeline
 - Optimal for production reliability
 
-**See [[Compute Selection]] for detailed guidance on cluster sizing and Photon usage.**
+**See [Compute Selection](compute-selection.md) for detailed guidance on cluster sizing and Photon usage.**
 
 ---
 
@@ -692,20 +692,20 @@ flowchart TD
 ## Related Documentation
 
 ### Within Databricks Best-Practices
-- [[Compute Selection]] - Cluster sizing, Photon usage, and cost optimization
+- [Compute Selection](compute-selection.md) - Cluster sizing, Photon usage, and cost optimization
 
 ### Fabric Architecture (Similar Concepts)
-- [[Data Layers and Modeling]] - Medal architecture principles applicable to Lakeflow
-- [[Landing and Staging]] - Staging (Bronze-equivalent) patterns and best practices
-- [[Data Pipeline Patterns]] - Common pipeline architectures
-- [[Lakehouse Architecture]] - Overall data platform design philosophy
+- [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) - Medal architecture principles applicable to Lakeflow
+- [Landing and Staging](../architectural-principles/landing-and-staging.md) - Staging (Bronze-equivalent) patterns and best practices
+- [Data Pipeline Patterns](../fabric/data-pipeline-patterns.md) - Common pipeline architectures
+- [Lakehouse Architecture](../fabric/lakehouse-architecture.md) - Overall data platform design philosophy
 
-> [!info] External Reference
-> For vendor-agnostic patterns and examples of scalable data and AI architectures on Databricks, see the official **Databricks Architecture Center**: <https://www.databricks.com/resources/architectures>
+!!! info "External Reference"
+    For vendor-agnostic patterns and examples of scalable data and AI architectures on Databricks, see the official **Databricks Architecture Center**: <https://www.databricks.com/resources/architectures>
 
 ### dbt Integration
-- [[Project Structure]] - Organizing transformation code for maintainability
-- [[Operations & Testing]] - Testing strategies applicable to DLT expectations
+- [Project Structure](../dbt/project-structure.md) - Organizing transformation code for maintainability
+- [Operations & Testing](Operations%20&%20Testing.md) - Testing strategies applicable to DLT expectations
 
 ---
 
