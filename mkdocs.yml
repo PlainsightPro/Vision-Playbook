@@ -1,0 +1,140 @@
+site_name: Plainsight Playbook
+site_url: https://playbook.plainsight.pro
+site_description: >-
+  Plainsight's open-source company handbook — purpose, values,
+  technical guidelines, and operational processes in plain sight.
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  logo: assets/logo.svg
+  favicon: images/Plainsight.png
+  custom_dir: overrides
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  # Admonitions (converted from Obsidian callouts)
+  - admonition
+  - pymdownx.details
+
+  # Code blocks
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # Tables
+  - tables
+
+  # Footnotes
+  - footnotes
+
+  # Highlight ==text== support
+  - pymdownx.mark
+
+  # Task lists
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  # Smart symbols & typography
+  - pymdownx.smartsymbols
+
+  # Table of contents
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - About Plainsight:
+      - "🥇 The Foundation of Plainsight": "about-plainsight/the-foundation-of-plainsight.md"
+      - "🏗️ How We're Organised": "about-plainsight/how-were-organised.md"
+  - People Ops:
+      - "🛹 Pre-boarding & Hiring": "people-ops/pre-boarding-and-hiring.md"
+      - "🚀 Onboarding": "people-ops/onboarding.md"
+      - "😢 Off-Boarding": "people-ops/off-boarding.md"
+      - Working @ Plainsight:
+          - "🔨 Tools We Love": "people-ops/working/tools-we-love.md"
+          - "🎯 Evolution Process": "people-ops/working/evolution-process.md"
+          - "🚀 Impact by Ownership": "people-ops/working/impact-by-ownership.md"
+          - "🌱 Learning And Experimentation": "people-ops/working/learning-and-experimentation.md"
+          - "🏢 Our Offices and Locations": "people-ops/working/our-offices-and-locations.md"
+          - "💪 Hosting a Teambuilding or Sports Event": "people-ops/working/hosting-a-teambuilding-or-sports-event.md"
+          - "📄 CV - Curriculum Vitae": "people-ops/working/cv-curriculum-vitae.md"
+      - Remuneration Package:
+          - "🤑 Remuneration Package": "people-ops/remuneration/remuneration-package.md"
+          - "🌴 Holidays & Illness": "people-ops/remuneration/holidays-and-illness.md"
+          - "🚲 Mobility": "people-ops/remuneration/mobility.md"
+          - "⭐ Rewards - Stars And Clouds": "people-ops/remuneration/rewards-stars-and-clouds.md"
+  - Technical Guidelines:
+      - "Why Technical Guidelines": "technical-guidelines/why-technical-guidelines.md"
+      - Architectural Principles:
+          - "Data Layers and Modeling": "technical-guidelines/architectural-principles/data-layers-and-modeling.md"
+          - "Medallion - Bronze Silver Gold": "technical-guidelines/architectural-principles/medallion-bronze-silver-gold.md"
+          - "Data Sources & Data Loading": "technical-guidelines/architectural-principles/data-sources-and-data-loading.md"
+          - "Landing and Staging": "technical-guidelines/architectural-principles/landing-and-staging.md"
+          - "Analytical Data Store (ADS)": "technical-guidelines/architectural-principles/analytical-data-store-ads.md"
+
+          - "Star - Dimension Tables": "technical-guidelines/architectural-principles/star-dimension-tables.md"
+          - "Star - Fact Tables": "technical-guidelines/architectural-principles/star-fact-tables.md"
+          - "Surrogate, Primary & Foreign Keys": "technical-guidelines/architectural-principles/surrogate-primary-and-foreign-keys.md"
+          - "Master Data": "technical-guidelines/architectural-principles/master-data.md"
+          - "DRY - Don't Repeat Yourself": "technical-guidelines/architectural-principles/dry-dont-repeat-yourself.md"
+      - Power BI Best-Practices:
+          - "Data Modeling in Power BI": "technical-guidelines/power-bi/data-modeling-in-power-bi.md"
+          - "DAX Coding Standards": "technical-guidelines/power-bi/dax-coding-standards.md"
+          - "Import, DirectQuery & DirectLake": "technical-guidelines/power-bi/import-directquery-and-directlake.md"
+          - "Naming Conventions": "technical-guidelines/power-bi/naming-conventions.md"
+          - "CICD & Versioning": "technical-guidelines/power-bi/cicd-and-versioning.md"
+          - "Third Party Tooling": "technical-guidelines/power-bi/third-party-tooling.md"
+      - Databricks Best-Practices:
+          - "Compute Selection": "technical-guidelines/databricks/compute-selection.md"
+          - "Workspace Organization": "technical-guidelines/databricks/workspace-organization.md"
+          - "Unity Catalog": "technical-guidelines/databricks/unity-catalog.md"
+          - "Databricks Jobs": "technical-guidelines/databricks/databricks-jobs.md"
+          - "Databricks CI-CD": "technical-guidelines/databricks/databricks-ci-cd.md"
+          - "Lakeflow ETL Guide": "technical-guidelines/databricks/lakeflow-etl-guide.md"
+      - Fabric Best-Practices:
+          - "Workspace Organization": "technical-guidelines/fabric/workspace-organization.md"
+          - "Warehouse vs Lakehouse": "technical-guidelines/fabric/warehouse-vs-lakehouse.md"
+          - "Lakehouse Architecture": "technical-guidelines/fabric/lakehouse-architecture.md"
+          - "Data Pipeline Patterns": "technical-guidelines/fabric/data-pipeline-patterns.md"
+          - "Naming Conventions": "technical-guidelines/fabric/naming-conventions.md"
+          - "Capacity Management": "technical-guidelines/fabric/capacity-management.md"
+          - "Spark Autoscaling": "technical-guidelines/fabric/spark-autoscaling.md"
+          - "Third Party Tooling": "technical-guidelines/fabric/third-party-tooling.md"
+      - dbt Best-Practices:
+          - "Project Structure": "technical-guidelines/dbt/project-structure.md"
+          - "SQL Style & Configuration": "technical-guidelines/dbt/sql-style-and-configuration.md"
+          - "Documentation": "technical-guidelines/dbt/documentation.md"
+          - "Operations & Testing": "technical-guidelines/dbt/operations-and-testing.md"
+          - "Third Party Tooling": "technical-guidelines/dbt/third-party-tooling.md"
+  - Partners:
+      - "🤝 Partnerships": "partners/partnerships.md"
+      - "🧑‍🤝‍🧑 Communities": "partners/communities.md"

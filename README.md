@@ -65,3 +65,16 @@ The HR team will review your contribution for accuracy, consistency, and alignme
 
 **Questions?** Reach out to [sander.allert@plainsight.pro](mailto:sander.allert@plainsight.pro) for guidance on contributing to the Playbook.
 
+---
+
+## ⚠️ Branch Protection Reminder
+
+> **Action required:** Enable branch protection on `main` in GitHub so all changes require a Pull Request with at least one approval before merge.
+>
+> **Settings → Branches → Add rule:**
+> - Branch name pattern: `main`
+> - ✅ Require a pull request before merging
+> - ✅ Require approvals (minimum 1)
+> - ✅ Require status checks to pass before merging (select the `Build and Deploy` check)
+> - ✅ Do not allow bypassing the above settings
+

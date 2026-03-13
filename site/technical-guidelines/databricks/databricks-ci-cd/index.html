@@ -1,0 +1,3899 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Plainsight's open-source company handbook — purpose, values, technical guidelines, and operational processes in plain sight.">
+      
+      
+      
+        <link rel="canonical" href="https://playbook.plainsight.pro/technical-guidelines/databricks/databricks-ci-cd/">
+      
+      
+        <link rel="prev" href="../databricks-jobs/">
+      
+      
+        <link rel="next" href="../lakeflow-etl-guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/Plainsight.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Databricks CI-CD - Plainsight Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#databricks-cicd-best-practices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <a href="https://plainsight.pro" target="_blank" rel="noopener">
+    🌐 plainsight.pro
+  </a>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Plainsight Playbook" class="md-header__button md-logo" aria-label="Plainsight Playbook" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Plainsight Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Databricks CI-CD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Plainsight Playbook" class="md-nav__button md-logo" aria-label="Plainsight Playbook" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    Plainsight Playbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Plainsight
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About Plainsight
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-plainsight/the-foundation-of-plainsight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🥇 The Foundation of Plainsight
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-plainsight/how-were-organised/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ How We're Organised
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    People Ops
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    People Ops
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/pre-boarding-and-hiring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛹 Pre-boarding & Hiring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/off-boarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    😢 Off-Boarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working @ Plainsight
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Working @ Plainsight
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/working/tools-we-love/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔨 Tools We Love
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/working/evolution-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Evolution Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/working/impact-by-ownership/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Impact by Ownership
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/working/learning-and-experimentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌱 Learning And Experimentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/working/our-offices-and-locations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏢 Our Offices and Locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/working/hosting-a-teambuilding-or-sports-event/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💪 Hosting a Teambuilding or Sports Event
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/working/cv-curriculum-vitae/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📄 CV - Curriculum Vitae
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remuneration Package
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Remuneration Package
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/remuneration/remuneration-package/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤑 Remuneration Package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/remuneration/holidays-and-illness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌴 Holidays & Illness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/remuneration/mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚲 Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../people-ops/remuneration/rewards-stars-and-clouds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⭐ Rewards - Stars And Clouds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Guidelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Guidelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../why-technical-guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Technical Guidelines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architectural Principles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architectural Principles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/data-layers-and-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Layers and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/medallion-bronze-silver-gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medallion - Bronze Silver Gold
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/data-sources-and-data-loading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Sources & Data Loading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/landing-and-staging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Landing and Staging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/analytical-data-store-ads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analytical Data Store (ADS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/star-dimension-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Star - Dimension Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/star-fact-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Star - Fact Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/surrogate-primary-and-foreign-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surrogate, Primary & Foreign Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/master-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architectural-principles/dry-dont-repeat-yourself/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DRY - Don't Repeat Yourself
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power BI Best-Practices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Power BI Best-Practices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../power-bi/data-modeling-in-power-bi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Modeling in Power BI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../power-bi/dax-coding-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAX Coding Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../power-bi/import-directquery-and-directlake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import, DirectQuery & DirectLake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../power-bi/naming-conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naming Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../power-bi/cicd-and-versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CICD & Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../power-bi/third-party-tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third Party Tooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databricks Best-Practices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Databricks Best-Practices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compute-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compute Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workspace-organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workspace Organization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unity-catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unity Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../databricks-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databricks Jobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databricks CI-CD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Databricks CI-CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles-of-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Principles of CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles of CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-control-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control Everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automate-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automate Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#employ-infrastructure-as-code-iac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Employ Infrastructure as Code (IaC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isolate-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isolate Environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-and-automate-rollbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor and Automate Rollbacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unify-asset-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unify Asset Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#databricks-asset-bundles-for-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Databricks Asset Bundles for CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Databricks Asset Bundles for CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-bundles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Bundles?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-adaptation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Adaptation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-control-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Control Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Source Control Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-single-repository-recommended-for-small-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Single Repository (Recommended for Small Projects)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-separate-repositories-recommended-for-large-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Separate Repositories (Recommended for Large Teams)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-compiled-artifacts-in-bundles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference Compiled Artifacts in Bundles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-cicd-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended CI/CD Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended CI/CD Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-compile-and-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Compile and Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-and-store-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Upload and Store Artifact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-validate-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Validate Bundle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-deploy-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Deploy Bundle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-for-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD for Machine Learning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD for Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ml-specific-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ML-Specific Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mlops-stacks-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MLOps Stacks Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ml-cicd-collaboration-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ML CI/CD Collaboration Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-for-sql-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD for SQL Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD for SQL Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-workflow-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Workflow Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control-sql-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control SQL Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameterize-for-environment-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameterize for Environment Isolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-and-monitor-refreshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schedule and Monitor Refreshes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-cicd-workflow-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL CI/CD Workflow Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-for-dashboard-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD for Dashboard Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD for Dashboard Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-cicd-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard CI/CD Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous Sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Pages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lakeflow-etl-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lakeflow ETL Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fabric Best-Practices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fabric Best-Practices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/workspace-organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workspace Organization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/warehouse-vs-lakehouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Warehouse vs Lakehouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/lakehouse-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lakehouse Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/data-pipeline-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Pipeline Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/naming-conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Naming Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/capacity-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capacity Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/spark-autoscaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spark Autoscaling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fabric/third-party-tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third Party Tooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dbt Best-Practices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    dbt Best-Practices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dbt/project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dbt/sql-style-and-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL Style & Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dbt/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dbt/operations-and-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dbt/third-party-tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third Party Tooling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Partners
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Partners
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../partners/partnerships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤝 Partnerships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../partners/communities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧑‍🤝‍🧑 Communities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles-of-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Principles of CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles of CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-control-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control Everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automate-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automate Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#employ-infrastructure-as-code-iac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Employ Infrastructure as Code (IaC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isolate-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isolate Environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-and-automate-rollbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor and Automate Rollbacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unify-asset-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unify Asset Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#databricks-asset-bundles-for-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Databricks Asset Bundles for CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Databricks Asset Bundles for CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-bundles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Bundles?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-adaptation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Adaptation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-control-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Control Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Source Control Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-single-repository-recommended-for-small-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Single Repository (Recommended for Small Projects)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-separate-repositories-recommended-for-large-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Separate Repositories (Recommended for Large Teams)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-compiled-artifacts-in-bundles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference Compiled Artifacts in Bundles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-cicd-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended CI/CD Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended CI/CD Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-compile-and-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Compile and Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-and-store-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Upload and Store Artifact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-validate-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Validate Bundle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-deploy-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Deploy Bundle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-for-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD for Machine Learning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD for Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ml-specific-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ML-Specific Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mlops-stacks-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MLOps Stacks Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ml-cicd-collaboration-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ML CI/CD Collaboration Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-for-sql-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD for SQL Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD for SQL Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-workflow-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Workflow Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control-sql-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control SQL Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameterize-for-environment-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameterize for Environment Isolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-and-monitor-refreshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schedule and Monitor Refreshes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-cicd-workflow-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL CI/CD Workflow Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-for-dashboard-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD for Dashboard Developers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD for Dashboard Developers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-cicd-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard CI/CD Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous Sync
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Pages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="databricks-cicd-best-practices">Databricks CI/CD Best Practices<a class="headerlink" href="#databricks-cicd-best-practices" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Purpose</p>
+<p>This guide provides best practices for designing robust CI/CD pipelines on Databricks, ensuring rapid and reliable deployment of data engineering and analytics workloads.</p>
+</div>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>CI/CD (Continuous Integration and Continuous Delivery) has become a cornerstone of modern data engineering and analytics, ensuring code changes are integrated, tested, and deployed rapidly and reliably. Databricks provides a flexible framework supporting various CI/CD options shaped by organizational preferences, existing workflows, and specific technology environments.</p>
+<pre class="mermaid"><code>%%{init: { "flowchart": { "useMaxWidth": true } } }%%
+flowchart LR
+    A[Development] --&gt; B[Version Control]
+    B --&gt; C[Automated Testing]
+    C --&gt; D[Build &amp; Package]
+    D --&gt; E[Deploy to Staging]
+    E --&gt; F[Validation]
+    F --&gt; G[Deploy to Production]
+    G --&gt; H[Monitor]
+    H --|Rollback if needed|--&gt; E
+</code></pre>
+<h2 id="core-principles-of-cicd">Core Principles of CI/CD<a class="headerlink" href="#core-principles-of-cicd" title="Permanent link">&para;</a></h2>
+<p>Effective CI/CD pipelines share foundational principles regardless of implementation specifics. These universal best practices apply across organizational preferences, developer workflows, and cloud environments.</p>
+<h3 id="version-control-everything">Version Control Everything<a class="headerlink" href="#version-control-everything" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Store all artifacts in Git</strong>: Notebooks, scripts, infrastructure definitions (IaC), and job configurations</li>
+<li><strong>Use branching strategies</strong>: Implement Gitflow or similar strategies aligned with development, staging, and production environments</li>
+<li><strong>Track configuration changes</strong>: Maintain history of all deployment-related changes</li>
+</ul>
+<h3 id="automate-testing">Automate Testing<a class="headerlink" href="#automate-testing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Test Type</th>
+<th>Tools</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unit Tests</td>
+<td><code>pytest</code> (Python), <code>ScalaTest</code> (Scala)</td>
+<td>Validate business logic</td>
+</tr>
+<tr>
+<td>Validation Tests</td>
+<td>Databricks CLI <code>bundle validate</code></td>
+<td>Check notebook and workflow functionality</td>
+</tr>
+<tr>
+<td>Integration Tests</td>
+<td><code>chispa</code> for Spark DataFrames</td>
+<td>Test complete workflows and data pipelines</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Testing Strategy</p>
+<p>Implement multiple layers of testing to catch issues early in the development cycle.</p>
+</div>
+<h3 id="employ-infrastructure-as-code-iac">Employ Infrastructure as Code (IaC)<a class="headerlink" href="#employ-infrastructure-as-code-iac" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Define infrastructure declaratively</strong>: Use Databricks Asset Bundles YAML or Terraform for clusters, jobs, and workspace configurations</li>
+<li><strong>Parameterize settings</strong>: Avoid hardcoding environment-specific values like cluster size and secrets</li>
+<li><strong>Version infrastructure changes</strong>: Track all infrastructure modifications in Git</li>
+</ul>
+<h3 id="isolate-environments">Isolate Environments<a class="headerlink" href="#isolate-environments" title="Permanent link">&para;</a></h3>
+<p><strong>Environment separation best practices:</strong>
+- Maintain separate workspaces for development, staging, and production
+- Choose tools that match your cloud ecosystem:
+  - <strong>Azure</strong>: Azure DevOps + Databricks Asset Bundles or Terraform</p>
+<h3 id="monitor-and-automate-rollbacks">Monitor and Automate Rollbacks<a class="headerlink" href="#monitor-and-automate-rollbacks" title="Permanent link">&para;</a></h3>
+<p>Track key metrics:
+- Deployment success rates
+- Job performance
+- Test coverage
+- Pipeline execution times</p>
+<p>Implement automated rollback mechanisms for failed deployments to minimize downtime.</p>
+<h3 id="unify-asset-management">Unify Asset Management<a class="headerlink" href="#unify-asset-management" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Avoid Siloed Management</p>
+<p>Use Databricks Asset Bundles to deploy code, jobs, and infrastructure as a single unit. Avoid managing notebooks, libraries, and workflows separately.</p>
+<p>[!info] Authentication Recommendation
+Databricks recommends <strong>workload identity federation</strong> for CI/CD authentication. This eliminates the need for Databricks secrets, making it the most secure authentication method for automated flows.</p>
+</div>
+<h2 id="databricks-asset-bundles-for-cicd">Databricks Asset Bundles for CI/CD<a class="headerlink" href="#databricks-asset-bundles-for-cicd" title="Permanent link">&para;</a></h2>
+<p>Databricks Asset Bundles offer a unified approach to managing code, workflows, and infrastructure within the Databricks ecosystem and are <strong>recommended</strong> for CI/CD pipelines.</p>
+<h3 id="why-bundles">Why Bundles?<a class="headerlink" href="#why-bundles" title="Permanent link">&para;</a></h3>
+<p>By bundling code, workflows, and infrastructure into a single YAML-defined unit, bundles:
+- ✅ Simplify deployment
+- ✅ Ensure consistency across environments
+- ✅ Provide atomic deployments
+- ✅ Enable version control of entire stack</p>
+<h3 id="workflow-adaptation">Workflow Adaptation<a class="headerlink" href="#workflow-adaptation" title="Permanent link">&para;</a></h3>
+<p>Different development backgrounds require different approaches to adopting bundles:</p>
+<table>
+<thead>
+<tr>
+<th>Developer Background</th>
+<th>Traditional Workflow</th>
+<th>Bundle Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java</td>
+<td>Build JARs with Maven/Gradle, test with JUnit</td>
+<td>Bundle code + infrastructure in YAML</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Package wheels, test with pytest</td>
+<td>Bundle Python code + configs together</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>Query validation, notebook management</td>
+<td>Bundle SQL files with pipeline definitions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="source-control-strategies">Source Control Strategies<a class="headerlink" href="#source-control-strategies" title="Permanent link">&para;</a></h2>
+<p>The first choice when implementing CI/CD is how to store and version source files. Two main approaches exist:</p>
+<h3 id="option-1-single-repository-recommended-for-small-projects">Option 1: Single Repository (Recommended for Small Projects)<a class="headerlink" href="#option-1-single-repository-recommended-for-small-projects" title="Permanent link">&para;</a></h3>
+<p><strong>Structure:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>databricks-dab-repo/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── databricks.yml               # Bundle definition
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── resources/
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── workflows/
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   │   ├── my_pipeline.yml      # YAML pipeline def
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   │   └── my_pipeline_job.yml  # YAML job def
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── clusters/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   │   ├── dev_cluster.yml      # Development cluster
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   │   └── prod_cluster.yml     # Production cluster
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── src/
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   ├── my_pipeline.ipynb        # Pipeline notebook
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   └── mypython.py              # Python modules
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>└── README.md
+</code></pre></div></p>
+<p><strong>Pros:</strong>
+- ✅ All artifacts versioned together
+- ✅ Single PR updates both code and configuration
+- ✅ Simplified CI/CD pipeline</p>
+<p><strong>Cons:</strong>
+- ❌ Repository may become bloated
+- ❌ Coordinated releases required</p>
+<h3 id="option-2-separate-repositories-recommended-for-large-teams">Option 2: Separate Repositories (Recommended for Large Teams)<a class="headerlink" href="#option-2-separate-repositories-recommended-for-large-teams" title="Permanent link">&para;</a></h3>
+<p><strong>Repository 1: Application Code</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>java-app-repo/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── pom.xml                      # Maven configuration
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── src/
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│   ├── main/
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   │   ├── java/                # Java source code
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   │   └── resources/           # Application resources
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   └── test/
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│       ├── java/                # Unit tests
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│       └── resources/           # Test resources
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>├── target/                      # Compiled JARs
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>└── README.md
+</code></pre></div></p>
+<p><strong>Repository 2: Bundle Configuration</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>databricks-dab-repo/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── databricks.yml               # Bundle definition
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── resources/
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── jobs/
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   │   ├── my_java_job.yml      # Job definitions
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   │   └── my_other_job.yml
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── clusters/
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   │   ├── dev_cluster.yml      # Cluster configs
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   │   └── prod_cluster.yml
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>└── README.md
+</code></pre></div></p>
+<p><strong>Pros:</strong>
+- ✅ Team separation: Development vs. infrastructure management
+- ✅ Independent release cycles
+- ✅ Smaller, focused repositories</p>
+<p><strong>Cons:</strong>
+- ❌ Additional coordination required
+- ❌ Must ensure version compatibility</p>
+<div class="admonition warning">
+<p class="admonition-title">Version Artifacts</p>
+<p>Always use versioned artifacts (Git commit hashes) when uploading to Databricks or external storage to ensure traceability and rollback capabilities.</p>
+</div>
+<h3 id="reference-compiled-artifacts-in-bundles">Reference Compiled Artifacts in Bundles<a class="headerlink" href="#reference-compiled-artifacts-in-bundles" title="Permanent link">&para;</a></h3>
+<p>Example <code>databricks.yml</code> referencing a versioned JAR:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">jobs</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">my_java_job</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">tasks</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">task_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">process_data</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">          </span><span class="nt">libraries</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">jar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/Volumes/artifacts/my-app-${{ GIT_SHA }}.jar</span>
+</code></pre></div>
+<h2 id="recommended-cicd-workflow">Recommended CI/CD Workflow<a class="headerlink" href="#recommended-cicd-workflow" title="Permanent link">&para;</a></h2>
+<p>Regardless of repository structure, follow this workflow:</p>
+<pre class="mermaid"><code>%%{init: { "flowchart": { "useMaxWidth": true } } }%%
+flowchart TD
+    A[Code Change / PR] --&gt; B[Compile &amp; Test]
+    B --&gt; C{Tests Pass?}
+    C --&gt;|No| D[Fix Issues]
+    D --&gt; A
+    C --&gt;|Yes| E[Upload Artifact]
+    E --&gt; F[Validate Bundle]
+    F --&gt; G{Validation OK?}
+    G --&gt;|No| D
+    G --&gt;|Yes| H[Deploy to Staging]
+    H --&gt; I[Integration Tests]
+    I --&gt; J{Tests Pass?}
+    J --&gt;|No| K[Rollback]
+    J --&gt;|Yes| L[Deploy to Production]
+    L --&gt; M[Monitor]
+
+    style B fill:#e1f5ff
+    style E fill:#fff3cd
+    style L fill:#d4edda
+    style K fill:#f8d7da</code></pre>
+<h3 id="step-1-compile-and-test">Step 1: Compile and Test<a class="headerlink" href="#step-1-compile-and-test" title="Permanent link">&para;</a></h3>
+<p><strong>Triggered on:</strong> Pull request or commit to main branch</p>
+<p>Actions:
+1. Compile code
+2. Run unit tests
+3. Generate versioned artifact (e.g., <code>my-app-1.0.jar</code>)</p>
+<h3 id="step-2-upload-and-store-artifact">Step 2: Upload and Store Artifact<a class="headerlink" href="#step-2-upload-and-store-artifact" title="Permanent link">&para;</a></h3>
+<p><strong>Store compiled files</strong> in Databricks Unity Catalog volume or artifact repository Azure Blob Storage or Databricks Unity Catalog volumes (recommended)</p>
+<p><strong>Versioning scheme examples:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/Volumes/artifacts/my-app-${{ github.sha }}.jar
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>dbfs:/mnt/artifacts/my-app-1.0.jar
+</code></pre></div></p>
+<h3 id="step-3-validate-bundle">Step 3: Validate Bundle<a class="headerlink" href="#step-3-validate-bundle" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>databricks<span class="w"> </span>bundle<span class="w"> </span>validate
+</code></pre></div>
+<p>This ensures:
+- YAML configuration correctness
+- No missing libraries
+- Proper resource references
+- Environment-specific parameters are valid</p>
+<div class="admonition tip">
+<p class="admonition-title">Catch Issues Early</p>
+<p>Run validation during pull requests to catch misconfigurations before deployment.</p>
+</div>
+<h3 id="step-4-deploy-bundle">Step 4: Deploy Bundle<a class="headerlink" href="#step-4-deploy-bundle" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>databricks<span class="w"> </span>bundle<span class="w"> </span>deploy<span class="w"> </span>--target<span class="o">=</span>staging
+</code></pre></div>
+<p>For production:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>databricks<span class="w"> </span>bundle<span class="w"> </span>deploy<span class="w"> </span>--target<span class="o">=</span>prod
+</code></pre></div></p>
+<p>Reference uploaded libraries in <code>databricks.yml</code>. See <a href="https://docs.databricks.com">Databricks Asset Bundles library dependencies</a> for details.</p>
+<h2 id="cicd-for-machine-learning">CI/CD for Machine Learning<a class="headerlink" href="#cicd-for-machine-learning" title="Permanent link">&para;</a></h2>
+<p>ML projects introduce unique CI/CD challenges compared to traditional software development:</p>
+<pre class="mermaid"><code>%%{init: { "flowchart": { "useMaxWidth": true } } }%%
+flowchart LR
+    A[Data Engineering] --&gt; B[Feature Engineering]
+    B --&gt; C[Model Training]
+    C --&gt; D[Model Validation]
+    D --&gt; E[Model Registry]
+    E --&gt; F[Staging Deployment]
+    F --&gt; G[A/B Testing]
+    G --&gt; H[Production Deployment]
+    H --&gt; I[Monitoring &amp; Retraining]
+    I --|Data Drift|--&gt; C
+
+    style A fill:#e1f5ff
+    style C fill:#fff3cd
+    style E fill:#d4edda
+    style I fill:#f8d7da</code></pre>
+<h3 id="ml-specific-considerations">ML-Specific Considerations<a class="headerlink" href="#ml-specific-considerations" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Databricks Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Multi-team coordination</strong></td>
+<td>MLflow for experiment tracking, Delta Sharing for governance, Asset Bundles for IaC</td>
+</tr>
+<tr>
+<td><strong>Data &amp; model versioning</strong></td>
+<td>Delta Lake (ACID transactions, time travel), MLflow Model Registry (lineage)</td>
+</tr>
+<tr>
+<td><strong>Reproducibility</strong></td>
+<td>Asset Bundles ensure atomic deployment across environments</td>
+</tr>
+<tr>
+<td><strong>Continuous retraining</strong></td>
+<td>Lakeflow Jobs + MLflow + Data Quality Monitoring</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mlops-stacks-framework">MLOps Stacks Framework<a class="headerlink" href="#mlops-stacks-framework" title="Permanent link">&para;</a></h3>
+<p>MLOps Stacks combine:
+- Databricks Asset Bundles
+- Preconfigured CI/CD workflows
+- Modular ML project templates</p>
+<p><strong>Team responsibilities:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Team</th>
+<th>Responsibilities</th>
+<th>Bundle Components</th>
+<th>Artifacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Engineers</strong></td>
+<td>ETL pipelines, data quality</td>
+<td>Lakeflow YAML, cluster policies</td>
+<td><code>etl_pipeline.yml</code>, <code>feature_store_job.yml</code></td>
+</tr>
+<tr>
+<td><strong>Data Scientists</strong></td>
+<td>Model training, validation</td>
+<td>MLflow Projects, notebooks</td>
+<td><code>train_model.yml</code>, <code>batch_inference_job.yml</code></td>
+</tr>
+<tr>
+<td><strong>MLOps Engineers</strong></td>
+<td>Orchestration, monitoring</td>
+<td>Environment variables, dashboards</td>
+<td><code>databricks.yml</code>, <code>lakehouse_monitoring.yml</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ml-cicd-collaboration-workflow">ML CI/CD Collaboration Workflow<a class="headerlink" href="#ml-cicd-collaboration-workflow" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Data engineers</strong> commit ETL pipeline changes → automated schema validation → staging deployment</li>
+<li><strong>Data scientists</strong> submit ML code → unit tests run → deploy to staging workspace for integration testing</li>
+<li><strong>MLOps engineers</strong> review validation metrics → promote vetted models to production via MLflow Registry</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Learn More</p>
+<ul>
+<li><a href="https://docs.databricks.com">MLOps Stacks bundle documentation</a></li>
+<li><a href="https://github.com/databricks/mlops-stacks">MLOps Stacks GitHub repository</a></li>
+</ul>
+</div>
+<h2 id="cicd-for-sql-developers">CI/CD for SQL Developers<a class="headerlink" href="#cicd-for-sql-developers" title="Permanent link">&para;</a></h2>
+<p>SQL developers using Databricks SQL to manage streaming tables and materialized views can leverage Git integration and CI/CD pipelines to streamline workflows.</p>
+<h3 id="sql-workflow-best-practices">SQL Workflow Best Practices<a class="headerlink" href="#sql-workflow-best-practices" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>%%{init: { "flowchart": { "useMaxWidth": true } } }%%
+flowchart TD
+    A[Write SQL in Editor] --&gt; B[Commit to Git Branch]
+    B --&gt; C[Pull Request]
+    C --&gt; D[Validate Syntax &amp; Schema]
+    D --&gt; E{Valid?}
+    E --&gt;|No| F[Fix Issues]
+    F --&gt; A
+    E --&gt;|Yes| G[Merge to Main]
+    G --&gt; H[Deploy SQL Files]
+    H --&gt; I[Schedule Refreshes]
+    I --&gt; J[Monitor Performance]
+
+    style A fill:#e1f5ff
+    style G fill:#d4edda
+    style J fill:#fff3cd</code></pre>
+<h3 id="version-control-sql-files">Version Control SQL Files<a class="headerlink" href="#version-control-sql-files" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Store <code>.sql</code> files</strong> in Git using Databricks Git folders or external providers (GitHub, Azure DevOps)</li>
+<li><strong>Use branches</strong> for environment-specific changes (development, staging, production)</li>
+<li><strong>Integrate into CI/CD</strong> to automate deployment</li>
+</ul>
+<h3 id="parameterize-for-environment-isolation">Parameterize for Environment Isolation<a class="headerlink" href="#parameterize-for-environment-isolation" title="Permanent link">&para;</a></h3>
+<p>Use variables in <code>.sql</code> files for dynamic resource references:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">REFRESH</span><span class="w"> </span><span class="n">STREAMING</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="err">${</span><span class="n">env</span><span class="err">}</span><span class="n">_sales_ingest</span><span class="w"> </span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">AS</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">read_files</span><span class="p">(</span><span class="s1">&#39;s3://${env}-sales-data&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="schedule-and-monitor-refreshes">Schedule and Monitor Refreshes<a class="headerlink" href="#schedule-and-monitor-refreshes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Use SQL tasks</strong> in Databricks Jobs to schedule updates</li>
+<li><strong>Refresh materialized views</strong>:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">REFRESH</span><span class="w"> </span><span class="n">MATERIALIZED</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">view_name</span>
+</code></pre></div></li>
+<li><strong>Monitor refresh history</strong> using system tables</li>
+</ul>
+<h3 id="sql-cicd-workflow-steps">SQL CI/CD Workflow Steps<a class="headerlink" href="#sql-cicd-workflow-steps" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Develop</strong></td>
+<td>Write and test <code>.sql</code> scripts in SQL editor, commit to Git branch</td>
+</tr>
+<tr>
+<td><strong>Validate</strong></td>
+<td>During PR, validate syntax and schema compatibility via automated CI checks</td>
+</tr>
+<tr>
+<td><strong>Deploy</strong></td>
+<td>Upon merge, deploy <code>.sql</code> scripts using CI/CD pipelines</td>
+</tr>
+<tr>
+<td><strong>Monitor</strong></td>
+<td>Track query performance and data freshness with dashboards and alerts</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cicd-for-dashboard-developers">CI/CD for Dashboard Developers<a class="headerlink" href="#cicd-for-dashboard-developers" title="Permanent link">&para;</a></h2>
+<p>Databricks supports integrating dashboards into CI/CD workflows using Asset Bundles.</p>
+<h3 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ Version-control dashboards for auditability</li>
+<li>✅ Automate deployments alongside jobs and pipelines</li>
+<li>✅ Reduce manual errors</li>
+<li>✅ Ensure consistent updates across environments</li>
+</ul>
+<h3 id="dashboard-cicd-implementation">Dashboard CI/CD Implementation<a class="headerlink" href="#dashboard-cicd-implementation" title="Permanent link">&para;</a></h3>
+<p><strong>1. Export existing dashboards as JSON:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>databricks<span class="w"> </span>bundle<span class="w"> </span>generate
+</code></pre></div>
+<p><strong>2. Configure bundle YAML:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">dashboards</span><span class="p">:</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">sales_dashboard</span><span class="p">:</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">      </span><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Sales</span><span class="nv"> </span><span class="s">Dashboard&#39;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">      </span><span class="nt">file_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./dashboards/sales_dashboard.lvdash.json</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">      </span><span class="nt">warehouse_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${var.warehouse_id}</span>
+</code></pre></div>
+<p><strong>3. Store <code>.lvdash.json</code> files in Git</strong> to track changes and collaborate</p>
+<p><strong>4. Deploy dashboards via CI/CD:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Dashboard</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">databricks bundle deploy --target=prod</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">DATABRICKS_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DATABRICKS_TOKEN }}</span>
+</code></pre></div>
+<p><strong>5. Parameterize configurations</strong> using variables like <code>${var.warehouse_id}</code> for SQL warehouses or data sources</p>
+<h3 id="continuous-sync">Continuous Sync<a class="headerlink" href="#continuous-sync" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Use <code>bundle generate --watch</code></strong> to continuously sync local dashboard JSON files with Databricks UI changes</li>
+<li><strong>Force overwrite</strong> with <code>--force</code> flag during deployment if discrepancies occur</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Dashboard Workflow</p>
+<p>Maintain dashboard definitions in Git, deploy through automated pipelines, and use variables for environment-specific configurations.</p>
+</div>
+<hr />
+<h2 id="related-pages">Related Pages<a class="headerlink" href="#related-pages" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../databricks-jobs/">Databricks Jobs &amp; Asset Bundles</a></li>
+<li><a href="../../fabric/data-pipeline-patterns/">Data Pipeline Patterns</a></li>
+<li><a href="../workspace-organization/">Workspace Organization</a></li>
+</ul>
+<hr />
+<p><em>This guide helps teams implement robust CI/CD practices on Databricks, accelerating data engineering and analytics initiatives while improving code quality and reducing deployment risks.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
