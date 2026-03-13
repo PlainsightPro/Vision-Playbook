@@ -163,7 +163,7 @@ CREATE TABLE ADS_Customer_Snapshot
 ## Related Topics
 
 - [Data Layers and Modeling](data-layers-and-modeling.md) - Overall architecture context
-- [Medallion - Bronze Silver Gold](Medallion%20-%20Bronze%20Silver%20Gold.md) - How ADS maps to Silver
-- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - Downstream consumer for dimensional modeling
-- [Star - Fact Tables](Star%20-%20Fact%20Tables.md) - Downstream consumer for dimensional modeling
+- [Medallion - Bronze Silver Gold](medallion-bronze-silver-gold.md) - How ADS maps to Silver
+- [Star - Dimension Tables](star-dimension-tables.md) - Downstream consumer for dimensional modeling
+- [Star - Fact Tables](star-fact-tables.md) - Downstream consumer for dimensional modeling
 - [Master Data](master-data.md) - Parallel consumer for reference data management

@@ -14,7 +14,7 @@
 ## DRY - Don't Repeat Yourself
 
 !!! info "Core Principle"
-    See [DRY  - Don't Repeat Yourself](DRY%20%20-%20Don't%20Repeat%20Yourself.md) in Architectural Principles for the language-agnostic foundation of this principle, covering SQL, Python, and general programming patterns.
+    See [DRY - Don't Repeat Yourself](../architectural-principles/dry-dont-repeat-yourself.md) in Architectural Principles for the language-agnostic foundation of this principle, covering SQL, Python, and general programming patterns.
 
 **In dbt projects, apply DRY by extracting reusable logic into macros, packages, and centralized models.** This reduces maintenance burden, minimizes errors, and accelerates development.
 

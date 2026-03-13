@@ -3,7 +3,7 @@
 !!! info "info"
     **Audience:** Data engineers, analytics engineers, and platform administrators working with Databricks on Plainsight projects.
 
-A well-organized Databricks workspace accelerates collaboration, code quality, and data governance. Use a clear folder structure aligned with our semantic layers (`landing`, `staging`, `ads`, `gold` / `star`, see [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) and [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md)) and mirror them to the Medallion zones (bronze/silver/gold, see [Medallion Architecture](Technical%20Guideline%20Ops/Architectural%20Principles/Medallion%20-%20Bronze%20Silver%20Gold.md)) so teams can navigate using either naming set. Integrating unit tests into your workspace further strengthens code reliability.
+A well-organized Databricks workspace accelerates collaboration, code quality, and data governance. Use a clear folder structure aligned with our semantic layers (`landing`, `staging`, `ads`, `gold` / `star`, see [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) and [Analytical Data Store (ADS)](../architectural-principles/analytical-data-store-ads.md)) and mirror them to the Medallion zones (bronze/silver/gold, see [Medallion Architecture](../architectural-principles/medallion-bronze-silver-gold.md)) so teams can navigate using either naming set. Integrating unit tests into your workspace further strengthens code reliability.
 
 ## A general folder structure for Databricks workspaces
 

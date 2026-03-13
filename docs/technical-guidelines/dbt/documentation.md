@@ -109,4 +109,4 @@ dbt docs serve --port 8080 --no-browser
 
 ## Related Pages
 - [Third Party Tooling](../power-bi/third-party-tooling.md)
-- [Free Packages](Technical%20Guideline%20Ops/DBT%20Best-Practices/Free%20Packages.md)
+- Free Packages (coming soon)

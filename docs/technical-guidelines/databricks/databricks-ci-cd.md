@@ -430,7 +430,7 @@ env:
 
 ## Related Pages
 
-- [Databricks Jobs & Asset Bundles](Databricks%20Jobs%20&%20Asset%20Bundles.md)
+- [Databricks Jobs & Asset Bundles](databricks-jobs.md)
 - [Data Pipeline Patterns](../fabric/data-pipeline-patterns.md)
 - [Workspace Organization](../fabric/workspace-organization.md)
 

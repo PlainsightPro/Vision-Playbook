@@ -1,7 +1,7 @@
 # Fact Tables
 
 !!! info "Core Concept"
-    Fact tables store **numeric measurements** (the "facts") of business events and processes. They contain the quantitative data you analyze - sales amounts, quantities, balances, temperatures - within the context provided by [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md).
+    Fact tables store **numeric measurements** (the "facts") of business events and processes. They contain the quantitative data you analyze - sales amounts, quantities, balances, temperatures - within the context provided by [Star - Dimension Tables](star-dimension-tables.md).
 
 ## Structure Overview
 
@@ -51,7 +51,7 @@ The **grain of the fact table** (combination of dimension keys) provides an impl
 
 ### Dimension Keys
 
-**Dimension keys determine the dimensionality and grain** of the fact table. These are foreign keys referencing surrogate keys in [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md).
+**Dimension keys determine the dimensionality and grain** of the fact table. These are foreign keys referencing surrogate keys in [Star - Dimension Tables](star-dimension-tables.md).
 
 ```mermaid
 %%{init: { "classDiagram": { "useMaxWidth": true } } }%%
@@ -97,8 +97,8 @@ classDiagram
 
 **Best practices:**
 - Set all dimension keys as `NOT NULL`
-- Use [special dimension members](Dimension%20Tables.md#special-dimension-members) (-1, -2) for `_UNK` and `_N/A`
-- Support [role-playing dimensions](Dimension%20Tables.md#role-playing-dimensions) with multiple keys to the same dimension (e.g., `OrderDate_FK`, `ShipDate_FK`, `DeliveryDate_FK`)
+- Use [special dimension members](star-dimension-tables.md#special-dimension-members) (-1, -2) for `_UNK` and `_N/A`
+- Support [role-playing dimensions](star-dimension-tables.md#role-playing-dimensions) with multiple keys to the same dimension (e.g., `OrderDate_FK`, `ShipDate_FK`, `DeliveryDate_FK`)
 
 ### Business Keys (Natural Keys)
 
@@ -162,7 +162,7 @@ Attributes in fact tables provide additional context but are neither measures no
 - Transaction IDs: `TransactionID`, `TicketNumber`
 - Tracking numbers: `ShipmentTrackingNo`
 
-These form [degenerate dimensions](Dimension%20Tables.md#degenerate-dimensions);dimensional data stored directly in the fact table without a separate dimension table.
+These form [degenerate dimensions](star-dimension-tables.md#degenerate-dimensions);dimensional data stored directly in the fact table without a separate dimension table.
 
 ### Measures
 
@@ -209,9 +209,9 @@ Fact tables are typically:
 
 ## Related Topics
 
-- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - Provide context for fact measures through filtering and grouping
+- [Star - Dimension Tables](star-dimension-tables.md) - Provide context for fact measures through filtering and grouping
 - [Data Layers and Modeling](data-layers-and-modeling.md) - Where fact tables fit in the architecture
-- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - Source layer for cleaned data feeding into dimensional model
+- [Analytical Data Store (ADS)](analytical-data-store-ads.md) - Source layer for cleaned data feeding into dimensional model
 
 ---
 

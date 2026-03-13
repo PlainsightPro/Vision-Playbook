@@ -1,7 +1,7 @@
 # Dimension Tables
 
 !!! info "Core Concept"
-    Dimension tables describe the **who, what, where, when, and why** of your business. They provide context for the numeric measures stored in [Star - Fact Tables](Star%20-%20Fact%20Tables.md), enabling analysts to filter, group, and slice data meaningfully.
+    Dimension tables describe the **who, what, where, when, and why** of your business. They provide context for the numeric measures stored in [Star - Fact Tables](star-fact-tables.md), enabling analysts to filter, group, and slice data meaningfully.
 
 ## Structure Overview
 
@@ -45,10 +45,10 @@ CREATE TABLE D_Salesperson
 
 ==Always use surrogate keys== as the primary key for dimension tables. A surrogate key is a system-generated, single-column **integer** unique identifier.
 
-For complete details on key design principles, see [Surrogate, Primary & Foreign Keys](Surrogate,%20Primary%20&%20Foreign%20Keys.md).
+For complete details on key design principles, see [Surrogate, Primary & Foreign Keys](surrogate-primary-and-foreign-keys.md).
 
 **Why surrogate keys for dimensions:**
-- Enables [Slowly Changing Dimensions](Slowly%20Changing%20Dimensions.md) (SCD Type 2) for historical tracking
+- Enables [Slowly Changing Dimensions](star-dimension-tables.md) (SCD Type 2) for historical tracking
 - Consolidates multiple data sources without identifier conflicts
 - Simplifies multi-column natural keys into efficient single-column keys
 - Insulates the data warehouse from source system changes
@@ -163,7 +163,7 @@ Manage historical changes with three primary strategies:
     - `"Lynn Tsoflias (United Kingdom)"` (current version)
     
     [!warning] Balance Usability vs. Accuracy
-    Too many SCD Type 2 changes create overwhelming version counts. If an attribute changes frequently, consider storing it in the [Star - Fact Tables](Star%20-%20Fact%20Tables.md) instead.
+    Too many SCD Type 2 changes create overwhelming version counts. If an attribute changes frequently, consider storing it in the [Star - Fact Tables](star-fact-tables.md) instead.
 
 ### Conformed Dimensions
 
@@ -234,10 +234,10 @@ Include rows representing data quality states:
 
 ## Related Topics
 
-- [Star - Fact Tables](Star%20-%20Fact%20Tables.md) - Numeric measures that dimensions provide context for
-- [Surrogate, Primary & Foreign Keys](Surrogate,%20Primary%20&%20Foreign%20Keys.md) - Key design principles and best practices
+- [Star - Fact Tables](star-fact-tables.md) - Numeric measures that dimensions provide context for
+- [Surrogate, Primary & Foreign Keys](surrogate-primary-and-foreign-keys.md) - Key design principles and best practices
 - [Data Layers and Modeling](data-layers-and-modeling.md) - Where dimensions fit in the architecture
-- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - Source of cleaned, denormalized data for dimension loading
+- [Analytical Data Store (ADS)](analytical-data-store-ads.md) - Source of cleaned, denormalized data for dimension loading
 - [Master Data](master-data.md) - Operational database for user-maintained reference data
 
 ---

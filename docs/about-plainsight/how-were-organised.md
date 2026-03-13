@@ -133,4 +133,4 @@ Want to know what drives that culture? Read [🥇 The Foundation of Plainsight](
 | Our purpose and values | [🥇 The Foundation of Plainsight](the-foundation-of-plainsight.md) |
 | How you grow here | [🎯 Evolution Process](../people-ops/working/evolution-process.md) |
 | The employee journey | [🚀 Onboarding](../people-ops/onboarding.md) |
-| Our technical guidelines | [Why 'Technical Guideline Ops'](Why%20'Technical%20Guideline%20Ops'.md) |
+| Our technical guidelines | [Why 'Technical Guideline Ops'](../technical-guidelines/why-technical-guidelines.md) |

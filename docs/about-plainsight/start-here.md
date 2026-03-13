@@ -11,7 +11,7 @@ You are just one merge request away: <a name="top"></a>
 # Where to start? 🤔
 
 1. Purpose & [🥇 The Foundation of Plainsight](the-foundation-of-plainsight.md) 🚀
-2. How we're organised → [🏗️ How We're Organised](🏗️%20How%20We're%20Organised.md) 
+2. How we're organised → [How We're Organised](how-were-organised.md) 
 3. What makes us different next to the above?
 	1. Making people grow in their careers is prio 1. Read our Career Framework: [🎯 Evolution Process](../people-ops/working/evolution-process.md)
 	2. Is there a limit on my growth? Spoiler alert: "No, sorry". Read: [🚀 Impact by Ownership](../people-ops/working/impact-by-ownership.md)

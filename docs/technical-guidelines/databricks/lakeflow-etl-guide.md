@@ -304,7 +304,7 @@ flowchart TD
 ### When to Use DLT Pipelines
 
 **Use DLT for:**
-- Production ETL across Landing -> ADS -> Gold layers (our semantic layering) mapped to bronze/silver/gold Medallion zones for platform alignment - see [Medallion Architecture](Technical%20Guideline%20Ops/Architectural%20Principles/Medallion%20-%20Bronze%20Silver%20Gold.md) and [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md)
+- Production ETL across Landing -> ADS -> Gold layers (our semantic layering) mapped to bronze/silver/gold Medallion zones for platform alignment - see [Medallion Architecture](../architectural-principles/medallion-bronze-silver-gold.md) and [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md)
 - Pipelines requiring data quality validation
 - Team collaboration on shared transformations
 - Automatic dependency management needs
@@ -359,7 +359,7 @@ def gold_daily_revenue():
 ```
 
 **Best practices:**
-- ✅ Follow our semantic layering (Landing -> ADS -> Gold) and map to Medallion bronze/silver/gold for platform alignment (see [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) and [Medallion Architecture](Technical%20Guideline%20Ops/Architectural%20Principles/Medallion%20-%20Bronze%20Silver%20Gold.md))
+- ✅ Follow our semantic layering (Landing -> ADS -> Gold) and map to Medallion bronze/silver/gold for platform alignment (see [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) and [Medallion Architecture](../architectural-principles/medallion-bronze-silver-gold.md))
 - ✅ Add quality expectations at each layer
 - ✅ Use streaming for real-time, batch for scheduled updates
 - ✅ Document table purposes and business logic
@@ -705,7 +705,7 @@ flowchart TD
 
 ### dbt Integration
 - [Project Structure](../dbt/project-structure.md) - Organizing transformation code for maintainability
-- [Operations & Testing](Operations%20&%20Testing.md) - Testing strategies applicable to DLT expectations
+- [Operations & Testing](../dbt/operations-and-testing.md) - Testing strategies applicable to DLT expectations
 
 ---
 

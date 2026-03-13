@@ -31,6 +31,6 @@ and speed up filters and joins at scale. GUID relationships are stored as string
 
 ## Related Topics
 
-- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - How surrogate keys are used in dimension design
-- [Star - Fact Tables](Star%20-%20Fact%20Tables.md) - How foreign keys reference dimension surrogate keys
+- [Star - Dimension Tables](star-dimension-tables.md) - How surrogate keys are used in dimension design
+- [Star - Fact Tables](star-fact-tables.md) - How foreign keys reference dimension surrogate keys
 - [Data Layers and Modeling](data-layers-and-modeling.md) - Where keys fit in the overall architecture 

@@ -40,7 +40,7 @@ Document selectors, targets, threads, and variables for each scenario so operato
 ### 2. Business Logic, Anomaly Tests & Freshness
 - Store reusable custom tests in `tests/generic/` (e.g., `test_positive_amounts.sql`).
 - Capture scenario-specific checks via singular tests (SQL queries that return zero rows).
-- Parameterize tests so new models inherit the logic automatically by referencing macros (see [DRY  - Don't Repeat Yourself](DRY%20%20-%20Don't%20Repeat%20Yourself.md) for patterns).
+- Parameterize tests so new models inherit the logic automatically by referencing macros (see [DRY - Don't Repeat Yourself](../architectural-principles/dry-dont-repeat-yourself.md) for patterns).
 - Configure `freshness` blocks per critical source with warn/error thresholds (e.g., warn after 18h, error after 26h).
 
 

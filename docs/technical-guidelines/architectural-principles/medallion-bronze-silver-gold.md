@@ -95,5 +95,5 @@ flowchart TB
 
 - [Data Layers and Modeling](data-layers-and-modeling.md): End-to-end architecture
 - [Landing and Staging](landing-and-staging.md): Bronze equivalent
-- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md): Silver equivalent
-- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) and [Star - Fact Tables](Star%20-%20Fact%20Tables.md): Gold equivalents
+- [Analytical Data Store (ADS)](analytical-data-store-ads.md): Silver equivalent
+- [Star - Dimension Tables](star-dimension-tables.md) and [Star - Fact Tables](star-fact-tables.md): Gold equivalents

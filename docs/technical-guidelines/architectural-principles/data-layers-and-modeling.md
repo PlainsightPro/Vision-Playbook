@@ -126,7 +126,7 @@ class A,C blueBox;
 ```
 
 Here we see all data that the information is flowing through. 
-1. The **Source** contains all information but is not part of our Data Platform. Read more about sources in [Data Sources & Data Loading](Data%20Sources%20&%20Data%20Loading.md)
+1. The **Source** contains all information but is not part of our Data Platform. Read more about sources in [Data Sources & Data Loading](data-sources-and-data-loading.md)
 
 2. **Landing (Optional, Bronze)** contains the increments extracted from the source or external tables populated by ingestion tools. This layer is useful when:
    - External tools (Fabric Pipelines, Databricks Lakeflow Connect, replication, ...) populate external tables
@@ -142,10 +142,10 @@ Here we see all data that the information is flowing through.
    
 !!! tip "The 'Intermediate' layer can be skipped when no intermediary steps are required to fill 'ADS' or 'Gold' layers"
    
-5. The **ADS layer (Silver)** provides cleaned data with data quality rules applied and initial denormalization. Tables are unpivoted, making the data more accessible while still allowing for further business-friendly modeling. This layer is used to integrate different sources, for historical build-up (supporting SCD2 logic in later-on streams), and for increased querying capacity to address business questions. This is the ideal phase to feed Master Data Services (MDS). This layer can be used by experienced data engineers and data analysts. Read more about this layer in [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md). 
+5. The **ADS layer (Silver)** provides cleaned data with data quality rules applied and initial denormalization. Tables are unpivoted, making the data more accessible while still allowing for further business-friendly modeling. This layer is used to integrate different sources, for historical build-up (supporting SCD2 logic in later-on streams), and for increased querying capacity to address business questions. This is the ideal phase to feed Master Data Services (MDS). This layer can be used by experienced data engineers and data analysts. Read more about this layer in [Analytical Data Store (ADS)](analytical-data-store-ads.md). 
 
 6. The **Gold layer** provides business-optimized data structures for reporting, analytics, and machine learning:
-   - **Star - Dimensional Model** (Facts & Dimensions): Star schema optimized for fast querying and business user exploration. Read more in [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) and [Star - Fact Tables](Star%20-%20Fact%20Tables.md).
+   - **Star - Dimensional Model** (Facts & Dimensions): Star schema optimized for fast querying and business user exploration. Read more in [Star - Dimension Tables](star-dimension-tables.md) and [Star - Fact Tables](star-fact-tables.md).
    - **Feature Store**: Curated, reusable feature tables (often wide / denormalized) for machine learning model training, inference, and advanced analytics.
 
 
@@ -247,8 +247,8 @@ graph LR
 
 ## Related Topics
 
-- [Data Sources & Data Loading](Data%20Sources%20&%20Data%20Loading.md) - How data enters the platform
-- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - Silver layer between Bronze and Gold
-- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - Star schema dimension design patterns
-- [Star - Fact Tables](Star%20-%20Fact%20Tables.md) - Star schema fact table design patterns  
+- [Data Sources & Data Loading](data-sources-and-data-loading.md) - How data enters the platform
+- [Analytical Data Store (ADS)](analytical-data-store-ads.md) - Silver layer between Bronze and Gold
+- [Star - Dimension Tables](star-dimension-tables.md) - Star schema dimension design patterns
+- [Star - Fact Tables](star-fact-tables.md) - Star schema fact table design patterns  
 - [Master Data](master-data.md) - Operational database for business-maintained reference data

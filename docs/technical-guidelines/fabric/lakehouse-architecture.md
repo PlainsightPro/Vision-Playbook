@@ -124,7 +124,7 @@ Track ingestion latency, freshness, error rates, and storage growth. Define SLA 
 - [ ] Monitoring and alerts configured
 
 ## Related pages
-- [Medallion Architecture](Technical%20Guideline%20Ops/Architectural%20Principles/Medallion%20-%20Bronze%20Silver%20Gold.md) - How Bronze/Silver/Gold map to our semantic layers
+- [Medallion Architecture](../architectural-principles/medallion-bronze-silver-gold.md) - How Bronze/Silver/Gold map to our semantic layers
 - [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) - Plainsight's explicit layer definitions
 - [Naming Conventions](../power-bi/naming-conventions.md)
 - [Data Pipeline Patterns](data-pipeline-patterns.md)

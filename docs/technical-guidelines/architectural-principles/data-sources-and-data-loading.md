@@ -123,4 +123,4 @@ classDef all fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
 ## Related Topics
 
 - [Data Layers and Modeling](data-layers-and-modeling.md) - Overall architecture showing how data sources fit into the platform
-- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - Where source data is cleaned and integrated
+- [Analytical Data Store (ADS)](analytical-data-store-ads.md) - Where source data is cleaned and integrated

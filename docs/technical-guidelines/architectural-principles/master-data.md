@@ -1,7 +1,7 @@
 # Master Data
 
 !!! info "Core Concept"
-    Master Data is an **operational database** that serves as a centralized hub for managing critical reference data, lists, lookups, budgets, and other business-maintained information within the data platform. Unlike source systems or analytical layers, Master Data is actively managed by business users and provides a bidirectional interface with the [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md).
+    Master Data is an **operational database** that serves as a centralized hub for managing critical reference data, lists, lookups, budgets, and other business-maintained information within the data platform. Unlike source systems or analytical layers, Master Data is actively managed by business users and provides a bidirectional interface with the [Analytical Data Store (ADS)](analytical-data-store-ads.md).
 
 ## Purpose
 
@@ -119,6 +119,6 @@ When out-of-the-box solutions don't fit, **custom applications** can be develope
 
 ## Related Topics
 
-- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md) - The primary integration point for Master Data
-- [Star - Dimension Tables](Star%20-%20Dimension%20Tables.md) - How Master Data enriches dimensional models
+- [Analytical Data Store (ADS)](analytical-data-store-ads.md) - The primary integration point for Master Data
+- [Star - Dimension Tables](star-dimension-tables.md) - How Master Data enriches dimensional models
 - [Data Layers and Modeling](data-layers-and-modeling.md) - Where Master Data fits in the overall architecture

@@ -112,6 +112,6 @@ graph LR
 ## Related Pages
 
 - [Data Layers and Modeling](data-layers-and-modeling.md): Full data platform architecture overview
-- [Data Sources & Data Loading](Data%20Sources%20&%20Data%20Loading.md): Source system integration patterns
-- [Analytical Data Store (ADS)](Analytical%20Data%20Store%20(ADS).md): Next transformation step after staging
+- [Data Sources & Data Loading](data-sources-and-data-loading.md): Source system integration patterns
+- [Analytical Data Store (ADS)](analytical-data-store-ads.md): Next transformation step after staging
 ---
