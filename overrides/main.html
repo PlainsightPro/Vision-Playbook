@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
-{% block announce %}
-  <a href="https://plainsight.pro" target="_blank" rel="noopener">
-    🌐 plainsight.pro
-  </a>
+{% block header %}
+  {{ super() }}
+  <div class="ps-subheader">
+    <div class="md-grid ps-subheader__inner">
+      <a href="https://plainsight.pro" target="_blank" rel="noopener">
+        <img src="{{ 'assets/rocket-schuin.svg' | url }}" alt="">
+        plainsight.pro
+      </a>
+    </div>
+  </div>
 {% endblock %}
