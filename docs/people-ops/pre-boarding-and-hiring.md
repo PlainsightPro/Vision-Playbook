@@ -4,14 +4,7 @@ Welcome to the start of your journey with Plainsight! Our recruitment process is
 
 
 ```mermaid
----
-config:
-  layout: elk
-  theme: base
-  themeVariables:
-    primaryTextColor: '#FFFFFF'
----
-
+%%{init: { "theme": "base", "themeVariables": { "primaryTextColor": "#FFFFFF" } } }%%
 graph TB;
     subgraph A[Phase 1: 🎉 Initial Engagement]
         A1[👋 Interview 1: Get to Know Us]

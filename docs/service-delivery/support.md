@@ -21,13 +21,7 @@ Our ticket process ensures that your issues are tracked and resolved efficiently
 4. **✅ Solved**: The issue has been resolved and the ticket is closed.
 
 ```mermaid
----
-config:
-  layout: elk
-  theme: base
-  themeVariables:
-    primaryTextColor: '#FFFFFF'
----
+%%{init: { "theme": "base", "themeVariables": { "primaryTextColor": "#FFFFFF" } } }%%
 graph TD;
     A[📧 Log Issue via Email or Portal] --> B[📥 Open Ticket]
     B --> C[⚙️ In Progress]

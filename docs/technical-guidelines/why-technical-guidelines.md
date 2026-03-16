@@ -3,12 +3,7 @@ These Technical Guidelines guide you towards a better implementation within a Da
 While these Technical Guidelines provide our way of working, there are always reasons one prefers to use another way/manner. The flowchart below shows what to do when. 
 
 ```mermaid
----
-config:
-  theme: base
-  layout: elk  themeVariables:
-    primaryTextColor: '#FFFFFF'---
-%%{init: { "flowchart": { "useMaxWidth": true } } }%%
+%%{init: { "theme": "base", "flowchart": { "useMaxWidth": true }, "themeVariables": { "primaryTextColor": "#FFFFFF" } } }%%
 graph TD;
     A[Q? Can I adhere to the technical Guidelines?]
     B[Yes, it's a greenfield.]
