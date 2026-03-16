@@ -76,7 +76,6 @@ classDef silver fill:#C0C0C0,stroke:#808080,stroke-width:1px,color:#111827;
 classDef silverOptional fill:#C0C0C0,stroke:#808080,stroke-width:2px,stroke-dasharray:5 5,color:#111827;
 classDef gold fill:#FFD700,stroke:#DAA520,stroke-width:1px,color:#111827;
 classDef goldOptional fill:#FFD700,stroke:#DAA520,stroke-width:2px,stroke-dasharray:5 5,color:#111827;
-class A,C blueBox;
 ```
 
 The typical flow of data is as follows:
@@ -122,7 +121,6 @@ classDef bronzeOptional fill:#CD7F32,stroke:#8B4513,stroke-width:2px,stroke-dash
 classDef silver fill:#C0C0C0,stroke:#808080,stroke-width:1px,color:#111827;
 classDef silverOptional fill:#C0C0C0,stroke:#808080,stroke-width:2px,stroke-dasharray:5 5,color:#111827;
 classDef gold fill:#FFD700,stroke:#DAA520,stroke-width:1px,color:#111827;
-class A,C blueBox;
 ```
 
 Here we see all data that the information is flowing through. 

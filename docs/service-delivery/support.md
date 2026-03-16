@@ -35,7 +35,7 @@ graph TD;
     B -.-> F[🔴 High Priority? Call Account Manager]
     F --> C
     
-    classDef blueBox fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
+    classDef blueBox fill:#000075,stroke:#000075,stroke-width:1px,color:#FFFFFF;
     class A,B,C,D,E,F blueBox;
 
 ``` 
