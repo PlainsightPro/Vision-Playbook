@@ -115,7 +115,7 @@ classDef bronzeOptional fill:#CD7F32,stroke:#8B4513,stroke-width:2px,stroke-dash
 classDef silver fill:#C0C0C0,stroke:#808080,stroke-width:1px,color:#111827;
 classDef silverOptional fill:#C0C0C0,stroke:#808080,stroke-width:2px,stroke-dasharray:5 5,color:#111827;
 classDef gold fill:#FFD700,stroke:#DAA520,stroke-width:1px,color:#111827;
-classDef all fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
+classDef all fill:#000075,stroke:#000075,stroke-width:1px,color:#FFFFFF;
 ```
 
 ---

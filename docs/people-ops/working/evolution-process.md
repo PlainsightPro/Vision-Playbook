@@ -24,10 +24,10 @@ graph TD;
     B --> B
     D --> D
 
-    classDef pinkBox fill:#FDCAD2,stroke:#031B89,stroke-width:1px;
-    class A,C,D,E pinkBox;
+    classDef orangeBox fill:#D5693A,stroke:#BD5428,stroke-width:1px,color:#FFFFFF;
+    class A,C,D,E orangeBox;
 
-    classDef blueBox fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
+    classDef blueBox fill:#000075,stroke:#000075,stroke-width:1px,color:#FFFFFF;
     class B,D blueBox;
 ```
 

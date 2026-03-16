@@ -35,10 +35,10 @@ graph TB;
     A --> B --> C --> D
     B1 --> B2
     
-    classDef outerBox fill:#FDCAD2,stroke:#031B89,stroke-width:1px;
-    class A,B,C,D outerBox;
-    
-    classDef innerbox fill:#031B89,stroke:#031B89,stroke-width:1px,color:#FFFFFF;
+classDef outerBox fill:#D5693A,stroke:#BD5428,stroke-width:1px,color:#FFFFFF;
+    class A,B,C,D outerBox;
+    
+    classDef innerbox fill:#000075,stroke:#000075,stroke-width:1px,color:#FFFFFF;
     class A1,B1,B2,C1,C2,D1,D2 innerbox;
     
 ```
