@@ -7,15 +7,10 @@ Besides the continuous open candor and feedback culture, we have two fixed 720°
 This is how we structure it:
 
 ```mermaid
----
-config:
-  theme: base
-  layout: elk
-  themeVariables:
-    primaryTextColor: '#FFFFFF'
-    B[🔄 Periodic Follow-Up with Career Coach]
-    C[📊 July: Mid-Year Feedback moment]
-    D[🔄 Periodic Follow-Up with Career Coach]
+%%{init: { "theme": "base", "themeVariables": { "primaryTextColor": "#FFFFFF" } } }%%
+graph TD;
+    A[🎯 Dec/Jan: Set Long & Short-Term Goals]
+    B[🔄 Periodic Follow-Up with Career Coach]
     E[🎉 Dec/Jan: 720° Feedback & Reset Goals]
 
     A --> B --> C --> D --> E --> A
