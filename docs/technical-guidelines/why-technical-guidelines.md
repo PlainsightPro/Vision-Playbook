@@ -6,8 +6,8 @@ While these Technical Guidelines provide our way of working, there are always re
 ---
 config:
   theme: base
-  layout: elk
----
+  layout: elk  themeVariables:
+    primaryTextColor: '#FFFFFF'---
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 graph TD;
     A[Q? Can I adhere to the technical Guidelines?]

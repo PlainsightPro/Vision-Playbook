@@ -25,7 +25,8 @@ Our ticket process ensures that your issues are tracked and resolved efficiently
 config:
   layout: elk
   theme: base
-  look: neo
+  themeVariables:
+    primaryTextColor: '#FFFFFF'
 ---
 graph TD;
     A[📧 Log Issue via Email or Portal] --> B[📥 Open Ticket]

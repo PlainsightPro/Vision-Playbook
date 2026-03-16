@@ -11,10 +11,8 @@ This is how we structure it:
 config:
   theme: base
   layout: elk
----
-
-graph TD;
-    A[🎯 Dec/Jan: Set Long & Short-Term Goals]
+  themeVariables:
+    primaryTextColor: '#FFFFFF'
     B[🔄 Periodic Follow-Up with Career Coach]
     C[📊 July: Mid-Year Feedback moment]
     D[🔄 Periodic Follow-Up with Career Coach]

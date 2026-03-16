@@ -8,39 +8,35 @@ Welcome to the start of your journey with Plainsight! Our recruitment process is
 config:
   layout: elk
   theme: base
-  look: neo
+  themeVariables:
+    primaryTextColor: '#FFFFFF'
 ---
 
 graph TB;
-    subgraph A[Phase 1: 🎉 Initial Engagement]
-        A1[👋 Interview 1: Get to Know Us]
-    end
-    
-    subgraph B[Phase 2: 🤓 In-Depth Meeting]
-        direction LR
-        B1[💬 Interview 2: Questions & Deep-Dive] 
-        B2[🛠️ Technical Challenge]
-    end
-
-    subgraph C[Phase 4: 📝 Decision Making]
-        direction LR
-        C1[📄 Offer Proposal] --> C2[🤔 What's it gonna be? Yes or No?!]
-    end
-
-    subgraph D[Phase 5: 🌟 Onboarding]
-        direction LR
-        D1[📋 Pre-boarding] --> D2[🚀 First Day at Plainsight]
-    end
-
-    A --> B --> C --> D
-    B1 --> B2
-    
-classDef outerBox fill:#D5693A,stroke:#BD5428,stroke-width:1px,color:#FFFFFF;
-    class A,B,C,D outerBox;
+    subgraph A[Phase 1: 🎉 Initial Engagement]
+        A1[👋 Interview 1: Get to Know Us]
+    end
     
-    classDef innerbox fill:#000075,stroke:#000075,stroke-width:1px,color:#FFFFFF;
-    class A1,B1,B2,C1,C2,D1,D2 innerbox;
+    subgraph B[Phase 2: 🤓 In-Depth Meeting]
+        direction LR
+        B1[💬 Interview 2: Questions & Deep-Dive] 
+        B2[🛠️ Technical Challenge]
+    end
+
+    subgraph C[Phase 4: 📝 Decision Making]
+        direction LR
+        C1[📄 Offer Proposal] --> C2[🤔 What's it gonna be? Yes or No?!]
+    end
+
+    subgraph D[Phase 5: 🌟 Onboarding]
+        direction LR
+        D1[📋 Pre-boarding] --> D2[🚀 First Day at Plainsight]
+    end
+
+    A --> B --> C --> D
+    B1 --> B2
     
+    classDef outerBox fill:#D5693A,stroke:#BD5428,stroke-width:1px,color:#FFFFFF;
 ```
   
 *This streamlined process ensures we're on the same page from the start and ready to move forward together. 🙌*
