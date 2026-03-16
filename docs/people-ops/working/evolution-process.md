@@ -9,7 +9,7 @@ This is how we structure it:
 ```mermaid
 ---
 config:
-  theme: forest
+  theme: base
   layout: elk
 ---
 

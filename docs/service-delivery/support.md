@@ -24,7 +24,7 @@ Our ticket process ensures that your issues are tracked and resolved efficiently
 ---
 config:
   layout: elk
-  theme: forest
+  theme: base
   look: neo
 ---
 graph TD;
