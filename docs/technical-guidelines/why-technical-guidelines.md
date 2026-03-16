@@ -5,7 +5,7 @@ While these Technical Guidelines provide our way of working, there are always re
 ```mermaid
 ---
 config:
-  theme: forest
+  theme: base
   layout: elk
 ---
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%

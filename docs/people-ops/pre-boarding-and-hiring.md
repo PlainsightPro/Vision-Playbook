@@ -7,7 +7,7 @@ Welcome to the start of your journey with Plainsight! Our recruitment process is
 ---
 config:
   layout: elk
-  theme: forest
+  theme: base
   look: neo
 ---
 
