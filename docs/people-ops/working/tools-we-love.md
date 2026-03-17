@@ -1,3 +1,7 @@
+---
+description: "Discover the tools Plainsight consultants use daily, including Snagit, Bitwarden, VS Code, and SSMS, with best practices and install guides."
+---
+
 # Tools We Love 🛠️
 
 At Plainsight, we rely on a variety of tools to get the job done efficiently and effectively. Here are some of our favorites, along with best practices and where to install them:

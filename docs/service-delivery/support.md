@@ -1,3 +1,7 @@
+---
+description: "Plainsight support services: how to log tickets, track issue status, handle high-priority incidents, and access the support portal."
+---
+
 # Plainsight Support 🛠️
 
 At Plainsight, we're dedicated to ensuring that you have the support you need to thrive. Whether you're facing an issue, need assistance, or have a question, our support team is here to help you every step of the way. 
@@ -30,8 +34,6 @@ graph TD;
     B -.-> F[🔴 High Priority? Call Account Manager]
     F --> C
     
-    classDef blueBox fill:#000075,stroke:#000075,stroke-width:1px,color:#FFFFFF;
-    class A,B,C,D,E,F blueBox;
 
 ``` 
 

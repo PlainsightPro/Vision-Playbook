@@ -1,6 +1,10 @@
+---
+description: "Standardized Microsoft Fabric naming conventions with semantic prefixes, item type codes, and purpose tags for pipelines, lakehouses, and reports."
+---
+
 # Fabric Naming Conventions
 
-!!! info "Purpose"
+??? info "Purpose"
     Standardized naming patterns create clarity and enable automation across the Fabric data estate. Through semantic prefixes, version indicators, and type codes, teams can automate governance processes and maintain clear data lineage. When implemented properly, these conventions accelerate development through discoverability while building trust through consistent, meaningful artifact names.
 
 ## Overview
@@ -106,7 +110,7 @@ This structure keeps type & purpose easily parseable for automation.
 | Report | `RP_ANLYZ_ExecSummary` | Business-facing Exec summary dashboard |
 
 
-!!! warning "Keep Environment Names Out of Artifact Names"
+??? warning "Keep Environment Names Out of Artifact Names"
     Avoid embedding environment names into canonical artifact names (prefer `Lakehouse_Bronze` over `Lakehouse_Bronze_DEV`). Environment-aware behavior is better handled by workspace scoping, deployment pipelines, or display names. This keeps canonical names environment-agnostic and simplifies promotion across environments.
     
     [!tip] Validating & Automating Naming Conventions

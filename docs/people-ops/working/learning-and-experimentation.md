@@ -1,3 +1,7 @@
+---
+description: "Plainsight's learning and experimentation perks: personal budgets, external training, and Azure sandbox subscriptions for hands-on innovation."
+---
+
 # Learning and Experimentation 🌱
 
 At Plainsight, we believe in continuous learning and fostering a culture of experimentation. Here’s how we support your growth and innovation:

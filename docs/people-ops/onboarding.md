@@ -1,3 +1,7 @@
+---
+description: "Plainsight onboarding guide: proposal signing, setup steps, welcome kit, orientation day, and the Plainsight Academy training program."
+---
+
 # 👋 Onboarding: Your Journey with Plainsight Begins
 ---
 _Onboarding at Plainsight is designed to make you feel welcome, informed, and ready to hit the ground running 🏃‍♂️‍➡️_

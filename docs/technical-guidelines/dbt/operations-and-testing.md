@@ -1,3 +1,7 @@
+---
+description: "dbt operations and testing playbook — run types, Slim CI, testing ladder with coverage matrix, freshness checks, and performance observability."
+---
+
 # dbt Operations & Testing Playbook
 
 ## Operating Principles
@@ -25,7 +29,7 @@ Document selectors, targets, threads, and variables for each scenario so operato
 
 ## Testing Ladder
 
-!!! note "🚨 Ship Nothing With Failing Tests"
+??? note "🚨 Ship Nothing With Failing Tests"
     CI pipelines and scheduled jobs must fail fast on any broken test. Production deployments without a green `dbt test` (or `dbt build`) are not allowed.
     
     [!tip] 💡 Testing Tactic

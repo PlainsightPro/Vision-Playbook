@@ -1,3 +1,7 @@
+---
+description: "Guidelines for keeping your Plainsight CV current, including what to include, update frequency, and the company-approved template process."
+---
+
 # Keeping Your CV Up-to-Date 📄
 
 At Plainsight, your CV is more than just a document - it's your professional story. It’s essential to keep it current, as we use your CV to present your skills and experience to potential customers. It's essential to maintain your CV regularly. Click the button below to update your CV:

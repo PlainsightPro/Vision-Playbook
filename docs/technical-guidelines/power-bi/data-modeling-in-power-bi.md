@@ -1,3 +1,7 @@
+---
+description: "Power BI data modeling best practices: star schema design, surrogate keys, incremental refresh, RLS, and performance optimization guidelines."
+---
+
 # Data Modeling Best Practices for Power BI
 
 ## Overview
@@ -11,11 +15,11 @@ Use robust relationships (single-direction where possible), prefer whole-number 
 - Ensure one-to-many relationships with unique dimension keys.  
 - Use integer surrogate keys (Primary Keys, Foreign Keys); avoid text/GUID keys for relationships. Read more here: [Surrogate, Primary & Foreign Keys](../architectural-principles/surrogate-primary-and-foreign-keys.md)  
 - Use Date dimension(s); mark it as a Date table.  
-- Declare the grain of each fact table (e.g., “one row per order line”) to avoid confusion.  
+- Declare the grain of each fact table (e.g., "one row per order line") to avoid confusion.  
 - Add an Unknown / Not Applicabl key (e.g., `-1`) in dimensions to handle orphaned fact rows.  
 - Build dimensions wide enough with relevant attributes, but avoid unnecessary snowflaking.  
 - Use bridge tables for many-to-many instead of direct relationships.  
-- Enable `Incremental Refresh` on large tables with stable “last modified” columns for efficiency.  
+- Enable `Incremental Refresh` on large tables with stable "last modified" columns for efficiency.  
 - Optimize column storage:  
   - Remove unused columns.  
   - Use whole numbers where possible.  
@@ -27,32 +31,32 @@ Use robust relationships (single-direction where possible), prefer whole-number 
 - Keep reports thin: heavy logic belongs in the dataset, not in visuals.  
 
 
->[!Example: Grain declaration]-
->
->```text
-F_Sales: One row per order line
->- OrderID
->- OrderLineID
->- ProductKey
->- CustomerKey
->- SalesAmount
->```
->
->This makes it clear that “OrderID” alone is not unique in the fact table.
+??? example "Grain declaration"
 
->[!Example: Incremental Refresh policy]-
->
->```text
->Policy:
->- Keep data for last 5 years
->- Refresh last 7 days
->- Detect changes on [ModifiedDate]
->```
->
->This balances query performance with manageable refresh times.
+    ```text
+    F_Sales: One row per order line
+    - OrderID
+    - OrderLineID
+    - ProductKey
+    - CustomerKey
+    - SalesAmount
+    ```
+
+    This makes it clear that "OrderID" alone is not unique in the fact table.
+
+??? example "Incremental Refresh policy"
+
+    ```text
+    Policy:
+    - Keep data for last 5 years
+    - Refresh last 7 days
+    - Detect changes on [ModifiedDate]
+    ```
+
+    This balances query performance with manageable refresh times.
 
 **Don’t**
-- Don’t build one giant “flat” table for everything.  
+- Don’t build one giant "flat" table for everything.  
 - Don’t snowflake dimensions unless reuse or maintenance clearly requires it.  
 - Don’t enable bi-directional relationships by default. Bi-directional relationships can lead to ambiguity. If bi-directional relationships are required, override the filtering behaviour **in your measure** by using CROSSFILTER[^1].  
 - Don’t apply RLS with complex filters directly on large fact tables.  

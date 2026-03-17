@@ -1,3 +1,7 @@
+---
+description: "Plainsight's open-source company playbook: discover our purpose, values, career framework, and how we drive business outcomes through data and AI."
+---
+
 <a name="top"></a>
 # Plainsight Playbook 📔
 
@@ -19,7 +23,7 @@ You are just one merge request away:
 	4. We believe in an eco-system of people that can provide value when our customers need them. Therefore we closely work together via employment and/or contract based.
 
 
-# Why This Playbook? 🤔
+## Why This Playbook? 🤔
 
 This playbook exists to align everyone with our purpose, values, and processes. We want to show who we are to all our stakeholders - our colleagues, customers, partners, friends, and family, and anyone who wants to know what Plainsight stands for and how we do business. It's a living document that evolves with us, ensuring that we stay on course as we grow and innovate together.
 

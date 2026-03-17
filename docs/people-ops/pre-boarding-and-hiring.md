@@ -1,3 +1,7 @@
+---
+description: "Plainsight's hiring and pre-boarding process: from initial interview and technical assessment to offer and first-day preparation."
+---
+
 # Pre-Boarding at Plainsight 🛹
 
 Welcome to the start of your journey with Plainsight! Our recruitment process is designed to be as seamless, transparent, and engaging as possible. Here’s what you can expect as you embark on this exciting path with us.

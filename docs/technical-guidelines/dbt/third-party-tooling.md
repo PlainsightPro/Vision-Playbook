@@ -1,3 +1,7 @@
+---
+description: "Essential third-party tools for dbt — dbt Power User extension, SQLFluff linting, community packages like dbt-utils, and onboarding defaults."
+---
+
 # Third-Party Tools for dbt
 
 ## Overview
@@ -69,7 +73,7 @@ Use a small, pinned set of packages; avoid floating versions. Evaluate maintenan
 | `dbt-bounce`            | Validate refs/tests connectivity             | Optional; useful for dependency sanity checks.                             |
 | `elementary`            | Monitoring/observability for dbt runs        | Adds overhead; justify for teams needing run-time telemetry.               |
 
-!!! tip "Keep `packages.yml` pinned"
+??? tip "Keep `packages.yml` pinned"
     Pin every package version and review upgrades alongside dbt-core minor releases.
 
 ---

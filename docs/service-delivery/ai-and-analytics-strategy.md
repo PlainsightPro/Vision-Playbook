@@ -1,3 +1,7 @@
+---
+description: "Plainsight's AI and analytics strategy services: discovery, business prioritization, roadmap execution, and governance for data-driven organizations."
+---
+
 # AI & Analytics Strategy
 
 > Crafting the foundation for impactful data & AI initiatives

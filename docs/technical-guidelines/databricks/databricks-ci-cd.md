@@ -1,6 +1,10 @@
+---
+description: "Databricks CI/CD best practices: Asset Bundles, source control strategies, automated testing, environment isolation, and ML/SQL deployment workflows."
+---
+
 # Databricks CI/CD Best Practices
 
-!!! info "Purpose"
+??? info "Purpose"
     This guide provides best practices for designing robust CI/CD pipelines on Databricks, ensuring rapid and reliable deployment of data engineering and analytics workloads.
 
 ## Overview
@@ -39,7 +43,7 @@ Effective CI/CD pipelines share foundational principles regardless of implementa
 | Validation Tests  | Databricks CLI `bundle validate`       | Check notebook and workflow functionality  |
 | Integration Tests | `chispa` for Spark DataFrames          | Test complete workflows and data pipelines |
 
-!!! tip "Testing Strategy"
+??? tip "Testing Strategy"
     Implement multiple layers of testing to catch issues early in the development cycle.
 
 ### Employ Infrastructure as Code (IaC)
@@ -67,7 +71,7 @@ Implement automated rollback mechanisms for failed deployments to minimize downt
 
 ### Unify Asset Management
 
-!!! warning "Avoid Siloed Management"
+??? warning "Avoid Siloed Management"
     Use Databricks Asset Bundles to deploy code, jobs, and infrastructure as a single unit. Avoid managing notebooks, libraries, and workflows separately.
     
     [!info] Authentication Recommendation
@@ -167,7 +171,7 @@ databricks-dab-repo/
 - ❌ Additional coordination required
 - ❌ Must ensure version compatibility
 
-!!! warning "Version Artifacts"
+??? warning "Version Artifacts"
     Always use versioned artifacts (Git commit hashes) when uploading to Databricks or external storage to ensure traceability and rollback capabilities.
 
 ### Reference Compiled Artifacts in Bundles
@@ -243,7 +247,7 @@ This ensures:
 - Proper resource references
 - Environment-specific parameters are valid
 
-!!! tip "Catch Issues Early"
+??? tip "Catch Issues Early"
     Run validation during pull requests to catch misconfigurations before deployment.
 
 ### Step 4: Deploy Bundle
@@ -312,7 +316,7 @@ MLOps Stacks combine:
 2. **Data scientists** submit ML code → unit tests run → deploy to staging workspace for integration testing
 3. **MLOps engineers** review validation metrics → promote vetted models to production via MLflow Registry
 
-!!! info "Learn More"
+??? info "Learn More"
     - [MLOps Stacks bundle documentation](https://docs.databricks.com)
     - [MLOps Stacks GitHub repository](https://github.com/databricks/mlops-stacks)
 
@@ -423,7 +427,7 @@ env:
 - **Use `bundle generate --watch`** to continuously sync local dashboard JSON files with Databricks UI changes
 - **Force overwrite** with `--force` flag during deployment if discrepancies occur
 
-!!! tip "Dashboard Workflow"
+??? tip "Dashboard Workflow"
     Maintain dashboard definitions in Git, deploy through automated pipelines, and use variables for environment-specific configurations.
 
 ---

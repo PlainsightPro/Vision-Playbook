@@ -1,3 +1,7 @@
+---
+description: "DAX coding standards for Power BI: VAR blocks, DIVIDE, CALCULATE best practices, formatting guidelines, and practical measure examples."
+---
+
 # DAX Coding Standards
 
 ## Overview

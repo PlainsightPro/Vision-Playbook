@@ -1,3 +1,7 @@
+---
+description: "Power BI naming conventions for tables, columns, and measures. Business-friendly names, prefixing strategies, and role-playing dimension patterns."
+---
+
 # Naming Conventions
 
 ## Overview
@@ -22,7 +26,7 @@ Good naming conventions make it easier for both developers and business users to
 
 ## Columns
 - Provide user-friendly column names that describe the business meaning (e.g., `Booking Month`, `Product Code`).  
-- Prefix column names with the table abbreviation to avoid ambiguity in reports. Example:  
+- Prefix column names with the table abbreviation to avoid ambiguity in reports.[^1] Example:  
   - `'Sales Transaction (ST)'[ST Order Number]`  
   - `'Invoice Customer (Inv. Cust.)'[Inv. Cust. Country Name]`  
 - When a column contains both `Code` and `Name`, consider adding a concatenated `Code Name` column to simplify filtering and searching.  
@@ -46,7 +50,7 @@ Good naming conventions make it easier for both developers and business users to
 - Keep measure names concise but unambiguous; avoid unnecessary filler words like *“Total”* unless needed for clarity.  
 
 **Don’t**
-- Don’t put all measures into a “dummy” or “measures” table. Keep them on the table they logically belong to.  
+- Don’t put all measures into a “dummy” or “measures” table.[^2] Keep them on the table they logically belong to.  
 - Don’t use technical language in measure names; names should be understandable by a business audience.  
 
 ---

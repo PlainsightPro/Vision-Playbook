@@ -1,3 +1,7 @@
+---
+description: "Essential third-party tools for Power BI: Tabular Editor, DAX Studio, Power BI Helper, and PBI Inspector for governance and performance tuning."
+---
+
 # Third-Party Tools for Power BI
 
 ## Overview

@@ -1,6 +1,10 @@
+---
+description: "Proven Fabric data pipeline patterns for incremental processing, idempotent MERGE operations, error handling, and choosing Pipelines vs Notebooks vs Dataflows."
+---
+
 # Data Pipeline Patterns
 
-!!! info "Purpose"
+??? info "Purpose"
     Proven pipeline patterns ensure reliable data processing and optimal resource utilization in Fabric implementations. Through incremental processing, smart CDC handling, and comprehensive observability, teams can maintain data freshness and recover gracefully from failures. Robust error handling and checkpointing strategies enable automated recovery while optimizing resource usage through intelligent scheduling.
 
 ## Overview

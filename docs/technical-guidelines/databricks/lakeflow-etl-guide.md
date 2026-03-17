@@ -1,6 +1,8 @@
+---
+description: "Databricks Lakeflow ETL guide: data ingestion with CDC and Auto Loader, DLT pipeline transformations, data quality expectations, and job orchestration."
+---
 
-
-!!! info "Get in Touch"
+??? info "Get in Touch"
     This guide explains how to build production-ready ETL pipelines using **Databricks Lakeflow** - a unified data engineering solution combining ingestion, transformation, and orchestration. For Plainsight-specific implementation guidance, contact **Benoit**, **Nick** or **Lander**.
 
 ---
@@ -25,7 +27,7 @@ flowchart LR
 | **Lakeflow Pipelines** | Data transformation | Declarative pipelines with built-in quality checks (Delta Live Tables / Spark Declarative Pipelines) |
 | **Lakeflow Jobs** | Orchestration | Reliable scheduling, monitoring, and production deployment |
 
-!!! info "Naming Note"
+??? info "Naming Note"
     Lakeflow Pipelines is also known as **Spark Declarative Pipelines** since its full integration with Spark. Some DLT commands may reflect this updated naming.
 
 ---
@@ -152,7 +154,7 @@ def bronze_transactions():
 - ❌ Don't use batch processing for continuous file arrival
 - ❌ Don't manually track processed files (Auto Loader handles this)
 
-!!! tip "Auto Loader Advantages"
+??? tip "Auto Loader Advantages"
     Auto Loader automatically tracks processed files, handles schema evolution, and scales efficiently. Use it whenever files arrive continuously rather than in scheduled batches.
 
 ---
@@ -187,7 +189,7 @@ def bronze_partner_data():
 - ❌ Don't use batch for continuous file arrival (use Auto Loader)
 - ❌ Don't manually implement file tracking logic
 
-!!! warning "Avoid Batch for Continuous Data"
+??? warning "Avoid Batch for Continuous Data"
     If files arrive continuously, use Auto Loader instead. Manual file tracking adds unnecessary complexity and error potential.
 
 ---
@@ -366,7 +368,7 @@ def gold_daily_revenue():
 - ❌ Don't mix data quality levels in one table
 - ❌ Don't skip the Staging layer - always preserve structured copies of raw data feeding ADS
 
-!!! tip "DLT for Production"
+??? tip "DLT for Production"
     Use DLT for production pipelines. The declarative approach and built-in quality checks provide reliability and maintainability worth the initial learning curve.
 
 ---
@@ -443,7 +445,7 @@ def gold_daily_metrics():
     )
 ```
 
-!!! warning "Don't Over-Stream"
+??? warning "Don't Over-Stream"
     Streaming adds complexity and cost. If hourly or daily updates meet business needs, use batch processing. Most BI reports don't need sub-minute latency.
 
 ---
@@ -474,7 +476,7 @@ def ads_customers():
 - ✅ Use `expect_or_fail()` only for critical business keys
 - ❌ Don't use `expect_or_fail()` liberally - it stops the entire pipeline
 
-!!! warning "Production Consideration"
+??? warning "Production Consideration"
     Use `expect_or_fail()` sparingly - it will stop your entire pipeline. Reserve it for truly critical validations where data integrity failures would cause downstream issues.
 
 ---
@@ -500,7 +502,7 @@ flowchart LR
     
 ```
 
-!!! warning "Cost Optimization Rule"
+??? warning "Cost Optimization Rule"
     **Every production job must have a dedicated Job Cluster.** Never use All-Purpose clusters for scheduled production jobs.
 
 **Why Job Clusters?**
@@ -623,9 +625,13 @@ flowchart TD
     G --> D
     G --> E
     
-    style B fill:#cd7f32,color:#fff
-    style D fill:#c0c0c0
-    style E fill:#ffd700
+    classDef bronze fill:#CD7F32,stroke:#8B4513,stroke-width:1px,color:#FFFFFF
+    classDef silver fill:#C0C0C0,stroke:#808080,stroke-width:1px,color:#111827
+    classDef gold fill:#FFD700,stroke:#DAA520,stroke-width:1px,color:#111827
+
+    class B bronze
+    class D silver
+    class E gold
     style G fill:#c9f0c9
 ```
 
@@ -700,7 +706,7 @@ flowchart TD
 - [Data Pipeline Patterns](../fabric/data-pipeline-patterns.md) - Common pipeline architectures
 - [Lakehouse Architecture](../fabric/lakehouse-architecture.md) - Overall data platform design philosophy
 
-!!! info "External Reference"
+??? info "External Reference"
     For vendor-agnostic patterns and examples of scalable data and AI architectures on Databricks, see the official **Databricks Architecture Center**: <https://www.databricks.com/resources/architectures>
 
 ### dbt Integration

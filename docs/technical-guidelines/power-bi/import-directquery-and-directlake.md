@@ -1,3 +1,7 @@
+---
+description: "Power BI connection modes compared: Import, DirectQuery, and DirectLake. Decision framework for choosing the right mode based on data volume and latency."
+---
+
 # Connection Modes – Import, DirectQuery & DirectLake
 
 ## Overview
@@ -54,7 +58,7 @@ Import should be your **default choice** unless specific constraints force alter
 - ✅ Report performance is critical (executives, dashboards, embedded scenarios)
 - ✅ Source system can handle scheduled extract loads
 
-!!! tip "Memory Estimation"
+??? tip "Memory Estimation"
     Power BI's VertiPaq compression typically achieves **10:1 compression ratios** for typical business data. A 50 GB source table often compresses to ~5 GB in-memory. Use [Third Party Tooling](third-party-tooling.md) like VertiPaq Analyzer to estimate actual memory consumption.
 
 ### Do's & Don'ts
@@ -99,7 +103,7 @@ DirectQuery is appropriate when Import is not feasible due to data volume or rea
 - ✅ Source system is optimized for analytical queries (columnstore indexes, materialized views)
 - ✅ Query volume is predictable and manageable
 
-!!! warning "Performance Impact"
+??? warning "Performance Impact"
     DirectQuery shifts compute burden to the source system. A single report page with 10 visuals may generate 20+ queries to the source. Ensure the source database is designed for concurrent analytical workloads.
 
 ### Do's & Don'ts
@@ -142,7 +146,7 @@ DirectLake is the **preferred mode for large-scale Fabric workloads**:
 - ✅ Your organization uses Microsoft Fabric as data platform
 - ✅ You want to avoid redundant data copies
 
-!!! info "How DirectLake Works"
+??? info "How DirectLake Works"
     DirectLake analyzes visual queries and loads only required columns and row ranges from parquet files into memory. First interaction may be slower while data loads, but subsequent queries leverage cached parquet data. This **hybrid approach** delivers Import-like speed with DirectQuery-like scale.
 
 ### Do's & Don'ts

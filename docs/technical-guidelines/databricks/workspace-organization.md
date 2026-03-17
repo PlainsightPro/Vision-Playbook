@@ -1,6 +1,10 @@
+---
+description: "Databricks workspace organization: folder structure for landing, staging, ADS, and gold layers, naming conventions, and repo vs workspace folders."
+---
+
 # Databricks Best Practices: Workspace & Folder Organization
 
-!!! info "info"
+??? info "info"
     **Audience:** Data engineers, analytics engineers, and platform administrators working with Databricks on Plainsight projects.
 
 A well-organized Databricks workspace accelerates collaboration, code quality, and data governance. Use a clear folder structure aligned with our semantic layers (`landing`, `staging`, `ads`, `gold` / `star`, see [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) and [Analytical Data Store (ADS)](../architectural-principles/analytical-data-store-ads.md)) and mirror them to the Medallion zones (bronze/silver/gold, see [Medallion Architecture](../architectural-principles/medallion-bronze-silver-gold.md)) so teams can navigate using either naming set. Integrating unit tests into your workspace further strengthens code reliability.
@@ -14,7 +18,7 @@ Notebooks can be named using the following convention:
 - ADS (cleansed and integrated): `<data_source>_<table_name>.py` (for example `sap_sales_ads.py`) - Silver equivalent
 - Gold / Star dimensional model and products: `<data_product>_<table_or_view>.py` (for example `dwh_f_sales.py`) - Gold equivalent
 
-!!! tip "tip"
+??? tip "tip"
     In the Gold / star layer, one of the main applications is the data warehouse (`dwh`). Prefix fact notebooks with `f_` and dimension notebooks with `d_` (for example `dwh_f_sales.py`, `dwh_d_customer.py`).
 
 To trigger an automated testing framework, test notebooks can be named using the `test_` prefix, for example `test_<data_source>_<table_name>.py`.
@@ -45,12 +49,12 @@ To trigger an automated testing framework, test notebooks can be named using the
       <test_utils>
 ```
 
-!!! tip "tip"
+??? tip "tip"
     Optional: add a subfolder per data source (Landing/ADS) and per data product (Gold/Star) for further organization. When bronze/silver/gold must be shown explicitly (for example, in shared platform folders), treat them as aliases for `landing` / `ads` / `gold`.
 
 ## Workspace Folders vs Repo Folders
 
-!!! info "info"
+??? info "info"
     **Workspace folders** are Databricks-native directories for organizing notebooks, libraries, and other artifacts directly in the Databricks UI. **Repo folders** are linked to Git repositories, enabling version control and collaborative development.
 
 Our recommendation is to use repo folders. This simplifies production deploys (pull from Git) and allows you to import files and build Python packages, which is not possible with workspace folders.

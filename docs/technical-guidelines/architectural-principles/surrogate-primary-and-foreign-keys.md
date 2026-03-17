@@ -1,3 +1,7 @@
+---
+description: "Surrogate, primary, and foreign key best practices — why integer keys outperform GUIDs and text in star schema data warehouses."
+---
+
 # Surrogate, Primary & Foreign Keys
 
 ## Overview
@@ -24,7 +28,7 @@ and speed up filters and joins at scale. GUID relationships are stored as string
 - `FactSales[CustomerID]` (e.g., 12356) → `Dim_Customer[CustomerID]`
 
 
-!!! note "Dates as PK/FK?"
+??? note "Dates as PK/FK?"
     Within modern analytics platforms, dates are often stored as integers and benefit from excellent compression. Having date columns in your transactional/fact tables can provide advantages (they can be treated as degenerate dimensions and shown directly on the table without requiring a separate Date dimension). As such, dates are commonly allowed as keys. 
 
 ---

@@ -1,6 +1,10 @@
+---
+description: "Analytical Data Store (ADS) — Silver layer guide for data quality, denormalization, multi-source integration, and SCD-ready snapshots."
+---
+
 # Analytical Data Store (ADS)
 
-!!! info "Core Concept"
+??? info "Core Concept"
     The **Analytical Data Store (ADS)** is our Medallion **Silver** layer. It bridges Landing/Staging (Bronze) and the Gold layer (business products) by turning raw, source-aligned data into clean, integrated, and history-aware entities that dimensional models, feature stores, and downstream products can rely on.
 
 ## Why "Analytical Data Store"?
@@ -28,7 +32,7 @@ We keep the semantic name **ADS** to make responsibilities explicit while aligni
 | Granularity | Entity-level (one table per entity) | Business-process level (facts + supporting dimensions) |
 | Consumers | Data engineers, analytics engineers | Business users, BI tools, ML models |
 
-!!! note "Separation of concerns"
+??? note "Separation of concerns"
     ADS carries the heavy lifting for conformance, history, and integration. Gold-layer models focus on business meaning and performance rather than rebuilding history logic.
 
 ## Purpose and Core Transformations
@@ -47,7 +51,7 @@ ADS sits between the Staging/Intermediate steps and the Dimensional Model. It fe
 | **Base tables** | Current, cleansed state | One current row | Overwrite changes (Type 1) | `ADS_<Entity>` (for example `ADS_Customer`) |
 | **Snapshot tables** | Historical versions | Multiple rows per entity | Track all attribute changes (Type 2) | `ADS_<Entity>_Snapshot` (for example `ADS_Customer_Snapshot`) |
 
-!!! warning "Snapshot vs Dimension"
+??? warning "Snapshot vs Dimension"
     ADS snapshots capture every attribute change so downstream consumers can choose how to model history. Dimension tables in Gold selectively track only the attributes that matter to the business.
 
 ### Base Tables (current state)
@@ -108,7 +112,7 @@ CREATE TABLE ADS_Customer_Snapshot
 );
 ```
 
-!!! tip "When to create snapshots"
+??? tip "When to create snapshots"
     Create a snapshot only when downstream analysis needs attribute change history, compliance requires it, or dimensions will consume the history. Transaction-style tables (for example invoices) are already point-in-time and rarely need snapshots.
 
 ## Key Transformations in Silver (ADS)

@@ -1,6 +1,10 @@
+---
+description: "Star schema fact table design — grain definition, dimension keys, business keys, measures, and degenerate dimensions with SQL examples."
+---
+
 # Fact Tables
 
-!!! info "Core Concept"
+??? info "Core Concept"
     Fact tables store **numeric measurements** (the "facts") of business events and processes. They contain the quantitative data you analyze - sales amounts, quantities, balances, temperatures - within the context provided by [Star - Dimension Tables](star-dimension-tables.md).
 
 ## Structure Overview
@@ -122,7 +126,7 @@ Product_FK INT NOT NULL,           -- Surrogate key (foreign key to D_Product)
 ProductCode_BK VARCHAR(50) NOT NULL, -- Business key (natural identifier from source)
 ```
 
-!!! tip "Late-Arriving Fact Handling"
+??? tip "Late-Arriving Fact Handling"
     When a fact arrives but the dimension record doesn't exist yet:
     1. Store the business key in the fact table (`ProductCode_BK = 'ABC-123'`)
     2. Set the surrogate key to special member `-1` (`Product_FK = -1`)
@@ -150,7 +154,7 @@ The grain is the most critical design decision for a fact table. It defines the 
 | Sales Target | One row per salesperson per quarter |
 | Customer Account Balance | One row per account per month-end |
 
-!!! tip "Grain Rule"
+??? tip "Grain Rule"
     **Store facts at the lowest atomic level possible** unless data volumes or query requirements justify a higher grain. It's easy to aggregate up but impossible to disaggregate down.
 
 ### Attributes (Degenerate Dimensions)

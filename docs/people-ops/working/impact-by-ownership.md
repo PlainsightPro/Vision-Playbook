@@ -1,3 +1,7 @@
+---
+description: "Explore Plainsight's ownership-driven growth model, collaborative partnership structure, and how consultants earn equity through impact."
+---
+
 # Unlimited growth
 
 At Plainsight, we believe that growth is a continuous journey and doesn't need to be capped. Therefore we go a step further than most organizations.

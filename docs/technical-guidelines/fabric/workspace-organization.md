@@ -1,6 +1,10 @@
+---
+description: "Best practices for organizing Microsoft Fabric workspaces with Dev/Test/Prod separation, RBAC roles, Git integration, and capacity isolation guidelines."
+---
+
 # Workspace Organization
 
-!!! info "Purpose"
+??? info "Purpose"
     Strategic workspace organization enables reliable development workflows and clear operational boundaries in Fabric environments. By implementing proper workspace scoping, RBAC models, and promotion patterns, teams can maintain security, predict costs, and accelerate development cycles. Well-structured workspaces form the foundation for scalable analytics delivery while maintaining clear ownership and access controls.
 
 ## Overview
@@ -102,5 +106,5 @@ Workspace scoping, role-based access control (RBAC), and promotion mechanics tog
 - [Naming Conventions](../power-bi/naming-conventions.md)
 - [Capacity Management](capacity-management.md)
 
-!!! tip "tip"
+??? tip "tip"
     Keep production workspaces minimal; use sharing (Apps) to present friendly names to end users.

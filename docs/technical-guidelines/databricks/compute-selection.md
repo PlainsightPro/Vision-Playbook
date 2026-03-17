@@ -1,11 +1,15 @@
+---
+description: "Databricks compute selection guide: SQL Warehouses, job clusters, all-purpose clusters, Photon acceleration, autoscaling, and cost optimization strategies."
+---
+
 # How to choose your Compute?
 
-!!! info "Purpose"
+??? info "Purpose"
     This guide helps you select the right compute resource in Databricks based on your workload type, team collaboration needs, and cost considerations.
 
 ## Compute Types Overview
 
-!!! tip "Quick Navigation"
+??? tip "Quick Navigation"
     This section provides a high-level overview. Click the compute type names to jump to detailed guidance.
 
 | Compute Type | Use Case | Cost Efficiency | Auto-termination | Best For |
@@ -93,7 +97,7 @@ graph LR
     style E fill:#ffe1e1
 ```
 
-!!! tip "Cost Optimization"
+??? tip "Cost Optimization"
     Enable auto-stop after 10-15 minutes of inactivity. SQL Warehouses can start up quickly, so aggressive auto-stop settings minimize costs without impacting user experience.
 
 **Example use case:**
@@ -125,7 +129,7 @@ ORDER BY total_revenue DESC
 | **Single User** | ML experimentation, full control | Python, SQL, R, Scala | Install anything |
 | **No Isolation** | Legacy support | All | Full access |
 
-!!! warning "Shared vs Single User"
+??? warning "Shared vs Single User"
     Shared access mode provides security isolation but restricts some libraries. Single User mode gives full flexibility but can't be shared with team members.
 
 **Configuration example:**
@@ -179,7 +183,7 @@ flowchart LR
     D --> D3[Photon: SQL-heavy jobs]
 ```
 
-!!! tip "Job Cluster Best Practice"
+??? tip "Job Cluster Best Practice"
     Always define job clusters in the job definition itself, not as a separate shared cluster. This ensures complete isolation and automatic cleanup.
 
 **Example job configuration:**
@@ -216,7 +220,7 @@ flowchart LR
 - Not suitable for production
 - Driver-only architecture
 
-!!! warning "Size Limitations"
+??? warning "Size Limitations"
     Single node clusters work well for datasets that fit in memory. For larger datasets, switch to a multi-node cluster.
 
 **When it makes sense:**
@@ -276,7 +280,7 @@ graph TD
 | Personal Compute | 20 minutes | Individual usage patterns |
 | Job Cluster | N/A | Auto-terminates on completion |
 
-!!! tip "Monitor and Adjust"
+??? tip "Monitor and Adjust"
     Review cluster usage metrics monthly. If clusters frequently restart due to aggressive auto-termination, increase the timeout slightly to improve user experience.
 
 ---
@@ -342,7 +346,7 @@ Cost increase: +$40 (+100%)
 Time saved: -40 minutes (-67%)
 ```
 
-!!! warning "Cost vs Benefit Reality"
+??? warning "Cost vs Benefit Reality"
     Photon doubles your DBU costs. Unless your workload performs **heavy joins and aggregations on large datasets (>100GB)**, the 2x cost increase typically exceeds any time savings. Most ETL pipelines don't have enough join/aggregation complexity to justify Photon.
 
 ### Photon Configuration Examples

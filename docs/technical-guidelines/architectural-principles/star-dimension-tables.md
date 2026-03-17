@@ -1,6 +1,10 @@
+---
+description: "Star schema dimension table design — surrogate keys, SCD Type 1 and 2, conformed and role-playing dimensions with practical examples."
+---
+
 # Dimension Tables
 
-!!! info "Core Concept"
+??? info "Core Concept"
     Dimension tables describe the **who, what, where, when, and why** of your business. They provide context for the numeric measures stored in [Star - Fact Tables](star-fact-tables.md), enabling analysts to filter, group, and slice data meaningfully.
 
 ## Structure Overview
@@ -53,7 +57,7 @@ For complete details on key design principles, see [Surrogate, Primary & Foreign
 - Simplifies multi-column natural keys into efficient single-column keys
 - Insulates the data warehouse from source system changes
 
-!!! warning "Exception: Date & Time Dimensions"
+??? warning "Exception: Date & Time Dimensions"
     Date dimensions should use `YYYYMMDD` format (e.g., `20251028`) as the surrogate key. This is human-readable, sortable, and conforms to ISO 8601 standards.
 
 ### Natural Keys (Business Keys)
@@ -71,7 +75,7 @@ Dimension attributes provide the descriptive context used for filtering and grou
 - Numeric codes: `ProductSize`, `Priority`
 - Flags: `IsActive`, `IsPreferred`
 
-!!! tip "Discovering Attributes"
+??? tip "Discovering Attributes"
     Listen for the word **"by"** in conversations: "analyze sales **by** salesperson, **by** month, **by** product category" → These are your dimension attributes!
 
 ### Technical Columns (Historical Tracking & Audit)
@@ -157,7 +161,7 @@ Manage historical changes with three primary strategies:
 
 ✅ **Benefit:** Historical aggregations remain accurate - sales attributed to the region where the salesperson worked at that time.
 
-!!! tip "Label Attribute for SCD Type 2"
+??? tip "Label Attribute for SCD Type 2"
     Include a human-readable label combining key attributes and version context:
     - `"Lynn Tsoflias (Australia)"` (old version)
     - `"Lynn Tsoflias (United Kingdom)"` (current version)

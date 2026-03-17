@@ -1,3 +1,7 @@
+---
+description: "Find Plainsight's office locations in Ghent and Mechelen, plus details on bi-weekly coworking days and flexible remote work policies."
+---
+
 # Offices and Locations 🏢
 
 At Plainsight, we believe that efficiency and impact far outweigh the importance of a specific location. While we have several key locations where our teams frequently meet, you are free to work from other cities or from home, as it suits your customer and you best. Our flexible approach to work environments is designed to foster collaboration, innovation, and a healthy work-life balance.

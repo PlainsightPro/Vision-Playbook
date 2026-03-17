@@ -1,6 +1,10 @@
+---
+description: "dbt documentation best practices — model and source descriptions, doc() blocks, exposures for Power BI lineage, and CI-enforced documentation standards."
+---
+
 # dbt Documentation Best Practices
 
-!!! info "Purpose"
+??? info "Purpose"
     Keep documentation current, enforceable, and tied to ownership so reviews can reject incomplete PRs before code is merged.
 
 ## Overview
@@ -23,7 +27,7 @@ Document every model, source, and column at the same time you build it. Treat do
 - **Ownership:** Every model/source carries an `owner` or `team` field so support paths are clear.
 - **Contracts:** Use `constraints`/`tests` alongside docs so descriptions and enforcement stay aligned.
 
-!!! tip "Folder-level YAML"
+??? tip "Folder-level YAML"
     Use `_models.yml` and `_sources.yml` in each folder (staging, intermediate, ADS, gold). This keeps metadata close to code and enables targeted `dbt build --select staging.*` runs with complete documentation.
 
 ---
@@ -78,7 +82,7 @@ exposures:
     description: "Executive view of revenue, pipeline, and retention metrics."
 ```
 
-!!! note "Adapter-specific considerations"
+??? note "Adapter-specific considerations"
     URL formats and authentication vary by adapter; keep the exposure definition adapter-agnostic and store secrets in the consuming platform, not in dbt.
 
 ---

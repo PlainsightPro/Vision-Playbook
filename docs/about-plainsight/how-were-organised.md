@@ -1,5 +1,8 @@
+---
+description: "How Plainsight is organised — a flat, hierarchy-free structure with career coaches, knowledge hubs, and self-managed teams of data and AI experts."
+---
 
-!!! tip "TL;DR"
+??? tip "TL;DR"
     No hierarchy. No ivory towers. A team of experts, each with a different role, all playing for the same goal.
 
 ## The Plainsight Flywheel
@@ -101,7 +104,7 @@ This model keeps us sharp without bureaucracy. If something matters, someone wil
     Databricks, dbt, LLM/RAG patterns, Fabric adoption, streaming architectures, CI/CD best practices, Azure Landing Zones, Agentic AI Architectures, Databricks AI (LLMOps), Vibe Coding/Engineering, DAX Optimizers, Data Mesh, Data Governance, Databricks Frameworks, Fabric Framework, ...
 
 
-!!! info "We've deliberately not chosen to put people in boxes in terms of knowledge. It's the people themselves that want to be part of an 'initiative' allowing them to be part of one, multiple or no initiatives."
+??? info "We've deliberately not chosen to put people in boxes in terms of knowledge. It's the people themselves that want to be part of an 'initiative' allowing them to be part of one, multiple or no initiatives."
 
 ---
 
@@ -111,7 +114,7 @@ We keep communication lines **short on purpose**.
 
 No layers of approvals. No "let me check with my manager's manager." If you need something, you talk to the person who can help. Directly. This isn't an accident; it's a deliberate choice we protect as we grow.
 
-!!! warning "Scaling without layers"
+??? warning "Scaling without layers"
     Growing the team doesn't mean adding hierarchy. It means building stronger habits: better async communication, clearer ownership, and a culture where anyone can raise their hand.
 
 ---

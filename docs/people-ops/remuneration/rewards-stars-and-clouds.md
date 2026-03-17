@@ -1,3 +1,7 @@
+---
+description: "Learn about Plainsight's Stars and Clouds reward system for recognizing strategic contributions, certifications, mentorship, and internal initiatives."
+---
+
 # Plainsight Stars & Clouds 🌟⛅
 
 At Plainsight, your hard work and dedication don't go unnoticed! Our unique reward system celebrates both your strategic contributions and extra efforts. Whether you're helping us reach key goals or going the extra mile in other areas, there’s a reward waiting for you.

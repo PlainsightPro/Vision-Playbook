@@ -1,8 +1,12 @@
+---
+description: "Power BI CI/CD and versioning guide: PBIP project format, Git integration, deployment pipelines, and OTAP promotion strategies for enterprise BI."
+---
+
 # CICD & Versioning
 
 ## Overview
 Treat Power BI like software.  
-Prefer **Power BI Desktop Projects (.pbip)** so semantic model and report definitions are **text-based, diffable, and Git-friendly**.  
+Prefer **Power BI Desktop Projects (.pbip)**[^1] so semantic model and report definitions are **text-based, diffable, and Git-friendly**.  
 This enables proper versioning, branching, and CI/CD.  
 
 ??? note "📝 What are .pbip and .pbir files?"

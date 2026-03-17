@@ -1,3 +1,7 @@
+---
+description: "Plainsight's off-boarding process: exit interviews, knowledge transfer, asset return, final payroll, and staying connected."
+---
+
 # Off-boarding at Plainsight
 
 At Plainsight, saying goodbye to a colleague is never easy. Whether you're moving on to new adventures or taking a different path, we want to ensure your transition is smooth, respectful, and positive. Here’s how we handle the off-boarding process:

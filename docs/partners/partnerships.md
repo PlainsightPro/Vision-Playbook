@@ -1,3 +1,7 @@
+---
+description: "Plainsight's technology partnerships with Microsoft and Databricks, driving innovation and delivering cutting-edge data and analytics solutions."
+---
+
 ## We believe in 1 + 1 > 2
 
 At Plainsight, we deeply value our partnerships with technology providers because they enable us to stay at the cutting edge of innovation. Our commitment to knowledge and continuous learning drives us to be closely aligned with our technology partners. 

@@ -1,6 +1,10 @@
+---
+description: "Fabric Warehouse vs Lakehouse decision guide — compare T-SQL and Spark workloads, ACID transactions, data types, and architecture patterns."
+---
+
 # Warehouse vs Lakehouse: A Decision Guide
 
-!!! info "Purpose"
+??? info "Purpose"
     Microsoft Fabric offers two enterprise-scale, open-standard storage workloads: **Warehouse** and **Lakehouse**. Both store data in Delta format on OneLake, but serve different use cases and developer profiles. This guide helps you choose the right platform based on your workload, data type, and analytical needs.
 
 ## Quick Decision Tree

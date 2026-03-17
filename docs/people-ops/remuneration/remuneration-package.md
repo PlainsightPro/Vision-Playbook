@@ -1,3 +1,7 @@
+---
+description: "Explore Plainsight's remuneration package including gross wage, net benefits, group insurance, phone allowance, and hospitalization coverage through Alan."
+---
+
 # Plainsight Remuneration Package 🤑
 
 At Plainsight, we value your contributions and believe in offering a comprehensive remuneration package. Here’s an overview of the key benefits that form part of your package:

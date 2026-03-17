@@ -1,3 +1,7 @@
+---
+description: "How to organize and request sponsorship for team-building or sports events at Plainsight, including guidelines and eligibility criteria."
+---
+
 # Hosting a Teambuilding or Sports Event 🎉🏀
 
 At Plainsight, we love to see our team come together, whether it’s for fun, fitness, or both! Hosting a teambuilding or sports event is a fantastic way to strengthen bonds, promote a healthy lifestyle, and enjoy some downtime with your colleagues.

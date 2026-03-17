@@ -1,6 +1,10 @@
+---
+description: "Medallion architecture explained — how Plainsight maps Bronze, Silver, and Gold layers to Landing, Staging, ADS, and dimensional models."
+---
+
 # Medallion Architecture - Bronze, Silver, Gold
 
-!!! info "Overview"
+??? info "Overview"
     Plainsight uses the Medallion pattern as a shared language (Bronze -> Silver -> Gold) while keeping our semantic layer names for clarity (Landing/Staging -> ADS -> Gold business products). Medallion names keep us aligned with platform defaults; semantic names keep responsibilities explicit.
 
 ```mermaid
@@ -42,7 +46,7 @@ The Dim/Fact, ADS, Staging, and Landing layers remain the canonical implementati
 - Use **Landing/Staging, ADS, Gold business products** when documenting responsibilities or writing code.
 - Tag schemas, jobs, and storage paths with both when it helps discoverability (`layer=ads`, `medallion=silver`). For Bronze, also tag the source (`layer=staging`, `medallion=bronze`, `source=sap`).
 
-!!! tip "Avoid layer sprawl"
+??? tip "Avoid layer sprawl"
     Stick to Bronze, Silver, and Gold. If you need intermediate logic, model it as views or transient steps inside the nearest layer instead of inventing new metals.
 
 ## Recommended Flow

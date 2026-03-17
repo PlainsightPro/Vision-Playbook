@@ -1,3 +1,7 @@
+---
+description: "Plainsight's execution phase: building data platforms, BI dashboards, AI/ML models, and scalable data products with certified experts and accelerators."
+---
+
 # From plan to platform - turning data into value
 
 >Strategy sets the blueprint, but execution builds the rocket. This phase is where we bring the vision to life - fast, focused, and aligned with your goals.

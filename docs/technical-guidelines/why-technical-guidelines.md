@@ -1,9 +1,13 @@
+---
+description: "Plainsight's technical guidelines for data projects — best practices from years of consulting experience, with AI-first MCP integration."
+---
+
 These Technical Guidelines guide you towards a better implementation within a Data Project at Plainsight. These guidelines result from years of experience, countless projects and experiences. Projects at Plainsight should, as closely as possible, adhere to these best-practices. 
 
 While these Technical Guidelines provide our way of working, there are always reasons one prefers to use another way/manner. The flowchart below shows what to do when. 
 
 ```mermaid
-%%{init: { "theme": "base", "flowchart": { "useMaxWidth": true }, "themeVariables": { "primaryTextColor": "#FFFFFF" } } }%%
+%%{init: { "theme": "base", "flowchart": { "useMaxWidth": true } } }%%
 graph TD;
     A[Q? Can I adhere to the technical Guidelines?]
     B[Yes, it's a greenfield.]
@@ -19,11 +23,9 @@ graph TD;
     A --> F --> G --> C
     
 
-    classDef orangeBox fill:#D5693A,stroke:#BD5428,stroke-width:1px,color:#FFFFFF;
-    class B,D,E,F,G orangeBox;
+    classDef silver fill:#C0C0C0,stroke:#808080,stroke-width:1px,color:#111827;
+    class B,D,E,F,G silver;
 
-    classDef blueBox fill:#000075,stroke:#000075,stroke-width:1px,color:#FFFFFF;
-    class A,C blueBox;
 ```
 
 ## Why do we have these Technical Guidelines? 
@@ -35,7 +37,7 @@ graph TD;
 
 These Technical Guidelines are not just written for humans reading a wiki; they are the foundation for how our AI assistants will reason about data projects at Plainsight.
 
-!!! info "Making the Playbook available to agents"
+??? info "Making the Playbook available to agents"
     We are actively working on exposing this content to the AI agents our customers use, via a Model Context Protocol (MCP) integration. That means:
     - Agents can **retrieve and reference** the latest Plainsight best-practices directly from the Playbook.
     - Guidance stays **centralised, versioned and explainable**, instead of being hidden in ad‑hoc prompts.

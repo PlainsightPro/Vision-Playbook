@@ -1,6 +1,10 @@
+---
+description: "Fabric Lakehouse architecture guide covering Bronze/Silver/Gold medallion layers, Delta Lake optimization, OneLake shortcuts, and quality gates."
+---
+
 # Lakehouse Architecture
 
-!!! info "Purpose"
+??? info "Purpose"
     We align Fabric lakehouses to the Medallion architecture (Bronze/Silver/Gold) and map those tiers to our semantic layers (Landing/Staging -> ADS -> Gold business products). Combined with Delta Lake optimization, this creates a clear path from raw data to business-ready products with strong data quality and performance.
 
 ## Overview
@@ -103,7 +107,7 @@ Implement as automated notebooks/jobs with failure alerts.
 | Z-ordering      | Better predicate pruning  | Use on high-selectivity columns |
 | Caching         | Faster repeated queries   | Use sparingly                   |
 
-!!! tip "tip"
+??? tip "tip"
     You can define table properties to lift performance
 
 ```sql
@@ -129,5 +133,5 @@ Track ingestion latency, freshness, error rates, and storage growth. Define SLA 
 - [Naming Conventions](../power-bi/naming-conventions.md)
 - [Data Pipeline Patterns](data-pipeline-patterns.md)
 
-!!! tip "tip"
+??? tip "tip"
     Start small: implement Bronze -> Silver first, then expand to Gold as business needs stabilize.

@@ -1,3 +1,7 @@
+---
+description: "dbt SQL style guide and configuration standards — CTE patterns, DRY macros, config inheritance, and whitespace conventions for clean dbt projects."
+---
+
 # dbt SQL Style & Configuration
 
 ## SQL File Structure & Style
@@ -13,7 +17,7 @@
 
 ## DRY - Don't Repeat Yourself
 
-!!! info "Core Principle"
+??? info "Core Principle"
     See [DRY - Don't Repeat Yourself](../architectural-principles/dry-dont-repeat-yourself.md) in Architectural Principles for the language-agnostic foundation of this principle, covering SQL, Python, and general programming patterns.
 
 **In dbt projects, apply DRY by extracting reusable logic into macros, packages, and centralized models.** This reduces maintenance burden, minimizes errors, and accelerates development.
@@ -67,7 +71,7 @@ select
 from orders
 ```
 
-!!! tip "dbt DRY Checklist"
+??? tip "dbt DRY Checklist"
     Before writing a transformation:
     - Have I seen this pattern before in the project?
     - Can I use a dbt_utils macro?
@@ -91,7 +95,7 @@ models:
       +unique_key: order_id
 ```
 
-!!! warning "⚠️ Avoid Ad-Hoc Overrides"
+??? warning "⚠️ Avoid Ad-Hoc Overrides"
     Scattered `{{ config(...) }}` blocks make maintenance difficult. Prefer path-level settings so reviewers can reason about behavior from the tree alone.
 
 

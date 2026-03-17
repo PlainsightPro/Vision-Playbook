@@ -1,4 +1,8 @@
-# 🌴Holidays 
+---
+description: "Plainsight holiday entitlement, ADV days, youth and European holidays, out-of-office guidelines, and illness reporting procedures for employees."
+---
+
+# 🌴Holidays
 
 > *"Take them, enjoy them 200%, and come back with amazing stories! 🌴🏖️"*
 

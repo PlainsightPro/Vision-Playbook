@@ -1,3 +1,7 @@
+---
+description: "Plainsight's active involvement in DataMinds, Fabric Belgium, and Generative AI Belgium communities for knowledge sharing and collaboration."
+---
+
 ## Community Involvement: Sharing Knowledge Beyond Boundaries
 
 At Plainsight, we believe that the best way to grow as data professionals is to actively engage in communities that foster learning, sharing, and collaboration. We are proud to be active participants in two key data communities: **[DataMinds](https://dataminds.be/)** and **[Fabric Belgium](https://powerbi.brussels/)**. Our involvement goes beyond just attending events; we aim to share knowledge, learn from others, and help break down silos between organizations.

@@ -1,6 +1,10 @@
+---
+description: "Fabric capacity management guide covering SKU sizing, workload isolation, autoscaling strategies, smoothing, and performance monitoring thresholds."
+---
+
 # Capacity Management & Optimization
 
-!!! info "Purpose"
+??? info "Purpose"
     Strategic capacity management ensures optimal performance and cost-effectiveness in Fabric environments. Through careful workload isolation, performance optimization, and intelligent scaling strategies, teams can maintain predictable performance while controlling costs. Proper capacity planning combined with workload smoothing enables efficient resource utilization while meeting service level objectives.
 
 ## Overview
@@ -55,7 +59,7 @@ flowchart LR
 ✓ Business SLAs and performance targets
 ✓ Growth projections (6-12 months)
 
-!!! warning "warning"
+??? warning "warning"
     Avoid F2 for production use - suitable only for POCs and light testing. F2 becomes constrained for Spark operations and cannot support Copilot features.
 
 ## 2. Workload Isolation
@@ -143,7 +147,7 @@ flowchart LR
    - Tag resources for cost allocation
    - Set spend alerts and thresholds
 
-!!! tip "tip"
+??? tip "tip"
     Start with conservative limits and adjust based on monitoring data. For Spark-based Lakehouse workloads, see [Spark Autoscaling](spark-autoscaling.md) for detailed configuration guidance.
 
 ## 4. Monitoring & Governance

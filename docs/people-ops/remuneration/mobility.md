@@ -1,3 +1,7 @@
+---
+description: "Plainsight mobility options explained: company car, mobility budget with three pillars, sustainable transport, housing costs, and how to get started."
+---
+
 # 🚗 Mobility 🛴
 
 > *Mobility is more than just getting from A to B - it's about flexibility, sustainability, and making the journey your own. 🚀  🚴‍♂️🚆🚗*

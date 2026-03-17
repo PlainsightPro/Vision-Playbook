@@ -3,6 +3,7 @@ site_url: https://playbook.plainsight.pro
 site_description: >-
   Plainsight's open-source company handbook — purpose, values,
   technical guidelines, and operational processes in plain sight.
+site_author: Plainsight
 
 theme:
   name: material
@@ -20,20 +21,28 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - search.suggest
     - search.highlight
     - content.code.copy
+    - navigation.footer
+    - search.share
   logo: assets/logo.svg
   favicon: images/Plainsight.png
   custom_dir: overrides
 
+extra:
+  generator: false
+
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/ask-ai.js
+
 plugins:
   - search
+
 
 markdown_extensions:
   # Admonitions (converted from Obsidian callouts)
@@ -76,9 +85,10 @@ nav:
       - "🥇 The Foundation of Plainsight": "about-plainsight/the-foundation-of-plainsight.md"
       - "🏗️ How We're Organised": "about-plainsight/how-were-organised.md"
   - People Ops:
-      - "🛹 Pre-boarding & Hiring": "people-ops/pre-boarding-and-hiring.md"
-      - "🚀 Onboarding": "people-ops/onboarding.md"
-      - "😢 Off-Boarding": "people-ops/off-boarding.md"
+      - Onboarding Process:
+          - "🛹 Pre-boarding & Hiring": "people-ops/pre-boarding-and-hiring.md"
+          - "🚀 Onboarding": "people-ops/onboarding.md"
+          - "😢 Off-Boarding": "people-ops/off-boarding.md"
       - Working @ Plainsight:
           - "🔨 Tools We Love": "people-ops/working/tools-we-love.md"
           - "🎯 Evolution Process": "people-ops/working/evolution-process.md"

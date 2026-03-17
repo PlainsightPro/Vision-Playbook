@@ -1,6 +1,10 @@
+---
+description: "Configure Autoscale Billing for Spark in Microsoft Fabric to enable pay-as-you-go compute, optimize costs, and monitor usage via Azure Cost Analysis."
+---
+
 # Autoscale Billing for Spark in Microsoft Fabric
 
-!!! info "Purpose"
+??? info "Purpose"
     Autoscale Billing for Spark enables serverless, pay-as-you-go compute for Spark workloads in Microsoft Fabric. Once enabled, Spark jobs no longer consume the shared capacity, giving you the flexibility to scale Spark workloads independently and optimize costs.
 
 ## Requirements
@@ -10,7 +14,7 @@
 | **Capacity** | Only available for Fabric F-SKUs (F2 and above). Not supported on P-SKUs or Fabric Trial capacities. |
 | **Access** | You must be a Fabric Capacity Administrator to configure Autoscale Billing. |
 
-!!! warning "Important"
+??? warning "Important"
     Enabling, disabling, or reducing the Maximum Capacity Units will cancel all active Spark jobs running under Autoscale Billing to avoid billing overlaps.
 
 ## How to Configure Autoscale Billing for Spark
@@ -40,7 +44,7 @@ Follow these steps to enable and manage Autoscale Billing settings for a Fabric 
    - Click Save to apply your configuration
    - Your Spark Pools can now utilize the new CU quota set by Autoscale Billing
 
-!!! tip "tip"
+??? tip "tip"
     Once Autoscale Billing is enabled, consider whether you can resize your shared Fabric capacity down (see [Optional: Resize and reset capacity](#optional-resize-and-reset-capacity-for-cost-optimization) below), since Spark workloads are now billed separately.
 
 ## Optional: Resize and Reset Capacity for Cost Optimization
@@ -58,7 +62,7 @@ After enabling Autoscale Billing, you can downsize your shared Fabric capacity i
 3. **Resize to a Lower SKU**
    - Resize the capacity to a lower SKU that fits your remaining workloads (e.g., Power BI, Data Warehouse, Real-Time Intelligence, Databases)
 
-!!! warning "Note"
+??? warning "Note"
     Only Azure administrators can resize SKUs. This change is made in the Azure portal, not within Fabric settings.
 
 ## Monitor Billing and Usage

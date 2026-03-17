@@ -1,6 +1,10 @@
+---
+description: "Master Data management — centralized reference data, lookups, and budgets with bidirectional ADS integration and Excel-based tooling."
+---
+
 # Master Data
 
-!!! info "Core Concept"
+??? info "Core Concept"
     Master Data is an **operational database** that serves as a centralized hub for managing critical reference data, lists, lookups, budgets, and other business-maintained information within the data platform. Unlike source systems or analytical layers, Master Data is actively managed by business users and provides a bidirectional interface with the [Analytical Data Store (ADS)](analytical-data-store-ads.md).
 
 ## Purpose
@@ -33,10 +37,10 @@ Master Data is fundamentally different from other data platform layers:
 Master Data maintains a bidirectional relationship with the Analytical Data Store (ADS):
 
 ```mermaid
-%%{init: { "flowchart": { "useMaxWidth": true } } }%%
-graph LR
+%%{init: { "flowchart": { "useMaxWidth": true }, "themeVariables": { "edgeLabelBackground": "transparent" } }}%%
+graph LR;
     MD[Master Data]
-    CONF[Analytical Data Store (ADS)]
+    CONF[Analytical Data Store ADS]
     
     MD -->|Enrichment Flow<br/>Reference data adds context| CONF
     CONF -->|Feedback Flow<br/>New values flagged for classification| MD
@@ -100,7 +104,7 @@ For smaller projects, **SharePoint Lists combined with Power Apps** provide a li
 - Budget input forms
 - Simple reference lists
 
-!!! tip "SharePoint + Power Apps Pattern"
+??? tip "SharePoint + Power Apps Pattern"
     Use SharePoint Lists as the data store and build a Power Apps interface for data entry. Connect your ETL processes to read from SharePoint via connectors or export to CSV for batch processing.
 
 ### Custom Applications

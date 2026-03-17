@@ -1,6 +1,10 @@
+---
+description: "Databricks Unity Catalog guide: catalog and schema organization, managed vs external tables, environment isolation, and role-based access control."
+---
+
 # Working with the Unity Catalog
 
-!!! info "info"
+??? info "info"
     **Audience:** Data engineers, analytics engineers, and platform administrators working with Databricks.  
     This guide shares quick tips to get productive with Unity Catalog in a scalable way.
 

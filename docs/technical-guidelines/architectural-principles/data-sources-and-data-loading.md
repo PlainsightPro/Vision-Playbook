@@ -1,3 +1,7 @@
+---
+description: "Data sources and loading strategies — full load vs incremental ingestion patterns for ETL/ELT pipelines in modern data platforms."
+---
+
 # Data Sources
 
 - **Databases**: SQL Server, PostgreSQL, MySQL, ...
@@ -17,7 +21,7 @@
 | **Abbreviation** | Extract > Transform > Load                                                                                                                              | Extract > Load > Transform                                                                                                                           |
 | **Explanation**  | The data is first extracted by an extraction tool, then transformed (typically in-memory of this extraction tool) and then loaded into a data platform. | The data is first extracted from the source system and directly loaded into a data platform. Transformations are applied within this data platform.  |
 
-!!! note "ETL or ELT? Frankly, we don't care"
+??? note "ETL or ELT? Frankly, we don't care"
     While our frameworks implement the 'ELT' principle, we often mix and match the older more used term 'ETL'. The term 'ETL' is more used by business and the difference between ETL and ELT is not always worth explaining (or an explanation could even lead to more confusion).  
     Our main goal is to provide insightful data layers meant for analytics; as long as this is achieved in a best-practice manner we don't care if you use the term 'ETL' or 'ELT'.
 
@@ -81,7 +85,7 @@ Incremental loading mechanisms reduce ETL duration but increase the complexity o
 %%{init: { "flowchart": { "useMaxWidth": true } }}%%
 graph LR
   subgraph Source Systems
-    S[(Source<br/>Changes since watermark)]:::all
+    S[(Source<br/>Changes since watermark)]
   end
 
   subgraph Data Platform
@@ -115,7 +119,6 @@ classDef bronzeOptional fill:#CD7F32,stroke:#8B4513,stroke-width:2px,stroke-dash
 classDef silver fill:#C0C0C0,stroke:#808080,stroke-width:1px,color:#111827;
 classDef silverOptional fill:#C0C0C0,stroke:#808080,stroke-width:2px,stroke-dasharray:5 5,color:#111827;
 classDef gold fill:#FFD700,stroke:#DAA520,stroke-width:1px,color:#111827;
-classDef all fill:#000075,stroke:#000075,stroke-width:1px,color:#FFFFFF;
 ```
 
 ---

@@ -1,3 +1,7 @@
+---
+description: "Learn about Plainsight's 720-degree feedback and evolution process, including goal setting, career coaching, and mid-year reviews."
+---
+
 # Plainsight Evolution Process 🔍
 
 At Plainsight, we believe that growth is a continuous journey fueled by honest, open feedback. We don’t adhere to the traditional concept of "evaluations" but instead embrace what we call 720° feedback. This approach ensures that every voice is heard, whether it's within our team or from our customers, fostering a culture where improvement is constant and multidimensional.
@@ -7,21 +11,21 @@ Besides the continuous open candor and feedback culture, we have two fixed 720°
 This is how we structure it:
 
 ```mermaid
-%%{init: { "theme": "base", "themeVariables": { "primaryTextColor": "#FFFFFF" } } }%%
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
 graph TD;
-    A[🎯 Dec/Jan: Set Long & Short-Term Goals]
-    B[🔄 Periodic Follow-Up with Career Coach]
+    A[🎯 Dec/Jan: Set Long & Short-Term Goals]
+    B[🔄 Periodic Follow-Up with Career Coach]
+    C[📊 July: Mid-Year Feedback moment]
+    D[🔄 Periodic Follow-Up with Career Coach]
     E[🎉 Dec/Jan: 720° Feedback & Reset Goals]
 
     A --> B --> C --> D --> E --> A
     B --> B
     D --> D
 
-    classDef orangeBox fill:#D5693A,stroke:#BD5428,stroke-width:1px,color:#FFFFFF;
-    class A,C,D,E orangeBox;
+    classDef bronze fill:#FFD700,stroke:#DAA520,stroke-width:1px,color:#111827;
+    class A,C,E bronze;
 
-    classDef blueBox fill:#000075,stroke:#000075,stroke-width:1px,color:#FFFFFF;
-    class B,D blueBox;
 ```
 
 ## December: Setting the Stage for Success 🎯
