@@ -20,12 +20,12 @@ graph TB;
         B2[🛠️ Technical Challenge]
     end
 
-    subgraph C[Phase 4: 📝 Decision Making]
+    subgraph C[Phase 3: 📝 Decision Making]
         direction LR
         C1[📄 Offer Proposal] --> C2[🤔 What's it gonna be? Yes or No?!]
     end
 
-    subgraph D[Phase 5: 🌟 Onboarding]
+    subgraph D[Phase 4: 🌟 Onboarding]
         direction LR
         D1[📋 Pre-boarding] --> D2[🚀 First Day at Plainsight]
     end
