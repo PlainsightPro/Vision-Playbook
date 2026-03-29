@@ -145,6 +145,8 @@ nav:
           - "Documentation": "technical-guidelines/dbt/documentation.md"
           - "Operations & Testing": "technical-guidelines/dbt/operations-and-testing.md"
           - "Third Party Tooling": "technical-guidelines/dbt/third-party-tooling.md"
+      - Migrations:
+          - "AI-Assisted Migration": "technical-guidelines/migrations/ai-assisted-migration.md"
   - Partners:
       - "🤝 Partnerships": "partners/partnerships.md"
       - "🧑‍🤝‍🧑 Communities": "partners/communities.md"
