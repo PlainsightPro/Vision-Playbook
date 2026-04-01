@@ -92,11 +92,12 @@ nav:
       - Working @ Plainsight:
           - "🔨 Tools We Love": "people-ops/working/tools-we-love.md"
           - "🎯 Evolution Process": "people-ops/working/evolution-process.md"
-          - "🚀 Impact by Ownership": "people-ops/working/impact-by-ownership.md"
           - "🌱 Learning And Experimentation": "people-ops/working/learning-and-experimentation.md"
           - "🏢 Our Offices and Locations": "people-ops/working/our-offices-and-locations.md"
           - "💪 Hosting a Teambuilding or Sports Event": "people-ops/working/hosting-a-teambuilding-or-sports-event.md"
           - "📄 CV - Curriculum Vitae": "people-ops/working/cv-curriculum-vitae.md"
+          - "🚀 Impact by Ownership": "people-ops/working/impact-by-ownership.md"
+          - "🧪 Product Lab": "people-ops/working/product-lab.md"
       - Remuneration Package:
           - "🤑 Remuneration Package": "people-ops/remuneration/remuneration-package.md"
           - "🌴 Holidays & Illness": "people-ops/remuneration/holidays-and-illness.md"
@@ -146,7 +147,7 @@ nav:
           - "Operations & Testing": "technical-guidelines/dbt/operations-and-testing.md"
           - "Third Party Tooling": "technical-guidelines/dbt/third-party-tooling.md"
       - Migrations:
-          - "AI-Assisted Migration": "technical-guidelines/migrations/ai-assisted-migration.md"
+          - "AI-Assisted Migration": "technical-guidelines/migrations/ai-driven-migration.md"
   - Partners:
       - "🤝 Partnerships": "partners/partnerships.md"
       - "🧑‍🤝‍🧑 Communities": "partners/communities.md"
