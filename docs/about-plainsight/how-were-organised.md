@@ -15,7 +15,7 @@ Our organisation is built around two sides of the same machine, linked together 
 
 ![Organisation structure](../images/Organisation%20structure.png)
 
-On the **right** sit our three offerings. This is where our experts do what they do best:
+On  the **right** sit our three offerings. This is where our experts do what they do best:
 
 | Offering | What we do |
 |---|---|
