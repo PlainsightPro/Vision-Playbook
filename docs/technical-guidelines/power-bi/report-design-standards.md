@@ -12,7 +12,9 @@ These standards define how Power BI reports should look and behave. They cover l
 >
 > A **Power BI theme file** is a `.json` configuration file that defines the color palette, font settings, and default visual formatting for an entire report. Once applied, every visual in the report inherits these defaults automatically, eliminating the need to format each visual manually and ensuring a consistent look across pages. Theme files are applied in Power BI Desktop via **View → Themes → Browse for themes**. They can be created manually, generated using a theme builder tool, or exported from an existing report.
 >
-> 📎 *Add links here to recommended theme builder tools.*
+> 📎 https://bibb.pro/apps/theme-generator/ 
+> 📎 https://themes.powerbi.tips/themes/wireframes
+
 
 ---
 
