@@ -65,7 +65,7 @@ The canvas is divided into named zones. These zones create a predictable layout 
 
 ### Native-Only Policy
 
-==Use native Power BI visuals unless a requirement cannot be met natively.==
+**Use native Power BI visuals unless a requirement cannot be met natively.**
 
 Native visuals receive Microsoft security patches and feature updates, behave predictably across Desktop, Service, and embedded contexts, and avoid JavaScript sandbox overhead. Custom visuals introduce publisher dependency: if a visual is deprecated or its publisher goes inactive, the report breaks silently.
 
