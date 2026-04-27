@@ -124,6 +124,7 @@ nav:
           - "Naming Conventions": "technical-guidelines/power-bi/naming-conventions.md"
           - "CICD & Versioning": "technical-guidelines/power-bi/cicd-and-versioning.md"
           - "Third Party Tooling": "technical-guidelines/power-bi/third-party-tooling.md"
+          - "Report Design Standards": "technical-guidelines/power-bi/report-design-standards.md"
       - Databricks Best-Practices:
           - "Compute Selection": "technical-guidelines/databricks/compute-selection.md"
           - "Workspace Organization": "technical-guidelines/databricks/workspace-organization.md"
