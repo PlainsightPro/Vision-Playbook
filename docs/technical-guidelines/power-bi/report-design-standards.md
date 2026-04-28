@@ -47,7 +47,7 @@ The canvas is divided into named zones. These zones create a predictable layout 
 - Limit each page to **one analytical question**. If a page tries to answer two questions, split it.
 - Keep the number of visuals per page low. As a rule of thumb, aim for **5 or fewer**. If you are struggling to fit everything on one page, that is a signal you are trying to communicate too much at once, not that you need a larger canvas. More visuals mean smaller visuals, and smaller visuals are harder to read and harder to compare. When in doubt, move secondary visuals to a detail or drill-through page.
 
-> 📸 *Add a labeled wireframe here showing the top band (with navigation buttons), KPI zone, and main content area — with approximate pixel dimensions for each zone. Add a second wireframe showing the right-side rail layout for reports with more than 6 pages.*
+![Page structure](../../images/page_structure_zones_v6.svg)
 
 ### Visual Hierarchy
 
@@ -57,7 +57,7 @@ The canvas is divided into named zones. These zones create a predictable layout 
 - Use **font size**, not color or decoration, to establish hierarchy in text elements.
 - Use gradient fills, drop shadows, and borders sparingly and subtly: a slight shadow can give a card gentle depth, but a heavy one draws attention away from the data. If an effect does not help the reader interpret the information, remove it.
 
-> 📸 *Add a before/after example here: one layout where all visuals are the same size, and one where hierarchy is applied (one large primary visual, smaller supporting visuals).*
+![Visual hierarchy](../../images/visual_hierarchy_before_after_v4.svg)
 
 ---
 
@@ -158,7 +158,7 @@ Each card should contain:
 - **Comparison** — variance vs. target, prior period, or budget. Show both absolute and percentage variance.
 - **Status indicator** — a color signal or icon defined in the theme, never hardcoded.
 
-> 📸 *Add a labeled screenshot of a well-structured KPI card here, with callouts pointing to the primary value, label, comparison, and status indicator.*
+![KPI Card Anatomy](../../images/kpi_card-anatomy.svg)
 
 ### Card vs. KPI Visual
 
