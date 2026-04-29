@@ -321,9 +321,6 @@ When the same measure appears in 10 visuals and the format needs to change, upda
 **Mixing filter mechanisms without a clear logic**  
 Using the filter pane for some filters and on-canvas slicers for others without a clear rationale confuses users who cannot see that the filter pane is active. Be explicit about what is hidden and what is visible.
 
-**Date slicers without a default selection**  
-A report that opens on "all time" data against a large dataset will be slow and may surface a misleading aggregate. Always set a sensible default relative date selection (e.g., last 12 months) and document it.
-
 **Tooltips surfacing internal IDs**  
 Users do not need to see `CustomerID = 84729`. Tooltips should show business-meaningful values only.
 
