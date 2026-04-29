@@ -87,12 +87,6 @@ Use a native sparkline, icon set (via conditional formatting), or a standard cha
 
 **Static SVG files are fine.** Uploading an `.svg` as a logo, icon, or background image does not carry these drawbacks. The file is rendered directly, not generated through DAX at query time.
 
-### Choosing the Right Visual for Your Use Case
-
-Not sure which native visual fits your data? The following resources help match analytical goals to the right chart type.
-
-📎 *Add links here to visual selection guides and tools (e.g. chart chooser tools, Microsoft visual reference).*
-
 ### Decision Guide
 
 ```
@@ -158,7 +152,7 @@ Each card should contain:
 - **Comparison** — variance vs. target, prior period, or budget. Show both absolute and percentage variance.
 - **Status indicator** — a color signal or icon defined in the theme, never hardcoded.
 
-![KPI Card Anatomy](../../images/kpi_card-anatomy.svg)
+![KPI Card Anatomy](../../images/kpi_card_anatomy.svg)
 
 ### Card vs. KPI Visual
 
