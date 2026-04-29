@@ -29,9 +29,9 @@ These standards define how Power BI reports should look and behave. They cover l
 ### Grid & Spacing
 
 - Align all visuals to an invisible **8px grid**: every element's position, size, and spacing should be a multiple of 8 pixels. This creates alignment structure that makes the canvas feel ordered and intentional even without visible lines. Use Power BI's snap-to-grid and alignment guides to enforce this.
-![8px Grid](../../images/8px_grid_report_fixed_legend.svg)
+![8px Grid](../../images/report-design-standards/8px_grid_report_fixed_legend.svg)
 - Maintain consistent **gutters** (the empty space between elements): minimum **16px between visuals**, **24px from the canvas edge**. Too little space makes the page feel cluttered; too much makes it feel disconnected.
-![Spacing](../../images/grid_spacing_annotation_diagram_v6.svg)
+![Spacing](../../images/report-design-standards/grid_spacing_annotation_diagram_v6.svg)
 - Imply grouping through **proximity and whitespace**, not boxes or borders. Proximity alone signals that visuals belong together. Decorative borders add visual noise and are harder to maintain across theme changes.
 
 
@@ -47,7 +47,7 @@ The canvas is divided into named zones. These zones create a predictable layout 
 - Limit each page to **one analytical question**. If a page tries to answer two questions, split it.
 - Keep the number of visuals per page low. As a rule of thumb, aim for **5 or fewer**. If you are struggling to fit everything on one page, that is a signal you are trying to communicate too much at once, not that you need a larger canvas. More visuals mean smaller visuals, and smaller visuals are harder to read and harder to compare. When in doubt, move secondary visuals to a detail or drill-through page.
 
-![Page structure](../../images/page_structure_zones_v6.svg)
+![Page structure](../../images/report-design-standards/page_structure_zones_v6.svg)
 
 ### Visual Hierarchy
 
@@ -57,7 +57,7 @@ The canvas is divided into named zones. These zones create a predictable layout 
 - Use **font size**, not color or decoration, to establish hierarchy in text elements.
 - Use gradient fills, drop shadows, and borders sparingly and subtly: a slight shadow can give a card gentle depth, but a heavy one draws attention away from the data. If an effect does not help the reader interpret the information, remove it.
 
-![Visual hierarchy](../../images/visual_hierarchy_before_after_v4.svg)
+![Visual hierarchy](../../images/report-design-standards/visual_hierarchy_before_after_v4.svg)
 
 ---
 
@@ -89,18 +89,7 @@ Use a native sparkline, icon set (via conditional formatting), or a standard cha
 
 ### Decision Guide
 
-```
-Does a native visual meet the requirement?
-├── Yes → Use it.
-└── No → Can the requirement be simplified or reframed to fit a native visual?
-    ├── Yes → Redesign the requirement. Simplification is preferable to a custom dependency.
-    └── No → Is there a Microsoft-certified AppSource visual?
-        ├── Yes → Get stakeholder sign-off, document the name and version, proceed.
-        └── No → Do not import. Escalate to the project lead.
-             Uncertified visuals cannot be used in government or regulated
-             cloud environments, cannot be exported to PDF, and carry no
-             security guarantees.
-```
+![Decision Guide](../../images/report-design-standards/visual_selection_decision_flowchart.svg)
 
 **When evaluating a native alternative**, consider these before reaching for a custom visual:
 
@@ -152,7 +141,7 @@ Each card should contain:
 - **Comparison** — variance vs. target, prior period, or budget. Show both absolute and percentage variance.
 - **Status indicator** — a color signal or icon defined in the theme, never hardcoded.
 
-![KPI Card Anatomy](../../images/kpi_card_anatomy.svg)
+![KPI Card Anatomy](../../images/report-design-standards/kpi_card_anatomy.svg)
 
 ### Card vs. KPI Visual
 
@@ -341,5 +330,3 @@ Users do not need to see `CustomerID = 84729`. Tooltips should show business-mea
 **Calculated columns for logic that belongs in measures**  
 Calculated columns are evaluated at refresh time and stored in the model. Measures are evaluated at query time in filter context. Putting context-dependent logic in a calculated column produces wrong results. 
 
-**Building without a signed-off wireframe**  
-Starting Power BI development before the layout is agreed leads to mid-build redesigns that break the model, measures, and interactions. The wireframe is a specification, not a formality.
