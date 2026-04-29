@@ -324,6 +324,4 @@ Using the filter pane for some filters and on-canvas slicers for others without 
 **Tooltips surfacing internal IDs**  
 Users do not need to see `CustomerID = 84729`. Tooltips should show business-meaningful values only.
 
-**Calculated columns for logic that belongs in measures**  
-Calculated columns are evaluated at refresh time and stored in the model. Measures are evaluated at query time in filter context. Putting context-dependent logic in a calculated column produces wrong results. 
 
