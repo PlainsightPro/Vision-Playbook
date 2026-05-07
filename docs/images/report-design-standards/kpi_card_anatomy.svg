@@ -1,0 +1,64 @@
+<svg width="680" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+  <title>KPI card anatomy with labeled callouts</title>
+  <desc>A Power BI-style KPI card with accent bar and four callout labels pointing precisely to each element.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="320" fill="#F5F4ED"/>
+
+  <!-- KPI CARD: x=210, y=70, w=260, h=140 -->
+  <rect x="210" y="70" width="260" height="140" rx="6" fill="white" stroke="rgba(31,30,29,0.15)" stroke-width="1"/>
+  <!-- Accent bar -->
+  <rect x="210" y="70" width="5" height="140" rx="3" fill="#1D9E75"/>
+
+  <!-- ① Label: baseline y=100 → centre y≈94 -->
+  <text x="228" y="100" font-size="12" font-family="sans-serif" fill="rgb(136,135,128)">Revenue YTD</text>
+
+  <!-- ② Primary value: baseline y=144 → cap-height y≈112, centre y≈128 -->
+  <text x="228" y="144" font-size="36" font-weight="500" font-family="sans-serif" fill="rgb(20,20,19)">€3.2M</text>
+
+  <!-- Comparison row: ▲ glyph x=228 (status), then delta text x=248 onwards
+       baseline y=175 → centre y≈169
+       "▲" ends ~x=242, "+€240K  (+8.1% vs. target)" starts x=248, ends ~x=462 → mid x≈355 -->
+  <text x="228" y="175" font-size="13" font-family="sans-serif" fill="#0F6E56">▲  +€240K  (+8.1% vs. target)</text>
+
+  <!-- ══ CALLOUT ARROWS ══
+
+       ① Label    → LEFT top:    tip x=290 y=94,   tail → x=168 y=46
+       ② Primary  → RIGHT top:   tip x=340 y=128,  tail → x=478 y=82
+       ③ Comparison → RIGHT bottom: tip at mid of delta text x=330 y=169, tail → x=478 y=238
+       ④ Status   → LEFT bottom: tip at ▲ glyph x=234 y=169, tail → x=168 y=238
+  -->
+
+  <!-- ① Label -->
+  <line x1="290" y1="94" x2="168" y2="46"
+        stroke="rgba(31,30,29,0.3)" stroke-width="0.75" stroke-dasharray="3 2" marker-end="url(#arr)"/>
+  <text x="16"  y="34"  font-size="12" font-weight="500" font-family="sans-serif" fill="rgb(61,61,58)">① Label</text>
+  <text x="16"  y="48"  font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">Metric name. Set in card Title.</text>
+
+  <!-- ② Primary value -->
+  <line x1="340" y1="128" x2="478" y2="82"
+        stroke="rgba(31,30,29,0.3)" stroke-width="0.75" stroke-dasharray="3 2" marker-end="url(#arr)"/>
+  <text x="484" y="70"  font-size="12" font-weight="500" font-family="sans-serif" fill="rgb(61,61,58)">② Primary value</text>
+  <text x="484" y="84"  font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">Current metric, formatted</text>
+  <text x="484" y="97"  font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">for scale (K / M / B).</text>
+
+  <!-- ④ Status colour — LEFT bottom, tip on ▲ glyph -->
+  <line x1="234" y1="169" x2="168" y2="238"
+        stroke="rgba(31,30,29,0.3)" stroke-width="0.75" stroke-dasharray="3 2" marker-end="url(#arr)"/>
+  <text x="16"  y="244" font-size="12" font-weight="500" font-family="sans-serif" fill="rgb(61,61,58)">④ Status colour</text>
+  <text x="16"  y="258" font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">Colour + arrow glyph via</text>
+  <text x="16"  y="271" font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">conditional formatting.</text>
+
+  <!-- ③ Comparison — RIGHT bottom, tip on delta text -->
+  <line x1="330" y1="169" x2="478" y2="238"
+        stroke="rgba(31,30,29,0.3)" stroke-width="0.75" stroke-dasharray="3 2" marker-end="url(#arr)"/>
+  <text x="484" y="244" font-size="12" font-weight="500" font-family="sans-serif" fill="rgb(61,61,58)">③ Comparison</text>
+  <text x="484" y="258" font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">Absolute delta + % vs. target</text>
+  <text x="484" y="271" font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">or prior period.</text>
+
+</svg>
