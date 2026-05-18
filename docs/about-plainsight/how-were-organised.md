@@ -57,83 +57,15 @@ flowchart TB
     C[Shared Consultant Pool<br/>Experts assigned based on project need]
   end
 
-  %% make the bottom banner "span" the three top blocks:
+  subgraph SUPPORT[Growth & Partnerships]
+    direction LR
+    GL[Growth Lead & Partnership<br/>New business · Accounts · Technology partnerships]
+  end
+
   O1 <---> C
   O2 <---> C
   O3 <---> C
 
-```
-
-
-## How We Grow: Career Coaches
-
-Every person at Plainsight has a **career coach**: someone dedicated to their personal and professional growth.
-
-Career coaches aren't managers. They don't assign work or approve timesheets. They exist for one reason: to make sure you're evolving in the direction *you* want to go.
-
-```mermaid
-%%{init: { "flowchart": { "useMaxWidth": true } } }%%
-
-flowchart LR
-    YOU[You] -->|regular check-ins| COACH[Your Career Coach]
-    COACH -->|growth direction| EVO[Evolution Process]
-    COACH -->|visibility| IMPACT[Impact by Ownership]
-```
-
-> Read more about [🎯 Evolution Process](../people-ops/working/evolution-process.md).
-> Read more about [🚀 Impact by Ownership](../people-ops/working/impact-by-ownership.md).
-
-
-## How We Learn: Knowledge Hubs
-
-Knowledge doesn't live in silos. It circulates.
-
-**Knowledge Hubs** are informal, topic-driven groups/initiative that form around subjects our experts want to go deeper on. They're not permanent departments. They come and go based on what's relevant.
-
-| Aspect | How it works |
-|---|---|
-| **Who starts one?** | Anyone who sees the need to deepen expertise in a topic |
-| **Who leads?** | The person who initiated it. Not appointed, self-selected |
-| **Who joins?** | Anyone interested. No approval needed |
-| **How long do they last?** | As long as the topic is relevant: weeks, months, or longer |
-| **What do they produce?** | Shared knowledge: playbook pages, internal sessions, reusable assets |
-
-This model keeps us sharp without bureaucracy. If something matters, someone will pick it up. That's how a team of experts operates.
-
-??? note "📝 Examples of knowledge hubs we had over the past..."
-    Databricks, dbt, LLM/RAG patterns, Fabric adoption, streaming architectures, CI/CD best practices, Azure Landing Zones, Agentic AI Architectures, Databricks AI (LLMOps), Vibe Coding/Engineering, DAX Optimizers, Data Mesh, Data Governance, Databricks Frameworks, Fabric Framework, ...
-
-
-??? info "We've deliberately not chosen to put people in boxes in terms of knowledge. It's the people themselves that want to be part of an 'initiative' allowing them to be part of one, multiple or no initiatives."
-
----
-
-## Short Lines, Big Impact
-
-We keep communication lines **short on purpose**.
-
-No layers of approvals. No "let me check with my manager's manager." If you need something, you talk to the person who can help. Directly. This isn't an accident; it's a deliberate choice we protect as we grow.
-
-??? warning "Scaling without layers"
-    Growing the team doesn't mean adding hierarchy. It means building stronger habits: better async communication, clearer ownership, and a culture where anyone can raise their hand.
-
----
-
-## Culture Is the Strategy
-
-Our culture isn't a poster on the wall. It's **how we actually work**.
-
-Everyone is free to give and receive feedback, at any time, in any direction. Not because a process tells us to, but because it makes us grow faster as people and as a company. We're all learning every minute of the day, and we actively support that in each other.
-
-Want to know what drives that culture? Read [🥇 The Foundation of Plainsight](the-foundation-of-plainsight.md).
-
----
-
-## Where to Go Next
-
-| Topic | Page |
-|---|---|
-| Our purpose and values | [🥇 The Foundation of Plainsight](the-foundation-of-plainsight.md) |
-| How you grow here | [🎯 Evolution Process](../people-ops/working/evolution-process.md) |
-| The employee journey | [🚀 Onboarding](../people-ops/onboarding.md) |
-| Our technical guidelines | [Why 'Technical Guideline Ops'](../technical-guidelines/why-technical-guidelines.md) |
+  GL -.->|supports| O1
+  GL -.->|supports| O2
+  GL -.->|supports| O3
