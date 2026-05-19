@@ -149,6 +149,24 @@ nav:
           - "Third Party Tooling": "technical-guidelines/dbt/third-party-tooling.md"
       - Migrations:
           - "AI-Assisted Migration": "technical-guidelines/migrations/ai-driven-migration.md"
+      - Plainsight AI:
+          - "The Plainsight AI Cocreation Framework": "technical-guidelines/plainsight-ai/cocreation-framework.md"
+          - Agentic Development:
+              - "INTRODUCING: Plainsight Brain":
+                  - "Plainsight Brain": "technical-guidelines/plainsight-ai/agentic-development/introducing-plainsight-brain/plainsight-brain.md"
+              - Software:
+                  - "Agentic SDLC Best-Practices": "technical-guidelines/plainsight-ai/agentic-development/software/agentic-sdlc-best-practices.md"
+                  - "Automated Testing": "technical-guidelines/plainsight-ai/agentic-development/software/automated-testing.md"
+                  - "Spec Driven Development": "technical-guidelines/plainsight-ai/agentic-development/software/spec-driven-development.md"
+                  - "Test Driven Development": "technical-guidelines/plainsight-ai/agentic-development/software/test-driven-development.md"
+              - Data Engineering:
+                  - "Fabric": "technical-guidelines/plainsight-ai/agentic-development/data-engineering/fabric.md"
+                  - "Databricks": "technical-guidelines/plainsight-ai/agentic-development/data-engineering/databricks.md"
+                  - "dbt": "technical-guidelines/plainsight-ai/agentic-development/data-engineering/dbt.md"
+              - Data Analytics:
+                  - "Power BI": "technical-guidelines/plainsight-ai/agentic-development/data-analytics/power-bi.md"
+          - Prototyping:
+              - "AI Lab": "technical-guidelines/plainsight-ai/prototyping/ai-lab.md"
   - Partners:
       - "🤝 Partnerships": "partners/partnerships.md"
       - "🧑‍🤝‍🧑 Communities": "partners/communities.md"
