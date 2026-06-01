@@ -132,6 +132,7 @@ nav:
           - "Databricks Jobs": "technical-guidelines/databricks/databricks-jobs.md"
           - "Databricks CI-CD": "technical-guidelines/databricks/databricks-ci-cd.md"
           - "Lakeflow ETL Guide": "technical-guidelines/databricks/lakeflow-etl-guide.md"
+          - "Code Execution from VS Code": "technical-guidelines/databricks/code-execution-from-vscode.md"
           - "Connect Databricks MCP to Claude Code": "technical-guidelines/databricks/connect-databricks-mcp-claude-code.md"
       - Fabric Best-Practices:
           - "Workspace Organization": "technical-guidelines/fabric/workspace-organization.md"
