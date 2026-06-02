@@ -50,7 +50,7 @@ Install these alongside the Databricks extension for a complete development expe
 
 ## Databricks MCP via Claude Code
 
-The Databricks MCP server gives Claude Code direct access to SQL execution, Unity Catalog, jobs, and 50+ other Databricks tools. See [Connect Databricks MCP to Claude Code](connect-databricks-mcp-claude-code.md) for the full setup guide.
+The Databricks MCP server gives Claude Code direct access to SQL execution, Unity Catalog, jobs, and 50+ other Databricks tools. See [Connect Databricks MCP to Claude Code](../../plainsight-ai/agentic-development/data-engineering/databricks.md) for the full setup guide.
 
 For safe multi-environment usage, configure **separate MCP entries per environment** in your `.mcp.json`:
 
