@@ -150,6 +150,7 @@ nav:
           - "Third Party Tooling": "technical-guidelines/dbt/third-party-tooling.md"
       - Plainsight AI:
           - Agentic Development:
+              - "🧠 Claude Code Extensibility": "technical-guidelines/plainsight-ai/agentic-development/skills.md"
               - "Connect Databricks MCP to Claude Code": "technical-guidelines/plainsight-ai/agentic-development/data-engineering/databricks.md"
       - Migrations:
           - "AI-Assisted Migration": "technical-guidelines/migrations/ai-driven-migration.md"
