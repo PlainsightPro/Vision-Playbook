@@ -76,6 +76,61 @@ Claude reads all applicable `CLAUDE.md` files and merges them, with more specifi
 ??? tip "Keep CLAUDE.md lean"
     `CLAUDE.md` is loaded every session. If it grows too large, Claude spends tokens processing instructions that may not be relevant. Move task-specific guidance into **skills** and keep `CLAUDE.md` focused on universal rules.
 
+### Folder-Level Context with claude-mem
+
+For larger projects, you can use [claude-mem](https://docs.claude-mem.ai) to **auto-generate** folder-level `CLAUDE.md` files that track recent activity per directory. Instead of manually maintaining context files in every subfolder, claude-mem observes your work and writes activity timelines into `CLAUDE.md` files using `<claude-mem-context>` tags.
+
+**How it works:**
+
+1. claude-mem tracks which files you access during work
+2. It generates a "Recent Activity" section per folder with timestamps, activity types, and descriptions
+3. The generated content uses emoji indicators for quick scanning:
+
+    | Emoji | Activity Type |
+    |-------|---------------|
+    | 🔴 | Bug fix |
+    | 🟣 | Feature |
+    | 🔄 | Refactoring |
+    | ✅ | Change |
+    | 🔵 | Discovery |
+    | ⚖️ | Decision |
+    | 🎯 | Session |
+
+**Enable it** by editing `~/.claude-mem/settings.json`:
+
+```json
+{
+  "CLAUDE_MEM_FOLDER_CLAUDEMD_ENABLED": "true"
+}
+```
+
+**Key behaviors:**
+
+- The **project root** `CLAUDE.md` (next to `.git`) is never overwritten — your manually written instructions are safe
+- Any content you write **outside** the `<claude-mem-context>` tags is preserved through regeneration cycles
+- Supports git worktrees — context is gathered from parent repos and worktree directories
+
+**Management commands:**
+
+```bash
+# Preview what would be generated
+bun scripts/regenerate-claude-md.ts --dry-run
+
+# Remove all generated content
+bun scripts/regenerate-claude-md.ts --clean
+
+# Regenerate for a specific project
+bun scripts/regenerate-claude-md.ts --project=my-project
+```
+
+??? tip "To commit or not to commit?"
+    Decide as a team whether to commit the generated `CLAUDE.md` files. Committing them gives visibility to all contributors and reviewers. Gitignoring them keeps the repo clean and allows per-machine context. A common pattern is to commit only the root `CLAUDE.md` and ignore the rest:
+
+    ```gitignore
+    **/CLAUDE.md
+    !CLAUDE.md
+    ```
+
 ---
 
 ## Skills — Contextual Instructions
