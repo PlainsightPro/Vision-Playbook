@@ -10,7 +10,8 @@ Prefer **Power BI Desktop Projects (.pbip)**[^1] so semantic model and report de
 This enables proper versioning, branching, and CI/CD.  
 
 ??? note "📝 What are .pbip and .pbir files?"
-    A `.pbip` file is a **project manifest** that points to the actual definition files:  
+    A `.pbip` file is a **project manifest** that points to the actual definition files:
+
     - **`.tmdl` (Tabular Model Definition Language):** semantic model definition (tables, relationships, measures).  
     - **`.pbir` (Power BI Report):** report layout, visuals, and metadata.  
     These text-based files replace binary `.pbix` files as the preferred format for collaborative, versioned development.
@@ -37,42 +38,42 @@ This enables proper versioning, branching, and CI/CD.
 - **Description:** Files live only in the Power BI Service.  
 - **Use when:** Never recommended.  
 - **Risks:**  
-  - No audit trail.  
-  - High risk of overwrites.  
-  - Difficult or impossible to roll back.  
+    - No audit trail.  
+    - High risk of overwrites.  
+    - Difficult or impossible to roll back.  
 
 ---
 
 ### 2. SharePoint / OneDrive Library with Versioning (✔ Acceptable for small projects)
 - **Description:** Store `.pbix` or `.pbip` files in SharePoint or OneDrive with version history enabled.  
-  - OneDrive/SharePoint may back up workspace files automatically.  
-  - Or: maintain a mirrored folder structure that reflects your Power BI Service workspaces.  
+    - OneDrive/SharePoint may back up workspace files automatically.  
+    - Or: maintain a mirrored folder structure that reflects your Power BI Service workspaces.  
 - **Pros:**  
-  - Simple to set up.  
-  - Built-in versioning & timestamps.  
-  - “Who changed what and when” visibility.  
+    - Simple to set up.  
+    - Built-in versioning & timestamps.  
+    - “Who changed what and when” visibility.  
 - **Cons:**  
-  - Diffs are not meaningful for binary `.pbix`.  
-  - Limited branching/review; merges are manual.  
+    - Diffs are not meaningful for binary `.pbix`.  
+    - Limited branching/review; merges are manual.  
 - **Use when:**  
-  - **Small teams/projects** or short-lived prototypes.  
-  - Not suitable for production-grade enterprise BI.  
+    - **Small teams/projects** or short-lived prototypes.  
+    - Not suitable for production-grade enterprise BI.  
 
 ---
 
 ### 3. Fabric Deployment Pipelines (➡ Promotion, not true versioning)
 - **Description:** Use Deployment Pipelines to promote artifacts across environments (Dev → Test → Prod).  
 - **Pros:**  
-  - Safe, repeatable promotions.  
-  - Parameter/connection rules at stage level.  
-  - Governance through controlled promotion.  
+    - Safe, repeatable promotions.  
+    - Parameter/connection rules at stage level.  
+    - Governance through controlled promotion.  
 - **Cons:**  
-  - Deployment Pipelines are **not a version control system**.  
-  - Limited diffs and history.  
-  - Does not replace Git.  
+    - Deployment Pipelines are **not a version control system**.  
+    - Limited diffs and history.  
+    - Does not replace Git.  
 - **Use when:**  
-  - You need structured **environment promotion** but no Git maturity.  
-  - Combine with (2) or (4) for stronger governance.  
+    - You need structured **environment promotion** but no Git maturity.  
+    - Combine with (2) or (4) for stronger governance.  
 
 ---
 
@@ -89,7 +90,7 @@ This enables proper versioning, branching, and CI/CD.
 - **Use when:**  
   - **Default choice** for production-grade, multi-developer, and enterprise BI projects.  
 
-??? note "🔍 Quality Assurance in Git Workflows"
+!!! note "🔍 Quality Assurance in Git Workflows"
     
 When integrating Power BI with Git, you can also introduce **automated quality checks** for semantic models and reports:
 > 
