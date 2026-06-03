@@ -96,7 +96,7 @@ models:
       +unique_key: order_id
 ```
 
-??? warning "⚠️ Avoid Ad-Hoc Overrides"
+??? warning "Avoid Ad-Hoc Overrides"
     Scattered `{{ config(...) }}` blocks make maintenance difficult. Prefer path-level settings so reviewers can reason about behavior from the tree alone.
 
 

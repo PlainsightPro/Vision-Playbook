@@ -75,8 +75,8 @@ Implement automated rollback mechanisms for failed deployments to minimize downt
 ??? warning "Avoid Siloed Management"
     Use Databricks Asset Bundles to deploy code, jobs, and infrastructure as a single unit. Avoid managing notebooks, libraries, and workflows separately.
     
-    [!info] Authentication Recommendation
-    Databricks recommends **workload identity federation** for CI/CD authentication. This eliminates the need for Databricks secrets, making it the most secure authentication method for automated flows.
+    !!!info "Authentication Recommendation"
+        Databricks recommends **workload identity federation** for CI/CD authentication. This eliminates the need for Databricks secrets, making it the most secure authentication method for automated flows.
 
 ## Databricks Asset Bundles for CI/CD
 

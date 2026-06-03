@@ -92,17 +92,17 @@ This enables proper versioning, branching, and CI/CD.
 
 !!! note "🔍 Quality Assurance in Git Workflows"
     
-When integrating Power BI with Git, you can also introduce **automated quality checks** for semantic models and reports:
-> 
-> - **[Tabular Editor Best Practice Analyzer (BPA)](https://github.com/TabularEditor/BestPracticeRules)**  
-  Define and enforce best-practice rules for DAX, relationships, naming conventions, unused fields, etc.  
-  Rules can be customized in JSON and run automatically in pipelines.  
-> 
-> - **[PBI Inspector v2](https://github.com/NatVanG/PBI-InspectorV2)**  
-  Open-source tooling for inspecting Power BI projects, validating structure, and running automated checks.  
-  Useful for compliance, technical debt reduction, and governance.  
-> 
-These tools can be integrated into CI/CD pipelines to enforce coding standards, naming conventions, and model optimization **before deployment**.  
+    When integrating Power BI with Git, you can also introduce **automated quality checks** for semantic models and reports:
+    > 
+    > - **[Tabular Editor Best Practice Analyzer (BPA)](https://github.com/TabularEditor/BestPracticeRules)**  
+    Define and enforce best-practice rules for DAX, relationships, naming conventions, unused fields, etc.  
+    Rules can be customized in JSON and run automatically in pipelines.  
+    > 
+    > - **[PBI Inspector v2](https://github.com/NatVanG/PBI-InspectorV2)**  
+    Open-source tooling for inspecting Power BI projects, validating structure, and running automated checks.  
+    Useful for compliance, technical debt reduction, and governance.  
+    > 
+    These tools can be integrated into CI/CD pipelines to enforce coding standards, naming conventions, and model optimization **before deployment**.  
 
 ---
 

@@ -241,6 +241,7 @@ graph LR
 
 ??? tip "Progressive Denormalization"
     Notice the progressive reduction in table count as data moves through layers:
+    
     - **Staging**: 8 tables with complex relationships
     - **ADS**: 6 tables with denormalization, history tracking (`ADS_Customer_Snapshot`), business categorization (`ADS_ProductCategory`), and budgets (`ADS_SalesBudget`)
     - **Dimensional**: 2 fact tables + 2 dimension tables in star schema
