@@ -100,6 +100,7 @@ classDiagram
 ```
 
 **Best practices:**
+
 - Set all dimension keys as `NOT NULL`
 - Use [special dimension members](star-dimension-tables.md#special-dimension-members) (-1, -2) for `_UNK` and `_N/A`
 - Support [role-playing dimensions](star-dimension-tables.md#role-playing-dimensions) with multiple keys to the same dimension (e.g., `OrderDate_FK`, `ShipDate_FK`, `DeliveryDate_FK`)
@@ -109,12 +110,14 @@ classDiagram
 **Store business keys from source systems alongside surrogate keys** to simplify querying and handle late-arriving facts.
 
 **Why include business keys in fact tables:**
+
 - **Simplified queries**: Analysts can filter/join using recognizable identifiers (product codes, dates) without joining to dimension tables
 - **Late-arriving facts**: When a fact arrives before its dimension is loaded, store the business key and use dimension special members (e.g., `-1` for _Unknown) as a placeholder
 - **ETL debugging**: Trace back to source system records using natural identifiers
 - **Reprocessing**: Re-lookup surrogate keys if dimension records are reprocessed or corrected
 
 **Naming convention:** Suffix business keys with `BK` to distinguish from surrogate foreign keys:
+
 - `ProductCode_BK` (business key) vs. `Product_FK` (surrogate key)
 - `OrderDate_BK` (business key) vs. `OrderDate_FK` (surrogate key)
 - `CustomerNumber_BK` (business key) vs. `Customer_FK` (surrogate key)
@@ -140,6 +143,7 @@ ProductCode_BK VARCHAR(50) NOT NULL, -- Business key (natural identifier from so
 The grain is the most critical design decision for a fact table. It defines the level of detail stored.
 
 **Questions to determine grain:**
+
 - What exactly does one row represent?
 - At what level of detail do we capture this measurement?
 - Can we aggregate from this grain to answer all required questions?
@@ -162,6 +166,7 @@ The grain is the most critical design decision for a fact table. It defines the 
 Attributes in fact tables provide additional context but are neither measures nor dimension keys.
 
 **Common examples:**
+
 - Order numbers: `SalesOrderNo`, `InvoiceNo`
 - Transaction IDs: `TransactionID`, `TicketNumber`
 - Tracking numbers: `ShipmentTrackingNo`
@@ -173,6 +178,7 @@ These form [degenerate dimensions](star-dimension-tables.md#degenerate-dimension
 **Measures are the numeric values you analyze**; the core business metrics stored in fact tables.
 
 **Characteristics:**
+
 - Typically numeric data types: `INT`, `DECIMAL`, `FLOAT`
 - Aggregated in queries: SUM, AVG, COUNT, MIN, MAX
 - Represent quantities, amounts, balances, rates, or other quantifiable observations
@@ -192,6 +198,7 @@ Fact tables include technical columns for data lineage, audit trails, and data q
 
 
 **Lineage & audit patterns:**
+
 - Use `UNIQUEIDENTIFIER` (GUID) run IDs to trace records back to specific ETL execution logs for debugging and lineage tracking
 - The datetime columns provide human-readable timestamps for audit trails and troubleshooting
 - On initial creation: `T_CreatedRunId = T_ModifiedRunId` and `T_CreatedDateTime = T_ModifiedDateTime`
@@ -202,10 +209,12 @@ Fact tables include technical columns for data lineage, audit trails, and data q
 ## Fact Table Size
 
 Fact tables are typically:
+
 - **Narrow**: Fewer columns than dimension tables (just keys + measures + attributes)
 - **Deep**: Massive row counts - millions, billions, or more
 
 **Size drivers:**
+
 - **Dimensionality**: More dimension keys = more possible combinations
 - **Granularity**: Lower grain (more detailed) = more rows
 - **Measure count**: Number of numeric metrics captured
