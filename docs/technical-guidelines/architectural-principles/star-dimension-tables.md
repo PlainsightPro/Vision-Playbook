@@ -52,6 +52,7 @@ CREATE TABLE D_Salesperson
 For complete details on key design principles, see [Surrogate, Primary & Foreign Keys](surrogate-primary-and-foreign-keys.md).
 
 **Why surrogate keys for dimensions:**
+
 - Enables [Slowly Changing Dimensions](star-dimension-tables.md) (SCD Type 2) for historical tracking
 - Consolidates multiple data sources without identifier conflicts
 - Simplifies multi-column natural keys into efficient single-column keys
@@ -71,6 +72,7 @@ Don't use natural keys as primary keys → They can change, clash across sources
 Dimension attributes provide the descriptive context used for filtering and grouping in analytical queries.
 
 **Common attributes:**
+
 - Text columns: `FirstName`, `CategoryName`, `Region`
 - Numeric codes: `ProductSize`, `Priority`
 - Flags: `IsActive`, `IsPreferred`
@@ -95,12 +97,14 @@ Dimension tables include technical columns for version tracking (SCD Type 2) and
 | `T_ModifiedDateTime`  | Timestamp when the record was last modified                             | `2025-03-15 14:30:00`                                                              |
 
 **SCD Type 2 patterns:**
+
 - **Initial load**: Set `T_ValidFromDateTime = '1900-01-01 00:00:00'` to ensure all historical fact records can join to the dimension, regardless of transaction date
 - **New versions**: When creating a new version, set `T_ValidFromDateTime` to the exact datetime when the change occurred
 - **Current records**: Set `T_ValidToDateTime = NULL` and `T_IsCurrent = 1` (never use far-future dates like `9999-12-31`)
 - **Expired records**: When closing a version, set `T_ValidToDateTime` to the exact datetime when the change occurred and `T_IsCurrent = 0`
 
 **Audit & lineage patterns:**
+
 - Use `UNIQUEIDENTIFIER` (GUID) run IDs to trace records back to specific ETL execution logs for debugging and lineage tracking
 - The datetime columns provide human-readable timestamps for audit trails and troubleshooting
 - On initial creation: `T_CreatedRunId = T_ModifiedRunId` and `T_CreatedDateTime = T_ModifiedDateTime`
@@ -128,6 +132,7 @@ Manage historical changes with three primary strategies:
 | 101            | John Smith | ==555-9999== |
 
 **Use for:**
+
 - Attributes that don't require historical tracking (phone number, email)
 - Error corrections
 - Most changing attributes
@@ -152,10 +157,12 @@ Manage historical changes with three primary strategies:
 | ==102==        | Lynn Tsoflias  | ==United Kingdom== | ==2025-03-15 14:30:00== | NULL                | ==1==       |
 
 **Operations:**
+
 1. **UPDATE** existing record (SK 101): Set `T_ValidToDateTime = '2025-03-15 14:30:00'` and `T_IsCurrent = 0`
 2. **INSERT** new record (SK 102): New surrogate key with updated region, `T_ValidFromDateTime = '2025-03-15 14:30:00'`, `T_ValidToDateTime = NULL`, `T_IsCurrent = 1`
 
 **Use for:**
+
 - Attributes requiring accurate historical context (region, manager, status)
 - Audit and compliance requirements
 
