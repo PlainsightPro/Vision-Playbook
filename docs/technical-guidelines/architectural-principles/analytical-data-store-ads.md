@@ -57,6 +57,7 @@ ADS sits between the Staging/Intermediate steps and the Dimensional Model. It fe
 ### Base Tables (current state)
 
 **Characteristics**
+
 - One row per entity (latest state)
 - Denormalized structure with data quality enforced
 - Multi-source integration applied
@@ -84,6 +85,7 @@ CREATE TABLE ADS_Customer
 ### Snapshot Tables (historical tracking)
 
 **Characteristics**
+
 - Multiple rows per entity (per version)
 - `T_ValidFromDateTime`, `T_ValidToDateTime`, `T_IsCurrent` columns
 - Default approach: track all attribute changes with SCD Type 2 (adjust if justified)
