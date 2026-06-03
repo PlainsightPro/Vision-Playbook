@@ -11,6 +11,7 @@ add comments, and prefer **measures** over calculated columns when possible.
 ## Do’s & Don’ts
 
 **Do**
+
 - Use `VAR` to compute sub-results once and `RETURN` a clear expression. Prefix your variables with an underscore.  
 - Format DAX consistently (each argument on a new line, indent filters).  
 - Add inline `// comments` for complex business rules.  
@@ -23,6 +24,7 @@ add comments, and prefer **measures** over calculated columns when possible.
 - Document assumptions in comments (e.g., “Assumes sales amount is net of tax”).  
 
 **Don’t**
+
 - Don’t cram everything into one giant measure; break it down into helper/base measures.  
 - Don’t use `FILTER(ALL(Table), …)` when `REMOVEFILTERS` or `ALLSELECTED` is sufficient.  
 - Don’t overuse iterators (`SUMX`, `AVERAGEX`) when a simple aggregator (`SUM`, `AVERAGE`) works.  
