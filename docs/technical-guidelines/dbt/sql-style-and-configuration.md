@@ -73,6 +73,7 @@ from orders
 
 ??? tip "dbt DRY Checklist"
     Before writing a transformation:
+    
     - Have I seen this pattern before in the project?
     - Can I use a dbt_utils macro?
     - Should this be a `ref()` model instead?
@@ -95,7 +96,7 @@ models:
       +unique_key: order_id
 ```
 
-??? warning "⚠️ Avoid Ad-Hoc Overrides"
+??? warning "Avoid Ad-Hoc Overrides"
     Scattered `{{ config(...) }}` blocks make maintenance difficult. Prefer path-level settings so reviewers can reason about behavior from the tree alone.
 
 

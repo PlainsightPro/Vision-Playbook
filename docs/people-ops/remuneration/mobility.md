@@ -12,11 +12,13 @@ description: "Plainsight mobility options explained: company car, mobility budge
 
 ### Short term
 You can choose to start with either:
+
 - **Mobility Budget** right away, or
 - A temporary **'starter car'** (a rental car for a limited period)
 
 ### Long-Term 
 After some time, you have the option to:
+
 - Choose a **Company Car** through **Lizy** or **Alphabet Lease** platforms, or
 - Opt for the **Mobility Budget** after all
 

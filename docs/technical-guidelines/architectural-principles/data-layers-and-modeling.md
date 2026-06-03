@@ -136,13 +136,13 @@ Here we see all data that the information is flowing through.
    - Raw files (JSON, Parquet) require parsing before staging
    - Change data capture (CDC) streams need transformation
    
-??? tip "The 'Landing' layer can be skipped when no intermediary steps are required to fill 'Staging'"
+!!! tip "The 'Landing' layer can be skipped when no intermediary steps are required to fill 'Staging'"
    
 4. The **Staging layer (Bronze)** contains a replica of the source information. This layer contains a replica of the source after an ETL load. The data in this layer is as close to the source as possible (similar column names, similar table names) and nearly no data corrections are applied here. This layer is used for reloads of data to subsequent layers. Read more in [Landing and Staging](landing-and-staging.md).
 
 5. The **Intermediate layers (Silver)** provide helpful steps to apply changes to the staging and ADS layers such as flattening, filtering, grouping, denormalizing/flattening and more. The intermediary layers can consist of volatile views, of small increments, persisted tables and more. These layers help split up the ETL for more modularity, re-use of logic and more. 
    
-??? tip "The 'Intermediate' layer can be skipped when no intermediary steps are required to fill 'ADS' or 'Gold' layers"
+!!! tip "The 'Intermediate' layer can be skipped when no intermediary steps are required to fill 'ADS' or 'Gold' layers"
    
 5. The **ADS layer (Silver)** provides cleaned data with data quality rules applied and initial denormalization. Tables are unpivoted, making the data more accessible while still allowing for further business-friendly modeling. This layer is used to integrate different sources, for historical build-up (supporting SCD2 logic in later-on streams), and for increased querying capacity to address business questions. This is the ideal phase to feed Master Data Services (MDS). This layer can be used by experienced data engineers and data analysts. Read more about this layer in [Analytical Data Store (ADS)](analytical-data-store-ads.md). 
 
@@ -234,12 +234,14 @@ graph LR
 ```
 
 **Transformation flow:**
+
 - **Bronze (Source/Staging) — 8 tables**: Normalized structure with `Customer`, `Address`, `Invoice Header`, `Invoice Line`, `Product`, `Product Color`, `Product Category`, `Sales Budget`.
 - **Silver (ADS) — 6 tables**: Denormalized into `ADS_Customer` (Customer + Address), `ADS_Customer_Snapshot` (history tracking from Customer), `ADS_Product` (Product + Color + Category), `ADS_ProductCategory` (aggregated product categories from Sales Budget), `ADS_Invoice` (Invoice Header + Lines), `ADS_SalesBudget` (budget targets from Sales Budget and Product Category).
 - **Gold (Dimensional Model) — 4 tables**: Star schema with 2 facts (`F_Sales`, `F_SalesBudget`) and 2 dimensions (`D_Customer`, `D_Product` merging both detail and category levels).
 
 ??? tip "Progressive Denormalization"
     Notice the progressive reduction in table count as data moves through layers:
+    
     - **Staging**: 8 tables with complex relationships
     - **ADS**: 6 tables with denormalization, history tracking (`ADS_Customer_Snapshot`), business categorization (`ADS_ProductCategory`), and budgets (`ADS_SalesBudget`)
     - **Dimensional**: 2 fact tables + 2 dimension tables in star schema

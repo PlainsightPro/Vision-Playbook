@@ -11,6 +11,7 @@ Use robust relationships (single-direction where possible), prefer whole-number 
 ## Do’s & Don’ts
 
 **Do**
+
 - Model as a star schema for clarity and performance.  
 - Ensure one-to-many relationships with unique dimension keys.  
 - Use integer surrogate keys (Primary Keys, Foreign Keys); avoid text/GUID keys for relationships. Read more here: [Surrogate, Primary & Foreign Keys](../architectural-principles/surrogate-primary-and-foreign-keys.md)  
@@ -56,6 +57,7 @@ Use robust relationships (single-direction where possible), prefer whole-number 
     This balances query performance with manageable refresh times.
 
 **Don’t**
+
 - Don’t build one giant "flat" table for everything.  
 - Don’t snowflake dimensions unless reuse or maintenance clearly requires it.  
 - Don’t enable bi-directional relationships by default. Bi-directional relationships can lead to ambiguity. If bi-directional relationships are required, override the filtering behaviour **in your measure** by using CROSSFILTER[^1].  

@@ -19,6 +19,7 @@ Good naming conventions make it easier for both developers and business users to
 - Add short aliases in parentheses `(XX)` for long table names to simplify prefixing columns.  
 
 **Don’t**
+
 - Don’t prefix tables with `F_` or `D_`. Business users don’t think in facts/dimensions, and not all tables will fit neatly into those categories.  
 - Don’t use cryptic system names from the source (e.g., `tbl_CUST_DIM` → rename to `Customer`).  
 
@@ -34,6 +35,7 @@ Good naming conventions make it easier for both developers and business users to
 - Ensure that calculated/derived columns are named in a way that signals their logic (e.g., `Customer Age (Years)` instead of just `Age`).  
 
 **Don’t**
+
 - Don’t use technical abbreviations (e.g., `CustID`, `PrdNm`). Always prefer clarity.  
 - Don’t reuse the same column name across different tables without a prefix; users won’t know whether `Date` refers to order, invoice, or delivery.  
 
@@ -50,6 +52,7 @@ Good naming conventions make it easier for both developers and business users to
 - Keep measure names concise but unambiguous; avoid unnecessary filler words like *“Total”* unless needed for clarity.  
 
 **Don’t**
+
 - Don’t put all measures into a “dummy” or “measures” table.[^2] Keep them on the table they logically belong to.  
 - Don’t use technical language in measure names; names should be understandable by a business audience.  
 
@@ -58,6 +61,7 @@ Good naming conventions make it easier for both developers and business users to
 ## Practical Examples
 
 **Tables & Columns**  
+
 - `Sales Transaction (ST)`  
   - `'Sales Transaction (ST)'[ST Order Number]`  
   - `'Sales Transaction (ST)'[ST Line Number]`  

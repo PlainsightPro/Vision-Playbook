@@ -14,17 +14,20 @@ and speed up filters and joins at scale. GUID relationships are stored as string
 
 ## Do's & Don'ts
 **Do**
+
 - Use `CustomerID`, `ProductID` (INT) as PKs; use the same INTs as FKs in facts.
 - Mark the Date table and use a consistent key (Date or `YYYYMMDD` INT).
 - Remove unused or redundant key columns.
 
 **Don't**
+
 - Don't relate on high‑cardinality text or GUID columns when avoidable.
 - Don't leave duplicate keys on the one‑side (breaks one‑to‑many).
 
 ## Practical Examples
 
 **Key approach**
+
 - `FactSales[CustomerID]` (e.g., 12356) → `Dim_Customer[CustomerID]`
 
 

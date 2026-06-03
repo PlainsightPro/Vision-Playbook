@@ -47,21 +47,25 @@ Consultants are not split into fixed "one consultant per offer" boxes. A consult
 flowchart TB
   subgraph TOP[Offer Leads]
     direction LR
-    O1[Data/AI Strategy & Governance]
-    O2[AI & GenAI Implementation]
+    O1[AI & GenAI Implementation]
+    O2[Data/AI Strategy & Governance]
     O3[Data & Analytics]
   end
 
-  subgraph BOTTOM[Projects & Experts]
-    direction LR
+  subgraph BOTTOM[" "]
+    direction TB
+    S1[" "]
     C[Shared Consultant Pool<br/>Experts assigned based on project need]
+    P["Projects & Experts"]
   end
 
   %% make the bottom banner "span" the three top blocks:
   O1 <---> C
   O2 <---> C
   O3 <---> C
-
+  C ~~~ P
+  style P fill:transparent,stroke:transparent, font-size:16px
+  style S1 fill:transparent,stroke:transparent 
 ```
 
 
@@ -104,7 +108,7 @@ This model keeps us sharp without bureaucracy. If something matters, someone wil
     Databricks, dbt, LLM/RAG patterns, Fabric adoption, streaming architectures, CI/CD best practices, Azure Landing Zones, Agentic AI Architectures, Databricks AI (LLMOps), Vibe Coding/Engineering, DAX Optimizers, Data Mesh, Data Governance, Databricks Frameworks, Fabric Framework, ...
 
 
-??? info "We've deliberately not chosen to put people in boxes in terms of knowledge. It's the people themselves that want to be part of an 'initiative' allowing them to be part of one, multiple or no initiatives."
+!!! info "We've deliberately not chosen to put people in boxes in terms of knowledge. It's the people themselves that want to be part of an 'initiative' allowing them to be part of one, multiple or no initiatives."
 
 ---
 

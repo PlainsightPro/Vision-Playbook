@@ -39,6 +39,7 @@ Talk to one of the collaborative partners.
 # Collaborative partnership
 
 We believe that the act of distributing ownership generates impact beyond what a single person could ever achieve. Therefore ownership gets distributed based upon company growth towards the shoulders that makes the most impact and perform above the Olympic minimum on all domains.
+
 ![Equity](../../images/Equity.png)
 
 Questions on the nitty gritty details?

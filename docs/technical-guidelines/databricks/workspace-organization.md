@@ -14,6 +14,7 @@ A well-organized Databricks workspace accelerates collaboration, code quality, a
 We recommend two top-level folders: `/src` and `/test`. The `/src` folder contains all production code, organized by our semantic data layers (`landing`, `staging`, `ads`, `gold` / `star`) and shared utilities (`shared`). Treat bronze/silver/gold as direct aliases: `landing` and `staging` = bronze, `ads` = silver, `gold`/`star` = gold. The `/test` folder mirrors this structure to enable automated testing with pytest.
 
 Notebooks can be named using the following convention:
+
 - Landing (raw ingestion): `<data_source>_<table_name>.py` (for example `sap_sales_order_items_landing.py`) - Bronze equivalent
 - ADS (cleansed and integrated): `<data_source>_<table_name>.py` (for example `sap_sales_ads.py`) - Silver equivalent
 - Gold / Star dimensional model and products: `<data_product>_<table_or_view>.py` (for example `dwh_f_sales.py`) - Gold equivalent

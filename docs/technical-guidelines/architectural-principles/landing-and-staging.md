@@ -47,12 +47,14 @@ graph LR
 **Data pattern:** Delta-only (increments, changes, new records)
 
 **When to use:**
+
 - External ingestion tools populate external tables (e.g., replication tools, data connectors)
 - Incremental CDC streams need preprocessing before full history build
 - Raw files require parsing (JSON, Parquet, XML)
 - Source data needs filtering or light transformation before staging
 
 **When to skip:**
+
 - Source is directly queryable without preprocessing
 - No external tools; direct database connections work
 - Simple incremental patterns can be handled in staging
@@ -70,16 +72,19 @@ graph LR
 ### Common Landing Patterns
 
 **1. External tables from ingestion tools**
+
 - Replication tools land data as external tables
 - Landing layer filters deleted records, adds metadata
 - Staging merges increments into full history
 
 **2. Raw file parsing**
+
 - Object storage contains JSON/Parquet/CSV files
 - Landing parses and flattens nested structures
 - Staging consolidates parsed data
 
 **3. CDC stream preprocessing**
+
 - Change streams capture INSERT/UPDATE/DELETE operations
 - Landing captures operations with sequence tracking
 - Staging applies CDC logic to build full state

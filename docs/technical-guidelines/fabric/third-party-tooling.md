@@ -43,19 +43,22 @@ flowchart TD
 ## Implementation Guide
 
 1. **Standardization:**
-   - Use VS Code as primary development environment
-   - Configure recommended extensions and settings
-   - Document common workflows
+
+    - Use VS Code as primary development environment
+    - Configure recommended extensions and settings
+    - Document common workflows
 
 2. **Integration:**
-   - Enable Git source control
-   - Configure workspace settings
-   - Set up Copilot features
+
+    - Enable Git source control
+    - Configure workspace settings
+    - Set up Copilot features
 
 3. **Maintenance:**
-   - Keep tools updated
-   - Monitor capacity usage
-   - Review and update configurations
+
+    - Keep tools updated
+    - Monitor capacity usage
+    - Review and update configurations
 
 ??? tip "About Copilot"
     Copilot features in Fabric and Power BI can significantly boost productivity. Available on all capacity tiers (F2 and above). Consider workload requirements when choosing capacity tiers for Copilot-enabled experiences.
@@ -69,20 +72,20 @@ flowchart TD
 
 - **Purpose:** Primary development environment for Fabric workspaces
 - **Key Capabilities:**
-  - Rich extension ecosystem for Fabric development
-  - Integrated Git and source control
-  - Notebook support for data exploration
-  - Integrated terminal for CLI operations
-  - Multi-language support (Python, SQL, etc.)
-  - Connect to Fabric services
-  - Run and debug notebooks
-  - Author transformations and data quality checks
+    - Rich extension ecosystem for Fabric development
+    - Integrated Git and source control
+    - Notebook support for data exploration
+    - Integrated terminal for CLI operations
+    - Multi-language support (Python, SQL, etc.)
+    - Connect to Fabric services
+    - Run and debug notebooks
+    - Author transformations and data quality checks
 - **Essential Extensions:**
-  - Azure Account (`ms-vscode.azure-account`)
-  - Python (`ms-python.python`)
-  - Jupyter (`ms-toolsai.jupyter`)
-  - PowerShell (`ms-vscode.powershell`)
-  - SQL Server (`ms-mssql.mssql`)
+    - Azure Account (`ms-vscode.azure-account`)
+    - Python (`ms-python.python`)
+    - Jupyter (`ms-toolsai.jupyter`)
+    - PowerShell (`ms-vscode.powershell`)
+    - SQL Server (`ms-mssql.mssql`)
 - **Feature Matrix:**
 
 | Feature | Benefits |
@@ -102,21 +105,21 @@ flowchart TD
 
 - **Purpose:** Deep SQL development and performance tuning
 - **Key Capabilities:**
-  - Advanced query plan analysis
-  - Database administration interface
-  - Security management
-  - Server monitoring and maintenance
-  - Performance investigations
-  - GUI for security & maintenance
+    - Advanced query plan analysis
+    - Database administration interface
+    - Security management
+    - Server monitoring and maintenance
+    - Performance investigations
+    - GUI for security & maintenance
 - **Best For:**
-  - Performance investigations
-  - DBAs and infrastructure teams
-  - Complex SQL development
-  - Server management tasks
+    - Performance investigations
+    - DBAs and infrastructure teams
+    - Complex SQL development
+    - Server management tasks
 - **Limitations:**
-  - Windows-only
-  - Limited notebook support
-  - No direct lakehouse integration
+    - Windows-only
+    - Limited notebook support
+    - No direct lakehouse integration
 - **Website:** [SQL Server Management Studio](https://learn.microsoft.com/sql/ssms/)
 
 ---
@@ -126,10 +129,10 @@ flowchart TD
 
 - **Purpose:** File-level operations and sync for Fabric lakehouses
 - **Key Capabilities:**
-  - Browse and manage lakehouse files
-  - Offline file sync
-  - Windows integration
-  - Direct file operations
+    - Browse and manage lakehouse files
+    - Offline file sync
+    - Windows integration
+    - Direct file operations
 - **Feature Comparison:**
 
 | Capability | OneLake Explorer | Storage Explorer |
@@ -140,10 +143,10 @@ flowchart TD
 | Cross-workspace | ✅ | ⚠️ |
 
 - **Benefits over Azure Storage Explorer:**
-  - Native OneLake integration
-  - Offline capabilities
-  - Simpler authentication
-  - Better performance
+    - Native OneLake integration
+    - Offline capabilities
+    - Simpler authentication
+    - Better performance
 - **Website:** [OneLake Explorer](https://learn.microsoft.com/en-us/fabric/onelake/onelake-file-explorer)
 
 ---
@@ -153,21 +156,21 @@ flowchart TD
 
 - **Purpose:** Data modeling and report development
 - **Key Capabilities:**
-  - Visual report creation
-  - DAX measure development
-  - Data model design
-  - DirectLake connectivity
-  - Report prototyping and testing
+    - Visual report creation
+    - DAX measure development
+    - Data model design
+    - DirectLake connectivity
+    - Report prototyping and testing
 - **Integration with Fabric:**
-  - Direct lakehouse connections
-  - Semantic model development
-  - Copilot integration
-  - Deployment pipelines
+    - Direct lakehouse connections
+    - Semantic model development
+    - Copilot integration
+    - Deployment pipelines
 - **Best Practices:**
-  - Use for report testing before publishing
-  - Leverage PBIP files for version control
-  - Integrate with deployment pipelines
-  - Enable Copilot features for productivity
+    - Use for report testing before publishing
+    - Leverage PBIP files for version control
+    - Integrate with deployment pipelines
+    - Enable Copilot features for productivity
 - **Website:** [Power BI Desktop](https://powerbi.microsoft.com/desktop/)
 
 ??? note "note"
@@ -185,16 +188,16 @@ flowchart TD
 ## Security Configuration
 
 - **Authentication:**
-  - Use Azure AD authentication
-  - Enable managed identities where possible
-  - Enforce MFA for administrative access
-  - Configure conditional access policies
+    - Use Azure AD authentication
+    - Enable managed identities where possible
+    - Enforce MFA for administrative access
+    - Configure conditional access policies
 
 - **Secret Management:**
-  - Store credentials in Key Vault
-  - Never embed secrets in notebooks
-  - Use service principals for automation
-  - Rotate access keys regularly
+    - Store credentials in Key Vault
+    - Never embed secrets in notebooks
+    - Use service principals for automation
+    - Rotate access keys regularly
 
 ## Related Documentation
 - [Naming Conventions](../power-bi/naming-conventions.md)

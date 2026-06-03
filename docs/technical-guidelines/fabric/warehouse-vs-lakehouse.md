@@ -45,6 +45,7 @@ flowchart TD
 ### 1. **Warehouse** - Enterprise Data Warehouse
 
 **When to use:**
+
 - Enterprise-scale analytics with strict ACID compliance
 - Structured data only, analyzed with T-SQL
 - Complex workflows with multi-table transactions (updates, inserts, deletes)
@@ -52,6 +53,7 @@ flowchart TD
 - Departmental or business-unit data warehousing
 
 **Key features:**
+
 - **Full T-SQL support**: DQL, DML, DDL, stored procedures, views, functions
 - **ACID transactions**: Multi-table consistency guarantees
 - **No configuration**: Auto-scaling, no compute/storage tuning needed
@@ -61,6 +63,7 @@ flowchart TD
 - **Cross-database queries**: Virtual warehouses for federated analytics
 
 **Typical architecture:**
+
 - Staging zone (bronze) → transform with T-SQL → production tables (gold)
 - ETL pipelines using SQL or dataflows
 - Direct BI consumption via semantic models
@@ -73,6 +76,7 @@ flowchart TD
 ### 2. **Lakehouse** - Data Architecture Platform
 
 **When to use:**
+
 - Mixed data types (logs, images, raw data + structured tables)
 - Data engineering and data science workflows (Spark / Python)
 - Medallion architecture (bronze → silver → gold zones, see [Medallion Architecture](../architectural-principles/medallion-bronze-silver-gold.md))
@@ -80,6 +84,7 @@ flowchart TD
 - Incremental data pipelines with Spark
 
 **Key features:**
+
 - **Spark-first development**: Native PySpark, SQL, and notebooks
 - **Automatic discovery**: Files → tables with minimal effort
 - **SQL analytics endpoint**: Read-only T-SQL endpoint for querying Delta tables and shortcuts
@@ -89,6 +94,7 @@ flowchart TD
 - **Large-scale processing**: Spark compute for transformations and ML
 
 **Typical architecture:**
+
 - Raw zone (bronze) → Spark ETL → curated zone (silver) → optional SQL endpoint for BI
 - Optional SQL analytics endpoint for read-only T-SQL querying
 - Notebooks for data exploration and feature engineering

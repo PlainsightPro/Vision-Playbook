@@ -72,6 +72,7 @@ Native visuals receive Microsoft security patches and feature updates, behave pr
 ### Approval Process for Custom Visuals
 
 If a custom visual is genuinely necessary:
+
 1. Confirm the visual is **Microsoft-certified** on AppSource. Uncertified visuals cannot be used in government or regulated cloud environments, and cannot be exported to PDF.
 2. Get written sign-off from stakeholders on the third-party dependency.
 3. Document the custom visual name and version in the report's metadata.
@@ -79,6 +80,7 @@ If a custom visual is genuinely necessary:
 ### SVG & DAX-Rendered Visuals
 
 The restriction here applies specifically to **DAX-generated SVGs**: measures that return an SVG string to render inside a table or card cell. These are:
+
 - **Not accessible**: no alt-text support.
 - **Expensive**: DAX is evaluated row-by-row to render each cell.
 - **Hard to maintain**: formatting logic is split between the data model and the visual.
@@ -136,6 +138,7 @@ A bar chart titled "Revenue by Region" does not need a Y-axis label reading "Rev
 A KPI card answers one question: *what is the current value of this metric, and is it good or bad?*
 
 Each card should contain:
+
 - **Primary value** — current metric, formatted for scale (see [Number, Date & Percentage Formatting](#number-date-percentage-formatting)).
 - **Label** — the metric name, concise.
 - **Comparison** — variance vs. target, prior period, or budget. Show both absolute and percentage variance.

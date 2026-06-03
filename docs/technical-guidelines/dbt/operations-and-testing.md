@@ -7,7 +7,7 @@ description: "dbt operations and testing playbook — run types, Slim CI, testin
 ## Operating Principles
 Keep dbt operations boring by standardizing how jobs run, how failures alert, and which tests guard each layer. Treat runs as production software pipelines - even if analysts write the SQL.
 
-??? note "📝 Run Vocabulary"
+??? note "Run Vocabulary"
     - **Development:** local, iterative, `dbt build --select my_model+`
     - **Pre-Prod:** automated validation on feature branches or staging datasets
     - **Production:** scheduled jobs that own SLAs and downstream contracts
@@ -29,12 +29,12 @@ Document selectors, targets, threads, and variables for each scenario so operato
 
 ## Testing Ladder
 
-??? note "🚨 Ship Nothing With Failing Tests"
+??? warning "Ship Nothing With Failing Tests"
     CI pipelines and scheduled jobs must fail fast on any broken test. Production deployments without a green `dbt test` (or `dbt build`) are not allowed.
     
-    [!tip] 💡 Testing Tactic
-    - **Hit sources hard:** Saturate staging/source models with `not_null`, `unique`, freshness, and schema-conformance tests so bad data is blocked before it propagates.  
-- **Guard dimensions & facts:** In the ADS/Gold layers (dimensions & facts), prioritize relationship tests, contracts, and business constraints to ensure metrics stay trustworthy.
+    !!!tip "Testing Tactic"
+        - **Hit sources hard:** Saturate staging/source models with `not_null`, `unique`, freshness, and schema-conformance tests so bad data is blocked before it propagates.  
+        - **Guard dimensions & facts:** In the ADS/Gold layers (dimensions & facts), prioritize relationship tests, contracts, and business constraints to ensure metrics stay trustworthy.
 
 ### 1. Built-In Data Quality
 - Saturate staging and ADS/Gold models with `not_null` and `unique` on natural or surrogate keys; only add these tests to intermediate models when they are high-risk models.

@@ -109,6 +109,7 @@ Two organizational units matter: catalogs and schemas.
   - Silver/Gold layers often integrate multiple sources, so schemas are typically shared (for example a single `ads` schema) or split by domain (for example `ads_sales`, `star_finance`).
 
 Recommended baseline naming:
+
 - Bronze (Landing optional): `landing_<source>` and `staging_<source>`
 - Silver: `ads` (or `ads_<domain>`)
 - Gold: split schemas by consumption pattern (for example `star`, `feature_store`) and optionally by domain (for example `star_sales`)
@@ -125,6 +126,7 @@ SELECT * FROM schema.table_name;
 ```
 
 Organizing by environment provides:
+
 - Clear separation between environments, reducing risk of accidental exposure or modification.
 - Simplified promotion and testing by isolating changes.
 - Simplified access management (permissions per catalog).
