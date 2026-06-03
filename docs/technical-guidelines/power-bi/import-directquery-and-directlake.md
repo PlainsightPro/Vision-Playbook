@@ -64,6 +64,7 @@ Import should be your **default choice** unless specific constraints force alter
 ### Do's & Don'ts
 
 **Do:**
+
 - Use Import for dimension tables and smaller fact tables (< 100M rows)
 - Apply incremental refresh on large Import tables with stable partition columns
 - Filter source data in Power Query to reduce imported volume
@@ -72,6 +73,7 @@ Import should be your **default choice** unless specific constraints force alter
 - Schedule refreshes during off-peak hours to minimize source system impact
 
 **Don't:**
+
 - Don't import unnecessarily granular data; aggregate at source when possible
 - Don't import audit columns or system metadata unless required for analysis
 - Don't use Import when data must be real-time (< 1 hour latency)
@@ -109,6 +111,7 @@ DirectQuery is appropriate when Import is not feasible due to data volume or rea
 ### Do's & Don'ts
 
 **Do:**
+
 - Use DirectQuery for very large fact tables while importing dimensions (Composite models)
 - Create aggregation tables in Import mode to accelerate common queries
 - Optimize source queries with indexes, columnstore, and query plans
@@ -117,6 +120,7 @@ DirectQuery is appropriate when Import is not feasible due to data volume or rea
 - Monitor source system performance and query patterns
 
 **Don't:**
+
 - Don't use DirectQuery as default "just because"; performance will suffer
 - Don't point DirectQuery at OLTP transactional systems without read replicas
 
@@ -152,6 +156,7 @@ DirectLake is the **preferred mode for large-scale Fabric workloads**:
 ### Do's & Don'ts
 
 **Do:**
+
 - Use DirectLake for large fact tables in Fabric Lakehouses
 - Optimize Delta tables with appropriate partitioning (by date typically)
 - Run OPTIMIZE and VACUUM commands on Delta tables regularly
@@ -159,6 +164,7 @@ DirectLake is the **preferred mode for large-scale Fabric workloads**:
 - Monitor fallback to DirectQuery mode (occurs when memory insufficient)
 
 **Don't:**
+
 - Don't use DirectLake outside Microsoft Fabric ecosystem (not supported)
 - Don't expect instant first-load performance - initial query loads parquet data
 - Don't skip Delta table optimization - poorly structured parquet degrades performance
