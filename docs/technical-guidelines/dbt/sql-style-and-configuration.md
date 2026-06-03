@@ -73,6 +73,7 @@ from orders
 
 ??? tip "dbt DRY Checklist"
     Before writing a transformation:
+    
     - Have I seen this pattern before in the project?
     - Can I use a dbt_utils macro?
     - Should this be a `ref()` model instead?

@@ -2,7 +2,8 @@
 
 This guide describes how AI agents can accelerate and standardize migrations from SQL-based integration tools  to Microsoft Fabric. The approach is designed to industrialize repeatable migration work while maintaining strong human oversight and delivery quality.
 
-⚠️ Important: This is an AI-assisted migration approach and is not fully autonomous. Human review and approval remain mandatory at defined control points.
+!!! warning "Important:"
+     This is an AI-assisted migration approach and is not fully autonomous. Human review and approval remain mandatory at defined control points.
 
 ---
 
@@ -61,7 +62,8 @@ The design emphasizes:
 
 Each agent has a single, well-defined responsibility. Tool-specific analyzers first interpret the source logic (SSIS, ADF, Synapse). Their outputs are normalized into a unified canonical model, which then drives automated target design and asset generation for Microsoft Fabric.
 
-⚠️ Important: This framework is AI-assisted, not AI-autonomous. While agents significantly accelerate analysis and generation, human validation and architectural oversight remain essential to ensure correctness, performance, and business alignment.
+!!! warning "Important:"
+     This framework is AI-assisted, not AI-autonomous. While agents significantly accelerate analysis and generation, human validation and architectural oversight remain essential to ensure correctness, performance, and business alignment.
 
 The diagram below illustrates the end-to-end interaction between the agents in the migration pipeline.
 
@@ -208,4 +210,5 @@ These assets are ready for promotion through DEV → ACC → PRD using the organ
 
 ---
 
-⚠️ **Reminder:** The framework is **AI-assisted**. Human review and approval remain essential, especially for complex business logic and production promotion.
+!!! warning "**Reminder:**" 
+    The framework is **AI-assisted**. Human review and approval remain essential, especially for complex business logic and production promotion.

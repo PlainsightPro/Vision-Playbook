@@ -113,9 +113,10 @@ This structure keeps type & purpose easily parseable for automation.
 ??? warning "Keep Environment Names Out of Artifact Names"
     Avoid embedding environment names into canonical artifact names (prefer `Lakehouse_Bronze` over `Lakehouse_Bronze_DEV`). Environment-aware behavior is better handled by workspace scoping, deployment pipelines, or display names. This keeps canonical names environment-agnostic and simplifies promotion across environments.
     
-    [!tip] Validating & Automating Naming Conventions
-    - **Validation**: Use this regex pattern to validate names: `^[A-Z]{2}_[A-Z]{4,7}_[A-Za-z0-9_]+$`
-    - **Ownership**: Assign ownership automatically using prefix + purpose (e.g., all `LH_*` items owned by the Data Platform team)
+    !!! tip "Validating & Automating Naming Conventions"
+
+        - **Validation**: Use this regex pattern to validate names: `^[A-Z]{2}_[A-Z]{4,7}_[A-Za-z0-9_]+$`
+        - **Ownership**: Assign ownership automatically using prefix + purpose (e.g., all `LH_*` items owned by the Data Platform team)
 
 ## Related pages
 - [Workspace Organization](workspace-organization.md) - where items live

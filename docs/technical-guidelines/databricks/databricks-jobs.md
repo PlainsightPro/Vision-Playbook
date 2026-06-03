@@ -37,6 +37,7 @@ flowchart LR
 ### Break Complex Workflows into Smaller Tasks
 
 Each task should perform **one logical function**:
+
 - Data ingestion
 - Validation
 - Transformation
@@ -44,6 +45,7 @@ Each task should perform **one logical function**:
 - Reporting
 
 **Benefits:**
+
 - ✅ Easier troubleshooting (failures are isolated)
 - ✅ Improved reusability across pipelines
 - ✅ Better parallel execution
@@ -118,12 +120,14 @@ print(f"Processing {target_table} for date {processing_date}")
 ### Prefer Job Clusters over All-Purpose Clusters
 
 **Job clusters:**
+
 - ✅ Spin up only when needed
 - ✅ Shut down automatically after job completion
 - ✅ Ensure clean environment for dependency management
 - ✅ Reduce cost by preventing idle cluster time
 
 **All-purpose clusters:**
+
 - ❌ Remain running even when idle
 - ❌ May have conflicting dependencies from multiple users
 - ❌ Higher cost for scheduled workloads
@@ -149,6 +153,7 @@ flowchart TD
 ```
 
 **Benefits:**
+
 - Enforce best practices (approved node types, max sizes, allowed libraries)
 - Improve security and governance
 - Prevent accidental use of very large or expensive instances
@@ -170,11 +175,13 @@ mlflow==2.8.1
 ```
 
 **Pin versions of critical libraries:**
+
 - ✅ Ensures reproducibility
 - ✅ Prevents breaking changes from auto-updates
 - ✅ Simplifies troubleshooting
 
 **Prefer workspace or repo-based notebooks:**
+
 - Keeps code organized and version-controlled
 - Enables code review and collaboration
 - Supports CI/CD workflows
@@ -215,6 +222,7 @@ flowchart TD
 ```
 
 **Retry configuration best practices:**
+
 - Configure retries for **transient failures** (network issues, throttling, cluster startup)
 - Avoid infinite retries - **3 attempts is a common safe default**
 - Use exponential backoff for retries
@@ -316,6 +324,7 @@ flowchart LR
 ```
 
 **Monitor:**
+
 - Task runtimes and failure patterns
 - Cluster size, auto-scaling behavior
 - Execution time trends over time
@@ -362,6 +371,7 @@ api_key = dbutils.secrets.get(scope="api-keys", key="external-service")
 ### Assign Least-Privilege Permissions
 
 Configure access controls for:
+
 - **Jobs**: Who can view, edit, run
 - **Clusters**: Who can attach, restart, terminate
 - **Service principals**: Minimal required permissions
@@ -435,6 +445,7 @@ flowchart TD
 ### Measure and Tune
 
 **Track performance with:**
+
 - Cluster metrics in the Databricks UI
 - Spark UI for query plans and stage details
 - Job run history for trends

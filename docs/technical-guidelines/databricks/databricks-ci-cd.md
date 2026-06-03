@@ -55,9 +55,10 @@ Effective CI/CD pipelines share foundational principles regardless of implementa
 ### Isolate Environments
 
 **Environment separation best practices:**
+
 - Maintain separate workspaces for development, staging, and production
 - Choose tools that match your cloud ecosystem:
-  - **Azure**: Azure DevOps + Databricks Asset Bundles or Terraform
+    - **Azure**: Azure DevOps + Databricks Asset Bundles or Terraform
 
 ### Monitor and Automate Rollbacks
 
@@ -84,6 +85,7 @@ Databricks Asset Bundles offer a unified approach to managing code, workflows, a
 ### Why Bundles?
 
 By bundling code, workflows, and infrastructure into a single YAML-defined unit, bundles:
+
 - ✅ Simplify deployment
 - ✅ Ensure consistency across environments
 - ✅ Provide atomic deployments
@@ -123,11 +125,13 @@ databricks-dab-repo/
 ```
 
 **Pros:**
+
 - ✅ All artifacts versioned together
 - ✅ Single PR updates both code and configuration
 - ✅ Simplified CI/CD pipeline
 
 **Cons:**
+
 - ❌ Repository may become bloated
 - ❌ Coordinated releases required
 
@@ -163,11 +167,13 @@ databricks-dab-repo/
 ```
 
 **Pros:**
+
 - ✅ Team separation: Development vs. infrastructure management
 - ✅ Independent release cycles
 - ✅ Smaller, focused repositories
 
 **Cons:**
+
 - ❌ Additional coordination required
 - ❌ Must ensure version compatibility
 
@@ -242,6 +248,7 @@ databricks bundle validate
 ```
 
 This ensures:
+
 - YAML configuration correctness
 - No missing libraries
 - Proper resource references
@@ -298,6 +305,7 @@ flowchart LR
 ### MLOps Stacks Framework
 
 MLOps Stacks combine:
+
 - Databricks Asset Bundles
 - Preconfigured CI/CD workflows
 - Modular ML project templates

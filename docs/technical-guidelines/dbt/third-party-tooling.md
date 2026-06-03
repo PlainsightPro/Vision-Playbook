@@ -17,22 +17,22 @@ The most vital tool to know and use is **dbt Power User** in VS Code, paired wit
 ### dbt Power User
 - **Purpose:** Primary VS Code extension for dbt navigation and documentation.  
 - **Key Capabilities:**  
-  - Graph and lineage browsing from manifest artifacts.  
-  - `ref()`/`source()` auto-complete and quick open of dependent models.  
-  - Inline editing of model/column descriptions to reduce undocumented items.  
-  - Documentation stubs and shortcuts to keep `_models.yml` synchronized.  
+    - Graph and lineage browsing from manifest artifacts.  
+    - `ref()`/`source()` auto-complete and quick open of dependent models.  
+    - Inline editing of model/column descriptions to reduce undocumented items.  
+    - Documentation stubs and shortcuts to keep `_models.yml` synchronized.  
 - **Recommended Settings:**  
-  - Point to `target/manifest.json` for accurate lineage.  
-  - Enable “Generate Documentation Stub” command for new models.  
+    - Point to `target/manifest.json` for accurate lineage.  
+    - Enable “Generate Documentation Stub” command for new models.  
 
 ---
 
 ### SQLFluff
 - **Purpose:** Enforce consistent SQL/Jinja style and catch templating errors.  
 - **Key Capabilities:**  
-  - dbt-aware linting (`templater = dbt`).  
-  - CI-friendly outputs (GitHub annotations, JSON).  
-  - Optional auto-fix with review.  
+    - dbt-aware linting (`templater = dbt`).  
+    - CI-friendly outputs (GitHub annotations, JSON).  
+    - Optional auto-fix with review.  
 - **Config Example:**  
 
 ```ini

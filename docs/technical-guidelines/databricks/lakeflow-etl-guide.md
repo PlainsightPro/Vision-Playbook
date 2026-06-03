@@ -73,6 +73,7 @@ flowchart TD
 CDC efficiently captures only changed data (inserts, updates, deletes) from databases with minimal impact on source systems.
 
 **When to use:**
+
 - Source is a transactional database
 - Need only changed records (not full table)
 - Want to minimize load on operational systems
@@ -99,6 +100,7 @@ flowchart LR
 ```
 
 **Best practices:**
+
 - ✅ Use CDC for production databases to minimize source impact
 - ✅ Schedule initial full load during off-peak hours
 - ✅ Monitor lag metrics to ensure timely data arrival
@@ -114,6 +116,7 @@ flowchart LR
 Auto Loader incrementally and efficiently processes new data files as they arrive in cloud storage, with automatic schema detection and evolution.
 
 **When to use:**
+
 - Files land continuously in cloud storage (Azure Data Lake Storage)
 - New files arrive unpredictably throughout the day
 - Need automatic schema detection and evolution
@@ -147,6 +150,7 @@ def bronze_transactions():
 ```
 
 **Best practices:**
+
 - ✅ Use Auto Loader for continuously arriving files
 - ✅ Enable schema inference for flexible data sources
 - ✅ Store schema in dedicated location for evolution tracking
@@ -165,6 +169,7 @@ def bronze_transactions():
 Simple file reads executed on a schedule for predictable data arrival patterns.
 
 **When to use:**
+
 - Files arrive on predictable schedule (daily/weekly)
 - Full control over file arrival timing
 - Dataset is relatively small (<100GB per batch)
@@ -183,6 +188,7 @@ def bronze_partner_data():
 ```
 
 **Best practices:**
+
 - ✅ Use for predictable, scheduled file arrivals
 - ✅ Leverage file patterns for date partitioning
 - ✅ Validate expected file counts and sizes
@@ -200,6 +206,7 @@ def bronze_partner_data():
 Real-time data ingestion from message queues and event streams.
 
 **When to use:**
+
 - Data arrives from queues (Kafka, Event Hub)
 - Sub-minute latency required
 - Event-driven architecture
@@ -221,6 +228,7 @@ def bronze_events():
 ```
 
 **Best practices:**
+
 - ✅ Use checkpointing to track progress
 - ✅ Set appropriate trigger intervals (5-15 minutes for most cases)
 - ✅ Monitor consumer lag metrics
@@ -306,6 +314,7 @@ flowchart TD
 ### When to Use DLT Pipelines
 
 **Use DLT for:**
+
 - Production ETL across Landing -> ADS -> Gold layers (our semantic layering) mapped to bronze/silver/gold Medallion zones for platform alignment - see [Medallion Architecture](../architectural-principles/medallion-bronze-silver-gold.md) and [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md)
 - Pipelines requiring data quality validation
 - Team collaboration on shared transformations
@@ -361,6 +370,7 @@ def gold_daily_revenue():
 ```
 
 **Best practices:**
+
 - ✅ Follow our semantic layering (Landing -> ADS -> Gold) and map to Medallion bronze/silver/gold for platform alignment (see [Data Layers and Modeling](../architectural-principles/data-layers-and-modeling.md) and [Medallion Architecture](../architectural-principles/medallion-bronze-silver-gold.md))
 - ✅ Add quality expectations at each layer
 - ✅ Use streaming for real-time, batch for scheduled updates
@@ -376,6 +386,7 @@ def gold_daily_revenue():
 ### When to Use Standard Notebooks
 
 **Use Standard Notebooks for:**
+
 - Ad-hoc analysis and exploration
 - One-time data migrations
 - Custom logic with third-party libraries
@@ -401,6 +412,7 @@ transformed.write.mode("overwrite").saveAsTable("catalog.schema.customers")
 ```
 
 **Best practices:**
+
 - ✅ Use for exploratory work and quick iterations
 - ✅ Migrate to DLT when ready for production
 - ❌ Don't build complex production pipelines without quality checks
@@ -471,6 +483,7 @@ def ads_customers():
 ```
 
 **Best practices:**
+
 - ✅ Use `expect()` for data profiling and monitoring
 - ✅ Use `expect_or_drop()` for most quality checks
 - ✅ Use `expect_or_fail()` only for critical business keys
@@ -506,6 +519,7 @@ flowchart LR
     **Every production job must have a dedicated Job Cluster.** Never use All-Purpose clusters for scheduled production jobs.
 
 **Why Job Clusters?**
+
 - Automatically terminate after job completion (no idle costs)
 - Isolated environment (no conflicts with other workloads)
 - Right-sized for specific workload
@@ -527,6 +541,7 @@ flowchart LR
 | **Multiple per day** | High-frequency updates | `0 0 */6 * * ?` (Every 6 hours) | Intraday reporting |
 
 **Best practices:**
+
 - ✅ Schedule batch jobs during off-peak hours (1-5 AM)
 - ✅ Stagger multiple pipelines to avoid resource contention
 - ✅ Use continuous mode only for true streaming needs
@@ -561,6 +576,7 @@ flowchart LR
 ```
 
 **Best practices:**
+
 - ✅ Keep dependencies simple and linear when possible
 - ✅ Use parallel tasks for independent workloads
 - ✅ Add validation tasks between major stages
@@ -599,6 +615,7 @@ dbutils.notebook.exit(f"Success: {current_count} rows processed at {datetime.now
 ```
 
 **Lakeflow Jobs observability features:**
+
 - **Full lineage tracking**: Source to table relationships, transformation dependencies
 - **Health monitoring**: Data freshness metrics, quality check results, pipeline status
 - **Automated alerts**: Failure notifications, SLA breach warnings, quality degradation

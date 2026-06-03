@@ -67,14 +67,14 @@ flowchart LR
 ### Split Strategies
 
 1. **Environment-based Splitting**
-   - Separate Dev/Test/Prod to prevent resource contention
-   - Enable different settings per environment
-   - Maintain clear cost allocation
+    - Separate Dev/Test/Prod to prevent resource contention
+    - Enable different settings per environment
+    - Maintain clear cost allocation
 
 2. **Workload-based Splitting**
-   - Isolate interactive (BI) from batch (ETL) workloads
-   - Optimize settings for specific use cases
-   - Better resource utilization
+    - Isolate interactive (BI) from batch (ETL) workloads
+    - Optimize settings for specific use cases
+    - Better resource utilization
 
 ### Example Split Configuration
 
@@ -91,46 +91,52 @@ flowchart LR
 
 1. **Workload Management Approaches**
 
-   a. **Smoothing**
-   - Stagger jobs to avoid concurrent peaks
-   - More cost-efficient approach
-   - Better for predictable workloads
-   - Requires careful scheduling
+    a. **Smoothing**
 
-   ![smoothing](../../images/smoothing.png)
-   *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
+    - Stagger jobs to avoid concurrent peaks
+    - More cost-efficient approach
+    - Better for predictable workloads
+    - Requires careful scheduling
 
-
-   **Impact of Smoothing on Capacity Metrics**
-
-   Without smoothing - CPU usage shows sharp spikes:
-   ![capacity_metrics_no_smoothing](../../images/capacity_metrics_no_smoothing.png)
-
-   With smoothing - More even resource utilization:
-   ![capacity_metrics_with_smoothing](../../images/capacity_metrics_with_smoothing.png)
-   *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
+        ![smoothing](../../images/smoothing.png)
+        *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
 
 
-   !!! tip "tip"
-       Notice how workload smoothing reduces sharp CPU spikes and creates a more consistent resource utilization pattern. This leads to better performance predictability and more efficient capacity usage.
+        **Impact of Smoothing on Capacity Metrics**
 
-   b. **Bursting**
-   - Scale up temporarily for peaks
-   - More expensive but flexible
-   - Good for unexpected spikes
-   - Requires proper monitoring
+        Without smoothing - CPU usage shows sharp spikes:
 
-   c. **Autoscaling**
-   - Automatically adjusts capacity based on usage
-   - Balances performance and cost
-   - Responds to both predictable and unexpected demands
-   - Sets min/max boundaries for control
+        ![capacity_metrics_no_smoothing](../../images/capacity_metrics_no_smoothing.png)
 
-   ![autoscale](../../images/autoscale.png)
-   *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
+        With smoothing - More even resource utilization:
 
-   !!! tip "tip"
-       Autoscaling automatically increases or decreases your capacity size based on workload demands. It helps optimize costs by scaling down during quiet periods and scaling up to handle peak loads. Configure min/max boundaries to control costs while ensuring performance.
+        ![capacity_metrics_with_smoothing](../../images/capacity_metrics_with_smoothing.png)
+
+        *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
+
+
+        !!! tip "tip"
+            Notice how workload smoothing reduces sharp CPU spikes and creates a more consistent resource utilization pattern. This leads to better performance predictability and more efficient capacity usage.
+
+    b. **Bursting**   
+
+    - Scale up temporarily for peaks
+    - More expensive but flexible
+    - Good for unexpected spikes
+    - Requires proper monitoring
+
+    c. **Autoscaling**
+
+    - Automatically adjusts capacity based on usage
+    - Balances performance and cost
+    - Responds to both predictable and unexpected demands
+    - Sets min/max boundaries for control
+
+        ![autoscale](../../images/autoscale.png)
+        *Image source: [Sam Debruyn](https://debruyn.dev/2023/a-closer-look-at-microsoft-fabric-pricing-billing-and-autoscaling/)*
+
+        !!! tip "tip"
+            Autoscaling automatically increases or decreases your capacity size based on workload demands. It helps optimize costs by scaling down during quiet periods and scaling up to handle peak loads. Configure min/max boundaries to control costs while ensuring performance.
 
 2. **Admin Portal Settings**
 
@@ -142,10 +148,11 @@ flowchart LR
 | Container Size Limit | Isolation control | Based on dataset size |
 
 3. **Cost Optimization**
-   - Use automation for scaling (REST API)
-   - Implement reserved capacity for steady workloads
-   - Tag resources for cost allocation
-   - Set spend alerts and thresholds
+
+    - Use automation for scaling (REST API)
+    - Implement reserved capacity for steady workloads
+    - Tag resources for cost allocation
+    - Set spend alerts and thresholds
 
 ??? tip "tip"
     Start with conservative limits and adjust based on monitoring data. For Spark-based Lakehouse workloads, see [Spark Autoscaling](spark-autoscaling.md) for detailed configuration guidance.
