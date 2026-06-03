@@ -65,8 +65,8 @@ Take full advantage of your holidays, relax, and come back with great memories t
 
 If you fall ill, here are the steps to follow:
 
-- **Log your illness in the [People Platform](https://selfservice.officient.io/) as soon as possible.
-- **Notify the admin team by sending an email to hr@plainsight.pro.
+- **Log your illness** in the [People Platform](https://selfservice.officient.io/) as soon as possible.
+- **Notify the admin team** by sending an email to hr@plainsight.pro.
 - **Contact your client** early in the morning to inform them of your situation.
 - (**Upload a doctor's certificate** to the People Platform within **2 days**.)
 
