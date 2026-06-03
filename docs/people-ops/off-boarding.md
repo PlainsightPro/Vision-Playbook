@@ -15,6 +15,7 @@ We value your feedback and experiences during your time with us. An exit intervi
 
 ### 2. Knowledge Transfer 📚
 Before you go, we’ll work with you to ensure a smooth transition of your responsibilities. This includes:
+
 - **Documenting Processes**: Making sure that your knowledge and work are properly documented.
 - **Training Successors**: If possible, assisting in training the person who will take over your role.
 
