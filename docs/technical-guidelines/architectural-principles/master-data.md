@@ -71,6 +71,7 @@ graph LR;
 **[Master Data Hub: Workbook to SQL](https://marketplace.microsoft.com/en-us/marketplace/consulting-services/plainsightpro.masterdatahub_excelforsql?tab=Overview)** is Plainsight's Excel-based plugin for managing SQL databases through a familiar spreadsheet interface.
 
 **Key benefits:**
+
 - Manage database tables directly from Excel - No SQL knowledge required
 - Built-in validation and data quality checks
 - Version control and audit trail automatically maintained
@@ -90,6 +91,7 @@ graph LR;
 For smaller projects, **SharePoint Lists combined with Power Apps** provide a lightweight Master Data solution.
 
 **Key benefits:**
+
 - No additional license required (included with Microsoft 365)
 - Quick to set up and deploy
 - Built-in collaboration and approval workflows
@@ -99,6 +101,7 @@ For smaller projects, **SharePoint Lists combined with Power Apps** provide a li
 **Best for:** Small to medium projects with limited Master Data volume, basic validation requirements, and teams already using Microsoft 365.
 
 **Example use cases:**
+
 - Product category lookups
 - Customer segmentation flags
 - Budget input forms
@@ -112,6 +115,7 @@ For smaller projects, **SharePoint Lists combined with Power Apps** provide a li
 When out-of-the-box solutions don't fit, **custom applications** can be developed to meet specific Master Data requirements.
 
 **Considerations:**
+
 - Higher development and maintenance cost
 - Full control over UI/UX and business logic
 - Can integrate complex approval workflows
