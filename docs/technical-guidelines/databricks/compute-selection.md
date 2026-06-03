@@ -76,6 +76,7 @@ The following sections provide in-depth information about each compute type, inc
 ## SQL Warehouses
 
 **When to use:**
+
 - Running SQL queries for analytics
 - Connecting BI tools (Power BI, Tableau)
 - Ad-hoc data exploration by business users
@@ -116,6 +117,7 @@ ORDER BY total_revenue DESC
 ## All-Purpose Clusters
 
 **When to use:**
+
 - Team collaboration on notebooks
 - Interactive data engineering work
 - Prototyping data pipelines
@@ -151,12 +153,14 @@ ORDER BY total_revenue DESC
 ## Job Clusters
 
 **When to use:**
+
 - Production ETL pipelines
 - Scheduled data processing
 - Automated ML model training
 - Any automated, repeatable workflow
 
 **Key advantages:**
+
 - Spin up for job execution only
 - Automatically terminated after completion
 - Most cost-effective for production workloads
@@ -209,12 +213,14 @@ flowchart LR
 ## Single Node Clusters
 
 **When to use:**
+
 - Quick data exploration on small datasets (<100 GB)
 - Testing code snippets
 - Learning and experimentation
 - Personal data science notebooks
 
 **Limitations:**
+
 - No distributed processing
 - Limited memory and CPU
 - Not suitable for production
@@ -334,6 +340,7 @@ flowchart TD
 ### Cost vs Performance Trade-off
 
 **Photon pricing:**
+
 - Approximately **2x DBU cost** compared to standard runtime
 - Performance improvements: **2-5x faster** for SQL workloads
 
