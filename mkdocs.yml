@@ -133,6 +133,7 @@ nav:
           - "Databricks CI-CD": "technical-guidelines/databricks/databricks-ci-cd.md"
           - "Lakeflow ETL Guide": "technical-guidelines/databricks/lakeflow-etl-guide.md"
           - "Code Execution from VS Code": "technical-guidelines/databricks/code-execution-from-vscode.md"
+          - "Connect Databricks MCP to Claude Code": "technical-guidelines/databricks/databricks-mcp-claude-code.md"
       - Fabric Best-Practices:
           - "Workspace Organization": "technical-guidelines/fabric/workspace-organization.md"
           - "Warehouse vs Lakehouse": "technical-guidelines/fabric/warehouse-vs-lakehouse.md"
@@ -151,7 +152,7 @@ nav:
       - Plainsight AI:
           - Agentic Development:
               - "🧠 Claude Code Extensibility": "technical-guidelines/plainsight-ai/agentic-development/skills.md"
-              - "Connect Databricks MCP to Claude Code": "technical-guidelines/plainsight-ai/agentic-development/data-engineering/databricks.md"
+              - "🧠 Connect Plainsight Brain to Claude Code": "technical-guidelines/plainsight-ai/agentic-development/plainsight-brain.md"
       - Migrations:
           - "AI-Assisted Migration": "technical-guidelines/migrations/ai-driven-migration.md"
   - Partners:
