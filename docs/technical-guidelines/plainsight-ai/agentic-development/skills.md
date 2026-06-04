@@ -539,7 +539,7 @@ Hooks are configured in `.claude/settings.json` (project-level) or `~/.claude/se
 
 MCP (Model Context Protocol) servers connect Claude Code to external systems — databases, APIs, cloud platforms, and custom tools. They extend Claude's capabilities beyond local file operations.
 
-For MCP configuration specific to Databricks, see the dedicated guide: [Connect Databricks MCP to Claude Code](data-engineering/databricks.md).
+For MCP configuration specific to Databricks, see the dedicated guide: [Connect Databricks MCP to Claude Code](../../databricks/databricks-mcp-claude-code.md).
 
 ### How MCP Works
 
