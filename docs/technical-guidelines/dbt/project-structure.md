@@ -54,7 +54,7 @@ models/
 - Name models `lnd_<source>_<entity>` if using this layer, otherwise skip directly to staging.
 - Organize by source system (`landing/sap`, `landing/salesforce`) for consistency.
 - Useful when:
-  - Data arrives via external tools (Fivetran, Airbyte) that populate external tables
+  - Data arrives via external tools (Fabric Pipelines, Databricks Lakeflow Connect) that populate external tables
   - Incremental-only data needs preprocessing before merging into staging
   - Raw files need parsing (JSON, Parquet) before source definitions
   - Change data capture (CDC) streams require transformation

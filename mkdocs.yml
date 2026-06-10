@@ -45,7 +45,7 @@ plugins:
 
 
 markdown_extensions:
-  # Admonitions (converted from Obsidian callouts)
+  # Admonitions
   - admonition
   - pymdownx.details
 
@@ -154,7 +154,7 @@ nav:
               - "🧠 Claude Code Extensibility": "technical-guidelines/plainsight-ai/agentic-development/skills.md"
               - "🧠 Connect Plainsight Brain to Claude Code": "technical-guidelines/plainsight-ai/agentic-development/plainsight-brain.md"
       - Migrations:
-          - "AI-Assisted Migration": "technical-guidelines/migrations/ai-driven-migration.md"
+          - "AI-Assisted Migration": "https://migration.plainsight.pro"
   - Partners:
       - "🤝 Partnerships": "partners/partnerships.md"
       - "🧑‍🤝‍🧑 Communities": "partners/communities.md"
