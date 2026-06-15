@@ -87,6 +87,8 @@ pie showData
 
 This model is designed to reward the people who create and drive the opportunity, while still building on Plainsight's support, network, and investment.
 
+> Note: this equity split is a guideline, not a fixed rule. The final share can change depending on the idea, traction, partner contributions, and the specific path the product takes.
+
 ## What about my customers?
 
 If your product gains traction, we will scale down your customer work week after week. We want to create the space you need to build without forcing a hard switch too early.
