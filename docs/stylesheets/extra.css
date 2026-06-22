@@ -167,6 +167,15 @@
 }
 
 /* ---------- Ask AI button ---------- */
+/* Contain the button's stacking inside the content area. Without a stacking
+   context here, the button's z-index leaks into the root context and paints
+   over the sticky header (z-index 4) and nav drawer (z-index 5) when scrolled.
+   position:relative also anchors the absolutely positioned button (ask-ai.js
+   sets the same inline, this keeps the layout correct without relying on JS). */
+.md-content {
+  position: relative;
+  isolation: isolate;
+}
 .ask-ai {
   position: absolute;
   top: 0.8rem;
