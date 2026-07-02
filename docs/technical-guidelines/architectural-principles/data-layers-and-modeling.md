@@ -16,9 +16,7 @@ graph TD
         A3[(Source System C)]
     end
 
-    subgraph Data Platform 
-        direction LR
-
+    subgraph Data Platform
         subgraph Bronze["Bronze (Landing & Staging)"]
             subgraph Source A
                 L1[Landing A<br/>delta-only<br>optional]:::bronzeOptional

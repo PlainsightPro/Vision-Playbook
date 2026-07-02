@@ -46,15 +46,12 @@ Consultants are not split into fixed "one consultant per offer" boxes. A consult
 
 flowchart TB
   subgraph TOP[Offer Leads]
-    direction LR
     O1[AI & GenAI Implementation]
     O2[Data/AI Strategy & Governance]
     O3[Data & Analytics]
   end
 
   subgraph BOTTOM[" "]
-    direction TB
-    S1[" "]
     C[Shared Consultant Pool<br/>Experts assigned based on project need]
     P["Projects & Experts"]
   end
