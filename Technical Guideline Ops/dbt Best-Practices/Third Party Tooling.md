@@ -65,7 +65,7 @@ sqlfluff fix models --force
   - Fits building (models + tests/docs/semantic definitions), lineage-aware debugging, and migrations (updates every `ref`, test, and YAML config with a reviewable diff).
 - **Surfaces:** Terminal CLI (`wizard` on PATH, works with dbt Core or Fusion, self-hosted or platform-backed) or a chat-first workspace embedded in Studio IDE (public preview/beta on the managed dbt platform).
 - **Guardrails:**
-  - Licensing: bring-your-own-key requires a direct Anthropic API key; Anthropic enterprise/subscription plans (e.g. Claude Enterprise) are not supported.
+  - Licensing: bring-your-own-key requires a direct Anthropic API key; Anthropic enterprise/subscription plans (e.g. Claude Enterprise) are not supported. Except for the ChatGPT, it is possible to connect with a subscription. (This is the case at July 2026).
   - Treat as optional and evaluate before adopting, same as the Fusion Engine preview extension above.
 
 ---
