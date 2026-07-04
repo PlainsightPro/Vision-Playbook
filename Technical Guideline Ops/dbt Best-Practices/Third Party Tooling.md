@@ -56,6 +56,20 @@ sqlfluff fix models --force
 
 ---
 
+### dbt Wizard (AI Agent) - Optional
+- **Purpose:** AI dev agent purpose-built for dbt. Unlike general-purpose coding agents (Copilot, Cursor, Claude Code), it's grounded in a native metadata engine (lineage, model health, tests, contracts, run results, semantic definitions) rather than just reading files, so it understands how a project connects before changing anything.
+- **Key Capabilities:**
+  - Checks upstream/downstream dependencies before changing code, then compiles and builds changes before surfacing them.
+  - Approval mode shows every change as a diff before anything is persisted.
+  - Built-in dbt Agent Skills encode dbt best practices for consistent output.
+  - Fits building (models + tests/docs/semantic definitions), lineage-aware debugging, and migrations (updates every `ref`, test, and YAML config with a reviewable diff).
+- **Surfaces:** Terminal CLI (`wizard` on PATH, works with dbt Core or Fusion, self-hosted or platform-backed) or a chat-first workspace embedded in Studio IDE (public preview/beta on the managed dbt platform).
+- **Guardrails:**
+  - Licensing: bring-your-own-key requires a direct Anthropic API key; Anthropic enterprise/subscription plans (e.g. Claude Enterprise) are not supported.
+  - Treat as optional and evaluate before adopting, same as the Fusion Engine preview extension above.
+
+---
+
 ## Common Community Packages (Reference)
 Use a small, pinned set of packages; avoid floating versions. Evaluate maintenance, adapter support, and performance before adoption.
 
