@@ -1,5 +1,5 @@
 ---
-description: "Essential third-party tools for dbt — dbt Power User extension, SQLFluff linting, community packages like dbt-utils, and onboarding defaults."
+description: "Essential third-party tools for dbt: dbt Power User extension, SQLFluff linting, community packages like dbt-utils, and onboarding defaults."
 ---
 
 # Third-Party Tools for dbt

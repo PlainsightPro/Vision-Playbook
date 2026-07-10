@@ -1,5 +1,5 @@
 ---
-description: "Star schema fact table design — grain definition, dimension keys, business keys, measures, and degenerate dimensions with SQL examples."
+description: "Star schema fact table design: grain definition, dimension keys, business keys, measures, and degenerate dimensions with SQL examples."
 ---
 
 # Fact Tables

@@ -1,6 +1,6 @@
 # Plainsight Visual & Brand Guidelines
 
-> **Internal reference only** — not published in the playbook.
+> **Internal reference only**: not published in the playbook.
 > This document captures the visual system used across Plainsight slides, website, and branded materials.
 
 ---
@@ -133,7 +133,7 @@ For the MkDocs site header (dark blue `#000075` background):
 | Element | Weight | Size |
 |---|---|---|
 | Page title (`h1`) | 700 (bold) | 2.2em |
-| Nav section headers | 700 (bold) | — |
+| Nav section headers | 700 (bold) | - |
 
 ---
 

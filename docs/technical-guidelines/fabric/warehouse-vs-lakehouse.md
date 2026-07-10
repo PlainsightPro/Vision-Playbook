@@ -1,5 +1,5 @@
 ---
-description: "Fabric Warehouse vs Lakehouse decision guide — compare T-SQL and Spark workloads, ACID transactions, data types, and architecture patterns."
+description: "Fabric Warehouse vs Lakehouse decision guide: compare T-SQL and Spark workloads, ACID transactions, data types, and architecture patterns."
 ---
 
 # Warehouse vs Lakehouse: A Decision Guide

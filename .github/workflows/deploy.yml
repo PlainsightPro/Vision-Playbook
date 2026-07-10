@@ -13,6 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check for em-dashes
+        run: |
+          if grep -rIn --exclude-dir=.git $'\u2014' .; then
+            echo "::error::Em-dash (U+2014) found in the files listed above. This repo bans em-dashes; use a comma, colon, parentheses, or hyphen instead (see AGENTS.md)."
+            exit 1
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:

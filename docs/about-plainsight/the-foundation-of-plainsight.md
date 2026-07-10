@@ -1,5 +1,5 @@
 ---
-description: "Explore Plainsight's purpose, vision, and core values — open knowledge, empowered ownership, 720° feedback, and transparency driving data and AI outcomes."
+description: "Explore Plainsight's purpose, vision, and core values: open knowledge, empowered ownership, 720° feedback, and transparency driving data and AI outcomes."
 ---
 
 ![visionvalues](../images/visionvalues.png)

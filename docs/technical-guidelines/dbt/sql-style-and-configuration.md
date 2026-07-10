@@ -1,5 +1,5 @@
 ---
-description: "dbt SQL style guide and configuration standards — CTE patterns, DRY macros, config inheritance, and whitespace conventions for clean dbt projects."
+description: "dbt SQL style guide and configuration standards: CTE patterns, DRY macros, config inheritance, and whitespace conventions for clean dbt projects."
 ---
 
 # dbt SQL Style & Configuration

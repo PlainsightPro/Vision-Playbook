@@ -47,14 +47,14 @@
   <text x="484" y="84"  font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">Current metric, formatted</text>
   <text x="484" y="97"  font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">for scale (K / M / B).</text>
 
-  <!-- ④ Status colour — LEFT bottom, tip on ▲ glyph -->
+  <!-- ④ Status colour - LEFT bottom, tip on ▲ glyph -->
   <line x1="234" y1="169" x2="168" y2="238"
         stroke="rgba(31,30,29,0.3)" stroke-width="0.75" stroke-dasharray="3 2" marker-end="url(#arr)"/>
   <text x="16"  y="244" font-size="12" font-weight="500" font-family="sans-serif" fill="rgb(61,61,58)">④ Status colour</text>
   <text x="16"  y="258" font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">Colour + arrow glyph via</text>
   <text x="16"  y="271" font-size="11" font-family="sans-serif" fill="rgb(136,135,128)">conditional formatting.</text>
 
-  <!-- ③ Comparison — RIGHT bottom, tip on delta text -->
+  <!-- ③ Comparison - RIGHT bottom, tip on delta text -->
   <line x1="330" y1="169" x2="478" y2="238"
         stroke="rgba(31,30,29,0.3)" stroke-width="0.75" stroke-dasharray="3 2" marker-end="url(#arr)"/>
   <text x="484" y="244" font-size="12" font-weight="500" font-family="sans-serif" fill="rgb(61,61,58)">③ Comparison</text>

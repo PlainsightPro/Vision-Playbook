@@ -1,5 +1,5 @@
 ---
-description: "dbt documentation best practices — model and source descriptions, doc() blocks, exposures for Power BI lineage, and CI-enforced documentation standards."
+description: "dbt documentation best practices: model and source descriptions, doc() blocks, exposures for Power BI lineage, and CI-enforced documentation standards."
 ---
 
 # dbt Documentation Best Practices

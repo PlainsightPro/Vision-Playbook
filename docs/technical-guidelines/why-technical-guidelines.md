@@ -1,5 +1,5 @@
 ---
-description: "Plainsight's technical guidelines for data projects — best practices from years of consulting experience, with AI-first MCP integration."
+description: "Plainsight's technical guidelines for data projects: best practices from years of consulting experience, with AI-first MCP integration."
 ---
 
 These Technical Guidelines guide you towards a better implementation within a Data Project at Plainsight. These guidelines result from years of experience, countless projects and experiences. Projects at Plainsight should, as closely as possible, adhere to these best-practices. 

@@ -1,5 +1,5 @@
 ---
-description: "dbt operations and testing playbook — run types, Slim CI, testing ladder with coverage matrix, freshness checks, and performance observability."
+description: "dbt operations and testing playbook: run types, Slim CI, testing ladder with coverage matrix, freshness checks, and performance observability."
 ---
 
 # dbt Operations & Testing Playbook

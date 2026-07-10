@@ -18,7 +18,7 @@ That is why we treat AI as a capability; one that requires process, governance, 
 Our Approach
  
 Understand Your Baseline. Build What Comes Next.
-We believe a successful AI transformation requires a comprehensive, structured approach across six interconnected workstreams. Together, these workstreams span the full arc from strategy through to operating model, build and run, and change and adoption—ensuring nothing is left to chance.
+We believe a successful AI transformation requires a comprehensive, structured approach across six interconnected workstreams. Together, these workstreams span the full arc from strategy through to operating model, build and run, and change and adoption, ensuring nothing is left to chance.
 The Six Workstreams
 #
 Workstream
@@ -94,7 +94,7 @@ The AI Lab serves a twofold goal:
 2.     Enable teams to experiment with AI safely
 The lab provides clear guidelines, technical expertise, and tooling to create a safe environment where use case owners can get started.
 The Operating Framework
-The framework structurally enables AI experimentation, scaling and governance—without slowing down delivery. It operates across three levels:
+The framework structurally enables AI experimentation, scaling and governance, without slowing down delivery. It operates across three levels:
 Level
 Focus
 AI Steering Circle
@@ -104,14 +104,14 @@ Cross-functional delivery, knowledge-sharing mechanisms, experimentation framewo
 AI Enablement Foundations
 Data and models, AI tooling, lifecycle operations, knowledge assets, organisation processes, people, skills, and culture
 Roles and Responsibilities: Clear Accountability Across the Organisation
-Successful AI adoption requires more than technology. Without clear ownership, initiatives stall in ambiguity or — worse — nobody feels accountable. That's why we work with organisations to define clear accountability using a comprehensive AI capabilities framework, supported by a RACI matrix that maps every capability to the right role.
+Successful AI adoption requires more than technology. Without clear ownership, initiatives stall in ambiguity or, worse, nobody feels accountable. That's why we work with organisations to define clear accountability using a comprehensive AI capabilities framework, supported by a RACI matrix that maps every capability to the right role.
 Key Roles
 The AI Product Owner bridges business, technology and change. This role owns the prioritised use-case backlog, drives value realisation and keeps stakeholders aligned. They are measured on use-cases in production and business value delivered.
-The Data Owner is accountable for data quality, definitions, lineage and compliance. No reliable data, no reliable AI — this role guards the foundation.
+The Data Owner is accountable for data quality, definitions, lineage and compliance. No reliable data, no reliable AI - this role guards the foundation.
 The AI Champion is the face of AI on the work floor. They actively encourage adoption, support colleagues in applying AI day-to-day and feed practical insights back into the organisation.
 The Process Owner ensures AI doesn't sit alongside existing ways of working but is embedded within them. They redesign processes from AS-IS to TO-BE and update standard operating procedures accordingly.
 The RACI as a Compass
-For every AI capability we map out who is Accountable (owns the outcome), Responsible (does the work), Consulted (provides input) and Informed (kept in the loop) — spanning from the Executive Committee and AI Lab Lead through to IT and the business units. This eliminates grey areas and makes it immediately clear who is on point for every decision, incident or milestone. As AI maturity grows, responsibilities naturally shift from central teams towards the business — exactly where they belong.
+For every AI capability we map out who is Accountable (owns the outcome), Responsible (does the work), Consulted (provides input) and Informed (kept in the loop) - spanning from the Executive Committee and AI Lab Lead through to IT and the business units. This eliminates grey areas and makes it immediately clear who is on point for every decision, incident or milestone. As AI maturity grows, responsibilities naturally shift from central teams towards the business - exactly where they belong.
 Workstream 4: Scalable AI Architecture
  
 Goal: Scalable, Secure, and Reusable
@@ -139,7 +139,7 @@ What We Structurally Install
 Data Ownership & Stewardship
 We assign business Data Owners and Data Stewards to own definitions, resolve issues, and keep data fit for AI use.
 Data Quality Framework
-We define “fit-for-AI” quality standards and checks—accuracy, completeness, consistency, timeliness—with embedded monitoring and remediation at the source.
+We define “fit-for-AI” quality standards and checks (accuracy, completeness, consistency, timeliness) with embedded monitoring and remediation at the source.
 Data Protection Framework
 We classify sensitive data, enforce role-based access and protection controls, and set guardrails for secure and responsible AI usage across the data lifecycle.
 
@@ -178,7 +178,7 @@ Measure what actually matters
 AI Change and Enablement tracks real adoption, business impact, and whether teams are using AI effectively and responsibly
 The Two Foundations
 Trust
-Trust in AI has to be earned, not assumed. When systems are transparent and data is reliable, people are far more likely to adopt AI with confidence—and to challenge outputs when something does not look right.
+Trust in AI has to be earned, not assumed. When systems are transparent and data is reliable, people are far more likely to adopt AI with confidence, and to challenge outputs when something does not look right.
 •       Scalable AI Architecture with transparency and explainability built in
 •       Data Readiness so people trust the inputs enough to question the outputs
 People

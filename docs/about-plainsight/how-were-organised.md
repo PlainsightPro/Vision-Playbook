@@ -1,5 +1,5 @@
 ---
-description: "How Plainsight is organised — a flat, hierarchy-free structure with career coaches, knowledge hubs, and self-managed teams of data and AI experts."
+description: "How Plainsight is organised: a flat, hierarchy-free structure with career coaches, knowledge hubs, and self-managed teams of data and AI experts."
 ---
 
 ??? tip "TL;DR"
