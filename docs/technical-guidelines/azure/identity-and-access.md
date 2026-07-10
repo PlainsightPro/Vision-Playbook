@@ -29,18 +29,18 @@ flowchart LR
 
 | Principle | Rule |
 |---|---|
-| Workload identity | Managed identities wherever the service supports them — no service principal secrets, no account keys |
-| Human access | Always via Entra security groups — never assign a role to an individual user |
+| Workload identity | Managed identities wherever the service supports them: no service principal secrets, no account keys |
+| Human access | Always via Entra security groups, never assign a role to an individual user |
 | Privileged access | Time-boxed elevation via PIM, not standing Owner/Admin rights |
 | Scope | Assign at the lowest scope that works, following least privilege |
 
 ## Managed identities first
 
-A managed identity is a service principal whose credentials Azure manages and rotates for you — there is **no secret to store, leak, or expire**.
+A managed identity is a service principal whose credentials Azure manages and rotates for you: there is **no secret to store, leak, or expire**.
 
 | Type | Lifecycle | Use when |
 |---|---|---|
-| System-assigned | Created and deleted with the resource | One resource needs its own identity — the default choice |
+| System-assigned | Created and deleted with the resource | One resource needs its own identity (the default choice) |
 | User-assigned | Independent resource, shared by several consumers | Multiple resources need identical access, or the identity must survive resource recreation |
 
 Typical examples:
@@ -69,7 +69,7 @@ Suggested group pattern per product: `sec-<product>-<env>-<role>`, for example `
 
 ### PIM for privileged roles
 
-Standing `Owner` or `Contributor` on production is a risk with no upside. With **Privileged Identity Management** the elevated role is *eligible* instead of *active*: you activate it when needed, for a limited time, optionally with approval — and every activation is logged.
+Standing `Owner` or `Contributor` on production is a risk with no upside. With **Privileged Identity Management** the elevated role is *eligible* instead of *active*: you activate it when needed, for a limited time, optionally with approval, and every activation is logged.
 
 | Access | Standing or PIM |
 |---|---|
@@ -80,14 +80,14 @@ Standing `Owner` or `Contributor` on production is a risk with no upside. With *
 
 ## RBAC scoping
 
-RBAC inherits down the same hierarchy as policy: management group → subscription → resource group → resource. Grant at the **lowest scope that does the job** — a support engineer who needs to restart one Data Factory doesn't need Contributor on the subscription.
+RBAC inherits down the same hierarchy as policy: management group → subscription → resource group → resource. Grant at the **lowest scope that does the job**. A support engineer who needs to restart one Data Factory doesn't need Contributor on the subscription.
 
 | Role | Grants | Watch out |
 |---|---|---|
 | Reader | View everything, change nothing | Safe default for stakeholders |
-| Contributor | Manage resources, but not access | Cannot hand out permissions — good |
+| Contributor | Manage resources, but not access | Cannot hand out permissions (by design) |
 | Owner | Everything including access management | PIM-only, sparingly |
-| Storage Blob Data Contributor | Read/write blob *data* | Data-plane roles are separate from control-plane — Reader alone doesn't let you read blobs |
+| Storage Blob Data Contributor | Read/write blob *data* | Data-plane roles are separate from control-plane: Reader alone doesn't let you read blobs |
 | Key Vault Secrets User | Read secret values | Pair with managed identities for workloads |
 
 ## Quick Reference: Do's and Don'ts
@@ -103,6 +103,6 @@ RBAC inherits down the same hierarchy as policy: management group → subscripti
 
 ## Related pages
 
-- [Security Fundamentals](security-fundamentals.md) — Key Vault as the single home for secrets
-- [Resource Organization](resource-organization.md) — the scopes RBAC inherits through
-- [Unity Catalog](../databricks/unity-catalog.md) — data-level access control in Databricks
+- [Security Fundamentals](security-fundamentals.md): Key Vault as the single home for secrets
+- [Resource Organization](resource-organization.md): the scopes RBAC inherits through
+- [Unity Catalog](../databricks/unity-catalog.md): data-level access control in Databricks

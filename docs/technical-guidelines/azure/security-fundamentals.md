@@ -9,7 +9,7 @@ description: "High-level security habits for Plainsight's Azure work: Azure Key 
 
 ## Azure Key Vault
 
-Key Vault is the **only** acceptable home for secrets, keys, and certificates. If a credential exists, it lives in a vault — full stop.
+Key Vault is the **only** acceptable home for secrets, keys, and certificates. If a credential exists, it lives in a vault, full stop.
 
 | Store in Key Vault | Never store in |
 |---|---|
@@ -22,10 +22,10 @@ How we use it:
 
 | Practice | Detail |
 |---|---|
-| One vault per product per environment | `kv-<product>-prd-...` and `kv-<product>-dev-...` — PRD secrets are never readable from non-PRD |
+| One vault per product per environment | `kv-<product>-prd-...` and `kv-<product>-dev-...`: PRD secrets are never readable from non-PRD |
 | RBAC authorization mode | Use Azure RBAC (e.g. *Key Vault Secrets User*), not legacy access policies |
 | Consumers use managed identities | Databricks secret scopes, ADF linked services, and Fabric connections all read from Key Vault without any bootstrap secret |
-| Soft delete + purge protection | Enabled — an accidental (or malicious) delete is recoverable |
+| Soft delete + purge protection | Enabled: an accidental (or malicious) delete is recoverable |
 | Rotation | Prefer managed identities so there is nothing to rotate; where keys must exist, rotate them and let consumers resolve the vault reference |
 
 !!! tip "The litmus test"
@@ -42,6 +42,6 @@ How we use it:
 
 ## Related pages
 
-- [Identity & Access](identity-and-access.md) — the identity layer in practice
-- [Regions & Storage](regions-and-storage.md) — storage network settings
-- [Resource Organization](resource-organization.md) — enforcing security settings via Azure Policy
+- [Identity & Access](identity-and-access.md): the identity layer in practice
+- [Regions & Storage](regions-and-storage.md): storage network settings
+- [Resource Organization](resource-organization.md): enforcing security settings via Azure Policy
