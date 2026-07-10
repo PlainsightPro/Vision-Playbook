@@ -43,7 +43,7 @@ A managed identity is a service principal whose credentials Azure manages and ro
 | System-assigned | Created and deleted with the resource | One resource needs its own identity — the default choice |
 | User-assigned | Independent resource, shared by several consumers | Multiple resources need identical access, or the identity must survive resource recreation |
 
-Typical Plainsight examples:
+Typical examples:
 
 | Scenario | Instead of |
 |---|---|
@@ -103,6 +103,6 @@ RBAC inherits down the same hierarchy as policy: management group → subscripti
 
 ## Related pages
 
-- [Security Fundamentals](security-fundamentals.md) — Zero Trust, Defense in Depth, and Key Vault
+- [Security Fundamentals](security-fundamentals.md) — Key Vault as the single home for secrets
 - [Resource Organization](resource-organization.md) — the scopes RBAC inherits through
 - [Unity Catalog](../databricks/unity-catalog.md) — data-level access control in Databricks
