@@ -25,7 +25,7 @@ We conform to the [Azure Landing Zone](https://learn.microsoft.com/azure/cloud-a
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart TD
-    Root[Tenant Root Group] --> Org[Plainsight]
+    Root[Tenant Root Group] --> Org["Organization (example: Plainsight)"]
     Org --> Platform
     Org --> LZ[Landing Zones]
     Org --> Sandboxes
@@ -45,7 +45,7 @@ flowchart TD
 
 | Management group | Role |
 |---|---|
-| **Plainsight** (intermediate root) | Everything we own lives under here: never assign directly on the Tenant Root Group |
+| **Organization** (intermediate root) | Named after the organization (Plainsight in our own tenant, the customer's name when we implement this at a customer). Everything the organization owns lives under here: never assign directly on the Tenant Root Group |
 | **Platform** | Shared services: monitoring, networking, identity, and security tooling |
 | **Landing Zones** | The product subscriptions, grouped by workload *archetype*: `Corp` for internal-only workloads, `Online` for internet-facing ones |
 | **Sandboxes** | Personal experimentation with loose policies, also the default group for new subscriptions so nothing lands under the root |
@@ -75,8 +75,8 @@ Azure Policy is how rules stay enforced without manual reviews. Policies inherit
 
 | Example policy | Assigned at | Effect |
 |---|---|---|
-| Require `Owner` and `Environment` tags | Plainsight MG | Deny deployment of untagged resources |
-| Allowed locations = Sweden Central | Plainsight MG | Deny resources outside our default region |
+| Require `Owner` and `Environment` tags | Organization MG | Deny deployment of untagged resources |
+| Allowed locations = Sweden Central | Organization MG | Deny resources outside our default region |
 | Deny public network access on storage accounts | Landing Zones MG | Audit or deny public endpoints |
 | Allowed VM SKUs | Sandboxes MG | Keep experimentation cheap |
 

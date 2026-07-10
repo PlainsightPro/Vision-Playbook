@@ -117,13 +117,6 @@ nav:
           - "Surrogate, Primary & Foreign Keys": "technical-guidelines/architectural-principles/surrogate-primary-and-foreign-keys.md"
           - "Master Data": "technical-guidelines/architectural-principles/master-data.md"
           - "DRY - Don't Repeat Yourself": "technical-guidelines/architectural-principles/dry-dont-repeat-yourself.md"
-      - Azure Best-Practices:
-          - "Resource Organization": "technical-guidelines/azure/resource-organization.md"
-          - "Naming Conventions & Tagging": "technical-guidelines/azure/naming-conventions-and-tagging.md"
-          - "Regions & Storage": "technical-guidelines/azure/regions-and-storage.md"
-          - "Identity & Access": "technical-guidelines/azure/identity-and-access.md"
-          - "Security Fundamentals": "technical-guidelines/azure/security-fundamentals.md"
-          - "Infrastructure as Code": "technical-guidelines/azure/infrastructure-as-code.md"
       - Power BI Best-Practices:
           - "Data Modeling in Power BI": "technical-guidelines/power-bi/data-modeling-in-power-bi.md"
           - "DAX Coding Standards": "technical-guidelines/power-bi/dax-coding-standards.md"
@@ -156,6 +149,13 @@ nav:
           - "Documentation": "technical-guidelines/dbt/documentation.md"
           - "Operations & Testing": "technical-guidelines/dbt/operations-and-testing.md"
           - "Third Party Tooling": "technical-guidelines/dbt/third-party-tooling.md"
+      - Azure Best-Practices:
+          - "Resource Organization": "technical-guidelines/azure/resource-organization.md"
+          - "Naming Conventions & Tagging": "technical-guidelines/azure/naming-conventions-and-tagging.md"
+          - "Regions & Storage": "technical-guidelines/azure/regions-and-storage.md"
+          - "Identity & Access": "technical-guidelines/azure/identity-and-access.md"
+          - "Security Fundamentals": "technical-guidelines/azure/security-fundamentals.md"
+          - "Infrastructure as Code": "technical-guidelines/azure/infrastructure-as-code.md"
       - Plainsight AI:
           - Agentic Development:
               - "🧠 Claude Code Extensibility": "technical-guidelines/plainsight-ai/agentic-development/skills.md"
