@@ -29,7 +29,7 @@ Document selectors, targets, threads, and variables for each scenario so operato
 ---
 
 ## Orchestrating with Exposures & Selectors
-Exposures (see [[Documentation]]) aren't just documentation - the `exposure:` selector method lets an orchestrator target exactly the models a downstream consumer needs, instead of a full run or a best-guess tag.
+Exposures (see [documentation](documentation.md)) aren't just documentation - the `exposure:` selector method lets an orchestrator target exactly the models a downstream consumer needs, instead of a full run or a best-guess tag.
 
 - `dbt build --select +exposure:sales_exec_dashboard` - rebuild everything upstream of one exposure before its scheduled refresh.
 - `dbt list --select +exposure:sales_exec_dashboard` - dry-run/preview the scope for impact analysis before changing a shared model.
@@ -37,8 +37,8 @@ Exposures (see [[Documentation]]) aren't just documentation - the `exposure:` se
 ### Reusable Named Selectors
 Define selection criteria once in `selectors.yml` (union, intersection, exclude) and reference them by name (`dbt build --selector <name>`) so scheduled jobs and CI stay consistent instead of hardcoding long `--select` strings across environments.
 
-> [!tip] 💡 Combining Tags & Exposures for Cadence Separation
-> A single exposure can be fed by models that need different refresh cadences, and a single tag (e.g. `daily`) can span multiple unrelated exposures. Intersecting `exposure:` with `tag:` lets an orchestrator run "only the daily-cadence models that feed this dashboard" separately from its weekly slice, instead of over- or under-building.
+!!! tip "💡 Combining Tags & Exposures for Cadence Separation"
+    A single exposure can be fed by models that need different refresh cadences, and a single tag (e.g. `daily`) can span multiple unrelated exposures. Intersecting `exposure:` with `tag:` lets an orchestrator run "only the daily-cadence models that feed this dashboard" separately from its weekly slice, instead of over- or under-building.
 
 `exclude` carves models back out of a selection - e.g. skip anything tagged `quarantined` (known-broken or under repair) so a single bad model doesn't block the whole daily build, without having to redefine the intersection above.
 
@@ -72,7 +72,7 @@ selectors:
 
 Two separate orchestrator jobs (daily schedule vs. weekly schedule) each call their own selector - `dbt build --selector sales_dashboard_daily` / `dbt build --selector sales_dashboard_weekly` - keeping cadence and downstream ownership consistent instead of one job over-building or the other missing dependencies.
 
-> Keep exposure names and selector names stable once orchestrator/CI configs reference them; see [[Project Structure]] for tag conventions.
+> Keep exposure names and selector names stable once orchestrator/CI configs reference them; see [project structure](project-structure.md) for tag conventions.
 
 ---
 
