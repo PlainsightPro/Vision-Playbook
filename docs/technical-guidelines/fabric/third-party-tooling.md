@@ -171,7 +171,7 @@ flowchart TD
     - Leverage PBIP files for version control
     - Integrate with deployment pipelines
     - Enable Copilot features for productivity
-- **Website:** [Power BI Desktop](https://powerbi.microsoft.com/desktop/)
+- **Website:** [Power BI Desktop](https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-get-the-desktop)
 
 ??? note "note"
     Azure Data Studio is intentionally excluded from recommendations in this guide.
