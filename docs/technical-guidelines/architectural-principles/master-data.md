@@ -1,5 +1,5 @@
 ---
-description: "Master Data management — centralized reference data, lookups, and budgets with bidirectional ADS integration and Excel-based tooling."
+description: "Master Data management: centralized reference data, lookups, and budgets with bidirectional ADS integration and Excel-based tooling."
 ---
 
 # Master Data

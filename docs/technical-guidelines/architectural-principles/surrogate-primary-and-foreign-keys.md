@@ -1,5 +1,5 @@
 ---
-description: "Surrogate, primary, and foreign key best practices — why integer keys outperform GUIDs and text in star schema data warehouses."
+description: "Surrogate, primary, and foreign key best practices: why integer keys outperform GUIDs and text in star schema data warehouses."
 ---
 
 # Surrogate, Primary & Foreign Keys

@@ -1,5 +1,5 @@
 ---
-description: "Medallion architecture explained — how Plainsight maps Bronze, Silver, and Gold layers to Landing, Staging, ADS, and dimensional models."
+description: "Medallion architecture explained: how Plainsight maps Bronze, Silver, and Gold layers to Landing, Staging, ADS, and dimensional models."
 ---
 
 # Medallion Architecture - Bronze, Silver, Gold

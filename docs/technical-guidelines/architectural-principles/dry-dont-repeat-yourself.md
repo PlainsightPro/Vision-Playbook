@@ -1,5 +1,5 @@
 ---
-description: "DRY principle for data engineering — reusable patterns in SQL, Python, and data platforms to eliminate duplication and reduce maintenance."
+description: "DRY principle for data engineering: reusable patterns in SQL, Python, and data platforms to eliminate duplication and reduce maintenance."
 ---
 
 # DRY - Don't Repeat Yourself

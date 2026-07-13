@@ -1,5 +1,5 @@
 ---
-description: "Connect Databricks to AI tools — MCP server for Claude Code (local) and Genie Code via Plainsight Brain (cloud)."
+description: "Connect Databricks to AI tools: MCP server for Claude Code (local) and Genie Code via Plainsight Brain (cloud)."
 ---
 
 # Connect Databricks MCP to Claude Code
@@ -99,13 +99,13 @@ Replace:
 - `<your-profile-name>` with your Databricks CLI profile name
 
 ??? tip "`defer_loading` keeps startup fast"
-    The `defer_loading: true` setting means Claude Code won't load the Databricks tools until you actually need them. This keeps session startup snappy — the 50+ Databricks tools are loaded on first use.
+    The `defer_loading: true` setting means Claude Code won't load the Databricks tools until you actually need them. This keeps session startup snappy - the 50+ Databricks tools are loaded on first use.
 
 ## Step 4: Verify the connection
 
 Start Claude Code in your project and type `/mcp`. You should see `databricks` listed as a connected server.
 
-Quick test — ask Claude:
+Quick test - ask Claude:
 
 > Execute a SQL query on Databricks: SELECT current_user()
 
@@ -165,7 +165,7 @@ You can also have multiple Databricks MCP entries for different workspaces:
 
 # Databricks Genie Code ↔ Plainsight Brain
 
-Connect Databricks Genie Code to Plainsight Brain via a Unity Catalog HTTP connection. No Agent Framework needed — Genie Code calls the MCP endpoint directly using OAuth2 delegated auth. Use the `/mcp/genie` endpoint to stay within Databricks' 15-tool limit.
+Connect Databricks Genie Code to Plainsight Brain via a Unity Catalog HTTP connection. No Agent Framework needed - Genie Code calls the MCP endpoint directly using OAuth2 delegated auth. Use the `/mcp/genie` endpoint to stay within Databricks' 15-tool limit.
 
 ## How It Works
 
@@ -218,7 +218,7 @@ Before Genie Code can connect, the Plainsight Brain deployment must allow your D
 
 ### How it works
 
-The Bicep template merges the Databricks workspace URLs into the `MCP_ALLOWED_ORIGINS` and `MCP_ALLOWED_HOSTS` environment variables automatically. You only need to set the parameter — the merge logic handles the rest.
+The Bicep template merges the Databricks workspace URLs into the `MCP_ALLOWED_ORIGINS` and `MCP_ALLOWED_HOSTS` environment variables automatically. You only need to set the parameter - the merge logic handles the rest.
 
 ### Add your workspace URL
 
@@ -277,7 +277,7 @@ OPTIONS (
 
 ## Entra App Registrations
 
-The integration uses two Entra app registrations by design — do not merge them.
+The integration uses two Entra app registrations by design - do not merge them.
 
 | App | Client ID | Purpose |
 |---|---|---|
@@ -293,7 +293,7 @@ The `/mcp/genie` endpoint activates a curated profile of 15 tools designed for d
 
 | Tool | Purpose |
 |---|---|
-| `brain_start` | Begin a session — loads project context and team intelligence |
+| `brain_start` | Begin a session - loads project context and team intelligence |
 | `brain_finish` | End session with durable learnings for the knowledge base |
 | `recall` | Semantic search across personal memories |
 | `remember` | Store a new memory |
@@ -313,13 +313,13 @@ The full `/mcp` endpoint (26 tools) and the complete registry (`PLAINSIGHT_MCP_T
 
 ## Key Points
 
-- **Use `/mcp/genie`** — Genie Code has a 15-tool limit. The genie profile exposes exactly 15 curated tools. The default `/mcp` (26 tools) will exceed the limit.
-- **No Agent Framework needed** — Genie Code calls the MCP endpoint directly via the UC HTTP connection.
-- **Streamable HTTP transport** — Plainsight Brain already supports this, which is what Genie Code requires.
-- **User identity flows through** — the OAuth2 delegated flow means the token carries the user's Entra identity. Brain resolves them to admin or team tier based on their roles.
-- **No separate service principal** — the existing MCP Client app registration is reused. No M2M client credentials flow.
-- **Refresh tokens** — the `offline_access` scope ensures the connection gets a refresh token, so the user doesn't need to re-authenticate every session.
-- **Same deployment** — the genie profile runs on the same container as the default endpoint. No additional infrastructure needed.
+- **Use `/mcp/genie`**: Genie Code has a 15-tool limit. The genie profile exposes exactly 15 curated tools. The default `/mcp` (26 tools) will exceed the limit.
+- **No Agent Framework needed**: Genie Code calls the MCP endpoint directly via the UC HTTP connection.
+- **Streamable HTTP transport**: Plainsight Brain already supports this, which is what Genie Code requires.
+- **User identity flows through**: the OAuth2 delegated flow means the token carries the user's Entra identity. Brain resolves them to admin or team tier based on their roles.
+- **No separate service principal**: the existing MCP Client app registration is reused. No M2M client credentials flow.
+- **Refresh tokens**: the `offline_access` scope ensures the connection gets a refresh token, so the user doesn't need to re-authenticate every session.
+- **Same deployment**: the genie profile runs on the same container as the default endpoint. No additional infrastructure needed.
 
 ## Verify the Connection
 

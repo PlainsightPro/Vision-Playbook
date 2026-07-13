@@ -1,5 +1,5 @@
 ---
-description: "Recommended third-party tools for Microsoft Fabric development — VS Code, SSMS, OneLake Explorer, Power BI Desktop, and essential extensions."
+description: "Recommended third-party tools for Microsoft Fabric development: VS Code, SSMS, OneLake Explorer, Power BI Desktop, and essential extensions."
 ---
 
 # Third Party Tools for Fabric

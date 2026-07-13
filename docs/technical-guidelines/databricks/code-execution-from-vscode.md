@@ -22,12 +22,12 @@ The official Databricks extension lets you attach to a remote cluster and run no
 Once the extension is configured:
 
 1. Open the **Databricks sidebar** in VS Code
-2. Browse the list of available clusters — names should follow your project naming convention (e.g. `dev-analytics`, `acc-etl`, `prod-reporting`)
+2. Browse the list of available clusters - names should follow your project naming convention (e.g. `dev-analytics`, `acc-etl`, `prod-reporting`)
 3. **Click to attach** to the cluster you want to use
 4. The attached cluster name is always visible in the **VS Code status bar**
 
 !!! warning "Always verify the status bar"
-    Before running any cell, check the cluster name in the VS Code status bar. Switching environments requires deliberately selecting a different cluster — there is no accidental drift.
+    Before running any cell, check the cluster name in the VS Code status bar. Switching environments requires deliberately selecting a different cluster - there is no accidental drift.
 
 ### Running Code
 
@@ -83,7 +83,7 @@ The environment name is part of the MCP server name (`databricks-dev`, `databric
 
 ## How Cluster Selection Is Enforced
 
-Every execution path requires an explicit environment choice — there is no default that silently targets production.
+Every execution path requires an explicit environment choice - there is no default that silently targets production.
 
 | Mechanism | How It Enforces Explicit Selection |
 |---|---|

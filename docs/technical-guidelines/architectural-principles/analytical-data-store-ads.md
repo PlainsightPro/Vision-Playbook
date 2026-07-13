@@ -1,5 +1,5 @@
 ---
-description: "Analytical Data Store (ADS) — Silver layer guide for data quality, denormalization, multi-source integration, and SCD-ready snapshots."
+description: "Analytical Data Store (ADS): Silver layer guide for data quality, denormalization, multi-source integration, and SCD-ready snapshots."
 ---
 
 # Analytical Data Store (ADS)

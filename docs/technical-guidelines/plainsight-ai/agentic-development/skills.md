@@ -1,11 +1,11 @@
 ---
-description: "Master Claude Code's extensibility system — CLAUDE.md, skills, custom agents, hooks, and MCP servers. Teach Claude once, compound the knowledge across your team."
+description: "Master Claude Code's extensibility system: CLAUDE.md, skills, custom agents, hooks, and MCP servers. Teach Claude once, compound the knowledge across your team."
 ---
 
 # Claude Code Extensibility Guide
 
 ??? info "Purpose"
-    Claude Code is more than a chat interface — it's an extensible agentic development environment. This guide covers the five main building blocks you can use to customize Claude's behavior: **CLAUDE.md**, **Skills**, **Custom Agents**, **Hooks**, and **MCP Servers**. Understanding when to use each one is the key to getting consistent, high-quality output across your team.
+    Claude Code is more than a chat interface - it's an extensible agentic development environment. This guide covers the five main building blocks you can use to customize Claude's behavior: **CLAUDE.md**, **Skills**, **Custom Agents**, **Hooks**, and **MCP Servers**. Understanding when to use each one is the key to getting consistent, high-quality output across your team.
 
 ## The Extensibility Landscape
 
@@ -36,7 +36,7 @@ flowchart TD
 
 ---
 
-## CLAUDE.md — Project Instructions
+## CLAUDE.md: Project Instructions
 
 `CLAUDE.md` is a markdown file at the root of your project (or in subdirectories) that Claude reads at the start of every session. It sets the baseline for how Claude behaves in your repo.
 
@@ -44,9 +44,9 @@ flowchart TD
 
 | Location | Scope |
 |----------|-------|
-| `~/CLAUDE.md` | User-level — applies to all your projects |
-| `./CLAUDE.md` | Project root — applies to everyone working in this repo |
-| `./src/CLAUDE.md` | Directory-level — applies when working in that subtree |
+| `~/CLAUDE.md` | User-level - applies to all your projects |
+| `./CLAUDE.md` | Project root - applies to everyone working in this repo |
+| `./src/CLAUDE.md` | Directory-level - applies when working in that subtree |
 
 Claude reads all applicable `CLAUDE.md` files and merges them, with more specific files taking precedence.
 
@@ -65,7 +65,7 @@ Claude reads all applicable `CLAUDE.md` files and merges them, with more specifi
 - Use `ruff` for Python formatting (line length 120)
 - All SQL follows uppercase keywords, lowercase identifiers
 - Tests go in `tests/` mirroring the `src/` structure
-- Never commit secrets — use Azure Key Vault references
+- Never commit secrets - use Azure Key Vault references
 
 ## Running Things
 - Tests: `pytest tests/ -v`
@@ -106,9 +106,9 @@ For larger projects, you can use [claude-mem](https://docs.claude-mem.ai) to **a
 
 **Key behaviors:**
 
-- The **project root** `CLAUDE.md` (next to `.git`) is never overwritten — your manually written instructions are safe
+- The **project root** `CLAUDE.md` (next to `.git`) is never overwritten - your manually written instructions are safe
 - Any content you write **outside** the `<claude-mem-context>` tags is preserved through regeneration cycles
-- Supports git worktrees — context is gathered from parent repos and worktree directories
+- Supports git worktrees - context is gathered from parent repos and worktree directories
 
 **Management commands:**
 
@@ -133,7 +133,7 @@ bun scripts/regenerate-claude-md.ts --project=my-project
 
 ---
 
-## Skills — Contextual Instructions
+## Skills: Contextual Instructions
 
 Skills are reusable instruction sets in `SKILL.md` files that Claude loads **only when relevant** to the current task. Instead of repeating the same prompt every session, you write a skill once and Claude applies it automatically.
 
@@ -169,7 +169,7 @@ Every skill needs a `SKILL.md` file with **frontmatter** (metadata) and **body**
 name: SQL Style Guide
 description: >
   Enforces our team's SQL coding standards when writing or reviewing
-  SQL queries — uppercase keywords, lowercase identifiers, CTEs over
+  SQL queries - uppercase keywords, lowercase identifiers, CTEs over
   subqueries, explicit column lists.
 ---
 
@@ -178,7 +178,7 @@ When writing or reviewing SQL:
 1. Use UPPERCASE for SQL keywords (SELECT, FROM, WHERE, JOIN)
 2. Use lowercase_snake_case for table and column names
 3. Prefer CTEs over subqueries for readability
-4. Always use explicit column lists — never SELECT *
+4. Always use explicit column lists - never SELECT *
 5. Use table aliases that are meaningful (not single letters)
 ```
 
@@ -187,7 +187,7 @@ When writing or reviewing SQL:
 | Field | Required | Description |
 |-------|----------|-------------|
 | `name` | Yes | Human-readable name for the skill |
-| `description` | Yes | **Critical** — Claude uses this to decide when to activate the skill |
+| `description` | Yes | **Critical**: Claude uses this to decide when to activate the skill |
 | `allowed-tools` | No | Restrict which tools the skill can use (security boundary) |
 
 ### Writing Good Descriptions
@@ -196,7 +196,7 @@ The `description` is the single most important part. Claude uses it to decide wh
 
 | Quality | Example | Why |
 |---------|---------|-----|
-| Bad | `"Helps with database stuff"` | Too vague — triggers unpredictably |
+| Bad | `"Helps with database stuff"` | Too vague - triggers unpredictably |
 | Bad | `"Code review skill"` | Every task could involve code review |
 | Good | `"Guides creation of Databricks jobs, including cluster configuration, task dependencies, retry policies, and notification setup."` | Specific technology, action, and scope |
 | Good | `"Applies when reviewing Python pull requests. Checks for type hints, docstring conventions, test coverage, and error handling patterns."` | Clear trigger condition and checklist |
@@ -292,7 +292,7 @@ Skills can be invoked explicitly using slash commands. Type `/<skill-name>` in C
 
 ---
 
-## Custom Agents — Specialized Workers
+## Custom Agents: Specialized Workers
 
 Custom agents are defined in `.claude/agents/*.md` files. Unlike skills (which inject instructions into your main conversation), custom agents are **independent workers** that Claude can spawn to handle tasks in parallel or in isolation.
 
@@ -335,7 +335,7 @@ Each agent file uses frontmatter to configure its behavior:
 ---
 name: data-quality-reviewer
 description: >
-  Reviews data pipeline code for quality issues — checks for missing
+  Reviews data pipeline code for quality issues - checks for missing
   null handling, schema validation, data type mismatches, and SLA
   compliance in Databricks notebooks and dbt models.
 model: sonnet
@@ -381,10 +381,10 @@ Report findings as a structured list:
 
 **Practical examples:**
 
-- **Skill**: "When writing SQL, follow our style guide" — augments the main conversation
-- **Agent**: "Review this PR for security issues" — isolated, parallel worker
-- **Skill**: "When deploying, use these Bicep patterns" — guidance during your workflow
-- **Agent**: "Check data quality across these 5 tables" — delegated, independent task
+- **Skill**: "When writing SQL, follow our style guide" - augments the main conversation
+- **Agent**: "Review this PR for security issues" - isolated, parallel worker
+- **Skill**: "When deploying, use these Bicep patterns" - guidance during your workflow
+- **Agent**: "Check data quality across these 5 tables" - delegated, independent task
 
 ### Agent Examples
 
@@ -419,7 +419,7 @@ Keep your response under 200 words.
 ---
 name: architecture-review
 description: >
-  Deep review of architectural decisions — evaluates module
+  Deep review of architectural decisions - evaluates module
   boundaries, dependency directions, API surface area, and
   consistency with existing patterns in the codebase.
 model: opus
@@ -445,7 +445,7 @@ before making judgments. Cite specific files and lines.
 
 ---
 
-## Hooks — Event-Driven Automation
+## Hooks: Event-Driven Automation
 
 Hooks are shell commands that execute automatically in response to Claude Code events. They're defined in `.claude/settings.json` and run **before or after** specific tool calls.
 
@@ -480,7 +480,7 @@ Hooks are configured in `.claude/settings.json` (project-level) or `~/.claude/se
     "PostToolUse": [
       {
         "matcher": "Bash",
-        "command": "echo 'Command executed — verify output'"
+        "command": "echo 'Command executed - verify output'"
       }
     ]
   }
@@ -535,9 +535,9 @@ Hooks are configured in `.claude/settings.json` (project-level) or `~/.claude/se
 
 ---
 
-## MCP Servers — External Integrations
+## MCP Servers: External Integrations
 
-MCP (Model Context Protocol) servers connect Claude Code to external systems — databases, APIs, cloud platforms, and custom tools. They extend Claude's capabilities beyond local file operations.
+MCP (Model Context Protocol) servers connect Claude Code to external systems - databases, APIs, cloud platforms, and custom tools. They extend Claude's capabilities beyond local file operations.
 
 For MCP configuration specific to Databricks, see the dedicated guide: [Connect Databricks MCP to Claude Code](../../databricks/databricks-mcp-claude-code.md).
 
@@ -634,9 +634,9 @@ All five features live in the project directory and can be committed to Git:
 
 For user-level configuration that shouldn't be shared (personal preferences, local paths), use:
 
-- `~/.claude/CLAUDE.md` — personal instructions
-- `~/.claude/settings.json` — personal hooks and permissions
-- `~/.claude/.mcp.json` — personal MCP connections
+- `~/.claude/CLAUDE.md` - personal instructions
+- `~/.claude/settings.json` - personal hooks and permissions
+- `~/.claude/.mcp.json` - personal MCP connections
 
 ---
 

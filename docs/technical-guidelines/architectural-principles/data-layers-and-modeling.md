@@ -1,5 +1,5 @@
 ---
-description: "Data layers and modeling overview — Bronze, Silver, and Gold architecture with progressive denormalization for modern cloud data platforms."
+description: "Data layers and modeling overview: Bronze, Silver, and Gold architecture with progressive denormalization for modern cloud data platforms."
 ---
 
 # Data Layers and Modeling - Overview
@@ -233,9 +233,9 @@ graph LR
 
 **Transformation flow:**
 
-- **Bronze (Source/Staging) — 8 tables**: Normalized structure with `Customer`, `Address`, `Invoice Header`, `Invoice Line`, `Product`, `Product Color`, `Product Category`, `Sales Budget`.
-- **Silver (ADS) — 6 tables**: Denormalized into `ADS_Customer` (Customer + Address), `ADS_Customer_Snapshot` (history tracking from Customer), `ADS_Product` (Product + Color + Category), `ADS_ProductCategory` (aggregated product categories from Sales Budget), `ADS_Invoice` (Invoice Header + Lines), `ADS_SalesBudget` (budget targets from Sales Budget and Product Category).
-- **Gold (Dimensional Model) — 4 tables**: Star schema with 2 facts (`F_Sales`, `F_SalesBudget`) and 2 dimensions (`D_Customer`, `D_Product` merging both detail and category levels).
+- **Bronze (Source/Staging) - 8 tables**: Normalized structure with `Customer`, `Address`, `Invoice Header`, `Invoice Line`, `Product`, `Product Color`, `Product Category`, `Sales Budget`.
+- **Silver (ADS) - 6 tables**: Denormalized into `ADS_Customer` (Customer + Address), `ADS_Customer_Snapshot` (history tracking from Customer), `ADS_Product` (Product + Color + Category), `ADS_ProductCategory` (aggregated product categories from Sales Budget), `ADS_Invoice` (Invoice Header + Lines), `ADS_SalesBudget` (budget targets from Sales Budget and Product Category).
+- **Gold (Dimensional Model) - 4 tables**: Star schema with 2 facts (`F_Sales`, `F_SalesBudget`) and 2 dimensions (`D_Customer`, `D_Product` merging both detail and category levels).
 
 ??? tip "Progressive Denormalization"
     Notice the progressive reduction in table count as data moves through layers:

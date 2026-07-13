@@ -1,7 +1,7 @@
 site_name: Plainsight Playbook
 site_url: https://playbook.plainsight.pro
 site_description: >-
-  Plainsight's open-source company handbook — purpose, values,
+  Plainsight's open-source company handbook - purpose, values,
   technical guidelines, and operational processes in plain sight.
 site_author: Plainsight
 
@@ -149,6 +149,13 @@ nav:
           - "Documentation": "technical-guidelines/dbt/documentation.md"
           - "Operations & Testing": "technical-guidelines/dbt/operations-and-testing.md"
           - "Third Party Tooling": "technical-guidelines/dbt/third-party-tooling.md"
+      - Azure Best-Practices:
+          - "Resource Organization": "technical-guidelines/azure/resource-organization.md"
+          - "Naming Conventions & Tagging": "technical-guidelines/azure/naming-conventions-and-tagging.md"
+          - "Regions & Storage": "technical-guidelines/azure/regions-and-storage.md"
+          - "Identity & Access": "technical-guidelines/azure/identity-and-access.md"
+          - "Security Fundamentals": "technical-guidelines/azure/security-fundamentals.md"
+          - "Infrastructure as Code": "technical-guidelines/azure/infrastructure-as-code.md"
       - Plainsight AI:
           - Agentic Development:
               - "🧠 Claude Code Extensibility": "technical-guidelines/plainsight-ai/agentic-development/skills.md"

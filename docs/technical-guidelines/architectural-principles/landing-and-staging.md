@@ -1,5 +1,5 @@
 ---
-description: "Landing and Staging layers — Bronze tier design patterns for source-aligned data ingestion, CDC preprocessing, and raw file parsing."
+description: "Landing and Staging layers: Bronze tier design patterns for source-aligned data ingestion, CDC preprocessing, and raw file parsing."
 ---
 
 # Landing and Staging Layers

@@ -1,5 +1,5 @@
 ---
-description: "Star schema dimension table design — surrogate keys, SCD Type 1 and 2, conformed and role-playing dimensions with practical examples."
+description: "Star schema dimension table design: surrogate keys, SCD Type 1 and 2, conformed and role-playing dimensions with practical examples."
 ---
 
 # Dimension Tables

@@ -12,8 +12,8 @@ These standards define how Power BI reports should look and behave. They cover l
 >
 > A **Power BI theme file** is a `.json` configuration file that defines the color palette, font settings, and default visual formatting for an entire report. Once applied, every visual in the report inherits these defaults automatically, eliminating the need to format each visual manually and ensuring a consistent look across pages. Theme files are applied in Power BI Desktop via **View → Themes → Browse for themes**. They can be created manually, generated using a theme builder tool, or exported from an existing report.
 >
-> - 📎 [bibb.pro — Theme Generator](https://bibb.pro/apps/theme-generator/)
-> - 📎 [PowerBI.Tips — Theme Editor](https://themes.powerbi.tips/themes/wireframes)
+> - 📎 [bibb.pro - Theme Generator](https://bibb.pro/apps/theme-generator/)
+> - 📎 [PowerBI.Tips - Theme Editor](https://themes.powerbi.tips/themes/wireframes)
 
 
 ---
@@ -120,8 +120,8 @@ A bar chart titled "Revenue by Region" does not need a Y-axis label reading "Rev
 ### Legend Placement
 
 - Place legends at the **top** of a visual for ≤ 5 series.
-- Use **direct labels** (data labels on the series) for 2–3 series when space allows — they are faster to read than a separate legend.
-- Avoid placing a legend below the chart — it forces the reader's eye to travel away from the data after reading it, which is the least natural reading position.
+- Use **direct labels** (data labels on the series) for 2–3 series when space allows - they are faster to read than a separate legend.
+- Avoid placing a legend below the chart - it forces the reader's eye to travel away from the data after reading it, which is the least natural reading position.
 
 ### Tooltips
 
@@ -139,10 +139,10 @@ A KPI card answers one question: *what is the current value of this metric, and 
 
 Each card should contain:
 
-- **Primary value** — current metric, formatted for scale (see [Number, Date & Percentage Formatting](#number-date-percentage-formatting)).
-- **Label** — the metric name, concise.
-- **Comparison** — variance vs. target, prior period, or budget. Show both absolute and percentage variance.
-- **Status indicator** — a color signal or icon defined in the theme, never hardcoded.
+- **Primary value**: current metric, formatted for scale (see [Number, Date & Percentage Formatting](#number-date-percentage-formatting)).
+- **Label**: the metric name, concise.
+- **Comparison**: variance vs. target, prior period, or budget. Show both absolute and percentage variance.
+- **Status indicator**: a color signal or icon defined in the theme, never hardcoded.
 
 ![KPI Card Anatomy](../../images/report-design-standards/kpi_card_anatomy.svg)
 
@@ -159,7 +159,7 @@ Each card should contain:
 ### Number Formatting on Cards
 
 - Match precision to the audience: executives want `€1.2M`, analysts want `€1,234,567`.
-- Apply format strings in the visual's format setting or via a dynamic format string measure — not via `FORMAT()` in DAX. `FORMAT()` returns text, which breaks sorting and aggregation downstream.
+- Apply format strings in the visual's format setting or via a dynamic format string measure - not via `FORMAT()` in DAX. `FORMAT()` returns text, which breaks sorting and aggregation downstream.
 
 ---
 
@@ -175,18 +175,18 @@ Each card should contain:
 | Relative date | Rolling period filters (last 7 days, this quarter) |
 | Search-enabled list | Free-text lookup on large dimension lists |
 
-Avoid the **tile slicer** for dimensions with more than 5 values — tiles wrap unpredictably and are difficult to theme consistently.
+Avoid the **tile slicer** for dimensions with more than 5 values - tiles wrap unpredictably and are difficult to theme consistently.
 
 ### Placement
 
 Reserve a **right rail** (120–160px) consistently across all pages as the dedicated home for slicers that affect the full page. Placing slicers here has two advantages: users learn where to look after seeing it once, and the vertical space accommodates more slicers without crowding the top band or the main content area.
 
-- Place all page-level slicers in the **right rail**. Keep this zone consistent across every page — if it exists on page 1, it must exist on every page.
+- Place all page-level slicers in the **right rail**. Keep this zone consistent across every page - if it exists on page 1, it must exist on every page.
 - Reserve the **top band** for the date slicer only, if a date filter is prominent enough to warrant immediate visibility. All other slicers belong in the right rail.
 - Slicers that affect only one visual should be placed directly adjacent to that visual, not in the rail.
 - On reports with more than 6 pages, the right rail is already recommended for navigation (see Layout & Composition). In this case, move page-level slicers to a **dedicated filter page** rather than splitting the rail between navigation and filters.
 
-**Exception — Apply & Clear buttons:** When slicers are configured with an Apply button (Power BI's query reduction mode, used to prevent the report from re-querying on every selection), all slicers *and* their Apply and Clear buttons must be placed together in the right rail. Keeping them visually grouped makes it clear to users that selections do not take effect until Apply is clicked — separating the buttons from the slicers breaks this mental model and leads to confusion.
+**Exception - Apply & Clear buttons:** When slicers are configured with an Apply button (Power BI's query reduction mode, used to prevent the report from re-querying on every selection), all slicers *and* their Apply and Clear buttons must be placed together in the right rail. Keeping them visually grouped makes it clear to users that selections do not take effect until Apply is clicked - separating the buttons from the slicers breaks this mental model and leads to confusion.
 
 ### Cross-Filtering Behavior
 
@@ -208,9 +208,9 @@ Where a filter lives affects both usability and report performance. Use this as 
 
 ### Placement Rules Within the Canvas
 
-- Place all page-level on-canvas slicers in the **right rail**. See [Slicers & Filters — Placement](#placement) for the full right rail guidance, including exceptions for Apply & Clear buttons and 6+ page reports.
-- The date slicer may optionally sit in the **top band** when it is the single most important filter on the page and warrants immediate visibility — but only if the right rail is already reserved for navigation.
-- Never split related slicers across different areas of the canvas (e.g., a date slicer in the top band and a related period-comparison slicer in the rail — keep them together).
+- Place all page-level on-canvas slicers in the **right rail**. See [Slicers & Filters - Placement](#placement) for the full right rail guidance, including exceptions for Apply & Clear buttons and 6+ page reports.
+- The date slicer may optionally sit in the **top band** when it is the single most important filter on the page and warrants immediate visibility - but only if the right rail is already reserved for navigation.
+- Never split related slicers across different areas of the canvas (e.g., a date slicer in the top band and a related period-comparison slicer in the rail - keep them together).
 - Use **consistent placement across all pages**. Whatever zone slicers occupy on page 1 must be the same on every page.
 
 ---
@@ -231,7 +231,7 @@ Do not use a matrix when a bar chart or line chart communicates the same insight
 - Show a maximum of **8–10 columns** before considering whether to filter or split the view.
 - Use **alternating row colors** (defined in the theme, not hardcoded) for tables with more than 15 rows.
 - **Right-align numbers, left-align text.** Center-aligned numbers make magnitude comparison harder.
-- Set **fixed column widths** rather than auto-fit when the report will be exported to PDF — auto-fit columns reflow unpredictably on export.
+- Set **fixed column widths** rather than auto-fit when the report will be exported to PDF - auto-fit columns reflow unpredictably on export.
 - Hide columns that exist only to drive sort order (e.g., a numeric sort key for a month name column).
 
 ### Conditional Formatting
@@ -247,7 +247,7 @@ Do not use a matrix when a bar chart or line chart communicates the same insight
 
 ### Date Format
 
-Date format depends on context — apply the right format for the right audience:
+Date format depends on context - apply the right format for the right audience:
 
 | Context | Format | Reason |
 |---|---|---|
@@ -273,7 +273,7 @@ Define abbreviation format strings at the measure level using a **dynamic format
 
 A dynamic format string measure is a separate DAX measure that returns a format string as text. You assign it to another measure's *Format* property in the model (not in the visual). Power BI then evaluates it at query time, so the same measure can display as `€142K` in one context and `€3.2M` in another, without any manual adjustment per visual.
 
-**Example — Revenue with automatic scale:**
+**Example - Revenue with automatic scale:**
 
 ```DAX
 // The measure being displayed

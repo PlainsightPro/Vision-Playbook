@@ -1,5 +1,5 @@
 ---
-description: "Data sources and loading strategies — full load vs incremental ingestion patterns for ETL/ELT pipelines in modern data platforms."
+description: "Data sources and loading strategies: full load vs incremental ingestion patterns for ETL/ELT pipelines in modern data platforms."
 ---
 
 # Data Sources
