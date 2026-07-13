@@ -40,6 +40,7 @@ jobs:
             --exclude '^https://plainsightis\.sharepoint\.com/.*'
             --exclude '^https://support\.plainsight\.pro/?$'
             --exclude '^https://playbook\.plainsight\.pro(/.*)?$'
+            --exclude '^https://(www\.)?plainsight\.pro/?$'
             --exclude '^https://(www\.)?rva\.be/'
             --exclude '^https://.*\.fgov\.be/'
             --exclude '^https://mobiliteitsbudget\.be/'
