@@ -32,3 +32,29 @@ We offer a robust hospitalization insurance plan through **Alan**, ensuring you 
 ---
 
 This package is part of our commitment to your health, financial security, and overall well-being, ensuring that you’re supported both now and in the future.
+
+## What if I outgrow my salary package? 🚀
+
+That's great! Growing gets rewarded. Remuneration packages are revised annually based on your growth and impact.
+
+Growing as a person also brings financial growth. All three levers of your personal growth are rolled up periodically. End-of-year growth is assessed and compensated. That assessment feeds into your full salary package (gross salary, [mobility budget](mobility.md), and the other package components).
+
+### How is performance rewarded?
+
+| Performance | Effect on gross salary |
+|---|---|
+| Good performance | Your gross salary increases |
+| High performance | Your gross salary increases more, year over year |
+
+Higher sustained performance compounds: the stronger your growth and impact, the steeper your salary trajectory over time.
+
+### Bonuses next to gross salary
+
+On top of gross salary, there are **two kinds of bonuses**. They are independent and both add up:
+
+| Bonus | Based on |
+|---|---|
+| Stars bonus | Your personal contribution to the [Plainsight Stars](rewards-stars-and-clouds.md) |
+| Billability bonus | Your billability on client engagement |
+
+Hurray!
