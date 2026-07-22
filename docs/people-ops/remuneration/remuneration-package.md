@@ -48,13 +48,6 @@ Growing as a person also brings financial growth. All three levers of your perso
 
 Higher sustained performance compounds: the stronger your growth and impact, the steeper your salary trajectory over time.
 
-### Bonuses next to gross salary
+### Questions about your remuneration package?
 
-On top of gross salary, there are **two kinds of bonuses**. They are independent and both add up:
-
-| Bonus | Based on |
-|---|---|
-| Stars bonus | Your personal contribution to the [Plainsight Stars](rewards-stars-and-clouds.md) |
-| Billability bonus | Your billability on client engagement |
-
-Hurray!
+Contact [hr@plainsight.pro](mailto:hr@plainsight.pro).
