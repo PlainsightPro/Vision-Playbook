@@ -225,6 +225,9 @@ graph LR
 
 **Other examples:** Airport (Departure/Arrival), Geography (Billing/Shipping Address)
 
+!!! tip "Implementing this in Power BI"
+    Power BI allows only one **active** relationship between two tables and silently deactivates the rest, so the diagram above does not translate one-for-one. See [Role-Playing Dates](../power-bi/data-modeling-in-power-bi.md#role-playing-dates) for the physical-role-table pattern and the all-inactive flexible date.
+
 ### Degenerate Dimensions
 
 **Dimension attribute stored directly in fact table** (no separate dimension table).
