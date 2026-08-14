@@ -65,13 +65,13 @@ Use robust relationships (single-direction where possible), prefer whole-number 
 - Don’t leave large descriptive text or high-cardinality columns in facts - split them into separate detail tables if needed.  
 - Don’t hard-code data sources; use parameters for environment portability.  
 - Don’t deploy straight to production; always validate in test first.  
-- Don’t assume Power BI will warn you about an ambiguous filter path. It deactivates a relationship **silently** at load — verify the active-edge paths yourself after any model change. See [Role-Playing Dates](#role-playing-dates).  
+- Don’t assume Power BI will warn you about an ambiguous filter path. It deactivates a relationship **silently** at load: verify the active-edge paths yourself after any model change. See [Role-Playing Dates](#role-playing-dates).  
 
 [^1]: CROSSFILTER and USERELATIONSHIP are not supported in models using Row-Level Security (RLS).
 
 ## Role-Playing Dates
 
-[Role-playing dimensions](../architectural-principles/star-dimension-tables.md) — one dimension carrying several meanings — have a specific Power BI failure mode. Only **one relationship between two tables can be active**, and when a model offers more than one active path Power BI picks one and disables the rest without raising anything. The report still renders. It just answers a different question than the one on the axis.
+[Role-playing dimensions](../architectural-principles/star-dimension-tables.md) (one dimension carrying several meanings) have a specific Power BI failure mode. Only **one relationship between two tables can be active**, and when a model offers more than one active path Power BI picks one and disables the rest without raising anything. The report still renders. It just answers a different question than the one on the axis.
 
 Verify by listing the **active** edges only and confirming every (source, target) pair is reachable exactly one way. The trap appears as soon as a dimension sits between a date table and a fact:
 
@@ -98,11 +98,11 @@ graph LR
 | Model | One import of the calendar per role, each with exactly **one** active relationship | One calendar, the extra relationships inactive |
 | Author drags | The role table they mean | Any date, then a role-specific measure |
 | Cost | More tables in the field list | Every role needs its own `USERELATIONSHIP` measure |
-| Fails when | — | Author reaches for a plain measure and silently gets whichever role is active |
+| Fails when | - | Author reaches for a plain measure and silently gets whichever role is active |
 
 Prefer physical role tables. The field list then states the question, so an author who picks the wrong role gets an obviously wrong chart rather than a plausible one.
 
-Name them with the role-playing convention from [Naming Conventions](naming-conventions.md) — `<Role> <Dimension> (<Alias>)`:
+Name them with the role-playing convention from [Naming Conventions](naming-conventions.md), `<Role> <Dimension> (<Alias>)`:
 
 ```text
 Activity Date (Act)          -> the fact tables
@@ -124,7 +124,7 @@ Mark **every** role table as a date table (`dataCategory: Time`). Time intellige
 
 ### Add one all-inactive role
 
-Alongside the active role tables, import the calendar once more with *every* relationship inactive — `Flexible Date (Flex)`. Nothing responds to it until a measure names the role it wants:
+Alongside the active role tables, import the calendar once more with *every* relationship inactive: `Flexible Date (Flex)`. Nothing responds to it until a measure names the role it wants:
 
 ```dax
 # New Users (Flex) =
@@ -134,7 +134,7 @@ CALCULATE (
 )
 ```
 
-It earns its place in exactly one situation: **a single axis carrying series that hang off different roles** — downloads by activity date beside new users by acquisition date. No single role table can do that, because each one filters one thing only.
+It earns its place in exactly one situation: **a single axis carrying series that hang off different roles**: downloads by activity date beside new users by acquisition date. No single role table can do that, because each one filters one thing only.
 
 Keep those measures in their own display folder and state in the description that they are shared-axis only. Left unlabelled they become a second, competing way to ask a question the role tables already answer.
 
@@ -153,4 +153,4 @@ Keep those measures in their own display folder and state in the description tha
     Flexible Date  -> everything, all inactive                        (excluded from resolution)
     ```
 
-    Note that `Companies` attaches to `Users`, not to each fact. Relating it to both would give `Companies` two paths to the fact tables — the same defect as the date roles, wearing a different hat.
+    Note that `Companies` attaches to `Users`, not to each fact. Relating it to both would give `Companies` two paths to the fact tables: the same defect as the date roles, wearing a different hat.
