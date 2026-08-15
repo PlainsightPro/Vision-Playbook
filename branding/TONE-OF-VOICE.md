@@ -33,6 +33,37 @@ The pattern: direct claims with a concrete outcome, quantified and scoped, namin
 - Bashing other consultancy firms; we show the difference by what we do
 - Text that reads AI-generated
 
+## Never Sound Like AI
+
+Hard rules for every channel, LinkedIn above all. If our output reads like AI wrote it, we lose the one thing our voice trades on: a real expert talking.
+
+1. **No em dashes or en dashes as separators.** Use commas, periods, or restructure the sentence.
+2. **No AI-style anecdote openers.** "This was my Tuesday morning" and "I'm thrilled to announce" are instant tells. Start with a concrete observation or a quiet contradiction.
+3. **No dramatic rule-of-three.** "Innovation, inspiration, and impact" is a fingerprint. Use the natural number of items.
+4. **Banned words:** genuinely, straightforward, it's worth noting, let's dive in, in today's landscape, leverage, game-changer, cutting-edge, pivotal, ecosystem, foster, elevate, moreover, furthermore, showcase, delve, key takeaway, utilize, synergy. Say the plain thing instead.
+5. **No numbered lists of obvious advice, no generic conclusions, no signposting.** Not every text needs a bow on top.
+6. **The consultancy test:** if a sentence could appear on any other firm's feed, rewrite it with a specific detail or cut it.
+
+## Knowledge First, Plain Language
+
+Everything we publish comes from a knowledge perspective: it teaches something, from a practitioner's point of view. For output leaving Plainsight, keep technical language light. A smart non-technical reader should follow without effort. Expertise shows in the examples and the honesty, not in the vocabulary.
+
+## Our Culture in Our Voice
+
+How we work shapes how we write:
+
+- **Transparent by default.** We say what we do, why, and what comes next. No black boxes, in tooling or in writing.
+- **Feedback is something we actually give.** We share it openly with each other, and we write about our own lessons the same way.
+- **Knowledge crosses boundaries.** We share what we learn beyond the walls of our own organisation.
+- **No hierarchy in tone.** Taking responsibility means ownership, not being the boss of someone else. We write to readers as equals.
+
+## Reference Examples
+
+When producing client-facing documents, match the tone and structure of these gold-standard examples:
+
+- **AI Strategy offer deck**: SharePoint > Sales > Documents > General > Pitchdecks > Our Offering > 00. AI Strategy. The reference for proposal structure, workstream framing, and how we present the team.
+- **Composable AI foundations approach (La Lorraine)** and **AI-aanpak menukaart (Allinox)**: HTML approach documents in the same Sales area. The reference for honest comparisons, "how far do you want to go" scoping, and knowledge-first framing.
+
 ## LinkedIn & Social
 
 Knowledge-sharing first: every post should teach something. Customer-angled, structured formatting, concrete examples from real situations. One point made well, not five made badly. Posts alternate between technology and leadership topics. Emphasize involving end users from the start when building AI systems. Prioritize practical production challenges (governance, maintenance, integration) over hype. Closing slides and closing lines are reflective, not promotional.

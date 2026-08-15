@@ -46,7 +46,7 @@ Use dashed strokes (`stroke-dasharray: 5 5`) for optional components. These fill
 | Element | Font | Notes |
 |---|---|---|
 | Headings | **Titillium Web**, bold, uppercase for section headings | Fallback: Segoe UI, Arial |
-| Body | **Epilogue** | Fallback: Segoe UI, Arial |
+| Body | **Inter** | Fallback: Segoe UI, Arial. Ratified 2026-08: Inter replaces Epilogue everywhere |
 
 Maximum 2 font weights per slide or section. No italics in carousels or slides. Short blocks: 1-2 sentences per paragraph on slides.
 
