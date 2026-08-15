@@ -59,10 +59,9 @@ How we work shapes how we write:
 
 ## Reference Examples
 
-When producing client-facing documents, match the tone and structure of these gold-standard examples:
+When producing client-facing documents, match the tone and structure of our gold-standard examples: the anonymized AI Strategy offer deck (proposal structure, workstream framing, how we present the team) and the anonymized approach documents (honest comparisons, "how far do you want to go" scoping, knowledge-first framing).
 
-- **AI Strategy offer deck**: SharePoint > Sales > Documents > General > Pitchdecks > Our Offering > 00. AI Strategy. The reference for proposal structure, workstream framing, and how we present the team.
-- **Composable AI foundations approach (La Lorraine)** and **AI-aanpak menukaart (Allinox)**: HTML approach documents in the same Sales area. The reference for honest comparisons, "how far do you want to go" scoping, and knowledge-first framing.
+Ask Bo or Lotte for the current set. Original offer documents contain client names and pricing and stay inside the Sales workspace; only anonymized, price-free versions are shared as references.
 
 ## LinkedIn & Social
 
