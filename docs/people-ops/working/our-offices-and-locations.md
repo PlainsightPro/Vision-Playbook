@@ -9,7 +9,7 @@ At Plainsight, we believe that efficiency and impact far outweigh the importance
 ## Our Key Locations
 
 ### Ghent (Ledeberg) 📍
-- **Address**: [Plainsight Gent](https://www.google.com/maps/place/Plainsight+Gent/@51.0411787,3.7381614,17z/data=!3m1!4b1!4m6!3m5!1s0x47c3750014df5317:0xac65cde1d91b7718!8m2!3d51.0411787!4d3.7407363!16s%2Fg%2F11y8jcs_rx?entry=tts&g_ep=EgoyMDI1MTIwOS4wIPu8ASoASAFQAw%3D%3D&skid=f2ad257b-3422-4bf8-8fc2-f37e15259775) - Brusselsesteenweg 6 bus 102, 9050 Ledeberg (Gentbrugge)
+- **Address**: [Plainsight Gent](https://www.google.com/maps/place/Plainsight+Gent/@51.0411787,3.7381614,17z/data=!3m1!4b1!4m6!3m5!1s0x47c3750014df5317:0xac65cde1d91b7718!8m2!3d51.0411787!4d3.7407363!16s%2Fg%2F11y8jcs_rx?entry=tts&g_ep=EgoyMDI1MTIwOS4wIPu8ASoASAFQAw%3D%3D&skid=f2ad257b-3422-4bf8-8fc2-f37e15259775) - Brusselsesteenweg 6 bus 101, 9050 Ledeberg (Gentbrugge)
 - **Description**: Our Ghent office is one of our primary hubs, where teams often meet for collaboration sessions and co-working days.
 - **Parking**: Drive to the entrance of 'Aldi', continue a bit further. Make a reservation via the **Commuty** app and park on level -3.
 - **Entrance**: Accessible at all times with your badge.
