@@ -71,3 +71,5 @@ If you fall ill, here are the steps to follow:
 - (**Upload a doctor's certificate** to the People Platform within **2 days**.)
 
 By following these steps, we can ensure smooth communication and that your illness is properly recorded. 🤧🤗
+
+Coming back after a longer absence, or had an accident at work? See [Wellbeing & Prevention](../working/wellbeing-and-prevention.md).
