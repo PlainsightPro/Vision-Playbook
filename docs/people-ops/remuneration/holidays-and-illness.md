@@ -65,10 +65,10 @@ Take full advantage of your holidays, relax, and come back with great memories t
 
 If you fall ill, here are the steps to follow:
 
-- **Log your illness** in the [People Platform](https://selfservice.officient.io/) as soon as possible.
-- **Notify the admin team** by sending an email to hr@plainsight.pro.
-- **Contact your client** early in the morning to inform them of your situation.
-- (**Upload a doctor's certificate** to the People Platform within **2 days**.)
+1. **Inform HR and your client** before your normal start time, via Teams, mail ([hr@plainsight.pro](mailto:hr@plainsight.pro)) or phone.
+2. **Log your illness** in the [People Platform](https://selfservice.officient.io/).
+3. **Upload a medical certificate** to the People Platform within **2 working days**. Up to three times per calendar year, you don't need a certificate for the first day of an illness.
+4. During the first 30 days of illness, a control doctor may visit you between 13:00 and 17:00 at the address where you are staying.
 
 By following these steps, we can ensure smooth communication and that your illness is properly recorded. 🤧🤗
 

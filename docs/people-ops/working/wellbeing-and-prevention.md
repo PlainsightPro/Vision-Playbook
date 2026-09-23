@@ -13,8 +13,7 @@ Something on this page unclear or missing? Talk to HR or mail [hr@plainsight.pro
 | Role | Who | How to reach them |
 |---|---|---|
 | Prevention advisor (internal) | HR | 0498 67 77 14 · [hr@plainsight.pro](mailto:hr@plainsight.pro) |
-| First aiders, Ghent | *(names follow after training)* | |
-| First aiders, Mechelen | *(names follow after training)* | |
+| First aiders | Trained colleagues in Ghent and Mechelen | Ask around at the office or contact HR |
 | Occupational doctor | Dr. Eleonora Mutafchieva, Mediwet | 09 221 06 07 |
 | Psychosocial prevention advisor | Mediwet (external, independent) | [psychosoc@mediwet.be](mailto:psychosoc@mediwet.be) · 09 221 06 07 (Ghent) · 03 205 69 70 (Antwerp) |
 | Your career coach | See Officient | |
@@ -52,7 +51,7 @@ We rent both offices. The landlord takes care of the building installations: fir
 ## 🩹 First Aid
 
 - Each office has a first aid kit. Every time it is used, write it down in the first aid register next to the kit, even for a plaster. This helps us see where risks are.
-- We are training at least two first aiders per office region. Their names will be added here once they are trained.
+- We train at least two first aiders per office region. Ask a colleague at the office or HR who they are.
 - Is it serious? Call **112** first, then let a first aider and HR know.
 
 ## 🚑 Accident at Work, at Home or on the Way
@@ -78,7 +77,7 @@ flowchart LR
 ## 🤒 When You Are Ill
 
 1. **Inform HR and your client** before your normal start time, via Teams, mail ([hr@plainsight.pro](mailto:hr@plainsight.pro)) or phone.
-2. **Log your illness** in [Officient](https://plainsight.officient.io/).
+2. **Log your illness** in [Officient](https://selfservice.officient.io/).
 3. **Upload a medical certificate** in Officient within 2 working days. Up to three times per calendar year, you don't need a certificate for the first day of an illness.
 4. During the first 30 days of illness, a control doctor may visit you between 13:00 and 17:00 at the address where you are staying.
 
