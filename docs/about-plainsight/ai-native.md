@@ -190,6 +190,8 @@ You sign in with your `@plainsight.pro` account. There are no tokens to copy, no
 !!! tip "Check that it worked"
     Ask your agent: *"Run brain_start for the project I'm working on."* If it comes back with a project brief and a session id, you're in. If it says unauthorized, sign in again through your tool.
 
+Working in Claude Code every day? [Connect Plainsight Brain to Claude Code](../technical-guidelines/plainsight-ai/agentic-development/plainsight-brain.md) goes deeper: user or project scope, the start-and-finish habit, making it stick in a repo, the tools you get, and troubleshooting.
+
 ## My Brain: see what it knows about you
 
 A memory you can't see is a memory you can't trust. So everyone at Plainsight gets a window into their own Brain.
