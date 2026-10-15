@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-label="Three bands. On top, the front ends people pick: our AI Assistant, Claude or ChatGPT, Claude Code or Codex, Cursor or Copilot, all connected over the open MCP protocol. In the middle, the Plainsight building blocks: the Brain for what we learn, the knowledge engine for what we wrote down, the relationship map for how it all connects, and numbers for what we measure. Underneath, where our work lives: Microsoft 365, our data platform and our business apps." style="font-family:Inter, 'Segoe UI', system-ui, -apple-system, sans-serif">
+  <rect x="0" y="0" width="960" height="480" rx="16" fill="#FCF8F3"/>
+
+  <!-- Band 1: front ends -->
+  <text x="40" y="40" font-size="12.5" font-weight="700" letter-spacing="2" fill="#000075">PICK YOUR FRONT END</text>
+  <rect x="40" y="56" width="205" height="48" rx="24" fill="#000075"/>
+  <text x="142.5" y="86" text-anchor="middle" font-size="16" font-weight="600" fill="#ffffff">Our AI Assistant</text>
+  <rect x="265" y="56" width="205" height="48" rx="24" fill="#ffffff" stroke="#000075" stroke-width="2"/>
+  <text x="367.5" y="86" text-anchor="middle" font-size="16" font-weight="500" fill="#000075">Claude / ChatGPT</text>
+  <rect x="490" y="56" width="205" height="48" rx="24" fill="#ffffff" stroke="#000075" stroke-width="2"/>
+  <text x="592.5" y="86" text-anchor="middle" font-size="16" font-weight="500" fill="#000075">Claude Code / Codex</text>
+  <rect x="715" y="56" width="205" height="48" rx="24" fill="#ffffff" stroke="#000075" stroke-width="2"/>
+  <text x="817.5" y="86" text-anchor="middle" font-size="16" font-weight="500" fill="#000075">Cursor / Copilot</text>
+
+  <g fill="none" stroke="#8888bb" stroke-width="1.5">
+    <path d="M142.5 104 C142.5 140, 300 136, 300 172"/>
+    <path d="M367.5 104 C367.5 140, 420 136, 420 172"/>
+    <path d="M592.5 104 C592.5 140, 540 136, 540 172"/>
+    <path d="M817.5 104 C817.5 140, 660 136, 660 172"/>
+  </g>
+  <rect x="445" y="124" width="70" height="26" rx="13" fill="#ECECF4"/>
+  <text x="480" y="142" text-anchor="middle" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#000075">MCP</text>
+
+  <!-- Band 2: building blocks -->
+  <rect x="40" y="172" width="880" height="170" rx="16" fill="#ffffff" stroke="#000075" stroke-width="2"/>
+  <text x="64" y="210" font-size="13" font-weight="700" letter-spacing="3" fill="#000075">PLAINSIGHT BUILDING BLOCKS</text>
+  <rect x="64" y="220" width="54" height="3" rx="1.5" fill="#D5693A"/>
+
+  <rect x="64" y="238" width="197" height="80" rx="12" fill="#000075"/>
+  <text x="84" y="272" font-size="16.5" font-weight="700" fill="#ffffff">Brain</text>
+  <text x="84" y="295" font-size="13" fill="#b0b0d0">What we learn</text>
+
+  <rect x="275" y="238" width="197" height="80" rx="12" fill="#ECECF4"/>
+  <text x="295" y="272" font-size="16.5" font-weight="700" fill="#000075">Knowledge engine</text>
+  <text x="295" y="295" font-size="13" fill="#3d3d6b">What we wrote down</text>
+
+  <rect x="486" y="238" width="197" height="80" rx="12" fill="#ECECF4"/>
+  <text x="506" y="272" font-size="16.5" font-weight="700" fill="#000075">Relationship map</text>
+  <text x="506" y="295" font-size="13" fill="#3d3d6b">How it all connects</text>
+
+  <rect x="697" y="238" width="197" height="80" rx="12" fill="#ECECF4"/>
+  <text x="717" y="272" font-size="16.5" font-weight="700" fill="#000075">Numbers</text>
+  <text x="717" y="295" font-size="13" fill="#3d3d6b">What we measure</text>
+
+  <!-- Band 3: where the work lives -->
+  <g fill="none" stroke="#8888bb" stroke-width="1.5">
+    <path d="M480 342 C480 372, 290 364, 290 394"/>
+    <path d="M480 342 L480 394"/>
+    <path d="M480 342 C480 372, 670 364, 670 394"/>
+  </g>
+  <text x="40" y="382" font-size="12.5" font-weight="700" letter-spacing="2" fill="#000075">WHERE OUR WORK LIVES</text>
+
+  <rect x="64" y="394" width="264" height="64" rx="12" fill="#ffffff" stroke="#c8c8dc" stroke-width="1.5"/>
+  <text x="84" y="421" font-size="15" font-weight="700" fill="#000075">Microsoft 365</text>
+  <text x="84" y="442" font-size="13" fill="#3d3d6b">Mail, files, agenda.</text>
+
+  <rect x="348" y="394" width="264" height="64" rx="12" fill="#ffffff" stroke="#c8c8dc" stroke-width="1.5"/>
+  <text x="368" y="421" font-size="15" font-weight="700" fill="#000075">Data platform</text>
+  <text x="368" y="442" font-size="13" fill="#3d3d6b">Our numbers, one warehouse.</text>
+
+  <rect x="632" y="394" width="264" height="64" rx="12" fill="#ffffff" stroke="#c8c8dc" stroke-width="1.5"/>
+  <text x="652" y="421" font-size="15" font-weight="700" fill="#000075">Business apps</text>
+  <text x="652" y="442" font-size="13" fill="#3d3d6b">CRM, HR, accounting, time.</text>
+</svg>
