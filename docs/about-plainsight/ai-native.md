@@ -6,9 +6,7 @@ description: "How Plainsight works AI-native: the Plainsight Brain as our shared
 
 > **Practise what you sell.**
 
-We are a company of about forty people. To our clients we would like that to feel like four hundred. To ourselves, like forty.
-
-That only works if running the company doesn't eat the time we should spend on clients. So the boring parts (finding the right document, chasing a number, rebuilding last year's slide, asking who did that migration again) go to AI and automation, and people spend their time on the work that needs a person.
+Running a company comes with a lot of small, boring work: finding the right document, chasing a number, rebuilding last year's slide, asking who did that migration again. We hand that to AI and automation, so people spend their time on clients and on the work that needs a person.
 
 Lean doesn't mean fewer people. It means fewer handoffs, fewer copy-pastes and fewer "can you send me that file".
 
@@ -49,25 +47,25 @@ Yes, that third row means the Brain has read this page. Ask your agent how to co
 
 ## What we already do with it
 
-An incomplete list, because it grows faster than this page does.
+A few examples. The list is open-ended on purpose.
 
-- Your agent gets briefed before you start, including the lesson a colleague learned the hard way in March.
-- Slides, one-pagers and web pages arrive on brand, because the agent pulled the brand kit first and the brand check read the result before anyone else did. It flags a filled-in triangle, the wrong font and dashes used as separators. You can guess who asked for that last one.
-- Two AI models audit the same work: one finds problems, the other challenges them. Every re-audit is compared with the previous one, so we see what got fixed and what keeps coming back. We audit the Brain this way too.
-- A project changes hands with everything the Brain knows about it, as a snapshot you preview before it's shared.
-- "Who should I talk to?" gets answered with a name. Sometimes the most useful thing an extra brain can do is point at a human one.
-- Meeting prep: what we've done in that sector, with which technology, and who worked on it.
-- Answers from our documents come with their source, and only from documents you're allowed to see.
-- The engineering standards that apply to your task show up while you work, instead of in a review afterwards.
-- Plans survive the chat window closing, so tomorrow's session picks up where today's stopped.
-- Reports, specs and other project files sit in a private library until you decide who sees them.
-- Finance and sales questions get asked in plain language, on the same numbers as our Power BI reports.
+- **Briefings before you start.** Your agent gets the project context and the lesson a colleague learned the hard way on another project, before you repeat it.
+- **The brand kit.** Slides, one-pagers and web pages arrive on brand, because the agent pulled the complete brand kit first and the **brand check** read the result before anyone else did. It flags a filled-in triangle, the wrong font and dashes used as separators. You can guess who asked for that last one.
+- **Audits with a second opinion.** Two AI models review the same work: one finds problems, the other challenges them. Every re-audit is compared with the previous one, so we see what got fixed and what keeps coming back. We audit the Brain this way too.
+- **Handovers.** A project changes hands with everything the Brain knows about it, as a snapshot you preview before it's shared.
+- **"Who should I talk to?"** gets answered with a name. Sometimes the most useful thing an extra brain can do is point at a human one.
+- **Meeting prep.** What we've done in that sector, with which technology, and who worked on it.
+- **Answers with a source.** Answers from our documents come with the paragraph they came from, and only from documents you're allowed to see.
+- **Standards while you work.** The engineering guidelines that apply to your task show up during the work, instead of in a review afterwards.
+- **Plans that survive.** Close the chat window and tomorrow's session picks up where today's stopped.
+- **A private file library.** Reports, specs and other project files stay private until you decide who sees them.
+- **Numbers in plain language.** Finance and sales questions, answered from the same figures as our Power BI reports.
 
-Next month this list is longer. That's the point.
+Doing something by hand for the second time? That's how the next item gets on this list.
 
 ## How the Brain fits in
 
-The Brain is one building block among several. Each does one job, they all speak the same open standard, and the first company they run on is Plainsight. If something doesn't survive forty consultants with real deadlines and little patience for tools that need babysitting, it doesn't go to a client.
+The Brain is one building block among several. Each does one job, they all speak the same open standard, and the first company they run on is Plainsight. If something doesn't survive our own consultants, with real deadlines and little patience for tools that need babysitting, it doesn't go to a client.
 
 ![Our building blocks: pick any front end, connect over MCP to the Brain, the knowledge engine, the relationship map and numbers, on top of Microsoft 365, our data platform and business apps](../images/ai-native/building-blocks.svg)
 
@@ -127,26 +125,20 @@ Your own memories get a graph too. Only you can see that one: it's under [My Gra
 
 ## Bring your own front end
 
-We don't hand out one AI tool and call it a strategy. Some colleagues live in Claude Code. Some prefer Codex or Cursor. Some want a chat window and nothing else. People do their best work in the tool they like, and we would rather have the Brain fit in there than ask everyone to move.
+We don't hand out one AI tool and call it a strategy. People do their best work in the tool they like, so the Brain comes to your tool instead of the other way round. Switch tools on Monday and your memory comes with you: it lives in the Brain, not in the tool.
 
-So there are two doors in. Open our **AI Assistant** and the Brain is already there. Or plug it into **any AI tool you like** through MCP, the Model Context Protocol: an open standard for connecting tools and data to AI assistants. Think of it as a wall socket. We installed the socket once. Which kettle you plug in is up to you.
+There are two doors in:
 
-![One memory under every tool: Claude, ChatGPT, coding assistants and our AI Assistant connect over MCP to the Plainsight Brain, which plugs into our knowledge bases, brand kit and other systems](../images/ai-native/one-memory-under-every-tool.svg)
+- **Our AI Assistant.** The Brain is built in. Sign in with your Plainsight account and it's there. (Don't see it? Ask an AI Assistant admin.)
+- **Any other AI tool, through MCP.** MCP, the Model Context Protocol, is an open standard for connecting tools and data to AI assistants. Think of it as a wall socket: we installed it once, and which kettle you plug in is up to you.
 
-Switch tools on Monday and your memory comes with you. It lives in the Brain, not in the tool.
-
-## Plug in
-
-Everything starts from one address:
+For the second door, everything starts from one address:
 
 ```text
 https://barabas.plainsight.pro/mcp
 ```
 
 You sign in with your `@plainsight.pro` account. There are no tokens to copy, no secrets to store and nothing to install on your laptop. The first time you connect, your tool opens a browser window, you log in, and that's it.
-
-??? info "Plainsight AI Assistant"
-    Nothing to set up. The Brain is already connected: sign in with your Plainsight account and the Assistant uses it on its own. Don't see the Brain tools in your chat? Ask an AI Assistant admin to grant you the connection.
 
 ??? info "Claude Code"
     Run this once in your terminal and sign in when your browser opens:
