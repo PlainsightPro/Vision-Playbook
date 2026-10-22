@@ -100,7 +100,7 @@ Dimension tables include technical columns for version tracking (SCD Type 2) and
 
 - **Initial load**: Set `T_ValidFromDateTime = '1900-01-01 00:00:00'` to ensure all historical fact records can join to the dimension, regardless of transaction date
 - **New versions**: When creating a new version, set `T_ValidFromDateTime` to the exact datetime when the change occurred
-- **Current records**: Set `T_ValidToDateTime = NULL` and `T_IsCurrent = 1` (never use far-future dates like `9999-12-31`)
+- **Current records**: Set `T_ValidToDateTime = NULL` and `T_IsCurrent = 1`. Treat the validity interval as half-open (from inclusive, to exclusive) and resolve a fact to the version valid at its transaction time with `COALESCE(T_ValidToDateTime, '9999-12-31')` in the range predicate. Some engines write a far-future end date themselves (SQL Server temporal tables); that is acceptable as long as one convention is used per platform and the join hides it from consumers
 - **Expired records**: When closing a version, set `T_ValidToDateTime` to the exact datetime when the change occurred and `T_IsCurrent = 0`
 
 **Audit & lineage patterns:**
