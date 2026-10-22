@@ -49,9 +49,9 @@ CREATE TABLE F_Sales
 ## Key Components
 
 ### Primary Key
-Don't create a primary key on fact tables → They rarely serve a useful purpose and unnecessarily increase storage size.
+**The grain is the key.** The combination of dimension keys and degenerate dimensions that defines the grain (for example `SalesOrderNo + SalesOrderLineNo`) uniquely identifies each row. Test that uniqueness after every load: Fabric Warehouse, Databricks and BigQuery accept a `PRIMARY KEY` declaration without enforcing it, so the test is the real constraint.
 
-The **grain of the fact table** (combination of dimension keys) provides an implied primary key. For example, in a sales fact table at order line level, the combination of `SalesOrderNo + SalesOrderLineNo` uniquely identifies each row.
+Don't add a single-column surrogate key to a fact table by default → It widens the table and, if it reaches the semantic model, adds a high-cardinality column that compresses badly. Add one (a `BIGINT`, hidden from report consumers) only when the load needs a row handle: `MERGE` on late-arriving or corrected facts, accumulating snapshots, or backing out a partial load (Kimball Group, Design Tip #81).
 
 ### Dimension Keys
 
@@ -112,7 +112,7 @@ classDiagram
 **Why include business keys in fact tables:**
 
 - **Simplified queries**: Analysts can filter/join using recognizable identifiers (product codes, dates) without joining to dimension tables
-- **Late-arriving facts**: When a fact arrives before its dimension is loaded, store the business key and use dimension special members (e.g., `-1` for _Unknown) as a placeholder
+- **Late-arriving facts**: When a fact arrives before its dimension is loaded, store the business key and point the surrogate key at the `-2` (_Unknown) special member as a placeholder
 - **ETL debugging**: Trace back to source system records using natural identifiers
 - **Reprocessing**: Re-lookup surrogate keys if dimension records are reprocessed or corrected
 
@@ -132,7 +132,7 @@ ProductCode_BK VARCHAR(50) NOT NULL, -- Business key (natural identifier from so
 ??? tip "Late-Arriving Fact Handling"
     When a fact arrives but the dimension record doesn't exist yet:
     1. Store the business key in the fact table (`ProductCode_BK = 'ABC-123'`)
-    2. Set the surrogate key to special member `-1` (`Product_FK = -1`)
+    2. Set the surrogate key to the `-2` (_Unknown) special member (`Product_FK = -2`); `-1` is reserved for _N/A
     3. Later, when the dimension loads, reprocess the fact to update `Product_FK` with the correct surrogate key
     4. The business key ensures you can always trace back to the source and correctly match facts to dimensions
 

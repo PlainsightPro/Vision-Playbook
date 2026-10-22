@@ -17,7 +17,7 @@ Use robust relationships (single-direction where possible), prefer whole-number 
 - Use integer surrogate keys (Primary Keys, Foreign Keys); avoid text/GUID keys for relationships. Read more here: [Surrogate, Primary & Foreign Keys](../architectural-principles/surrogate-primary-and-foreign-keys.md)  
 - Use Date dimension(s); mark it as a Date table.  
 - Declare the grain of each fact table (e.g., "one row per order line") to avoid confusion.  
-- Add an Unknown / Not Applicabl key (e.g., `-1`) in dimensions to handle orphaned fact rows.  
+- Add the [special dimension members](../architectural-principles/star-dimension-tables.md#special-dimension-members) `-1` (_N/A) and `-2` (_Unknown) in dimensions to handle orphaned fact rows.  
 - Build dimensions wide enough with relevant attributes, but avoid unnecessary snowflaking.  
 - Use bridge tables for many-to-many instead of direct relationships.  
 - Enable `Incremental Refresh` on large tables with stable "last modified" columns for efficiency.  
