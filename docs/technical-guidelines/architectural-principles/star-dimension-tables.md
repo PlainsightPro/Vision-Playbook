@@ -53,7 +53,7 @@ For complete details on key design principles, see [Surrogate, Primary & Foreign
 
 **Why surrogate keys for dimensions:**
 
-- Enables [Slowly Changing Dimensions](star-dimension-tables.md) (SCD Type 2) for historical tracking
+- Enables [Slowly Changing Dimensions](slowly-changing-dimensions.md) (SCD Type 2) for historical tracking
 - Consolidates multiple data sources without identifier conflicts
 - Simplifies multi-column natural keys into efficient single-column keys
 - Insulates the data warehouse from source system changes
@@ -113,7 +113,7 @@ Dimension tables include technical columns for version tracking (SCD Type 2) and
 
 ## Slowly Changing Dimensions (SCD)
 
-Manage historical changes with three primary strategies:
+The two strategies we use most are below. For the full set, Types 0 to 7, and when to use each, see [Slowly Changing Dimensions](slowly-changing-dimensions.md).
 
 ### SCD Type 1: Overwrite
 
@@ -175,6 +175,10 @@ Manage historical changes with three primary strategies:
     
     [!warning] Balance Usability vs. Accuracy
     Too many SCD Type 2 changes create overwhelming version counts. If an attribute changes frequently, consider storing it in the [Star - Fact Tables](star-fact-tables.md) instead.
+
+### Change Detection
+
+A load notices that an attribute changed by comparing a hash of the tracked attributes with the hash on the current row. Coalesce every column before hashing, keep one fixed column order and separator, and keep the hash out of the semantic model. See [Hash-Based Change Detection](hash-based-change-detection.md).
 
 ### Conformed Dimensions
 
@@ -249,6 +253,10 @@ Include rows representing data quality states:
 ## Related Topics
 
 - [Star - Fact Tables](star-fact-tables.md) - Numeric measures that dimensions provide context for
+- [Slowly Changing Dimensions](slowly-changing-dimensions.md) - SCD Types 0 to 7 and when to use each
+- [Hash-Based Change Detection](hash-based-change-detection.md) - How a load notices that an attribute changed
+- [Bus Matrix](bus-matrix.md) - Which facts share which conformed dimensions
+- [Bridge Tables](bridge-tables.md) - Multivalued dimensions without double counting
 - [Surrogate, Primary & Foreign Keys](surrogate-primary-and-foreign-keys.md) - Key design principles and best practices
 - [Data Layers and Modeling](data-layers-and-modeling.md) - Where dimensions fit in the architecture
 - [Analytical Data Store (ADS)](analytical-data-store-ads.md) - Source of cleaned, denormalized data for dimension loading
