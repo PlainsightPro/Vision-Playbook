@@ -136,6 +136,8 @@ ProductCode_BK VARCHAR(50) NOT NULL, -- Business key (natural identifier from so
     3. Later, when the dimension loads, reprocess the fact to update `Product_FK` with the correct surrogate key
     4. The business key ensures you can always trace back to the source and correctly match facts to dimensions
 
+    See [Late-Arriving Dimensions and Facts](late-arriving-dimensions-and-facts.md) for every case, including old events, inferred members and backdated dimension changes.
+
 **Storage trade-off:** Business keys increase fact table width, but the benefits for query simplicity, troubleshooting, and late-arriving fact handling typically outweigh the storage cost. 
 
 ### Grain Definition
@@ -223,6 +225,10 @@ Fact tables are typically:
 ## Related Topics
 
 - [Star - Dimension Tables](star-dimension-tables.md) - Provide context for fact measures through filtering and grouping
+- [Fact Table Types](fact-table-types.md) - Transaction, periodic snapshot, accumulating snapshot and factless
+- [Late-Arriving Dimensions and Facts](late-arriving-dimensions-and-facts.md) - Facts and dimensions that show up out of order
+- [Bridge Tables](bridge-tables.md) - When a fact row relates to several dimension members
+- [Bus Matrix](bus-matrix.md) - Which facts share which conformed dimensions
 - [Data Layers and Modeling](data-layers-and-modeling.md) - Where fact tables fit in the architecture
 - [Analytical Data Store (ADS)](analytical-data-store-ads.md) - Source layer for cleaned data feeding into dimensional model
 

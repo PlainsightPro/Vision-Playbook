@@ -115,8 +115,16 @@ nav:
           - "Analytical Data Store (ADS)": "technical-guidelines/architectural-principles/analytical-data-store-ads.md"
 
           - "Star - Dimension Tables": "technical-guidelines/architectural-principles/star-dimension-tables.md"
+          - "Slowly Changing Dimensions": "technical-guidelines/architectural-principles/slowly-changing-dimensions.md"
           - "Star - Fact Tables": "technical-guidelines/architectural-principles/star-fact-tables.md"
+          - "Fact Table Types": "technical-guidelines/architectural-principles/fact-table-types.md"
+          - "Bridge Tables": "technical-guidelines/architectural-principles/bridge-tables.md"
+          - "Late-Arriving Dimensions and Facts": "technical-guidelines/architectural-principles/late-arriving-dimensions-and-facts.md"
+          - "Bus Matrix": "technical-guidelines/architectural-principles/bus-matrix.md"
           - "Surrogate, Primary & Foreign Keys": "technical-guidelines/architectural-principles/surrogate-primary-and-foreign-keys.md"
+          - "Hash-Based Change Detection": "technical-guidelines/architectural-principles/hash-based-change-detection.md"
+          - "Time Travel and Bitemporal History": "technical-guidelines/architectural-principles/time-travel-and-bitemporal-history.md"
+          - "Data Contracts and Quality Gates": "technical-guidelines/architectural-principles/data-contracts-and-quality-gates.md"
           - "Master Data": "technical-guidelines/architectural-principles/master-data.md"
           - "DRY - Don't Repeat Yourself": "technical-guidelines/architectural-principles/dry-dont-repeat-yourself.md"
       - Power BI Best-Practices:
