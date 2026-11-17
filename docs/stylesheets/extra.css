@@ -279,3 +279,27 @@
     right: 0.5rem;
   }
 }
+
+
+/* ---------- Footer: compact previous / next ---------- */
+/* Material fits the left navigation into the space above the footer, so a
+   tall footer cuts the navigation short at the bottom of every page. */
+.md-footer__link {
+  align-items: center;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.md-footer__title {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  margin-bottom: 0;
+  /* Matches the smaller arrow button below (0.2rem margin + 0.6rem padding + 1.2rem icon) */
+  max-width: calc(100% - 2rem);
+}
+.md-footer__direction {
+  font-size: 0.55rem;
+}
+.md-footer__button {
+  margin: 0.1rem;
+  padding: 0.3rem;
+}
