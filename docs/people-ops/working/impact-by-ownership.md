@@ -6,7 +6,7 @@ description: "Explore Plainsight's ownership-driven growth model, collaborative 
 
 At Plainsight, we believe that growth is a continuous journey and doesn't need to be capped. Therefore we go a step further than most organizations.
 
-Taking ownership is a our strategy for the impact we make. Ownership instills a sense of responsibility and pride, of a deeply personal endeavor. 
+Taking ownership is our strategy for the impact we make. Ownership instills a sense of responsibility and pride, of a deeply personal endeavor. 
 
 The idea is rooted in simple, relatable principles: you take better care of what you own. It's about rewarding impact that goes beyond a customer assignment. 
 
@@ -27,7 +27,7 @@ It's all about going above and beyond. We have defined multiple areas that are t
 
 That's a lot! Do I need to be the best in all these domains? No, but an olympic minimum and shown expertise is required. 
 
-Do I need to execute all these tasks? No, luckily we are a team where everyone has his expertise. However we need to be able to cover all domains on all offerings to reach success. We expect that in your offering you at least are responsible for one of those domains. That does not mean you need to do all the activities. However it is of course your responsibility that everything is done well where you are responsible for.
+Do I need to execute all these tasks? No, luckily we are a team where everyone has their own expertise. However we need to be able to cover all domains on all offerings to reach success. We expect that in your offering you at least are responsible for one of those domains. That does not mean you need to do all the activities. However it is of course your responsibility that everything is done well where you are responsible for.
 
 That's how a team of people with everyone's strengths can be top notch on all domains to achieve business success.
 

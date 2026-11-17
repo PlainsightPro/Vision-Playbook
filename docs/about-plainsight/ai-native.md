@@ -271,4 +271,4 @@ Read more about our values in [🥇 The Foundation of Plainsight](the-foundation
 
 ---
 
-Something on this page out of date? You know the drill: you're one merge request away. And once it's merged, the Brain knows too.
+Something on this page out of date? You know the drill: you're one pull request away. And once it's merged, the Brain knows too.

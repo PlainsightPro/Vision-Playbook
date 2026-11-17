@@ -10,7 +10,7 @@ At Plainsight, we rely on a variety of tools to get the job done efficiently and
 
 ### Snagit
 - **Best Practices**: Use Snagit to create clear, annotated screenshots for documentation and presentations. Save your captures in an organized folder structure for easy access.
-- **Aqcuiring Snagit**: Ask to purchase snagit through your Experimentation Budget (estimated price: € 70). Snagit can then be downloaded throug the [official website](https://www.techsmith.com/snagit). 
+- **Acquiring Snagit**: Ask to purchase Snagit through your Experimentation Budget (estimated price: € 70). Snagit can then be downloaded through the [official website](https://www.techsmith.com/snagit). 
 
 ### Bitwarden
 - **Best Practices**: Use Bitwarden to securely store and manage your passwords. Enable two-factor authentication (2FA) for added security.

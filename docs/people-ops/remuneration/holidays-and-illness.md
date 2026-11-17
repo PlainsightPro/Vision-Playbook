@@ -2,7 +2,7 @@
 description: "Plainsight holiday entitlement, ADV days, youth and European holidays, out-of-office guidelines, and illness reporting procedures for employees."
 ---
 
-# 🌴Holidays
+# 🌴 Holidays
 
 > *"Take them, enjoy them 200%, and come back with amazing stories! 🌴🏖️"*
 
@@ -46,6 +46,7 @@ When you're off, set an **Out of Office** message to let others know. Here's an 
 > [Your Name]"
 
 To set your Out of Office message in Outlook:
+
 1. Go to **File** > **Automatic Replies**.
 2. Click on **"Send automatic replies"**.
 3. Fill in your message for both internal and external contacts.

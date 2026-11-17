@@ -1,5 +1,5 @@
 ---
-description: "Plainsight's technology partnerships with Microsoft and Databricks, driving innovation and delivering cutting-edge data and analytics solutions."
+description: "Plainsight's technology partnerships with Microsoft, Databricks and Anthropic, and why staying close to the vendors pays off for our clients."
 ---
 
 ## We believe in 1 + 1 > 2
@@ -12,4 +12,5 @@ Our current Technology Partners:
 
 - Microsoft
 - Databricks
+- Anthropic ([what that means for clients](https://www.plainsight.pro/anthropic-partnership))
 

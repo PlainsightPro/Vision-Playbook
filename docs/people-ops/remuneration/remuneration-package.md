@@ -43,7 +43,7 @@ This package is part of our commitment to your health, financial security, and o
 
 Higher sustained performance compounds: the stronger your growth and impact, the steeper your salary trajectory over time.
 
-## What if I outgrow my renumeration package? 🚀
+## What if I outgrow my remuneration package? 🚀
 
 That's great! Growing gets rewarded. Remuneration packages are revised annually based on your growth and impact.
 

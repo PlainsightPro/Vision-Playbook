@@ -64,6 +64,7 @@ Submitting expenses is easy - just upload a photo through the [app](https://play
 
 #### Pillar 2: Sustainable Transport & Housing Costs
 Examples include:
+
 - Purchasing or renting (electric) **(moped) bikes**, along with insurance and maintenance
 - **Public transport tickets** or subscriptions (for both Belgium and abroad, family members included)
 - **Parking fees** for public transport

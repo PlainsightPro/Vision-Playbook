@@ -8,7 +8,7 @@ description: "Plainsight's open-source company playbook: discover our purpose, v
 Plainsight loves to put things in Plain Sight (🥁). Open source code is the blueprint of our organization, built on transparency and rocket-fueled by passion 🌍🚀. Transparency fuels trust, trust generates speed and impact.
 
 Suggestions to improve our organization?
-You are just one merge request away:
+You are just one pull request away:
 [![Edit on GitHub](https://img.shields.io/badge/Edit_on-GitHub-FDCAD2?logo=github&logoColor=FFFFFF&style=for-the-badge)](https://github.com/PlainsightPro/Vision-Playbook)
 
 
@@ -39,7 +39,7 @@ This playbook exists to align everyone with our purpose, values, and processes. 
 
 - Always link to the relevant part of the handbook in communications rather than copying text.
 
-- The handbook reflects current practices; to change a process, update the handbook via a merge request.
+- The handbook reflects current practices; to change a process, update the handbook via a pull request.
 
 - Handbook guidelines apply equally to everyone of us.
 
@@ -49,5 +49,5 @@ This playbook exists to align everyone with our purpose, values, and processes. 
 
 ## What's Next? Join Us on This Journey 🎯
 
-The introduction is just the beginning of the Plainsight story. As you explore this playbook, you'll discover the many facets of our company - from our people and culture to our strategies and successes. We invite you to dive in, learn more, and join us on this exciting journey towards the future.
+The introduction is just the beginning of the Plainsight story. As you explore this playbook, you'll discover the many facets of our company - from our people and culture to our strategies and successes. Start wherever your question is. If an answer is missing, that's a page waiting to be written.
 ![plainsight playbook himym](images/plainsight%20playbook%20himym.png)

@@ -19,8 +19,8 @@ We view knowledge-sharing **across boundaries** as vital to driving innovation a
 
 ### How We Live This Value
 - **Monthly internal knowledge-sharing sessions** to exchange expertise and learnings across internal teams.
-- **Annual 5-week knowledge bootcamp** to deep-dive into the latest trends and developments.
-- **Strategic partnerships with Microsoft & Databricks** to stay ahead of the industry and foster growth.
+- **Plainsight Academy**, our annual 5-week bootcamp, to go deep on the latest trends and developments.
+- **Strategic partnerships with Microsoft, Databricks & Anthropic** to stay ahead of the industry and foster growth.
 - **Personalized growth plans for every employee** to support continuous learning and development. Check the [🎯 Evolution Process](../people-ops/working/evolution-process.md) page for more info!
 - **Founders of the "Fabric Belgium" initiative**, acting as community ambassadors to drive external collaboration. See [🧑‍🤝‍🧑 Communities](../partners/communities.md) for more information.
 
