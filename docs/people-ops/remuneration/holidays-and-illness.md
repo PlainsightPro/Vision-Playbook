@@ -62,15 +62,6 @@ Also add your holidays to your **Outlook calendar**. This will sync with Teams a
 Take full advantage of your holidays, relax, and come back with great memories to share!
 
 
-# 🤒 What to Do When You're ill
+## 🤒 What to Do When You're Ill
 
-If you fall ill, here are the steps to follow:
-
-1. **Inform HR and your client** before your normal start time, via Teams, mail ([hr@plainsight.pro](mailto:hr@plainsight.pro)) or phone.
-2. **Log your illness** in the [People Platform](https://selfservice.officient.io/).
-3. **Upload a medical certificate** to the People Platform within **2 working days**. Up to three times per calendar year, you don't need a certificate for the first day of an illness.
-4. During the first 30 days of illness, a control doctor may visit you between 13:00 and 17:00 at the address where you are staying.
-
-By following these steps, we can ensure smooth communication and that your illness is properly recorded. 🤧🤗
-
-Coming back after a longer absence, or had an accident at work? See [Wellbeing & Prevention](../working/wellbeing-and-prevention.md).
+The steps for calling in sick, logging it and the medical certificate live on one page, so they never drift apart: [🛟 Wellbeing & Prevention](../working/wellbeing-and-prevention.md#when-you-are-ill).

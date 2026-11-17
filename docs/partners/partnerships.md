@@ -2,6 +2,8 @@
 description: "Plainsight's technology partnerships with Microsoft, Databricks and Anthropic, and why staying close to the vendors pays off for our clients."
 ---
 
+# Partnerships 🤝
+
 ## We believe in 1 + 1 > 2
 
 At Plainsight, we deeply value our partnerships with technology providers because they enable us to stay at the cutting edge of innovation. Our commitment to knowledge and continuous learning drives us to be closely aligned with our technology partners. 

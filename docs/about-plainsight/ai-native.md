@@ -50,7 +50,7 @@ Yes, that third row means the Brain has read this page. Ask your agent how to co
 A few examples. The list is open-ended on purpose.
 
 - **Briefings before you start.** Your agent gets the project context and the lesson a colleague learned the hard way on another project, before you repeat it.
-- **The brand kit.** Slides, one-pagers and web pages arrive on brand, because the agent pulled the complete brand kit first and the **brand check** read the result before anyone else did. It flags a filled-in triangle, the wrong font and dashes used as separators. You can guess who asked for that last one.
+- **The [brand kit](https://plainsightpro.github.io/brand-kit/).** Slides, one-pagers and web pages arrive on brand, because the agent pulled the complete brand kit first and the **brand check** read the result before anyone else did. It flags a filled-in triangle, the wrong font and dashes used as separators. You can guess who asked for that last one.
 - **Audits with a second opinion.** Two AI models review the same work: one finds problems, the other challenges them. Every re-audit is compared with the previous one, so we see what got fixed and what keeps coming back. We audit the Brain this way too.
 - **Handovers.** A project changes hands with everything the Brain knows about it, as a snapshot you preview before it's shared.
 - **"Who should I talk to?"** gets answered with a name. Sometimes the most useful thing an extra brain can do is point at a human one.

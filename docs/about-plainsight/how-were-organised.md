@@ -2,6 +2,8 @@
 description: "How Plainsight is organised: a flat, hierarchy-free structure with career coaches, knowledge hubs, and self-managed teams of data and AI experts."
 ---
 
+# How We're Organised 🏗️
+
 ??? tip "TL;DR"
     No hierarchy. No ivory towers. A team of experts, each with a different role, all playing for the same goal.
 

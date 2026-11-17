@@ -203,7 +203,7 @@ Genie Code connects to external MCP servers via Unity Catalog HTTP connections. 
 | Setting | Value |
 |---|---|
 | **Connection type** | HTTP |
-| **Host** | `https://ca-plainsight-brain.thankfulglacier-ff0d1152.swedencentral.azurecontainerapps.io` |
+| **Host** | `https://barabas.plainsight.pro` |
 | **Base path** | `/mcp/genie` |
 | **Auth type** | OAuth2 delegated (user signs in interactively) |
 | **Client ID** | `28f0e9f1-2fb3-4512-a131-7fd01fe8c3dd` (MCP Client app registration) |
@@ -251,7 +251,7 @@ import json
 connection_config = {
     "connection_name": "plainsight_brain_mcp",
     "connection_type": "HTTP",
-    "host": "https://ca-plainsight-brain.thankfulglacier-ff0d1152.swedencentral.azurecontainerapps.io",
+    "host": "https://barabas.plainsight.pro",
     "base_path": "/mcp/genie",
     "auth_type": "OAuth",
     "oauth_client_id": "28f0e9f1-2fb3-4512-a131-7fd01fe8c3dd",
@@ -330,7 +330,7 @@ After creating the connection, test it from a Databricks notebook:
 # Genie Code should be able to invoke MCP tools through the connection
 
 # Quick health check via the connection
-# GET https://ca-plainsight-brain.thankfulglacier-ff0d1152.swedencentral.azurecontainerapps.io/healthz
+# GET https://barabas.plainsight.pro/healthz
 # Should return 200 OK
 ```
 

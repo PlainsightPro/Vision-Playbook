@@ -15,6 +15,7 @@ This is built for colleagues who have an idea that:
 ## The Product Lab flow
 
 ```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart TD
     A[Scalable idea] --> B[Sales reality check<br/>Will it sell?]
     B -->|No fit| C[Stop early and learn]

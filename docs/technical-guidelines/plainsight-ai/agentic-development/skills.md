@@ -20,6 +20,7 @@ Each extensibility mechanism serves a different purpose. Choosing the right one 
 | **MCP Servers** | `.mcp.json` | Tool-level | When tools are invoked | External integrations (Databricks, APIs, databases) |
 
 ```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart TD
     A[Should every task see these instructions?] -->|Yes| B["CLAUDE.md"]
     A -->|No| C[Does it apply to a specific type of task?]
@@ -140,6 +141,7 @@ Skills are reusable instruction sets in `SKILL.md` files that Claude loads **onl
 ### How Skills Work
 
 ```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart LR
     A[You type a task] --> B{Claude checks skill descriptions}
     B -->|Description matches| C[Skill loaded into context]
@@ -299,6 +301,7 @@ Custom agents are defined in `.claude/agents/*.md` files. Unlike skills (which i
 ### How Custom Agents Work
 
 ```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart LR
     A[Main Claude session] -->|Spawns| B[Custom Agent]
     A -->|Spawns| C[Custom Agent]
@@ -452,6 +455,7 @@ Hooks are shell commands that execute automatically in response to Claude Code e
 ### How Hooks Work
 
 ```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart LR
     A[Claude calls a tool] --> B{Pre-hook defined?}
     B -->|Yes| C[Run pre-hook command]
@@ -544,6 +548,7 @@ For MCP configuration specific to Databricks, see the dedicated guide: [Connect 
 ### How MCP Works
 
 ```mermaid
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
 flowchart LR
     A[Claude Code] -->|MCP Protocol| B[MCP Server]
     B -->|Tools & Resources| C[External System]

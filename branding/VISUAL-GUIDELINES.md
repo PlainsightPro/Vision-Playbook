@@ -1,7 +1,7 @@
 # Plainsight Visual & Brand Guidelines
 
 > **Internal reference only**: not published in the playbook.
-> **Source of truth:** the [Plainsight Brand Kit](https://github.com/PlainsightPro/brand-kit). This document mirrors it for search. When they disagree, the brand kit wins. For automated output, agents must read `assets/templates/brand.json` from the brand kit whole and place the asset files directly.
+> **Source of truth:** the [Plainsight Brand Kit](https://github.com/PlainsightPro/brand-kit), published at [plainsightpro.github.io/brand-kit](https://plainsightpro.github.io/brand-kit/). This document mirrors it for search. When they disagree, the brand kit wins. For automated output, agents must read `assets/templates/brand.json` from the brand kit whole and place the asset files directly.
 
 ---
 
@@ -45,10 +45,14 @@ Use dashed strokes (`stroke-dasharray: 5 5`) for optional components. These fill
 
 | Element | Font | Notes |
 |---|---|---|
-| Headings | **Titillium Web**, bold, uppercase for section headings | Fallback: Segoe UI, Arial |
-| Body | **Inter** | Fallback: Segoe UI, Arial. Ratified 2026-08: Inter replaces Epilogue everywhere |
+| Headings | **Inter** 700. Uppercase with wider tracking for section headings, labels and buttons; full-sentence action titles in sentence case | Fallback: Segoe UI, Calibri, Arial |
+| Body | **Inter** 400 | Fallback: Segoe UI, Calibri, Arial |
 
-Maximum 2 font weights per slide or section. No italics in carousels or slides. Short blocks: 1-2 sentences per paragraph on slides.
+One family: Inter. Titillium Web was dropped as heading face on 2026-11-16 (brand kit v1.5.0); older material set in it does not have to be redone, new work never uses it. Calibri and Segoe UI are allowed fallbacks. Never use: Titillium Web, Quicksand, Bahnschrift, Tw Cen MT, Epilogue.
+
+Maximum 2 font weights per slide or section. No italics anywhere. Emphasis comes from colour (blue) or a small uppercase label, never bold body text. Short blocks: 1-2 sentences per paragraph on slides.
+
+Text on an orange fill is blue (4.70:1). White on orange only at large sizes, from 18.66 px bold or 24 px regular.
 
 ---
 

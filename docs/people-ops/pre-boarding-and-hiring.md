@@ -4,11 +4,11 @@ description: "Plainsight's hiring and pre-boarding process: from initial intervi
 
 # Pre-Boarding at Plainsight 🛹
 
-Welcome to the start of your journey with Plainsight! Our recruitment process is designed to be as seamless, transparent, and engaging as possible. Here’s what you can expect as you embark on this exciting path with us.
+Applying somewhere shouldn't feel like a mystery. Here's what happens between your first conversation with us and your first day.
 
 
 ```mermaid
-%%{init: { "theme": "base", "themeVariables": { "primaryTextColor": "#FFFFFF" } } }%%
+%%{init: { "flowchart": { "useMaxWidth": true } } }%%
 graph TB;
     subgraph A[Phase 1: 🎉 Initial Engagement]
         A1[👋 Interview 1: Get to Know Us]
@@ -32,8 +32,7 @@ graph TB;
 
     A --> B --> C --> D
     B1 --> B2
-    
-    classDef outerBox fill:#D5693A,stroke:#BD5428,stroke-width:1px,color:#FFFFFF;
+
 ```
   
 *This streamlined process ensures we're on the same page from the start and ready to move forward together. 🙌*
@@ -42,11 +41,11 @@ graph TB;
 ### 1. Initial Contact: Making the Connection 🤝
 Our journey together begins the moment you express interest in joining Plainsight. Whether you applied directly or were scouted by our talent team, we’ll reach out to set up an initial conversation. This is our chance to get to know you, understand your career goals, and see how they align with our vision.
 
-### 2. The Screening Process: Let’s Dive Deeper 🔍
+### 2. The Screening Process: Getting to Know You 🔍
 If the initial vibe is good, we'll invite you to one of our offices for a deeper conversation, a technical test and a tour at the office. 
 
 #### Face-to-Face meeting (+-30min)
-In this stage, we’ll review your experience, skills, and potential fit with our team. This might is an in-person interview at one of our offices where we discuss your past projects, your approach to problem-solving, and how you could contribute to Plainsight’s mission. We’ll also answer any questions you have about the role, our culture, or our expectations.
+In this stage, we’ll review your experience, skills, and potential fit with our team. This is usually an in-person interview at one of our offices where we discuss your past projects, your approach to problem-solving, and how you could contribute to Plainsight’s mission. We’ll also answer any questions you have about the role, our culture, or our expectations.
 
 #### Showcasing Your Skills 🛠️ (+-45min)
 Depending on the role, you might be asked to complete an assessment or case study that simulates the kind of work you’d be doing at Plainsight. This is a chance for you to demonstrate your expertise and for us to see how you approach challenges in a practical context.
@@ -70,6 +69,4 @@ We’ll also pair you with a buddy who will be your go-to person for any questio
 
 ## Your First Steps with Plainsight 🛤️
 
-Your journey with us is just beginning, and we’re thrilled to have you on board. At Plainsight, we’re committed to your growth and success, and we can’t wait to see the amazing things we’ll accomplish together.
-
-Welcome to Plainsight; where innovation meets passion, and your potential is limitless.
+From here, [🚀 Onboarding](onboarding.md) takes over: your first day, your setup and the Plainsight Academy. See you soon.
