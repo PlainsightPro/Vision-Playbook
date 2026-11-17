@@ -26,7 +26,7 @@ Two levels, same spirit. Initiatives keep us curious. Hubs make sure the topics 
 | **Who joins** | Anyone, no strings attached | Anyone who signs up for the hub's goals, certification included |
 | **Plan** | Not needed | Yes: goals, deliverables, who covers which area |
 | **Lasts** | As long as the energy is there | As long as the topic matters to our clients |
-| **Shows up in** | Evening sessions, playbook pages | The same, plus presales conversations, events and, in time, our website |
+| **Shows up in** | Evening sessions, playbook pages, lessons in the Brain | The same, plus presales conversations, events and, in time, our website |
 
 ```mermaid
 %%{init: { "flowchart": { "useMaxWidth": true } } }%%
@@ -35,10 +35,10 @@ flowchart LR
     A[Curiosity] --> B[Initiative]
     B -->|matters for clients| C[Knowledge Hub]
     C --> D[Expertise clients can see]
-    B -.->|topic fades| E[Lessons kept in the playbook]
+    B -.->|topic fades| E[Lessons kept in the Brain and the playbook]
 ```
 
-An initiative that fades hasn't failed. If it left a playbook page or a good session behind, it did its job.
+An initiative that fades hasn't failed. If what it learned lives on in the [🧠 Plainsight Brain](ai-native.md) and the playbook, it did its job.
 
 ## What every hub has
 
@@ -48,7 +48,7 @@ An initiative that fades hasn't failed. If it left a playbook page or a good ses
 | **A plan** | What we want to reach and by when: goals, deliverables, certifications, and the profiles we still need to hire. One or two pages, not a binder. |
 | **Topic experts** | Nobody has to know everything. The hub splits the technology into areas and makes sure each area has someone who goes deep. Together, the hub covers the whole platform. |
 | **A certification path** | Joining a hub means working toward the certification that fits your area. |
-| **Shared output** | Playbook pages, internal sessions, blogs, accelerators, a talk at an event. If it stays in one head, it doesn't count. |
+| **Shared output** | Playbook pages, lessons in the Brain, internal sessions, blogs, accelerators, a talk at an event. If it stays in one head, it doesn't count. |
 
 ### Why certification
 
