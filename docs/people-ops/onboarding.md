@@ -20,8 +20,8 @@ flowchart LR
 ## 📝 Before Your First Day
 Once your proposal is signed, we start preparing for your arrival:
 
-- **People team contact**: our People team reaches out to guide you through the first steps.
-- **People Platform access**: you receive a link to our [People Platform](https://selfservice.officient.io), where you fill in what we need before your start date.
+- **HR contact**: HR reaches out to guide you through the first steps.
+- **HR platform access**: you receive a link to our [HR platform](https://selfservice.officient.io), Officient, where you fill in what we need before your start date.
 - **Mobility options**: we explain the mobility options you have at Plainsight. Feel free to take a peek at [🚲 Mobility](remuneration/mobility.md) already.
 - **Event invitations**: you start receiving invites to our events, and you're welcome to join before your first day.
 
@@ -43,7 +43,7 @@ Your first day is about getting settled and connected:
 | System | What you use it for | How you get in |
 |---|---|---|
 | **Microsoft 365 and Teams** | Mail, calendar, chat and documents. The Plainsight team in Teams is where company news lands, with SharePoint underneath for files. | Your account is ready on day one. Set up the authenticator app straight away. |
-| **Officient** | Contracts, holidays, illness, payslips | The invitation you received before your start date |
+| **Officient**, our HR platform | Contracts, holidays, illness, payslips | The invitation you received before your start date |
 | **Harvest** | Time tracking: 40 hours a week, with a short note on what you did. Not on a client project yet? Book your time on Plainsight > Internal. | Invitation on day one. The desktop app is in the Microsoft Store. |
 | **Plainsight Brain** | Our shared memory, and the quickest way to find the colleague who knows | [See below](#connect-to-the-plainsight-brain) |
 | **Alan** | Hospitalisation insurance and health support | Invitation by mail, then everything runs through the app |

@@ -26,7 +26,7 @@ We’ll coordinate the return of any company assets, such as laptops, access car
 While it’s completely optional, we encourage departing team members to consider organizing a farewell drink or gathering if they wish to celebrate their time at Plainsight. This initiative is up to you - whether it's a casual coffee, a drink after work, or any other way you’d like to say goodbye. It’s your moment, so feel free to make it how you want it to be!
 
 ### 5. Final Payroll and Benefits 🧾
-We’ll ensure that your final paycheck and any outstanding benefits are processed promptly. Our People Team will provide you with all the necessary details regarding your final payment, benefits continuation, and any other important information.
+We’ll ensure that your final paycheck and any outstanding benefits are processed promptly. HR will provide you with all the necessary details regarding your final payment, benefits continuation, and any other important information.
 
 ## Staying Connected 🌍
 
