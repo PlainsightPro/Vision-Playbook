@@ -20,7 +20,7 @@ On the **right** sit our three offerings. This is where our experts do what they
 | Offering | What we do |
 |---|---|
 | **Data/AI Strategy & Governance** | Helping organisations define their data and AI roadmap and set up the right governance to make it stick. |
-| **AI & GenAI Implementation** | Building and deploying AI and generative AI solutions that deliver real business value. |
+| **AI & Software Engineering** | Building AI that runs in production, from machine learning to GenAI and agents, and the custom software, platforms and integrations around it. |
 | **Data & Analytics** | Engineering data platforms, analytics solutions, and everything in between. |
 
 On the **left** sit the supporting services that keep the machine running: backoffice, marketing, sales, and recruitment. Without them, the offerings don't reach the people who need them.
@@ -46,7 +46,7 @@ Consultants are not split into fixed "one consultant per offer" boxes. A consult
 
 flowchart TB
   subgraph TOP[Offer Leads]
-    O1[AI & GenAI Implementation]
+    O1[AI & Software Engineering]
     O2[Data/AI Strategy & Governance]
     O3[Data & Analytics]
   end
@@ -62,7 +62,6 @@ flowchart TB
   O3 <---> C
   C ~~~ P
   style P fill:transparent,stroke:transparent, font-size:16px
-  style S1 fill:transparent,stroke:transparent 
 ```
 
 
@@ -137,4 +136,4 @@ Want to know what drives that culture? Read [🥇 The Foundation of Plainsight](
 | Our purpose and values | [🥇 The Foundation of Plainsight](the-foundation-of-plainsight.md) |
 | How you grow here | [🎯 Evolution Process](../people-ops/working/evolution-process.md) |
 | The employee journey | [🚀 Onboarding](../people-ops/onboarding.md) |
-| Our technical guidelines | [Why 'Technical Guideline Ops'](../technical-guidelines/why-technical-guidelines.md) |
+| Our technical guidelines | [Why Technical Guidelines](../technical-guidelines/why-technical-guidelines.md) |
