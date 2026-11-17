@@ -51,7 +51,7 @@ Your first day is about getting settled and connected:
 
 More tools, and what we use them for, are in [🔨 Tools We Love](working/tools-we-love.md).
 
-- [ ] Set up your laptop: new password, authenticator, Windows Hello, Office, Power BI Desktop, VS Code, SSMS and Harvest
+- [ ] Set up your laptop: new password, authenticator, Windows Hello, Microsoft 365 and Harvest. Then the tools your role needs, like VS Code and Claude Code: [🔨 Tools We Love](working/tools-we-love.md) has the rest
 - [ ] Sign your documents in Officient
 - [ ] Join the Plainsight team in Teams and turn on notifications for the channels that matter to you
 - [ ] Connect to the Plainsight Brain
