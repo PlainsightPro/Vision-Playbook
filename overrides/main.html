@@ -1,5 +1,64 @@
 {% extends "base.html" %}
 
+{% block htmltitle %}
+  {% if page.is_homepage %}
+    <title>{{ config.site_name }}: how a Belgian data and AI company works</title>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  {{ super() }}
+  {#- Titles come from hooks/seo.py (the page's H1 without emoji); descriptions from front matter. -#}
+  {% if page.is_homepage %}
+    {% set ps_title = config.site_name ~ ": how a Belgian data and AI company works" %}
+  {% elif page.meta and page.meta.title %}
+    {% set ps_title = page.meta.title %}
+  {% else %}
+    {% set ps_title = page.title | striptags %}
+  {% endif %}
+  {% set ps_desc = page.meta.description if page.meta and page.meta.description else config.site_description %}
+  {% set ps_title = ps_title or config.site_name %}
+  {% set ps_url = page.canonical_url or config.site_url %}
+  <meta property="og:type" content="{{ 'website' if page.is_homepage else 'article' }}">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ ps_title | e }}">
+  <meta property="og:description" content="{{ ps_desc | trim | e }}">
+  <meta property="og:url" content="{{ ps_url }}">
+  <meta name="twitter:card" content="summary">
+  {% set ps_org = {
+    "@type": "Organization",
+    "name": "Plainsight",
+    "url": "https://www.plainsight.pro",
+    "logo": "https://www.plainsight.pro/images/logo-blue.svg",
+    "sameAs": ["https://www.linkedin.com/company/plainsight-pro"]
+  } %}
+  {% set ps_site = {
+    "@type": "WebSite",
+    "@id": config.site_url ~ "#website",
+    "url": config.site_url,
+    "name": config.site_name,
+    "description": config.site_description | trim,
+    "inLanguage": "en",
+    "publisher": ps_org
+  } %}
+  {% if page.is_homepage %}
+    {% set ps_graph = [ps_site] %}
+  {% else %}
+    {% set ps_graph = [ps_site, {
+      "@type": "WebPage",
+      "url": ps_url,
+      "name": ps_title,
+      "description": ps_desc | trim,
+      "inLanguage": "en",
+      "isPartOf": {"@id": config.site_url ~ "#website"},
+      "publisher": ps_org
+    }] %}
+  {% endif %}
+  <script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": ps_graph} | tojson }}</script>
+{% endblock %}
+
 {% block header %}
   {{ super() }}
   <div class="ps-subheader">

@@ -1,9 +1,11 @@
 ---
-description: "Plainsight's open-source company playbook: discover our purpose, values, career framework, and how we drive business outcomes through data and AI."
+description: "The open handbook of Plainsight, a Belgian data and AI company: our values, how we're organised, what we offer, and the guidelines we build by."
 ---
 
 <a name="top"></a>
 # Plainsight Playbook 📔
+
+This is the handbook of [Plainsight](https://www.plainsight.pro), a Belgian data and AI company. It's public on purpose: colleagues, clients, candidates and anyone curious can read how we work, what we offer, and the technical guidelines we build by on Microsoft Fabric, Databricks, Azure and Power BI.
 
 Plainsight loves to put things in Plain Sight (🥁). Open source code is the blueprint of our organization, built on transparency and rocket-fueled by passion 🌍🚀. Transparency fuels trust, trust generates speed and impact.
 
