@@ -55,7 +55,7 @@ These are house rules, not generic Markdown advice - follow them:
 
 ## Workflow
 
-**One change = one branch**, PR targeting `main`. CI builds and link-checks every PR; only a merge to `main` deploys to production (there is no per-PR staging preview). Keep PRs focused and reviewable.
+**One change = one branch**, PR targeting `main`. CI builds and link-checks every PR. A PR from a branch in this repo also gets its own staging URL, posted as a comment on the PR and removed when the PR closes; only a merge to `main` deploys to production. Keep PRs focused and reviewable.
 
 Before submitting a change, verify:
 

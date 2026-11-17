@@ -56,7 +56,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build_and_deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # main deploys to production. A pull request from a branch in this repo deploys to its own
+    # staging URL, which the action posts as a comment on the PR; close_pull_request removes it.
+    if: >-
+      (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'pull_request' && github.event.action != 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     name: Build and Deploy
     steps:
