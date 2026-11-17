@@ -1,8 +1,9 @@
 site_name: Plainsight Playbook
 site_url: https://playbook.plainsight.pro
 site_description: >-
-  Plainsight's open-source company handbook - purpose, values,
-  technical guidelines, and operational processes in plain sight.
+  The open handbook of Plainsight, a Belgian data and AI company: how we work,
+  what we offer, and the technical guidelines we build by on Microsoft Fabric,
+  Databricks, Azure and Power BI.
 site_author: Plainsight
 
 theme:
@@ -45,6 +46,10 @@ extra_javascript:
 
 plugins:
   - search
+
+# Page titles from each page's H1, plus llms.txt and llms-full.txt (see hooks/seo.py)
+hooks:
+  - hooks/seo.py
 
 exclude_docs: |
   images/README.md

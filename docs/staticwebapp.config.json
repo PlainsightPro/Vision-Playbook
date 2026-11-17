@@ -1,0 +1,11 @@
+{
+  "trailingSlash": "auto",
+  "routes": [
+    { "route": "/service-delivery/ai-and-analytics-strategy/", "redirect": "/service-delivery/strategy/", "statusCode": 301 },
+    { "route": "/service-delivery/AI Strategy_Governance/", "redirect": "/service-delivery/strategy/", "statusCode": 301 },
+    { "route": "/service-delivery/execution/", "redirect": "/service-delivery/what-we-offer/", "statusCode": 301 }
+  ],
+  "responseOverrides": {
+    "404": { "rewrite": "/404.html" }
+  }
+}
