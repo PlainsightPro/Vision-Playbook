@@ -52,6 +52,7 @@ These are house rules, not generic Markdown advice - follow them:
 - **Tone & audience.** Write for **consultants in action**, not academic completeness. Professional but warm, reflecting Plainsight's transparency. Audience is mixed: employees, partners, customers, and the public. Concrete examples beat abstract principles. Document patterns actually in practice, not aspirational theory.
 - **Technical-guideline page structure:** Overview → Practical Examples → Do's & Don'ts → architecture diagram → links to related pages.
 - **Findable by search engines and AI assistants.** Every page needs a `description:` in front matter (about 140 to 160 characters, saying what the page answers and naming the platform or topic). Give each page exactly one H1 that says what it is: `hooks/seo.py` uses it, without emoji, as the browser and search title (technical-guideline titles get their platform added, like `Naming Conventions (Power BI)`), and builds `llms.txt` and `llms-full.txt` from the nav. When you remove or rename a page, add a 301 redirect to `docs/staticwebapp.config.json`.
+- **Images stay light.** The content column is about 700 px wide, so keep images at most 1600 px wide. Use JPEG for photos and illustrations, PNG (256 colours is usually enough) for screenshots and diagrams, and write alt text that says what the image shows. `docs/assets/og-image.png` is the 1200x630 card that links to the playbook show in Teams and LinkedIn; it is built from the brand kit's triangles and white logo.
 
 ## Workflow
 

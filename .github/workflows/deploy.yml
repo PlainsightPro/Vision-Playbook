@@ -12,6 +12,8 @@ jobs:
     name: Check Links
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history, so hooks/seo.py can date each page
 
       - name: Check for em-dashes
         run: |
@@ -61,6 +63,8 @@ jobs:
     name: Build and Deploy
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history, so hooks/seo.py can date each page
 
       - name: Set up Python
         uses: actions/setup-python@v5

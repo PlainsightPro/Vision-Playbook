@@ -8,9 +8,13 @@
 2. llms.txt and llms-full.txt. After the build, writes an index of every page in the nav
    (title, URL, description) and one file with the full text of those pages, so AI assistants
    can read the playbook without crawling it page by page. See https://llmstxt.org.
+3. Real dates. MkDocs stamps every page in sitemap.xml with the build date. This hook uses the
+   date of the last commit that touched the page instead, for the sitemap and for dateModified
+   in the JSON-LD. CI checks out the full history (fetch-depth: 0) so the dates are right.
 """
 import posixpath
 import re
+import subprocess
 from pathlib import Path
 
 # Emoji and pictographs, plus the joiners and variation selectors that glue them together.
@@ -29,6 +33,25 @@ PLATFORMS = {"fabric": "Microsoft Fabric", "databricks": "Databricks", "power-bi
 
 _pages = {}
 _nav = None
+_git_dates = {}
+
+
+def on_config(config):
+    """Read the last commit date of every file once: newest commits come first."""
+    _git_dates.clear()
+    try:
+        log = subprocess.run(["git", "log", "--format=%x00%cs", "--name-only", "--", "docs"],
+                             capture_output=True, text=True, check=True,
+                             cwd=Path(config["config_file_path"]).parent).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return config
+    date = None
+    for line in log.splitlines():
+        if line.startswith("\x00"):
+            date = line[1:]
+        elif line and date:
+            _git_dates.setdefault(line.strip(), date)
+    return config
 
 
 def clean(text):
@@ -52,6 +75,10 @@ def on_page_markdown(markdown, page, config, files):
         title = f"{title} ({platform})"
     if title and "title" not in page.meta and not page.is_homepage:
         page.meta["title"] = title
+    date = _git_dates.get(f"docs/{page.file.src_uri}")
+    if date:
+        page.update_date = date
+        page.meta["git_date"] = date
     site = config["site_url"].rstrip("/") + "/"
     base = posixpath.dirname(page.file.src_uri)
 
