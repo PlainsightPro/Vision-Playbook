@@ -16,7 +16,8 @@ You are just one pull request away:
 
 1. Purpose & [The Foundation of Plainsight](about-plainsight/the-foundation-of-plainsight.md) 🚀
 2. How we're organised → [How We're Organised](about-plainsight/how-were-organised.md)
-3. What makes us different next to the above?
+3. What we offer clients, and how we deliver it → [What We Offer](service-delivery/what-we-offer.md)
+4. What makes us different next to the above?
 	1. Making people grow in their careers is prio 1. Read our Career Framework: [Evolution Process](people-ops/working/evolution-process.md)
 	2. Is there a limit on my growth? Spoiler alert: "No, sorry". Read: [Impact by Ownership](people-ops/working/impact-by-ownership.md)
 	3. Sharing knowledge freely, openly and over boundaries of organisations is our success recipe: [Communities](partners/communities.md)

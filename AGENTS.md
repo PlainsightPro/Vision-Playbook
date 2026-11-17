@@ -28,7 +28,7 @@ Three files must stay in sync when you add, rename, move, or delete a page:
 2. **`mkdocs.yml` `nav:` section**: pages are NOT auto-discovered into navigation; every page needs an explicit `nav` entry (often with an emoji prefix in its title) or it won't appear in the site menu. A page missing from `nav` triggers a `--strict` warning.
 3. **Inbound relative links** from other pages - renaming a file breaks every `[text](path.md)` link pointing at it. `--strict` surfaces these.
 
-Content sections (see `mkdocs.yml` nav for the canonical structure): `about-plainsight/`, `people-ops/` (HR), `service-delivery/`, `technical-guidelines/` (the largest area - `architectural-principles/`, `power-bi/`, `databricks/`, `fabric/`, `dbt/`, `migrations/`), and `partners/`.
+Content sections (see `mkdocs.yml` nav for the canonical structure): `about-plainsight/`, `service-delivery/` (the **Our Offerings** nav section: Strategy, Build with Data & Analytics, AI and Software Engineering, Experts, and Support; names and structure follow plainsight.pro), `people-ops/` (HR), `technical-guidelines/` (the largest area - `architectural-principles/`, `power-bi/`, `databricks/`, `fabric/`, `dbt/`, `azure/`, `plainsight-ai/`), and `partners/`. Offering visuals live in `docs/images/offerings/`: brand kit visuals flattened onto cream, and SVGs with outlined Inter text, both with a cream background so they stay legible in dark mode.
 
 `branding/VISUAL-GUIDELINES.md` is an **internal reference, not published**: it defines the brand color system, triangle decoration geometry, and typography that drive `docs/stylesheets/extra.css` and `overrides/main.html`.
 
