@@ -26,7 +26,11 @@
   <meta property="og:title" content="{{ ps_title | e }}">
   <meta property="og:description" content="{{ ps_desc | trim | e }}">
   <meta property="og:url" content="{{ ps_url }}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{{ config.site_url }}assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Plainsight Playbook: how we work, in plain sight">
+  <meta name="twitter:card" content="summary_large_image">
   {% set ps_org = {
     "@type": "Organization",
     "name": "Plainsight",
@@ -46,7 +50,7 @@
   {% if page.is_homepage %}
     {% set ps_graph = [ps_site] %}
   {% else %}
-    {% set ps_graph = [ps_site, {
+    {% set ps_page = {
       "@type": "WebPage",
       "url": ps_url,
       "name": ps_title,
@@ -54,7 +58,11 @@
       "inLanguage": "en",
       "isPartOf": {"@id": config.site_url ~ "#website"},
       "publisher": ps_org
-    }] %}
+    } %}
+    {% if page.meta and page.meta.git_date %}
+      {% set ps_page = dict(ps_page, dateModified=page.meta.git_date) %}
+    {% endif %}
+    {% set ps_graph = [ps_site, ps_page] %}
   {% endif %}
   <script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": ps_graph} | tojson }}</script>
 {% endblock %}

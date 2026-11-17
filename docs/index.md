@@ -53,4 +53,4 @@ This playbook exists to align everyone with our purpose, values, and processes. 
 ## What's Next? Join Us on This Journey 🎯
 
 The introduction is just the beginning of the Plainsight story. As you explore this playbook, you'll discover the many facets of our company - from our people and culture to our strategies and successes. Start wherever your question is. If an answer is missing, that's a page waiting to be written.
-![plainsight playbook himym](images/plainsight%20playbook%20himym.png)
+![Book cover reading Plainsight Playbook, a nod to the playbook from How I Met Your Mother](images/plainsight-playbook-himym.jpg){ width="480" }
