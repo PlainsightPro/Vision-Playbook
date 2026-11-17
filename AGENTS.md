@@ -54,7 +54,7 @@ These are house rules, not generic Markdown advice - follow them:
 
 ## Workflow
 
-**One change = one branch**, PR targeting `main`. Each PR auto-deploys a staging preview via Azure Static Web Apps; merge to `main` deploys to production. Keep PRs focused and reviewable.
+**One change = one branch**, PR targeting `main`. CI builds and link-checks every PR; only a merge to `main` deploys to production (there is no per-PR staging preview). Keep PRs focused and reviewable.
 
 Before submitting a change, verify:
 

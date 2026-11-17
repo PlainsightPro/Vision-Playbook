@@ -2,7 +2,7 @@
 description: "Power BI connection modes compared: Import, DirectQuery, and DirectLake. Decision framework for choosing the right mode based on data volume and latency."
 ---
 
-# Connection Modes – Import, DirectQuery & DirectLake
+# Connection Modes: Import, DirectQuery & DirectLake
 
 ## Overview
 

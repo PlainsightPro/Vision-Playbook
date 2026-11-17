@@ -27,6 +27,9 @@ theme:
     - content.code.copy
     - navigation.footer
     - search.share
+  font:
+    text: Inter
+    code: Roboto Mono
   logo: assets/logo.svg
   favicon: images/Branding Plainsight/AI icon-logo.svg
   custom_dir: overrides
@@ -42,6 +45,9 @@ extra_javascript:
 
 plugins:
   - search
+
+exclude_docs: |
+  images/README.md
 
 
 markdown_extensions:
@@ -85,8 +91,9 @@ nav:
       - "🥇 The Foundation of Plainsight": "about-plainsight/the-foundation-of-plainsight.md"
       - "🏗️ How We're Organised": "about-plainsight/how-were-organised.md"
       - "🧠 AI-Native, In Plain Sight": "about-plainsight/ai-native.md"
+      - "🎨 Brand Kit": "https://plainsightpro.github.io/brand-kit/"
   - People Ops:
-      - Onboarding Process:
+      - Joining & Leaving:
           - "🛹 Pre-boarding & Hiring": "people-ops/pre-boarding-and-hiring.md"
           - "🚀 Onboarding": "people-ops/onboarding.md"
           - "😢 Off-Boarding": "people-ops/off-boarding.md"
@@ -163,7 +170,7 @@ nav:
               - "🧠 Claude Code Extensibility": "technical-guidelines/plainsight-ai/agentic-development/skills.md"
               - "🧠 Connect Plainsight Brain to Claude Code": "technical-guidelines/plainsight-ai/agentic-development/plainsight-brain.md"
       - Migrations:
-          - "AI-Assisted Migration": "https://migration.plainsight.pro"
+          - "AI-Driven Migration": "https://migration.plainsight.pro"
   - Partners:
       - "🤝 Partnerships": "partners/partnerships.md"
       - "🧑‍🤝‍🧑 Communities": "partners/communities.md"

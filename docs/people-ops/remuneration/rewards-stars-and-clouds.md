@@ -13,7 +13,7 @@ At Plainsight, your hard work and dedication don't go unnoticed! Our unique rewa
 ## ⭐ Plainsight Stars ⭐
 
 ### What Are Stars?
-Plainsight Stars are your rewards for driving our strategic goals forward. Our vision is to be the Microsoft Analytics leader in Belgium and the Netherlands, and Stars help align your efforts with our mission.
+Plainsight Stars are your rewards for driving our strategic goals forward. Our purpose is driving business outcomes through data & AI, and Stars help align your efforts with that purpose.
 
 ### Enablers/Goals
 - **Share Knowledge**: Publish blogs on our website.

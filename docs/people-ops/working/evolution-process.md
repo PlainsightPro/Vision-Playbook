@@ -2,7 +2,7 @@
 description: "Learn about Plainsight's 720-degree feedback and evolution process, including goal setting, career coaching, and mid-year reviews."
 ---
 
-# Plainsight Evolution Process 🔍
+# Plainsight Evolution Process 🎯
 
 At Plainsight, we believe that growth is a continuous journey fueled by honest, open feedback. We don’t adhere to the traditional concept of "evaluations" but instead embrace what we call 720° feedback. This approach ensures that every voice is heard, whether it's within our team or from our customers, fostering a culture where improvement is constant and multidimensional.
 
@@ -56,6 +56,7 @@ In July, we conduct a mid-year feedback moment. This is a well-structured conver
 This mid-year feedback moment is an essential checkpoint to ensure that you’re on course to achieve your objectives and to adjust any plans if needed.
 
 ![CareerCoach](../../images/CareerCoach.png)
+
 ---
 
 This process ensures that your career development is both proactive and aligned with the needs of Plainsight, fostering growth for both you and the company.♾️🚀

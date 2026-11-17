@@ -30,8 +30,10 @@ These standards define how Power BI reports should look and behave. They cover l
 
 - Align all visuals to an invisible **8px grid**: every element's position, size, and spacing should be a multiple of 8 pixels. This creates alignment structure that makes the canvas feel ordered and intentional even without visible lines. Use Power BI's snap-to-grid and alignment guides to enforce this.
 ![8px Grid](../../images/report-design-standards/8px_grid_report_fixed_legend.svg)
+
 - Maintain consistent **gutters** (the empty space between elements): minimum **16px between visuals**, **24px from the canvas edge**. Too little space makes the page feel cluttered; too much makes it feel disconnected.
 ![Spacing](../../images/report-design-standards/grid_spacing_annotation_diagram_v6.svg)
+
 - Imply grouping through **proximity and whitespace**, not boxes or borders. Proximity alone signals that visuals belong together. Decorative borders add visual noise and are harder to maintain across theme changes.
 
 

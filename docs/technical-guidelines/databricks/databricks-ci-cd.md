@@ -63,6 +63,7 @@ Effective CI/CD pipelines share foundational principles regardless of implementa
 ### Monitor and Automate Rollbacks
 
 Track key metrics:
+
 - Deployment success rates
 - Job performance
 - Test coverage
@@ -227,6 +228,7 @@ flowchart TD
 **Triggered on:** Pull request or commit to main branch
 
 Actions:
+
 1. Compile code
 2. Run unit tests
 3. Generate versioned artifact (e.g., `my-app-1.0.jar`)

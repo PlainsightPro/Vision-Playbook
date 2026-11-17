@@ -126,6 +126,7 @@ classDef gold fill:#FFD700,stroke:#DAA520,stroke-width:1px,color:#111827;
 ```
 
 Here we see all data that the information is flowing through. 
+
 1. The **Source** contains all information but is not part of our Data Platform. Read more about sources in [Data Sources & Data Loading](data-sources-and-data-loading.md)
 
 2. **Landing (Optional, Bronze)** contains the increments extracted from the source or external tables populated by ingestion tools. This layer is useful when:

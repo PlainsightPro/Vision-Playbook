@@ -8,7 +8,11 @@ At Plainsight, we believe in continuous learning and fostering a culture of expe
 
 ## Experimentation Budget 💸
 
-At Plainsight, we know that the best ideas often come from a little experimentation. That’s why we provide an experimentation budget! Use this budget to buy books, access subscriptions (like DataCamp, EdX, ChatGPT, etc.), or even buy a Raspberry Pi. As long as it contributes to your personal growth and our collective knowledge, the sky’s the limit!
+At Plainsight, we know that the best ideas often come from a little experimentation. That’s why every employee gets an experimentation budget of **€1,000 a year**. Use this budget to buy books, access subscriptions (like DataCamp, EdX, ChatGPT, etc.), or even buy a Raspberry Pi. As long as it contributes to your personal growth and our collective knowledge, the sky’s the limit!
+
+## Plainsight Academy 🎓
+
+Every September, new colleagues start with the Plainsight Academy: five weeks of hands-on training before the first client project. Read more in [🚀 Onboarding](../onboarding.md#plainsight-academy).
 
 ## External Training 🚀
 

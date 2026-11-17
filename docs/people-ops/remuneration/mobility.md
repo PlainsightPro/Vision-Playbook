@@ -2,7 +2,7 @@
 description: "Plainsight mobility options explained: company car, mobility budget with three pillars, sustainable transport, housing costs, and how to get started."
 ---
 
-# 🚗 Mobility 🛴
+# Mobility 🚲
 
 > *Mobility is more than just getting from A to B - it's about flexibility, sustainability, and making the journey your own. 🚀  🚴‍♂️🚆🚗*
 
@@ -64,6 +64,7 @@ Submitting expenses is easy - just upload a photo through the [app](https://play
 
 #### Pillar 2: Sustainable Transport & Housing Costs
 Examples include:
+
 - Purchasing or renting (electric) **(moped) bikes**, along with insurance and maintenance
 - **Public transport tickets** or subscriptions (for both Belgium and abroad, family members included)
 - **Parking fees** for public transport
@@ -75,7 +76,7 @@ Examples include:
 #### Pillar 3: Cash
 - Any remaining budget is paid out as **cash** in January
 - There is no way to transfer this remainder to the next year
-- Note: The payout is taxed at **38.08%**
+- Note: The payout is taxed at **38.07%**
 
 ![mobilitybudget](../../images/mobilitybudget.png)
 
