@@ -131,6 +131,7 @@ ProductCode_BK VARCHAR(50) NOT NULL, -- Business key (natural identifier from so
 
 ??? tip "Late-Arriving Fact Handling"
     When a fact arrives but the dimension record doesn't exist yet:
+
     1. Store the business key in the fact table (`ProductCode_BK = 'ABC-123'`)
     2. Set the surrogate key to the `-2` (_Unknown) special member (`Product_FK = -2`); `-1` is reserved for _N/A
     3. Later, when the dimension loads, reprocess the fact to update `Product_FK` with the correct surrogate key

@@ -170,6 +170,7 @@ Manage historical changes with three primary strategies:
 
 ??? tip "Label Attribute for SCD Type 2"
     Include a human-readable label combining key attributes and version context:
+
     - `"Lynn Tsoflias (Australia)"` (old version)
     - `"Lynn Tsoflias (United Kingdom)"` (current version)
     
