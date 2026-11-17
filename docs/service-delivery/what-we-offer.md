@@ -34,7 +34,7 @@ Before a bigger move, we check two things: the client's people understand what A
 
 ## How this maps to our organisation
 
-Internally, offer leads look after Data/AI Strategy & Governance, Data & Analytics, and AI & Software Engineering (see [🏗️ How We're Organised](../about-plainsight/how-were-organised.md)). Same work, cut the way we staff and sell it. Projects and expert placements draw from the same pool of people, which is why one colleague can be on a strategy track this quarter and in a client's data team the next.
+Internally, offer leads look after Data/AI Strategy & Governance, Data & Analytics, and AI & Software Engineering (see [🏗️ How We're Organised](../about-plainsight/how-were-organised.md)). Same work, cut the way we organise and sell it. Projects and Experts draw on the same people, which is why one colleague can be on a strategy track this quarter and in a client's data team the next.
 
 ## Where to Go Next
 
