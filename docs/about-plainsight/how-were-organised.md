@@ -25,6 +25,8 @@ On the **right** sit our three offerings. This is where our experts do what they
 | **AI & Software Engineering** | Building AI that runs in production, from machine learning to GenAI and agents, and the custom software, platforms and integrations around it. |
 | **Data & Analytics** | Engineering data platforms, analytics solutions, and everything in between. |
 
+What each offering brings to a client, and how we deliver it, is in [🧭 What We Offer](../service-delivery/what-we-offer.md).
+
 On the **left** sit the supporting services that keep the machine running: backoffice, marketing, sales, and recruitment. Without them, the offerings don't reach the people who need them.
 
 Both sides are equally important. The cogs only turn when they work together. An expert building a customer's data platform is just as vital as the person making sure the right people find their way to Plainsight.

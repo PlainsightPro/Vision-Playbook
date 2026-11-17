@@ -51,6 +51,8 @@ exclude_docs: |
 
 
 markdown_extensions:
+  # Image sizes and classes, e.g. ![alt](img.png){ width="520" }
+  - attr_list
   # Admonitions
   - admonition
   - pymdownx.details
@@ -92,6 +94,15 @@ nav:
       - "🏗️ How We're Organised": "about-plainsight/how-were-organised.md"
       - "🧠 AI-Native, In Plain Sight": "about-plainsight/ai-native.md"
       - "🎨 Brand Kit": "https://plainsightpro.github.io/brand-kit/"
+  - Our Offerings:
+      - "🧭 What We Offer": "service-delivery/what-we-offer.md"
+      - "🗺️ Strategy": "service-delivery/strategy.md"
+      - Build:
+          - "📊 Data & Analytics": "service-delivery/data-and-analytics.md"
+          - "🤖 AI": "service-delivery/ai.md"
+          - "💻 Software Engineering": "service-delivery/software-engineering.md"
+      - "🧩 Experts": "service-delivery/experts.md"
+      - "🛠️ Support": "service-delivery/support.md"
   - People Ops:
       - Joining & Leaving:
           - "🛹 Pre-boarding & Hiring": "people-ops/pre-boarding-and-hiring.md"
