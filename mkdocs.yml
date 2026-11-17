@@ -100,15 +100,6 @@ nav:
       - "📚 Knowledge Hubs": "about-plainsight/knowledge-hubs.md"
       - "🧠 AI-Native, In Plain Sight": "about-plainsight/ai-native.md"
       - "🎨 Brand Kit": "https://plainsightpro.github.io/brand-kit/"
-  - Our Offerings:
-      - "🧭 What We Offer": "service-delivery/what-we-offer.md"
-      - "🗺️ Strategy": "service-delivery/strategy.md"
-      - Build:
-          - "📊 Data & Analytics": "service-delivery/data-and-analytics.md"
-          - "🤖 AI": "service-delivery/ai.md"
-          - "💻 Software Engineering": "service-delivery/software-engineering.md"
-      - "🧩 Experts": "service-delivery/experts.md"
-      - "🛠️ Support": "service-delivery/support.md"
   - People Ops:
       - Joining & Leaving:
           - "🛹 Pre-boarding & Hiring": "people-ops/pre-boarding-and-hiring.md"
@@ -129,6 +120,15 @@ nav:
           - "🌴 Holidays & Illness": "people-ops/remuneration/holidays-and-illness.md"
           - "🚲 Mobility": "people-ops/remuneration/mobility.md"
           - "⭐ Rewards - Stars And Clouds": "people-ops/remuneration/rewards-stars-and-clouds.md"
+  - Our Offerings:
+      - "🧭 What We Offer": "service-delivery/what-we-offer.md"
+      - "🗺️ Strategy": "service-delivery/strategy.md"
+      - Build:
+          - "📊 Data & Analytics": "service-delivery/data-and-analytics.md"
+          - "🤖 AI": "service-delivery/ai.md"
+          - "💻 Software Engineering": "service-delivery/software-engineering.md"
+      - "🧩 Experts": "service-delivery/experts.md"
+      - "🛠️ Support": "service-delivery/support.md"
   - Technical Guidelines:
       - "Why Technical Guidelines": "technical-guidelines/why-technical-guidelines.md"
       - Architectural Principles:
