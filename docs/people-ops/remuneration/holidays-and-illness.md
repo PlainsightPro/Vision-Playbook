@@ -28,7 +28,7 @@ We believe in the importance of taking time off to relax, recharge, and come bac
 
 ## ✅ How to Take Your Holidays
 
-- **Where to Enter**: Log your holidays in the [**People Platform**](https://selfservice.officient.io/).
+- **Where to Enter**: Log your holidays in the [**HR platform**](https://selfservice.officient.io/).
 - **Approval**: **No approval needed**! We trust you to arrange holidays that suit both your needs and your customer’s needs. Just make sure you have the green light from your customer before booking your time off.
 	- If you are on the bench: please send the admin team an email in advance 
 - **Consider this order of taking up holidays:** ADV > Replacement holidays > Legal holidays > Youth/European holidays

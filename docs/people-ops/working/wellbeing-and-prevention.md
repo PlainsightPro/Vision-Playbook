@@ -111,7 +111,7 @@ Something at the client that bothers you: workload, the way you're treated, unsa
 Stress, conflicts, too much work, feeling isolated at a client: it happens, and it's better to talk about it early. What we do:
 
 - **Career coaching.** Your career coach checks in with you regularly, not only about goals but also about how you're really doing. See [Evolution Process](evolution-process.md).
-- **Monthly company update.** Everyone knows where the company stands. We share openly and welcome feedback in every direction.
+- **Company update, about every six weeks.** Everyone knows where the company stands. We share openly and welcome feedback in every direction.
 - **Training *From consultant to trusted advisor*.** Stand your ground with clients, set boundaries and support your advice with arguments.
 - **Right to disconnect.** You don't have to be reachable outside your working hours or during holidays and sick leave. Mails sent outside someone's working hours can wait until their next working day. Set an out-of-office when you're away. WhatsApp groups are informal and optional; important news always comes through official channels.
 - **Alan.** Via the Alan app you can book calls about (mental) health as well.

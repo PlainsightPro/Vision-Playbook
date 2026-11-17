@@ -18,7 +18,7 @@ We are committed to making a real impact through data and AI. Every part of our 
 We view knowledge-sharing **across boundaries** as vital to driving innovation and growth. Our commitment to openness means fostering a learning environment within our team and community while actively engaging across organizations. By championing collaboration, we break down silos, creating a culture where learning is continuous and co-creation thrives.
 
 ### How We Live This Value
-- **Monthly internal knowledge-sharing sessions** to exchange expertise and learnings across internal teams.
+- **Internal knowledge-sharing sessions about every six weeks**, right after the company update, to exchange expertise and learnings across teams.
 - **Plainsight Academy**, our annual 5-week bootcamp, to go deep on the latest trends and developments.
 - **Strategic partnerships with Microsoft, Databricks & Anthropic** to stay ahead of the industry and foster growth.
 - **Personalized growth plans for every employee** to support continuous learning and development. Check the [🎯 Evolution Process](../people-ops/working/evolution-process.md) page for more info!
